@@ -1,4 +1,7 @@
+import { useTranslations } from 'next-intl';
+
 export default function HomePage() {
+  const t = useTranslations();
   return (
     <div className="min-h-screen bg-background">
       {/* Simple Header */}
@@ -12,19 +15,19 @@ export default function HomePage() {
           </div>
           <nav className="hidden md:flex items-center space-x-6">
             <a href="/" className="text-sm font-medium transition-colors hover:text-primary">
-              首頁
+              {t('navigation.home')}
             </a>
             <a href="/projects" className="text-sm font-medium transition-colors hover:text-primary">
-              專案
+              {t('navigation.projects')}
             </a>
             <a href="/news" className="text-sm font-medium transition-colors hover:text-primary">
-              新聞
+              {t('navigation.news')}
             </a>
             <a href="/events" className="text-sm font-medium transition-colors hover:text-primary">
-              活動
+              {t('navigation.events')}
             </a>
             <a href="/about" className="text-sm font-medium transition-colors hover:text-primary">
-              關於我們
+              {t('navigation.about')}
             </a>
           </nav>
         </div>
@@ -36,22 +39,21 @@ export default function HomePage() {
           <div className="container px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
             <div className="mx-auto max-w-4xl text-center">
               <div className="mb-6 inline-flex items-center rounded-full border px-4 py-2 text-sm font-medium">
-                開源 • 協作 • 公民科技
+{t('hero.badge')}
               </div>
 
               <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-                用科技改變
-                <span className="text-primary"> 台灣社會</span>
+{t('hero.title')}
+                <span className="text-primary"> {t('hero.titleHighlight')}</span>
               </h1>
 
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-                Code for Taiwan
-                是一個開放的公民科技社群，匯聚開發者、設計師與公民，共同打造數位解決方案，讓政府更透明、社會更美好。
+{t('hero.description')}
               </p>
 
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <button className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90">
-                  加入我們
+{t('hero.joinUs')}
                 </button>
                 <a
                   href="https://github.com/g0v"
@@ -59,7 +61,7 @@ export default function HomePage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-md border border-input bg-background px-6 py-3 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
                 >
-                  查看專案
+{t('hero.viewProjects')}
                 </a>
               </div>
             </div>
@@ -70,11 +72,10 @@ export default function HomePage() {
         <section className="py-24 sm:py-32">
           <div className="container px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <div className="mb-4 inline-flex items-center rounded-full border px-3 py-1 text-sm">關於我們</div>
-              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">我們的使命與價值</h2>
+              <div className="mb-4 inline-flex items-center rounded-full border px-3 py-1 text-sm">{t('navigation.about')}</div>
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{t('about.mission.title')} & {t('about.values.title')}</h2>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                Code for Taiwan
-                致力於透過開源協作，建立更開放、透明、參與式的數位民主社會。我們相信科技應該服務於人民，而非相反。
+{t('about.mission.description')}
               </p>
             </div>
 
@@ -84,32 +85,32 @@ export default function HomePage() {
                   <div className="rounded-lg bg-primary/10 p-3 w-fit mb-4">
                     <div className="h-6 w-6 bg-primary rounded"></div>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">透明治理</h3>
-                  <p className="text-sm text-muted-foreground">推動政府資訊透明化，讓公民更容易監督政府運作</p>
+                  <h3 className="text-lg font-semibold mb-2">{t('features.transparency.title')}</h3>
+                  <p className="text-sm text-muted-foreground">{t('features.transparency.description')}</p>
                 </div>
 
                 <div className="rounded-lg border bg-card p-6">
                   <div className="rounded-lg bg-primary/10 p-3 w-fit mb-4">
                     <div className="h-6 w-6 bg-primary rounded"></div>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">社會關懷</h3>
-                  <p className="text-sm text-muted-foreground">關注弱勢族群權益，用科技縮小數位落差</p>
+                  <h3 className="text-lg font-semibold mb-2">{t('features.community.title')}</h3>
+                  <p className="text-sm text-muted-foreground">{t('features.community.description')}</p>
                 </div>
 
                 <div className="rounded-lg border bg-card p-6">
                   <div className="rounded-lg bg-primary/10 p-3 w-fit mb-4">
                     <div className="h-6 w-6 bg-primary rounded"></div>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">快速行動</h3>
-                  <p className="text-sm text-muted-foreground">面對社會議題，我們快速響應並提出解決方案</p>
+                  <h3 className="text-lg font-semibold mb-2">{t('features.innovation.title')}</h3>
+                  <p className="text-sm text-muted-foreground">{t('features.innovation.description')}</p>
                 </div>
 
                 <div className="rounded-lg border bg-card p-6">
                   <div className="rounded-lg bg-primary/10 p-3 w-fit mb-4">
                     <div className="h-6 w-6 bg-primary rounded"></div>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">國際連結</h3>
-                  <p className="text-sm text-muted-foreground">與國際公民科技社群交流，分享台灣經驗</p>
+                  <h3 className="text-lg font-semibold mb-2">{t('features.openSource.title')}</h3>
+                  <p className="text-sm text-muted-foreground">{t('features.openSource.description')}</p>
                 </div>
               </div>
             </div>
@@ -120,10 +121,10 @@ export default function HomePage() {
         <section className="py-24 sm:py-32 bg-muted/30">
           <div className="container px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <div className="mb-4 inline-flex items-center rounded-full border px-3 py-1 text-sm">專案展示</div>
-              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">我們的開源專案</h2>
+              <div className="mb-4 inline-flex items-center rounded-full border px-3 py-1 text-sm">{t('navigation.projects')}</div>
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{t('projects.title')}</h2>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                這些專案展現了我們如何運用科技解決社會問題，每個專案都歡迎社群貢獻。
+{t('projects.subtitle')}
               </p>
             </div>
 
@@ -141,7 +142,7 @@ export default function HomePage() {
                         </div>
                       </div>
                     </div>
-                    <p className="text-muted-foreground mb-4">數位法規調適平台，讓公民參與法規制定過程</p>
+                    <p className="text-muted-foreground mb-4">Digital regulation adaptation platform for citizen participation in policy making</p>
                     <div className="flex flex-wrap gap-2 mb-6">
                       <span className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium">
                         Vue.js
@@ -150,7 +151,7 @@ export default function HomePage() {
                         Node.js
                       </span>
                       <span className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium">
-                        政策參與
+                        Policy Participation
                       </span>
                     </div>
                     <div className="flex space-x-2">
@@ -160,10 +161,10 @@ export default function HomePage() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center rounded-md border border-input bg-background px-3 py-2 text-sm font-medium transition-colors hover:bg-accent"
                       >
-                        原始碼
+                        GitHub
                       </a>
                       <button className="inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground">
-                        查看
+                        {t('common.viewMore')}
                       </button>
                     </div>
                   </div>
@@ -181,7 +182,7 @@ export default function HomePage() {
                         </div>
                       </div>
                     </div>
-                    <p className="text-muted-foreground mb-4">開放的線上國語、台語、客語辭典</p>
+                    <p className="text-muted-foreground mb-4">Open online dictionary for Mandarin, Taiwanese, and Hakka languages</p>
                     <div className="flex flex-wrap gap-2 mb-6">
                       <span className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium">
                         React
@@ -190,7 +191,7 @@ export default function HomePage() {
                         API
                       </span>
                       <span className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium">
-                        語言保存
+                        Language Preservation
                       </span>
                     </div>
                     <div className="flex space-x-2">
@@ -200,10 +201,10 @@ export default function HomePage() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center rounded-md border border-input bg-background px-3 py-2 text-sm font-medium transition-colors hover:bg-accent"
                       >
-                        原始碼
+                        GitHub
                       </a>
                       <button className="inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground">
-                        查看
+                        {t('common.viewMore')}
                       </button>
                     </div>
                   </div>
@@ -217,37 +218,37 @@ export default function HomePage() {
         <section className="py-24 sm:py-32">
           <div className="container px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <div className="mb-4 inline-flex items-center rounded-full border px-3 py-1 text-sm">社群參與</div>
-              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">加入我們的社群</h2>
+              <div className="mb-4 inline-flex items-center rounded-full border px-3 py-1 text-sm">{t('footer.links.community')}</div>
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{t('hero.joinUs')}</h2>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                透過多種管道參與社群活動，與志同道合的夥伴一起為台灣的數位民主努力。
+{t('events.subtitle')}
               </p>
             </div>
 
             <div className="mx-auto mt-16 max-w-4xl">
               <div className="rounded-lg border bg-gradient-to-r from-primary/5 to-accent/5 p-8 text-center">
-                <h3 className="text-2xl font-bold mb-4">加入我們的行列</h3>
+                <h3 className="text-2xl font-bold mb-4">{t('hero.joinUs')}</h3>
                 <p className="text-muted-foreground mb-6">
-                  不論你是開發者、設計師、或是關心社會議題的公民，我們都歡迎你的參與。讓我們一起用科技讓台灣更美好！
+{t('about.subtitle')}
                 </p>
                 <div className="flex flex-wrap justify-center gap-2">
                   <span className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium">
-                    開發者
+                    Developers
                   </span>
                   <span className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium">
-                    設計師
+                    Designers
                   </span>
                   <span className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium">
-                    專案經理
+                    Project Managers
                   </span>
                   <span className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium">
-                    資料科學家
+                    Data Scientists
                   </span>
                   <span className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium">
-                    公民記者
+                    Civic Journalists
                   </span>
                   <span className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium">
-                    社會工作者
+                    Social Workers
                   </span>
                 </div>
               </div>
@@ -260,7 +261,7 @@ export default function HomePage() {
       <footer className="border-t bg-muted/30">
         <div className="container px-4 py-8 sm:px-6 lg:px-8">
           <div className="text-center">
-            <p className="text-sm text-muted-foreground">© 2024 Code for Taiwan. 致力於用科技讓台灣更美好。</p>
+            <p className="text-sm text-muted-foreground">{t('footer.legal.copyright')}</p>
           </div>
         </div>
       </footer>

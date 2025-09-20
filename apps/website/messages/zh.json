@@ -1,0 +1,154 @@
+{
+  "navigation": {
+    "home": "首頁",
+    "projects": "專案",
+    "news": "新聞",
+    "events": "活動",
+    "about": "關於我們",
+    "contact": "聯絡我們",
+    "language": "語言"
+  },
+  "hero": {
+    "badge": "開源 • 協作 • 公民科技",
+    "title": "用科技改變",
+    "titleHighlight": "台灣社會",
+    "description": "Code for Taiwan 是一個開放的公民科技社群，匯聚開發者、設計師與公民，共同打造數位解決方案，讓政府更透明、社會更美好。",
+    "joinUs": "加入我們",
+    "viewProjects": "查看專案",
+    "learnMore": "了解更多"
+  },
+  "features": {
+    "openSource": {
+      "title": "開源協作",
+      "description": "所有專案皆開源，歡迎社群成員共同貢獻"
+    },
+    "community": {
+      "title": "社群驅動",
+      "description": "由志工組成的多元社群，共同為社會影響力而努力"
+    },
+    "innovation": {
+      "title": "創新解決",
+      "description": "運用現代科技，為社會挑戰提供創新解決方案"
+    },
+    "transparency": {
+      "title": "政府透明",
+      "description": "打造工具讓政府更加透明且負責任"
+    }
+  },
+  "projects": {
+    "title": "我們的專案",
+    "subtitle": "探索我們為台灣打造的數位解決方案",
+    "viewAll": "查看所有專案",
+    "categories": {
+      "all": "全部",
+      "government": "政府",
+      "education": "教育",
+      "environment": "環境",
+      "healthcare": "醫療",
+      "transportation": "交通"
+    },
+    "status": {
+      "active": "進行中",
+      "completed": "已完成",
+      "planning": "規劃中",
+      "archived": "已封存"
+    }
+  },
+  "news": {
+    "title": "最新消息",
+    "subtitle": "掌握我們社群的活動與成果",
+    "readMore": "閱讀更多",
+    "publishedOn": "發布於",
+    "categories": {
+      "announcement": "公告",
+      "release": "發布",
+      "event": "活動",
+      "community": "社群"
+    }
+  },
+  "events": {
+    "title": "即將到來的活動",
+    "subtitle": "參加我們的工作坊、黑客松和社群聚會",
+    "register": "報名",
+    "location": "地點",
+    "date": "日期",
+    "time": "時間",
+    "participants": "參與者",
+    "types": {
+      "workshop": "工作坊",
+      "hackathon": "黑客松",
+      "meetup": "聚會",
+      "conference": "會議"
+    }
+  },
+  "about": {
+    "title": "關於 Code for Taiwan",
+    "subtitle": "透過科技與協作，打造更好的台灣",
+    "mission": {
+      "title": "我們的使命",
+      "description": "透過公民科技的協作開發，促進台灣的透明度、問責制和公民參與。"
+    },
+    "vision": {
+      "title": "我們的願景",
+      "description": "一個科技服務所有公民，並促進有效民主參與的台灣。"
+    },
+    "values": {
+      "title": "我們的價值",
+      "openness": "所有工作保持開放與透明",
+      "collaboration": "協作且包容的社群建設",
+      "innovation": "為正面社會影響而創新",
+      "accessibility": "可及性與使用者中心的設計"
+    }
+  },
+  "common": {
+    "loading": "載入中...",
+    "search": "搜尋",
+    "filter": "篩選",
+    "sort": "排序",
+    "reset": "重設",
+    "apply": "套用",
+    "cancel": "取消",
+    "confirm": "確認",
+    "save": "儲存",
+    "edit": "編輯",
+    "delete": "刪除",
+    "share": "分享",
+    "download": "下載",
+    "upload": "上傳",
+    "previous": "上一頁",
+    "next": "下一頁",
+    "viewMore": "查看更多",
+    "showLess": "顯示較少",
+    "noResults": "找不到結果",
+    "tryAgain": "再試一次",
+    "error": "發生錯誤",
+    "success": "成功"
+  },
+  "footer": {
+    "description": "Code for Taiwan 是全球 Code for All 網絡的一部分，在世界各地推廣公民科技。",
+    "links": {
+      "about": "關於我們",
+      "projects": "專案",
+      "community": "社群",
+      "contact": "聯絡我們",
+      "github": "GitHub",
+      "slack": "Slack",
+      "facebook": "Facebook"
+    },
+    "legal": {
+      "privacy": "隱私政策",
+      "terms": "服務條款",
+      "copyright": "© 2024 Code for Taiwan. 保留所有權利。"
+    }
+  },
+  "forms": {
+    "required": "此欄位為必填",
+    "invalidEmail": "請輸入有效的電子郵件地址",
+    "invalidUrl": "請輸入有效的網址",
+    "minLength": "最少需要 {count} 個字元",
+    "maxLength": "最多允許 {count} 個字元",
+    "submit": "提交",
+    "submitting": "提交中...",
+    "submitted": "提交成功"
+  }
+}

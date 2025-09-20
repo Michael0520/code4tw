@@ -1,0 +1,154 @@
+{
+  "navigation": {
+    "home": "Home",
+    "projects": "Projects",
+    "news": "News",
+    "events": "Events",
+    "about": "About",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "hero": {
+    "badge": "Open Source • Collaboration • Civic Tech",
+    "title": "Technology for",
+    "titleHighlight": "Social Good",
+    "description": "Code for Taiwan is an open civic tech community that brings together developers, designers, and citizens to build digital solutions for government transparency and social good.",
+    "joinUs": "Join Us",
+    "viewProjects": "View Projects",
+    "learnMore": "Learn More"
+  },
+  "features": {
+    "openSource": {
+      "title": "Open Source",
+      "description": "All projects are open source and welcome contributions from the community"
+    },
+    "community": {
+      "title": "Community Driven",
+      "description": "Diverse community of volunteers working together for social impact"
+    },
+    "innovation": {
+      "title": "Innovation",
+      "description": "Innovative solutions for social challenges using modern technology"
+    },
+    "transparency": {
+      "title": "Government Transparency",
+      "description": "Building tools to make government more transparent and accountable"
+    }
+  },
+  "projects": {
+    "title": "Our Projects",
+    "subtitle": "Discover the digital solutions we're building for Taiwan",
+    "viewAll": "View All Projects",
+    "categories": {
+      "all": "All",
+      "government": "Government",
+      "education": "Education",
+      "environment": "Environment",
+      "healthcare": "Healthcare",
+      "transportation": "Transportation"
+    },
+    "status": {
+      "active": "Active",
+      "completed": "Completed",
+      "planning": "Planning",
+      "archived": "Archived"
+    }
+  },
+  "news": {
+    "title": "Latest News",
+    "subtitle": "Stay updated with our community activities and achievements",
+    "readMore": "Read More",
+    "publishedOn": "Published on",
+    "categories": {
+      "announcement": "Announcement",
+      "release": "Release",
+      "event": "Event",
+      "community": "Community"
+    }
+  },
+  "events": {
+    "title": "Upcoming Events",
+    "subtitle": "Join our workshops, hackathons, and community gatherings",
+    "register": "Register",
+    "location": "Location",
+    "date": "Date",
+    "time": "Time",
+    "participants": "Participants",
+    "types": {
+      "workshop": "Workshop",
+      "hackathon": "Hackathon",
+      "meetup": "Meetup",
+      "conference": "Conference"
+    }
+  },
+  "about": {
+    "title": "About Code for Taiwan",
+    "subtitle": "Building a better Taiwan through technology and collaboration",
+    "mission": {
+      "title": "Our Mission",
+      "description": "To foster transparency, accountability, and citizen participation in Taiwan through the collaborative development of civic technology."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "A Taiwan where technology serves all citizens and enables effective democratic participation."
+    },
+    "values": {
+      "title": "Our Values",
+      "openness": "Openness and transparency in all our work",
+      "collaboration": "Collaborative and inclusive community building",
+      "innovation": "Innovation for positive social impact",
+      "accessibility": "Accessible and user-centered design"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "reset": "Reset",
+    "apply": "Apply",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "share": "Share",
+    "download": "Download",
+    "upload": "Upload",
+    "previous": "Previous",
+    "next": "Next",
+    "viewMore": "View More",
+    "showLess": "Show Less",
+    "noResults": "No results found",
+    "tryAgain": "Try again",
+    "error": "An error occurred",
+    "success": "Success"
+  },
+  "footer": {
+    "description": "Code for Taiwan is part of the global Code for All network, promoting civic technology worldwide.",
+    "links": {
+      "about": "About",
+      "projects": "Projects",
+      "community": "Community",
+      "contact": "Contact",
+      "github": "GitHub",
+      "slack": "Slack",
+      "facebook": "Facebook"
+    },
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "copyright": "© 2024 Code for Taiwan. All rights reserved."
+    }
+  },
+  "forms": {
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address",
+    "invalidUrl": "Please enter a valid URL",
+    "minLength": "Minimum {count} characters required",
+    "maxLength": "Maximum {count} characters allowed",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "submitted": "Submitted successfully"
+  }
+}
