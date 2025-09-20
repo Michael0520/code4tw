@@ -1,0 +1,184 @@
+# Pre-commit hooks for Code4TW development standards
+repos:
+  # English-only enforcement
+  - repo: local
+    hooks:
+      - id: no-chinese-characters
+        name: No Chinese characters in code
+        entry: bash -c 'if grep -r "[\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]" --include="*.ts" --include="*.tsx" --include="*.js" --include="*.jsx" --exclude="**/i18n.ts" --exclude="**/translations.ts" .; then echo "❌ Chinese characters found in source code. Please use English only."; exit 1; fi'
+        language: system
+        files: \.(ts|tsx|js|jsx)$
+        exclude: ^(.*\/i18n\.ts|.*\/translations\.ts)$
+
+      - id: commit-message-english
+        name: Commit message in English only
+        entry: bash -c 'if echo "$1" | grep -q "[\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]"; then echo "❌ Commit message contains Chinese characters. Please use English only."; exit 1; fi'
+        language: system
+        stages: [commit-msg]
+
+  # TypeScript and linting
+  - repo: local
+    hooks:
+      - id: typescript-check
+        name: TypeScript type checking
+        entry: pnpm check-types
+        language: system
+        files: \.(ts|tsx)$
+        pass_filenames: false
+
+      - id: eslint-check
+        name: ESLint with English-only rules
+        entry: pnpm lint
+        language: system
+        files: \.(ts|tsx|js|jsx)$
+        pass_filenames: false
+
+  # Test requirements
+  - repo: local
+    hooks:
+      - id: test-coverage
+        name: Test coverage validation
+        entry: bash -c 'pnpm test --coverage --passWithNoTests'
+        language: system
+        files: \.(ts|tsx)$
+        pass_filenames: false
+
+      - id: require-tests
+        name: Require tests for new source files
+        entry: bash -c '
+          for file in "$@"; do
+            if [[ "$file" =~ ^apps/.*/src/.*\.(ts|tsx)$ ]] && [[ ! "$file" =~ \.(test|spec)\. ]] && [[ ! "$file" =~ \.config\. ]]; then
+              testfile=$(dirname "$file")/__tests__/$(basename "$file" | sed "s/\.\(ts\|tsx\)$/.test.ts/")
+              if [ ! -f "$testfile" ]; then
+                echo "❌ Missing test file for $file"
+                echo "   Expected: $testfile"
+                echo "   TDD requires tests to be written first!"
+                exit 1
+              fi
+            fi
+          done
+        '
+        language: system
+        files: \.(ts|tsx)$
+
+  # Magic number detection
+  - repo: local
+    hooks:
+      - id: no-magic-numbers
+        name: Detect potential magic numbers
+        entry: bash -c '
+          for file in "$@"; do
+            if [[ ! "$file" =~ \.(test|spec|config)\. ]]; then
+              if grep -n "\b[0-9]\{2,\}\b" "$file" | grep -v "const\|CONFIG\|TIMEOUT\|PORT\|VERSION"; then
+                echo "⚠️  Potential magic numbers found in $file"
+                echo "   Consider externalizing to configuration constants"
+              fi
+            fi
+          done
+        '
+        language: system
+        files: \.(ts|tsx)$
+
+  # DDD Architecture validation
+  - repo: local
+    hooks:
+      - id: ddd-layer-dependencies
+        name: Validate DDD layer dependencies
+        entry: bash -c '
+          for file in "$@"; do
+            if [[ "$file" =~ /domain/.* ]]; then
+              if grep -q "from.*infrastructure\|from.*presentation" "$file"; then
+                echo "❌ Domain layer violation in $file"
+                echo "   Domain layer cannot depend on infrastructure or presentation"
+                exit 1
+              fi
+            fi
+          done
+        '
+        language: system
+        files: ^apps/.*/src/domain/.*\.(ts|tsx)$
+
+  # Configuration requirements
+  - repo: local
+    hooks:
+      - id: no-hardcoded-urls
+        name: No hardcoded URLs
+        entry: bash -c '
+          for file in "$@"; do
+            if [[ ! "$file" =~ /config/ ]] && [[ ! "$file" =~ \.(test|spec)\. ]]; then
+              if grep -n "http[s]*://" "$file"; then
+                echo "⚠️  Hardcoded URL found in $file"
+                echo "   Consider externalizing to configuration"
+              fi
+            fi
+          done
+        '
+        language: system
+        files: \.(ts|tsx)$
+
+  # Secret detection
+  - repo: local
+    hooks:
+      - id: detect-secrets
+        name: Detect potential secrets
+        entry: bash -c '
+          patterns=(
+            "api[_-]?key.*=.*['\''\"'][^'\''\"""]{10,}"
+            "secret.*=.*['\''\"'][^'\''\"""]{10,}"
+            "password.*=.*['\''\"'][^'\''\"""]{8,}"
+            "token.*=.*['\''\"'][^'\''\"""]{10,}"
+          )
+          for file in "$@"; do
+            for pattern in "${patterns[@]}"; do
+              if grep -i "$pattern" "$file"; then
+                echo "❌ Potential secret found in $file"
+                echo "   Secrets should never be committed to repository"
+                exit 1
+              fi
+            done
+          done
+        '
+        language: system
+        files: \.(ts|tsx|js|jsx|json|env)$
+
+  # Standard hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: \.(md|txt)$
+      - id: end-of-file-fixer
+        exclude: \.(md|txt)$
+      - id: check-json
+      - id: check-yaml
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+
+  # Prettier formatting
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.0.3
+    hooks:
+      - id: prettier
+        files: \.(ts|tsx|js|jsx|json|css|scss|md|yml|yaml)$
+        exclude: ^(pnpm-lock\.yaml|\.next/|dist/|build/)
+
+  # Package.json sorting
+  - repo: https://github.com/pre-commit/mirrors-fixjson
+    rev: v4.0.0
+    hooks:
+      - id: fix-json
+
+# Global configuration
+default_stages: [commit]
+fail_fast: false
+minimum_pre_commit_version: 3.0.0
+
+# Repository configuration
+repos:
+  - repo: meta
+    hooks:
+      - id: check-hooks-apply
+      - id: check-useless-excludes

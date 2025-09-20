@@ -8,6 +8,10 @@
       "import": "./next.config.base.mjs",
       "require": "./next.config.base.js"
     },
+    "./configs": {
+      "import": "./next.config.base.mjs",
+      "require": "./next.config.base.js"
+    },
     "./next": "./node_modules/next",
     "./next-themes": "./node_modules/next-themes"
   },

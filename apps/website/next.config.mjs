@@ -1,17 +1,10 @@
-import baseConfig from '@repo/next-config/base';
+import createNextConfig from '@repo/next-config/base';
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  ...baseConfig,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    unoptimized: true,
-  },
-}
+const nextConfig = createNextConfig({
+  eslintIgnore: true,
+  typescriptIgnore: true,
+  unoptimizedImages: true,
+});
 
-export default nextConfig
+export default nextConfig;
