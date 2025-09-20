@@ -39,6 +39,12 @@
     "title": "Our Projects",
     "subtitle": "Discover the digital solutions we're building for Taiwan",
     "viewAll": "View All Projects",
+    "featured": "Featured Projects",
+    "allProjects": "All Projects",
+    "searchResults": "Search results for \"{query}\"",
+    "showing": "Showing {count} projects",
+    "noResults": "No projects found",
+    "tryDifferentFilters": "Try adjusting your filters or search query",
     "categories": {
       "all": "All",
       "government": "Government",
@@ -52,6 +58,12 @@
       "completed": "Completed",
       "planning": "Planning",
       "archived": "Archived"
+    },
+    "stats": {
+      "total": "Total Projects",
+      "active": "Active",
+      "stars": "GitHub Stars",
+      "forks": "Forks"
     }
   },
   "news": {

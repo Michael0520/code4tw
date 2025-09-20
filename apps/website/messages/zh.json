@@ -39,6 +39,12 @@
     "title": "我們的專案",
     "subtitle": "探索我們為台灣打造的數位解決方案",
     "viewAll": "查看所有專案",
+    "featured": "精選專案",
+    "allProjects": "所有專案",
+    "searchResults": "「{query}」的搜尋結果",
+    "showing": "顯示 {count} 個專案",
+    "noResults": "找不到專案",
+    "tryDifferentFilters": "試著調整篩選條件或搜尋關鍵字",
     "categories": {
       "all": "全部",
       "government": "政府",
@@ -52,6 +58,12 @@
       "completed": "已完成",
       "planning": "規劃中",
       "archived": "已封存"
+    },
+    "stats": {
+      "total": "總專案數",
+      "active": "進行中",
+      "stars": "GitHub 星星",
+      "forks": "分支"
     }
   },
   "news": {
