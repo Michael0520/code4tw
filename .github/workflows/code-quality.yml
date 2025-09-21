@@ -45,7 +45,7 @@ jobs:
 
       - name: Test execution and coverage
         run: |
-          pnpm test --coverage
+          pnpm test:coverage
           echo "Checking coverage thresholds..."
           # Domain layer should have 100% coverage
           # Application layer should have 80% coverage
@@ -113,9 +113,11 @@ jobs:
         run: |
           echo "Validating configuration externalization..."
 
-          # Check for hardcoded URLs
-          if grep -r "http[s]*://" --include="*.ts" --include="*.tsx" --exclude-dir=node_modules --exclude="**/config/**" .; then
+          # Check for hardcoded URLs (exclude config, test files, and type definitions)
+          if grep -r "http[s]*://" --include="*.ts" --include="*.tsx" --exclude-dir=node_modules --exclude="**/config/**" --exclude="**/*.test.*" --exclude="**/*.spec.*" --exclude="**/next-env.d.ts" .; then
             echo "⚠️  WARNING: Hardcoded URLs found. Consider externalizing to configuration."
+          else
+            echo "✅ PASS: No problematic hardcoded URLs found"
           fi
 
           # Check for business rule constants
@@ -125,9 +127,9 @@ jobs:
 
           # Verify configuration files exist
           required_configs=(
-            "apps/website/src/infrastructure/config/app-config.ts"
-            "apps/website/src/infrastructure/config/business-rules.ts"
-            "apps/website/src/infrastructure/config/feature-flags.ts"
+            "apps/website/configs/app-config.ts"
+            "apps/website/configs/business-rules.ts"
+            "apps/website/configs/feature-flags.ts"
           )
 
           for config in "${required_configs[@]}"; do
