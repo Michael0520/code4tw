@@ -124,17 +124,22 @@ export async function getAboutInformation(): Promise<AboutResponse> {
         data.color
       )
     );
-    const team = teamData.map(data =>
-      TeamMember.create(
+    const team = teamData.map(data => {
+      // Filter out undefined values from socialLinks
+      const cleanSocialLinks = Object.fromEntries(
+        Object.entries(data.socialLinks || {}).filter(([key, value]) => value !== undefined)
+      ) as Record<string, string>;
+
+      return TeamMember.create(
         data.id,
         data.name,
         data.role,
         data.bio,
         data.imageUrl,
-        data.socialLinks,
+        cleanSocialLinks,
         data.isActive
-      )
-    );
+      );
+    });
 
     // Apply business logic through domain services
     const sortedPrinciples = AboutService.getPrinciples(principles);
@@ -225,17 +230,22 @@ export async function getCoreValues(): Promise<CoreValueDto[]> {
 export async function getTeamMembers(filters?: TeamSearchFilters): Promise<TeamMemberDto[]> {
   try {
     const teamData = STATIC_TEAM_DATA;
-    const team = teamData.map(data =>
-      TeamMember.create(
+    const team = teamData.map(data => {
+      // Filter out undefined values from socialLinks
+      const cleanSocialLinks = Object.fromEntries(
+        Object.entries(data.socialLinks || {}).filter(([key, value]) => value !== undefined)
+      ) as Record<string, string>;
+
+      return TeamMember.create(
         data.id,
         data.name,
         data.role,
         data.bio,
         data.imageUrl,
-        data.socialLinks,
+        cleanSocialLinks,
         data.isActive
-      )
-    );
+      );
+    });
 
     let filteredTeam = team;
 
@@ -319,17 +329,22 @@ export async function getOrganizationStats() {
         data.color
       )
     );
-    const team = teamData.map(data =>
-      TeamMember.create(
+    const team = teamData.map(data => {
+      // Filter out undefined values from socialLinks
+      const cleanSocialLinks = Object.fromEntries(
+        Object.entries(data.socialLinks || {}).filter(([key, value]) => value !== undefined)
+      ) as Record<string, string>;
+
+      return TeamMember.create(
         data.id,
         data.name,
         data.role,
         data.bio,
         data.imageUrl,
-        data.socialLinks,
+        cleanSocialLinks,
         data.isActive
-      )
-    );
+      );
+    });
 
     return AboutService.getOrganizationStats(organization, principles, values, team);
   } catch (error) {

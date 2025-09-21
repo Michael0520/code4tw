@@ -48,4 +48,5 @@ export const HOME_CONFIG = {
 
 export type HomeConfig = typeof HOME_CONFIG;
 export type AboutFeature = typeof HOME_CONFIG.aboutFeatures[0];
+export type HomeFeature = AboutFeature; // Alias for backwards compatibility
 export type Project = typeof HOME_CONFIG.projects[0];
