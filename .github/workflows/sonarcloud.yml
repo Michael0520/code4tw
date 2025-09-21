@@ -44,7 +44,7 @@ jobs:
         run: pnpm check-types
 
       - name: ESLint analysis
-        run: pnpm lint --format=json --output-file=eslint-report.json || true
+        run: pnpm lint || true
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
@@ -95,7 +95,7 @@ jobs:
       - name: Run tests for ${{ matrix.project.name }}
         run: |
           cd ${{ matrix.project.path }}
-          pnpm test --coverage.reporter=lcov
+          pnpm test:coverage
 
       - name: SonarCloud Scan for ${{ matrix.project.name }}
         uses: SonarSource/sonarcloud-github-action@master
@@ -105,8 +105,8 @@ jobs:
         with:
           projectBaseDir: ${{ matrix.project.path }}
           args: >
-            -Dsonar.projectKey=${{ matrix.project.sonar-project-key }}
-            -Dsonar.organization=code4tw
+            -Dsonar.projectKey=Michael0520_code4tw
+            -Dsonar.organization=michael0520
             -Dsonar.sources=.
             -Dsonar.exclusions=**/*.test.*,**/*.spec.*,**/node_modules/**,**/coverage/**,**/.next/**
             -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info
