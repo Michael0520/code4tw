@@ -37,7 +37,7 @@ export default function RootLayout({
     <html lang="zh-TW" suppressHydrationWarning>
       <body className={`font-sans ${inter.variable} ${jetbrainsMono.variable} antialiased min-h-screen`}>
         <Suspense fallback={null}>
-          <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange>
+          <ThemeProvider attribute="class" forcedTheme="light" disableTransitionOnChange>
             <LanguageProvider>
               <div className="min-h-screen flex flex-col">{children}</div>
             </LanguageProvider>
