@@ -9,18 +9,18 @@ export async function getHomeData(): Promise<{
   communityRoles: string[];
 }> {
   return {
-    aboutFeatures: [...HOME_CONFIG.aboutFeatures],
-    projects: [...HOME_CONFIG.projects],
+    aboutFeatures: [...HOME_CONFIG.aboutFeatures] as AboutFeature[],
+    projects: [...HOME_CONFIG.projects] as Project[],
     communityRoles: [...HOME_CONFIG.communityRoles]
   };
 }
 
 export async function getAboutFeatures(): Promise<AboutFeature[]> {
-  return [...HOME_CONFIG.aboutFeatures];
+  return [...HOME_CONFIG.aboutFeatures] as AboutFeature[];
 }
 
 export async function getProjects(): Promise<Project[]> {
-  return [...HOME_CONFIG.projects];
+  return [...HOME_CONFIG.projects] as Project[];
 }
 
 export async function getCommunityRoles(): Promise<readonly string[]> {

@@ -413,9 +413,9 @@ describe('About Domain', () => {
         const sorted = AboutService.getCoreValues(sampleValues);
 
         // Assert
-        expect(sorted[0].getTitle()).toBe('A Value');
-        expect(sorted[1].getTitle()).toBe('M Value');
-        expect(sorted[2].getTitle()).toBe('Z Value');
+        expect(sorted[0]!.getTitle()).toBe('A Value');
+        expect(sorted[1]!.getTitle()).toBe('M Value');
+        expect(sorted[2]!.getTitle()).toBe('Z Value');
       });
 
       it('should not mutate original array', () => {
@@ -436,9 +436,9 @@ describe('About Domain', () => {
         const sorted = AboutService.getPrinciples(samplePrinciples);
 
         // Assert
-        expect(sorted[0].getPriority()).toBe(90);
-        expect(sorted[1].getPriority()).toBe(50);
-        expect(sorted[2].getPriority()).toBe(10);
+        expect(sorted[0]!.getPriority()).toBe(90);
+        expect(sorted[1]!.getPriority()).toBe(50);
+        expect(sorted[2]!.getPriority()).toBe(10);
       });
 
       it('should sort by title when priorities are equal', () => {
@@ -452,8 +452,8 @@ describe('About Domain', () => {
         const sorted = AboutService.getPrinciples(equalPriorityPrinciples);
 
         // Assert
-        expect(sorted[0].getTitle()).toBe('A Principle');
-        expect(sorted[1].getTitle()).toBe('Z Principle');
+        expect(sorted[0]!.getTitle()).toBe('A Principle');
+        expect(sorted[1]!.getTitle()).toBe('Z Principle');
       });
     });
 
@@ -472,8 +472,8 @@ describe('About Domain', () => {
         const active = AboutService.getActiveTeamMembers(sampleTeamMembers);
 
         // Assert
-        expect(active[0].getName()).toBe('Alice Johnson');
-        expect(active[1].getName()).toBe('Charlie Brown');
+        expect(active[0]!.getName()).toBe('Alice Johnson');
+        expect(active[1]!.getName()).toBe('Charlie Brown');
       });
     });
 
@@ -518,7 +518,7 @@ describe('About Domain', () => {
 
         // Assert
         expect(results).toHaveLength(1);
-        expect(results[0].getName()).toBe('Alice Johnson');
+        expect(results[0]!.getName()).toBe('Alice Johnson');
       });
 
       it('should search by role', () => {
@@ -535,7 +535,7 @@ describe('About Domain', () => {
 
         // Assert
         expect(results).toHaveLength(1);
-        expect(results[0].getName()).toBe('Alice Johnson');
+        expect(results[0]!.getName()).toBe('Alice Johnson');
       });
 
       it('should return active members for empty query', () => {
@@ -553,7 +553,7 @@ describe('About Domain', () => {
 
         // Assert
         expect(results).toHaveLength(1);
-        expect(results[0].getName()).toBe('Alice Johnson');
+        expect(results[0]!.getName()).toBe('Alice Johnson');
       });
     });
 

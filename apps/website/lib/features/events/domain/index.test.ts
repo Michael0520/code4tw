@@ -723,7 +723,7 @@ describe('EventService', () => {
 
       // Assert
       expect(workshops).toHaveLength(1);
-      expect(workshops[0].getType().getValue()).toBe('workshop');
+      expect(workshops[0]!.getType().getValue()).toBe('workshop');
     });
 
     it('should filter by status', () => {
@@ -747,7 +747,7 @@ describe('EventService', () => {
 
       // Assert
       expect(featured).toHaveLength(1);
-      expect(featured[0].isFeatured()).toBe(true);
+      expect(featured[0]!.isFeatured()).toBe(true);
     });
 
     it('should filter by available spots', () => {
@@ -773,7 +773,7 @@ describe('EventService', () => {
 
       // Assert
       expect(results).toHaveLength(1);
-      expect(results[0].getTitle()).toContain('Workshop');
+      expect(results[0]!.getTitle()).toContain('Workshop');
     });
 
     it('should return all events for empty query', () => {
@@ -797,9 +797,9 @@ describe('EventService', () => {
       const sorted = EventService.sortEvents(events, 'title', 'asc');
 
       // Assert
-      expect(sorted[0].getTitle()).toBe('Hackathon 2024');
-      expect(sorted[1].getTitle()).toBe('Past Conference');
-      expect(sorted[2].getTitle()).toBe('Tech Workshop');
+      expect(sorted[0]!.getTitle()).toBe('Hackathon 2024');
+      expect(sorted[1]!.getTitle()).toBe('Past Conference');
+      expect(sorted[2]!.getTitle()).toBe('Tech Workshop');
     });
 
     it('should sort by event date ascending', () => {
@@ -811,8 +811,8 @@ describe('EventService', () => {
 
       // Assert
       const dates = sorted.map(e => e.getEventDate().getValue().getTime());
-      expect(dates[0]).toBeLessThan(dates[1]);
-      expect(dates[1]).toBeLessThan(dates[2]);
+      expect(dates[0]!).toBeLessThan(dates[1]!);
+      expect(dates[1]!).toBeLessThan(dates[2]!);
     });
 
     it('should sort by registrations descending', () => {
@@ -824,8 +824,8 @@ describe('EventService', () => {
 
       // Assert
       const registrations = sorted.map(e => e.getCapacity().getCurrentRegistered());
-      expect(registrations[0]).toBeGreaterThanOrEqual(registrations[1]);
-      expect(registrations[1]).toBeGreaterThanOrEqual(registrations[2]);
+      expect(registrations[0]!).toBeGreaterThanOrEqual(registrations[1]!);
+      expect(registrations[1]!).toBeGreaterThanOrEqual(registrations[2]!);
     });
   });
 
@@ -839,7 +839,7 @@ describe('EventService', () => {
 
       // Assert
       expect(featured).toHaveLength(1);
-      expect(featured[0].isFeatured()).toBe(true);
+      expect(featured[0]!.isFeatured()).toBe(true);
     });
   });
 
@@ -867,7 +867,7 @@ describe('EventService', () => {
 
       // Assert
       expect(past).toHaveLength(1);
-      expect(past[0].getStatus().getValue()).toBe('past');
+      expect(past[0]!.getStatus().getValue()).toBe('past');
     });
   });
 
@@ -881,7 +881,7 @@ describe('EventService', () => {
 
       // Assert
       expect(hackathons).toHaveLength(1);
-      expect(hackathons[0].getType().getValue()).toBe('hackathon');
+      expect(hackathons[0]!.getType().getValue()).toBe('hackathon');
     });
   });
 

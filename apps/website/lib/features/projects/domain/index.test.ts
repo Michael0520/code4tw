@@ -254,7 +254,7 @@ describe('ProjectService', () => {
       });
 
       expect(filtered).toHaveLength(1);
-      expect(filtered[0].getTitle()).toBe('Government Project');
+      expect(filtered[0]!.getTitle()).toBe('Government Project');
     });
 
     it('should filter by status', () => {
@@ -284,7 +284,7 @@ describe('ProjectService', () => {
       });
 
       expect(filtered).toHaveLength(1);
-      expect(filtered[0].getTitle()).toBe('Government Project');
+      expect(filtered[0]!.getTitle()).toBe('Government Project');
     });
 
     it('should return all when no filters applied', () => {
@@ -301,7 +301,7 @@ describe('ProjectService', () => {
       const results = ProjectService.searchProjects(projects, 'government');
 
       expect(results).toHaveLength(1);
-      expect(results[0].getTitle()).toBe('Government Project');
+      expect(results[0]!.getTitle()).toBe('Government Project');
     });
 
     it('should search in description', () => {
@@ -309,7 +309,7 @@ describe('ProjectService', () => {
       const results = ProjectService.searchProjects(projects, 'application');
 
       expect(results).toHaveLength(1);
-      expect(results[0].getTitle()).toBe('Healthcare App');
+      expect(results[0]!.getTitle()).toBe('Healthcare App');
     });
 
     it('should search in tags', () => {
@@ -317,7 +317,7 @@ describe('ProjectService', () => {
       const results = ProjectService.searchProjects(projects, 'react');
 
       expect(results).toHaveLength(1);
-      expect(results[0].getTitle()).toBe('Education Tool');
+      expect(results[0]!.getTitle()).toBe('Education Tool');
     });
 
     it('should return all for empty query', () => {
@@ -333,27 +333,27 @@ describe('ProjectService', () => {
       const projects = createTestProjects();
       const sorted = ProjectService.sortProjects(projects, 'title', 'asc');
 
-      expect(sorted[0].getTitle()).toBe('Education Tool');
-      expect(sorted[1].getTitle()).toBe('Government Project');
-      expect(sorted[2].getTitle()).toBe('Healthcare App');
+      expect(sorted[0]!.getTitle()).toBe('Education Tool');
+      expect(sorted[1]!.getTitle()).toBe('Government Project');
+      expect(sorted[2]!.getTitle()).toBe('Healthcare App');
     });
 
     it('should sort by stars', () => {
       const projects = createTestProjects();
       const sorted = ProjectService.sortProjects(projects, 'stars', 'desc');
 
-      expect(sorted[0].getMetrics().getStars()).toBe(200);
-      expect(sorted[1].getMetrics().getStars()).toBe(150);
-      expect(sorted[2].getMetrics().getStars()).toBe(100);
+      expect(sorted[0]!.getMetrics().getStars()).toBe(200);
+      expect(sorted[1]!.getMetrics().getStars()).toBe(150);
+      expect(sorted[2]!.getMetrics().getStars()).toBe(100);
     });
 
     it('should sort by date', () => {
       const projects = createTestProjects();
       const sorted = ProjectService.sortProjects(projects, 'date', 'asc');
 
-      expect(sorted[0].getId().getValue()).toBe('1');
-      expect(sorted[1].getId().getValue()).toBe('2');
-      expect(sorted[2].getId().getValue()).toBe('3');
+      expect(sorted[0]!.getId().getValue()).toBe('1');
+      expect(sorted[1]!.getId().getValue()).toBe('2');
+      expect(sorted[2]!.getId().getValue()).toBe('3');
     });
   });
 
@@ -365,8 +365,8 @@ describe('ProjectService', () => {
       expect(featured).toHaveLength(2);
       // Healthcare has popularity score of 150*2 + 30 = 330
       // Government has popularity score of 100*2 + 20 = 220
-      expect(featured[0].getTitle()).toBe('Healthcare App');
-      expect(featured[1].getTitle()).toBe('Government Project');
+      expect(featured[0]!.getTitle()).toBe('Healthcare App');
+      expect(featured[1]!.getTitle()).toBe('Government Project');
     });
 
     it('should only include active projects', () => {

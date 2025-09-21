@@ -3,22 +3,30 @@ export const HOME_CONFIG = {
     {
       id: "transparency",
       title: "透明治理",
-      description: "推動政府資訊透明化，讓公民更容易監督政府運作"
+      description: "推動政府資訊透明化，讓公民更容易監督政府運作",
+      link: "/about",
+      icon: "🏛️"
     },
     {
       id: "social",
       title: "社會關懷",
-      description: "關注弱勢族群權益，用科技縮小數位落差"
+      description: "關注弱勢族群權益，用科技縮小數位落差",
+      link: "/about",
+      icon: "🤝"
     },
     {
       id: "action",
       title: "快速行動",
-      description: "面對社會議題，我們快速響應並提出解決方案"
+      description: "面對社會議題，我們快速響應並提出解決方案",
+      link: "/about",
+      icon: "⚡"
     },
     {
       id: "connection",
       title: "國際連結",
-      description: "與國際公民科技社群交流，分享台灣經驗"
+      description: "與國際公民科技社群交流，分享台灣經驗",
+      link: "/about",
+      icon: "🌍"
     }
   ],
   projects: [
