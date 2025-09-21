@@ -159,3 +159,4 @@ Learn more about the power of Turborepo:
 
 - Website: [https://codefortaiwan.org](https://codefortaiwan.org)
 - GitHub: [Code for Taiwan](https://github.com/Michael0520/code4tw)
+# Test pre-commit hook
