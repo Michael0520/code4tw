@@ -43,13 +43,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          args: >
-            -Dsonar.projectKey=Michael0520_code4tw
-            -Dsonar.organization=michael0520
-            -Dsonar.sources=apps/website/app,apps/website/components,apps/website/lib
-            -Dsonar.tests=apps/website
-            -Dsonar.test.inclusions=**/*.test.ts,**/*.test.tsx
-            -Dsonar.exclusions=**/node_modules/**,**/dist/**,**/build/**,**/.next/**,**/coverage/**
-            -Dsonar.javascript.lcov.reportPaths=apps/website/coverage/lcov.info
-            -Dsonar.typescript.lcov.reportPaths=apps/website/coverage/lcov.info
