@@ -6,6 +6,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { NewsSearch } from './news-search';
 import { NewsFilters } from './news-filters';
@@ -25,6 +26,7 @@ interface NewsClientPageProps {
 
 export function NewsClientPage({ newsData, searchParams, showFeatured }: NewsClientPageProps) {
   const t = useTranslations();
+  const router = useRouter();
 
   const updateSearchParams = (key: string, value: string) => {
     const url = new URL(window.location.href);
@@ -33,8 +35,7 @@ export function NewsClientPage({ newsData, searchParams, showFeatured }: NewsCli
     } else {
       url.searchParams.delete(key);
     }
-    window.history.pushState({}, '', url.toString());
-    window.location.reload();
+    router.push(url.toString());
   };
 
   const clearFilters = () => {
@@ -42,8 +43,7 @@ export function NewsClientPage({ newsData, searchParams, showFeatured }: NewsCli
     url.searchParams.delete('q');
     url.searchParams.delete('category');
     url.searchParams.delete('sort');
-    window.history.pushState({}, '', url.toString());
-    window.location.reload();
+    router.push(url.toString());
   };
 
   return (
