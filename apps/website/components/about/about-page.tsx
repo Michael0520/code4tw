@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Users, Target, Heart, Globe, Github, ExternalLink, ArrowRight, CheckCircle } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 interface AboutPageProps {
   locale: string;
@@ -173,9 +174,11 @@ export function AboutPage({ locale }: AboutPageProps) {
                 </div>
               </div>
               <div className="relative">
-                <img
+                <Image
                   src="/about-mission-collaboration.jpg"
                   alt={locale === "zh" ? "團隊協作" : "Team collaboration"}
+                  width={500}
+                  height={300}
                   className="rounded-lg shadow-lg"
                 />
               </div>
@@ -266,9 +269,11 @@ export function AboutPage({ locale }: AboutPageProps) {
               {teamMembers.map((member) => (
                 <Card key={member.id} className="border-0 bg-card/80 backdrop-blur-sm overflow-hidden">
                   <div className="aspect-square overflow-hidden">
-                    <img
+                    <Image
                       src={member.image || "/placeholder.svg"}
                       alt={locale === "zh" ? member.name : member.name_en}
+                      width={300}
+                      height={300}
                       className="w-full h-full object-cover"
                     />
                   </div>

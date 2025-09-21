@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ExternalLink, Github, Star, GitFork, Search, Filter } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import { PROJECTS_CONFIG, STATIC_PROJECTS_DATA } from "@/lib/features/projects/config"
 
 interface ProjectsPageProps {
@@ -117,9 +118,11 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
                   className="group hover:shadow-lg transition-all duration-300 border-0 bg-card/80 backdrop-blur-sm overflow-hidden"
                 >
                   <div className="aspect-video overflow-hidden">
-                    <img
+                    <Image
                       src={project.image || "/placeholder.svg"}
                       alt={locale === "zh" ? project.title : project.title_en}
+                      width={400}
+                      height={225}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>

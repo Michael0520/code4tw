@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 import { OrganizationDto } from '@/lib/features/about/actions';
 import { ABOUT_CONFIG } from '@/lib/features/about/config';
 
@@ -36,18 +37,18 @@ export function ContactCTA({ organization }: ContactCTAProps) {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <a
+              <Link
                 href="/projects"
                 className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
               >
                 {t('common.viewMore')} {t('navigation.projects')}
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/events"
                 className="inline-flex items-center justify-center rounded-md border border-input bg-background px-6 py-3 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
               >
                 {t('events.register')} {t('navigation.events')}
-              </a>
+              </Link>
             </div>
 
             {/* Contact Information */}

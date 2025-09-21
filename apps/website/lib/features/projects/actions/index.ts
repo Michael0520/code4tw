@@ -5,7 +5,7 @@
 
 'use server';
 
-import { Project, ProjectService } from '@/lib/features/projects/domain';
+import { Project, ProjectService, ProjectData, ProjectCategory, ProjectStatus } from '@/lib/features/projects/domain';
 import { PROJECTS_CONFIG, STATIC_PROJECTS_DATA } from '@/lib/features/projects/config';
 
 // ============= Types =============
@@ -46,6 +46,28 @@ export interface ProjectsResponse {
   };
 }
 
+// ============= Helpers =============
+
+/**
+ * Transform raw config data to ProjectData format
+ */
+function transformToProjectData(rawData: typeof STATIC_PROJECTS_DATA[0]): ProjectData {
+  return {
+    id: rawData.id.toString(),
+    title: rawData.title,
+    description: rawData.description_zh, // Use Chinese description as primary
+    category: rawData.category as typeof ProjectCategory.VALID_CATEGORIES[number],
+    status: rawData.status as typeof ProjectStatus.VALID_STATUSES[number],
+    tags: rawData.tags,
+    githubUrl: rawData.github,
+    websiteUrl: rawData.website,
+    stars: rawData.stars,
+    forks: rawData.forks,
+    createdAt: new Date('2024-01-01'), // Default date for static data
+    updatedAt: new Date('2024-01-15')  // Default date for static data
+  };
+}
+
 // ============= Server Actions =============
 
 /**
@@ -56,8 +78,8 @@ export async function getProjects(filters?: ProjectFilters): Promise<ProjectsRes
     // TODO: Replace with actual database/API call
     const projectsData = STATIC_PROJECTS_DATA;
 
-    // Create domain entities
-    const projects = projectsData.map(data => new Project(data));
+    // Transform and create domain entities
+    const projects = projectsData.map(data => new Project(transformToProjectData(data)));
 
     // Apply filters using domain service
     let filteredProjects = projects;
@@ -111,7 +133,7 @@ export async function getProjects(filters?: ProjectFilters): Promise<ProjectsRes
 export async function getFeaturedProjects(limit?: number): Promise<ProjectDto[]> {
   try {
     const projectsData = STATIC_PROJECTS_DATA;
-    const projects = projectsData.map(data => new Project(data));
+    const projects = projectsData.map(data => new Project(transformToProjectData(data)));
 
     const featured = ProjectService.getFeaturedProjects(
       projects,
@@ -130,13 +152,13 @@ export async function getFeaturedProjects(limit?: number): Promise<ProjectDto[]>
  */
 export async function getProjectById(id: string): Promise<ProjectDto | null> {
   try {
-    const projectData = STATIC_PROJECTS_DATA.find(p => p.id === id);
+    const projectData = STATIC_PROJECTS_DATA.find(p => p.id.toString() === id);
 
     if (!projectData) {
       return null;
     }
 
-    const project = new Project(projectData);
+    const project = new Project(transformToProjectData(projectData));
     return projectToDto(project);
   } catch (error) {
     console.error('Failed to get project:', error);
@@ -154,7 +176,7 @@ export async function searchProjects(query: string): Promise<ProjectDto[]> {
     }
 
     const projectsData = STATIC_PROJECTS_DATA;
-    const projects = projectsData.map(data => new Project(data));
+    const projects = projectsData.map(data => new Project(transformToProjectData(data)));
 
     const searchResults = ProjectService.searchProjects(projects, query);
 
@@ -171,7 +193,7 @@ export async function searchProjects(query: string): Promise<ProjectDto[]> {
 export async function getProjectsByCategory(category: string): Promise<ProjectDto[]> {
   try {
     const projectsData = STATIC_PROJECTS_DATA;
-    const projects = projectsData.map(data => new Project(data));
+    const projects = projectsData.map(data => new Project(transformToProjectData(data)));
 
     const filtered = ProjectService.filterProjects(projects, { category });
 
@@ -188,7 +210,7 @@ export async function getProjectsByCategory(category: string): Promise<ProjectDt
 export async function getProjectStats() {
   try {
     const projectsData = STATIC_PROJECTS_DATA;
-    const projects = projectsData.map(data => new Project(data));
+    const projects = projectsData.map(data => new Project(transformToProjectData(data)));
 
     return ProjectService.getProjectStats(projects);
   } catch (error) {
@@ -214,11 +236,11 @@ export async function updateProjectGitHubMetrics(
     });
 
     // For now, just validate the data
-    const projectData = STATIC_PROJECTS_DATA.find(p => p.id === projectId);
+    const projectData = STATIC_PROJECTS_DATA.find(p => p.id.toString() === projectId.toString());
     if (projectData) {
       projectData.stars = stars;
       projectData.forks = forks;
-      projectData.updatedAt = new Date();
+      // Note: STATIC_PROJECTS_DATA doesn't have updatedAt property (it's in the transformed data)
     }
   } catch (error) {
     console.error('Failed to update GitHub metrics:', error);

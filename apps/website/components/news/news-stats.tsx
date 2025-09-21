@@ -4,7 +4,6 @@
  */
 
 import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { useTranslations } from 'next-intl';
 import type { NewsResponse } from '@/lib/features/news/actions';
 

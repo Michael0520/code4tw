@@ -130,7 +130,7 @@ describe('EventType Value Object', () => {
 
   it('should throw error for invalid type', () => {
     // Arrange
-    const invalidType = 'invalid-type' as any;
+    const invalidType = 'invalid-type' as string;
 
     // Act & Assert
     expect(() => new EventType(invalidType)).toThrow('Invalid event type: invalid-type');
@@ -184,7 +184,7 @@ describe('EventStatus Value Object', () => {
 
   it('should throw error for invalid status', () => {
     // Arrange
-    const invalidStatus = 'invalid-status' as any;
+    const invalidStatus = 'invalid-status' as string;
 
     // Act & Assert
     expect(() => new EventStatus(invalidStatus)).toThrow('Invalid event status: invalid-status');

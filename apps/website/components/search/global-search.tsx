@@ -57,7 +57,7 @@ export function GlobalSearch() {
   const [isOpen, setIsOpen] = useState(false)
   const [query, setQuery] = useState("")
   const [results, setResults] = useState<SearchResult[]>([])
-  const { language, t } = useLanguageContext()
+  const { t } = useLanguageContext()
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -89,7 +89,7 @@ export function GlobalSearch() {
   }, [query])
 
   const getTypeLabel = (type: string) => {
-    return t(`search.types.${type}` as any) || type
+    return t(`search.types.${type}` as `search.types.${string}`) || type
   }
 
   if (!isOpen) {

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Calendar, Clock, User, Search, Filter, ArrowRight } from "lucide-react"
+import Image from "next/image"
 
 interface NewsPageProps {
   locale: string;
@@ -195,9 +196,11 @@ export function NewsPage({ locale }: NewsPageProps) {
                 <Card className="overflow-hidden border-0 bg-card/80 backdrop-blur-sm">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                     <div className="aspect-video lg:aspect-square overflow-hidden">
-                      <img
+                      <Image
                         src={featuredArticle.image || "/placeholder.svg"}
                         alt={locale === "zh" ? featuredArticle.title : featuredArticle.title_en}
+                        width={600}
+                        height={400}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -247,9 +250,11 @@ export function NewsPage({ locale }: NewsPageProps) {
                   className="group hover:shadow-lg transition-all duration-300 border-0 bg-card/80 backdrop-blur-sm overflow-hidden"
                 >
                   <div className="aspect-video overflow-hidden">
-                    <img
+                    <Image
                       src={article.image || "/placeholder.svg"}
                       alt={locale === "zh" ? article.title : article.title_en}
+                      width={400}
+                      height={225}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>

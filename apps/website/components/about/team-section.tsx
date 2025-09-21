@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { TeamMemberDto } from '@/lib/features/about/actions';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -74,9 +75,11 @@ export function TeamSection({ team, stats }: TeamSectionProps) {
                 <div className="flex items-center space-x-4 mb-4">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                     {member.imageUrl ? (
-                      <img
+                      <Image
                         src={member.imageUrl}
                         alt={member.name}
+                        width={48}
+                        height={48}
                         className="w-12 h-12 rounded-full object-cover"
                       />
                     ) : (

@@ -127,7 +127,7 @@ export async function getAboutInformation(): Promise<AboutResponse> {
     const team = teamData.map(data => {
       // Filter out undefined values from socialLinks
       const cleanSocialLinks = Object.fromEntries(
-        Object.entries(data.socialLinks || {}).filter(([key, value]) => value !== undefined)
+        Object.entries(data.socialLinks || {}).filter(([, value]) => value !== undefined)
       ) as Record<string, string>;
 
       return TeamMember.create(
@@ -233,7 +233,7 @@ export async function getTeamMembers(filters?: TeamSearchFilters): Promise<TeamM
     const team = teamData.map(data => {
       // Filter out undefined values from socialLinks
       const cleanSocialLinks = Object.fromEntries(
-        Object.entries(data.socialLinks || {}).filter(([key, value]) => value !== undefined)
+        Object.entries(data.socialLinks || {}).filter(([, value]) => value !== undefined)
       ) as Record<string, string>;
 
       return TeamMember.create(
@@ -332,7 +332,7 @@ export async function getOrganizationStats() {
     const team = teamData.map(data => {
       // Filter out undefined values from socialLinks
       const cleanSocialLinks = Object.fromEntries(
-        Object.entries(data.socialLinks || {}).filter(([key, value]) => value !== undefined)
+        Object.entries(data.socialLinks || {}).filter(([, value]) => value !== undefined)
       ) as Record<string, string>;
 
       return TeamMember.create(

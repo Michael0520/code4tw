@@ -140,7 +140,7 @@ describe('NewsCategory Value Object', () => {
 
   it('should throw error for invalid category', () => {
     // Arrange
-    const invalidCategory = 'invalid-category' as any;
+    const invalidCategory = 'invalid-category' as string;
 
     // Act & Assert
     expect(() => new NewsCategory(invalidCategory)).toThrow('Invalid news category: invalid-category');
@@ -610,7 +610,7 @@ describe('NewsService', () => {
 
       // Assert
       expect(featured).toHaveLength(1);
-      expect(featured[0].isFeatured()).toBe(true);
+      expect(featured[0]!.isFeatured()).toBe(true);
     });
 
     it('should filter by category', () => {
@@ -622,7 +622,7 @@ describe('NewsService', () => {
 
       // Assert
       expect(announcements).toHaveLength(1);
-      expect(announcements[0].getCategory().getValue()).toBe('announcement');
+      expect(announcements[0]!.getCategory().getValue()).toBe('announcement');
     });
 
     it('should filter by author', () => {
@@ -646,7 +646,7 @@ describe('NewsService', () => {
 
       // Assert
       expect(withTag).toHaveLength(1);
-      expect(withTag[0].hasTag('important')).toBe(true);
+      expect(withTag[0]!.hasTag('important')).toBe(true);
     });
   });
 
@@ -660,7 +660,7 @@ describe('NewsService', () => {
 
       // Assert
       expect(results).toHaveLength(1);
-      expect(results[0].getTitle()).toContain('Announcement');
+      expect(results[0]!.getTitle()).toContain('Announcement');
     });
 
     it('should return all articles for empty query', () => {
@@ -684,9 +684,9 @@ describe('NewsService', () => {
       const sorted = NewsService.sortNews(articles, 'title', 'asc');
 
       // Assert
-      expect(sorted[0].getTitle()).toBe('Announcement Article');
-      expect(sorted[1].getTitle()).toBe('Draft Article');
-      expect(sorted[2].getTitle()).toBe('Release Update');
+      expect(sorted[0]!.getTitle()).toBe('Announcement Article');
+      expect(sorted[1]!.getTitle()).toBe('Draft Article');
+      expect(sorted[2]!.getTitle()).toBe('Release Update');
     });
 
     it('should sort by published date descending', () => {
@@ -697,8 +697,8 @@ describe('NewsService', () => {
       const sorted = NewsService.sortNews(articles, 'publishedAt', 'desc');
 
       // Assert
-      expect(sorted[0].getPublishedDate()?.getValue().getTime()).toBeGreaterThan(
-        sorted[1].getPublishedDate()?.getValue().getTime() || 0
+      expect(sorted[0]!.getPublishedDate()?.getValue().getTime()).toBeGreaterThan(
+        sorted[1]!.getPublishedDate()?.getValue().getTime() || 0
       );
     });
 
@@ -710,8 +710,8 @@ describe('NewsService', () => {
       const sorted = NewsService.sortNews(articles, 'readingTime', 'asc');
 
       // Assert
-      expect(sorted[0].getReadingTime().getMinutes()).toBeLessThanOrEqual(
-        sorted[1].getReadingTime().getMinutes()
+      expect(sorted[0]!.getReadingTime().getMinutes()).toBeLessThanOrEqual(
+        sorted[1]!.getReadingTime().getMinutes()
       );
     });
   });
@@ -726,8 +726,8 @@ describe('NewsService', () => {
 
       // Assert
       expect(featured).toHaveLength(1);
-      expect(featured[0].isFeatured()).toBe(true);
-      expect(featured[0].isPublished()).toBe(true);
+      expect(featured[0]!.isFeatured()).toBe(true);
+      expect(featured[0]!.isPublished()).toBe(true);
     });
   });
 
@@ -755,7 +755,7 @@ describe('NewsService', () => {
 
       // Assert
       expect(byCategory).toHaveLength(1);
-      expect(byCategory[0].getCategory().getValue()).toBe('announcement');
+      expect(byCategory[0]!.getCategory().getValue()).toBe('announcement');
     });
   });
 

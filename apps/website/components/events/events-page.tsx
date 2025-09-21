@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Calendar, Clock, MapPin, Users, Search, Filter, ArrowRight, ExternalLink } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 interface EventsPageProps {
   locale: string;
@@ -227,9 +228,11 @@ export function EventsPage({ locale }: EventsPageProps) {
                 <Card className="overflow-hidden border-0 bg-card/80 backdrop-blur-sm">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                     <div className="aspect-video lg:aspect-square overflow-hidden">
-                      <img
+                      <Image
                         src={featuredEvent.image || "/placeholder.svg"}
                         alt={locale === "zh" ? featuredEvent.title : featuredEvent.title_en}
+                        width={600}
+                        height={400}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -291,9 +294,11 @@ export function EventsPage({ locale }: EventsPageProps) {
                   className="group hover:shadow-lg transition-all duration-300 border-0 bg-card/80 backdrop-blur-sm overflow-hidden"
                 >
                   <div className="aspect-video overflow-hidden">
-                    <img
+                    <Image
                       src={event.image || "/placeholder.svg"}
                       alt={locale === "zh" ? event.title : event.title_en}
+                      width={400}
+                      height={225}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>

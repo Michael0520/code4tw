@@ -7,6 +7,7 @@ import { Calendar, Clock, MapPin, Users, ExternalLink } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { EventDto } from '@/lib/features/events/actions';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface EventsListProps {
   events: EventDto[];
@@ -43,9 +44,11 @@ export function EventsList({ events, variant = 'grid' }: EventsListProps) {
                   event.isFeatured ? 'aspect-video lg:aspect-square' : 'aspect-video'
                 } overflow-hidden`}
               >
-                <img
+                <Image
                   src={event.imageUrl || '/placeholder.svg'}
                   alt={event.title}
+                  width={600}
+                  height={300}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -109,9 +112,11 @@ export function EventsList({ events, variant = 'grid' }: EventsListProps) {
             className="group hover:shadow-lg transition-all duration-300 border-0 bg-card/80 backdrop-blur-sm overflow-hidden"
           >
             <div className="aspect-video overflow-hidden">
-              <img
+              <Image
                 src={event.imageUrl || '/placeholder.svg'}
                 alt={event.title}
+                width={400}
+                height={225}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>
@@ -147,9 +152,11 @@ export function EventsList({ events, variant = 'grid' }: EventsListProps) {
       {events.map((event) => (
         <Card key={event.id} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
           <div className="aspect-video overflow-hidden">
-            <img
+            <Image
               src={event.imageUrl || '/placeholder.svg'}
               alt={event.title}
+              width={400}
+              height={225}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </div>

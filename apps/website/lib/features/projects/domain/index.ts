@@ -50,7 +50,7 @@ export class ProjectCategory {
       'transportation': 'Transportation',
       'civic-tech': 'Civic Technology'
     };
-    return displayNames[this.value];
+    return displayNames[this.value]!;
   }
 
   equals(other: ProjectCategory): boolean {
@@ -91,7 +91,7 @@ export class ProjectStatus {
       'planning': 'Planning',
       'archived': 'Archived'
     };
-    return displayNames[this.value];
+    return displayNames[this.value]!;
   }
 
   equals(other: ProjectStatus): boolean {

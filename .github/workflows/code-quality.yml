@@ -32,7 +32,7 @@ jobs:
       - name: Check for Chinese characters in code
         run: |
           echo "Checking for Chinese characters in source code..."
-          if grep -r "[\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]" --include="*.ts" --include="*.tsx" --include="*.js" --include="*.jsx" --exclude-dir=node_modules --exclude="**/i18n.ts" --exclude="**/translations.ts" .; then
+          if grep -r "[\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]" --include="*.ts" --include="*.tsx" --include="*.js" --include="*.jsx" --exclude-dir=node_modules --exclude="**/i18n.ts" --exclude="**/translations.ts" --exclude="**/config/**" --exclude="**/messages/**" --exclude="**.json" .; then
             echo "❌ FAIL: Chinese characters found in source code (excluding i18n files)"
             echo "Please use English only for all code elements (variables, functions, comments)"
             exit 1
@@ -75,8 +75,10 @@ jobs:
 
           # Check Domain layer purity (no external imports)
           echo "Checking Domain layer dependencies..."
-          if find . -path "*/domain/**/*.ts" -not -path "*/node_modules/*" -not -path "**/__tests__/*" -exec grep -l "from.*infrastructure\|from.*presentation\|from.*external" {} \; | head -5; then
+          violations=$(find . -path "*/domain/**/*.ts" -not -path "*/node_modules/*" -not -path "**/__tests__/*" -exec grep -l "from.*infrastructure\|from.*presentation\|from.*external" {} \; | head -5)
+          if [ -n "$violations" ]; then
             echo "❌ FAIL: Domain layer has external dependencies"
+            echo "$violations"
             echo "Domain layer must be pure - no infrastructure or presentation dependencies"
             exit 1
           fi

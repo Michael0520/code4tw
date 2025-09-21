@@ -85,7 +85,7 @@ export class EventType {
       training: 'Training',
       conference: 'Conference'
     };
-    return displayNames[this.value];
+    return displayNames[this.value]!;
   }
 
   getIcon(): string {
@@ -96,7 +96,7 @@ export class EventType {
       training: '📚',
       conference: '🎤'
     };
-    return icons[this.value];
+    return icons[this.value]!;
   }
 
   getColor(): string {
@@ -107,7 +107,7 @@ export class EventType {
       training: 'bg-orange-500/10 text-orange-700 border-orange-500/20',
       conference: 'bg-red-500/10 text-red-700 border-red-500/20'
     };
-    return colors[this.value];
+    return colors[this.value]!;
   }
 
   equals(other: EventType): boolean {
@@ -140,7 +140,7 @@ export class EventStatus {
       past: 'Past',
       cancelled: 'Cancelled'
     };
-    return displayNames[this.value];
+    return displayNames[this.value]!;
   }
 
   getColor(): string {
@@ -150,7 +150,7 @@ export class EventStatus {
       past: 'bg-gray-500/10 text-gray-700 border-gray-500/20',
       cancelled: 'bg-red-500/10 text-red-700 border-red-500/20'
     };
-    return colors[this.value];
+    return colors[this.value]!;
   }
 
   equals(other: EventStatus): boolean {

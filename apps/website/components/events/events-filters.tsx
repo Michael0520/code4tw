@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -32,9 +32,9 @@ export function EventsFilters({ currentFilters, total }: EventsFiltersProps) {
     }, EVENTS_CONFIG.search.debounceMs);
 
     return () => clearTimeout(timer);
-  }, [searchQuery]);
+  }, [searchQuery, updateFilters]);
 
-  const updateFilters = (newFilters: Record<string, string | undefined>) => {
+  const updateFilters = useCallback((newFilters: Record<string, string | undefined>) => {
     const params = new URLSearchParams(searchParams);
 
     Object.entries(newFilters).forEach(([key, value]) => {
@@ -48,7 +48,7 @@ export function EventsFilters({ currentFilters, total }: EventsFiltersProps) {
     const queryString = params.toString();
     const url = queryString ? `${pathname}?${queryString}` : pathname;
     router.push(url);
-  };
+  }, [pathname, router, searchParams]);
 
   const handleTypeChange = (value: string) => {
     setSelectedType(value);
@@ -138,7 +138,7 @@ export function EventsFilters({ currentFilters, total }: EventsFiltersProps) {
         <div className="flex flex-wrap gap-2">
           {searchQuery && (
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-muted rounded-full text-sm">
-              <span>{t('common.search')}: "{searchQuery}"</span>
+              <span>{t('common.search')}: &quot;{searchQuery}&quot;</span>
               <button
                 onClick={() => setSearchQuery('')}
                 className="text-muted-foreground hover:text-foreground"

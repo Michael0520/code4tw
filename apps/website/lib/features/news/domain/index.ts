@@ -87,7 +87,7 @@ export class NewsCategory {
       tutorial: 'Tutorial',
       update: 'Update'
     };
-    return displayNames[this.value];
+    return displayNames[this.value]!;
   }
 
   getColor(): string {
@@ -99,7 +99,7 @@ export class NewsCategory {
       tutorial: 'bg-yellow-500/10 text-yellow-700 border-yellow-500/20',
       update: 'bg-gray-500/10 text-gray-700 border-gray-500/20'
     };
-    return colors[this.value];
+    return colors[this.value]!;
   }
 
   equals(other: NewsCategory): boolean {
@@ -430,11 +430,12 @@ export const NewsService = {
         case 'title':
           comparison = a.getTitle().localeCompare(b.getTitle());
           break;
-        case 'publishedAt':
+        case 'publishedAt': {
           const aPublished = a.getPublishedDate()?.getValue().getTime() || 0;
           const bPublished = b.getPublishedDate()?.getValue().getTime() || 0;
           comparison = aPublished - bPublished;
           break;
+        }
         case 'createdAt':
           comparison = a.toData().createdAt.getTime() - b.toData().createdAt.getTime();
           break;

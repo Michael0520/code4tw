@@ -1,7 +1,7 @@
 "use server"
 
 import { HOME_CONFIG } from "@/lib/features/home/config";
-import type { HomeConfig, AboutFeature, Project } from "@/lib/features/home/config";
+import type { AboutFeature, Project } from "@/lib/features/home/config";
 
 export async function getHomeData(): Promise<{
   aboutFeatures: AboutFeature[];
