@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { LanguageSelector } from "@/components/ui/language-selector"
 import { Menu, Github } from "lucide-react"
-import { ThemeToggle } from "@/components/theme-toggle"
+// import { ThemeToggle } from "@/components/theme-toggle" // Disabled for force light mode
 import { GlobalSearch } from "@/components/search/global-search"
 
 interface HeaderProps {
@@ -49,7 +49,7 @@ export function Header({ locale }: HeaderProps) {
         <div className="flex items-center space-x-2">
           <GlobalSearch />
           <LanguageSelector locale={locale} />
-          <ThemeToggle />
+          {/* <ThemeToggle /> */} {/* Disabled for force light mode */}
           <Button variant="ghost" size="sm" asChild className="hidden sm:flex">
             <Link href="https://github.com/g0v" target="_blank" rel="noopener noreferrer">
               <Github className="h-4 w-4" />
