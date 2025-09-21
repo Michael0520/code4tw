@@ -390,6 +390,7 @@ Automated quality gates run on every push and pull request:
 - **Configuration**: Config externalization validation, feature flag checks
 - **Security**: Secret scanning, environment variable validation
 - **Documentation**: Required docs and JSDoc coverage checks
+- **SonarCloud Analysis**: Continuous code quality monitoring, security hotspot detection
 
 ### Development Commands
 ```bash
@@ -431,11 +432,19 @@ The following quality gates must pass for code to be merged:
 - **TDD Compliance**: Tests written before implementation
 - **DDD Architecture**: Proper layer separation maintained
 - **Config-Driven**: No hardcoded business logic
+- **SonarCloud Quality Gate**: Must pass with current settings
 
 #### ⚠️ Warning Gates (Should Pass)
 - **Test Coverage**: Domain (100%), Application (80%), UI (60%)
 - **Code Quality**: No magic numbers, proper error handling
 - **Documentation**: JSDoc coverage for public APIs
 - **Performance**: No obvious performance anti-patterns
+- **SonarCloud Metrics**: Code duplication <3%, Security hotspots reviewed
+
+#### 📊 SonarCloud Integration
+- **Dashboard**: https://sonarcloud.io/dashboard?id=Michael0520_code4tw
+- **Analysis**: Automatic on every push and PR
+- **Reports**: Integrated with GitHub checks
+- **Configuration**: See `SONARCLOUD_SETUP.md` for detailed setup
 
 This comprehensive system ensures that all Code4TW development follows the established standards automatically and consistently, creating a sustainable development culture focused on quality, maintainability, and team collaboration.

@@ -27,9 +27,10 @@ This guide walks you through setting up SonarCloud integration for the Code4TW p
 ## Step 2: Project Configuration
 
 ### 2.1 Main Project Setup
-1. **Project Key**: `code4tw_monorepo`
-2. **Project Name**: `Code for Taiwan - Monorepo`
-3. **Main Branch**: `main`
+1. **Project Key**: `Michael0520_code4tw`
+2. **Organization**: `michael0520`
+3. **Project Name**: `Code for Taiwan - Monorepo`
+4. **Main Branch**: `main`
 
 ### 2.2 Additional Projects (Optional)
 For monorepo analysis, you may want to create separate projects:
@@ -60,12 +61,14 @@ The following files have been created in your repository:
 
 ### 4.1 GitHub Actions Workflow
 - **File**: `.github/workflows/sonarcloud.yml`
+- **Action**: `SonarSource/sonarqube-scan-action@v5`
 - **Purpose**: Runs SonarCloud analysis on push and PR
 - **Features**:
   - Full monorepo analysis
   - Test coverage integration
   - TypeScript support
   - Quality Gate validation
+- **Note**: Updated to use the official `sonarqube-scan-action` (replaces deprecated `sonarcloud-github-action`)
 
 ### 4.2 SonarCloud Configuration
 - **File**: `sonar-project.properties`
@@ -144,9 +147,9 @@ The workflow includes Quality Gate validation:
 Add SonarCloud badges to your README:
 
 ```markdown
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=code4tw_monorepo&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=code4tw_monorepo)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=code4tw_monorepo&metric=coverage)](https://sonarcloud.io/summary/new_code?id=code4tw_monorepo)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=code4tw_monorepo&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=code4tw_monorepo)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Michael0520_code4tw&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Michael0520_code4tw)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Michael0520_code4tw&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Michael0520_code4tw)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Michael0520_code4tw&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=Michael0520_code4tw)
 ```
 
 ## Troubleshooting
@@ -157,21 +160,33 @@ Add SonarCloud badges to your README:
 **Error**: `SONAR_TOKEN` not found
 **Solution**: Verify the secret is added correctly in GitHub repository settings
 
-#### 2. Coverage Not Found
+#### 2. Automatic Analysis vs CI Analysis Conflict
+**Error**: "You are running CI analysis while Automatic Analysis is enabled"
+**Solution**:
+- Go to SonarCloud project → Administration → Analysis Method
+- Turn OFF "Automatic Analysis"
+- Keep "CI-based analysis" ON
+- This is the most common setup issue
+
+#### 3. Deprecated Action Warning
+**Error**: "This action is deprecated and will be removed in a future release"
+**Solution**: Use `SonarSource/sonarqube-scan-action@v5` instead of `sonarcloud-github-action@master`
+
+#### 4. Coverage Not Found
 **Error**: No coverage reports found
 **Solution**:
 - Ensure tests are running successfully
 - Check `lcov` reporter is included in vitest config
 - Verify coverage paths match `sonar-project.properties`
 
-#### 3. Quality Gate Failure
+#### 5. Quality Gate Failure
 **Error**: Quality gate failed
 **Solution**:
 - Review SonarCloud project dashboard
 - Fix reported issues (bugs, vulnerabilities, code smells)
 - Increase test coverage if needed
 
-#### 4. Monorepo Analysis Issues
+#### 6. Monorepo Analysis Issues
 **Error**: Some modules not analyzed
 **Solution**:
 - Check `sonar-project.properties` module configuration
