@@ -11,7 +11,7 @@ const nextConfig = {
   images: {
     unoptimized: false,
   },
-  // 解決 workspace root 警告
+  // Resolve workspace root warning
   outputFileTracingRoot: path.join(__dirname, '../../'),
   turbopack: {
     root: path.join(__dirname, '../../'),
