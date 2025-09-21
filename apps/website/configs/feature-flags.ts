@@ -3,7 +3,7 @@ export const FEATURE_FLAGS = {
   betaFeatures: process.env.NODE_ENV === 'development',
   advancedSearch: true,
   socialLogin: true,
-  darkMode: true,
+  darkMode: false,
   multiLanguage: true,
   analytics: process.env.NODE_ENV === 'production',
   debugging: process.env.NODE_ENV === 'development',
