@@ -148,7 +148,23 @@
       "openness": "所有工作保持開放與透明",
       "collaboration": "協作且包容的社群建設",
       "innovation": "為正面社會影響而創新",
-      "accessibility": "可及性與使用者中心的設計"
+      "accessibility": "可及性與使用者中心的設計",
+      "transparency": {
+        "title": "透明治理",
+        "description": "推動政府資訊透明化，讓公民更容易監督政府運作"
+      },
+      "social": {
+        "title": "社會關懷",
+        "description": "關注弱勢族群權益，用科技縮小數位落差"
+      },
+      "action": {
+        "title": "快速行動",
+        "description": "面對社會議題，我們快速響應並提出解決方案"
+      },
+      "connection": {
+        "title": "國際連結",
+        "description": "與國際公民科技社群交流，分享台灣經驗"
+      }
     }
   },
   "common": {
@@ -176,15 +192,18 @@
     "success": "成功"
   },
   "search": {
-    "placeholder": "搜尋專案、新聞、活動...",
-    "noResults": "沒有找到相關結果",
+    "placeholder": "搜尋專案、活動或頁面...",
+    "popular": "熱門結果",
+    "noResults": "找不到相關結果",
+    "tryDifferent": "請嘗試不同的關鍵字",
     "navigate": "導航",
     "select": "選擇",
     "close": "關閉",
-    "types": {
+    "type": {
       "project": "專案",
       "news": "新聞",
-      "event": "活動"
+      "event": "活動",
+      "page": "頁面"
     }
   },
   "footer": {

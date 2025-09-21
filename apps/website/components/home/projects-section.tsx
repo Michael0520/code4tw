@@ -1,4 +1,7 @@
+"use client"
+
 import type { Project } from "@/lib/features/home/config";
+import { useTranslation, type Language } from "@/lib/i18n";
 
 interface ProjectsSectionProps {
   projects: Project[];
@@ -6,23 +9,20 @@ interface ProjectsSectionProps {
 }
 
 export function ProjectsSection({ projects, locale }: ProjectsSectionProps) {
-  const isZh = locale === "zh";
+  const { t } = useTranslation(locale as Language);
 
   return (
     <section className="py-24 sm:py-32 bg-muted/30">
       <div className="container px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <div className="mb-4 inline-flex items-center rounded-full border px-3 py-1 text-sm">
-            {isZh ? "專案展示" : "Project Showcase"}
+            {t("home.projects.badge")}
           </div>
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            {isZh ? "我們的開源專案" : "Our Open Source Projects"}
+            {t("home.projects.title")}
           </h2>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            {isZh
-              ? "這些專案展現了我們如何運用科技解決社會問題，每個專案都歡迎社群貢獻。"
-              : "These projects showcase how we use technology to solve social problems. Every project welcomes community contributions."
-            }
+            {t("home.projects.description")}
           </p>
         </div>
 
@@ -34,14 +34,14 @@ export function ProjectsSection({ projects, locale }: ProjectsSectionProps) {
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                      <h3 className="text-xl font-semibold mb-2">{t(`projects.${project.id}.title`)}</h3>
                       <div className="flex items-center space-x-4 text-sm text-muted-foreground">
                         <span>⭐ {project.stars}</span>
                         <span>🍴 {project.forks}</span>
                       </div>
                     </div>
                   </div>
-                  <p className="text-muted-foreground mb-4">{project.description}</p>
+                  <p className="text-muted-foreground mb-4">{t(`projects.${project.id}.description`)}</p>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.map((tech) => (
                       <span
@@ -59,10 +59,10 @@ export function ProjectsSection({ projects, locale }: ProjectsSectionProps) {
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center rounded-md border border-input bg-background px-3 py-2 text-sm font-medium transition-colors hover:bg-accent"
                     >
-                      {isZh ? "原始碼" : "Source Code"}
+                      {t("home.projects.source")}
                     </a>
                     <button className="inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground">
-                      {isZh ? "查看" : "View"}
+                      {t("home.projects.view")}
                     </button>
                   </div>
                 </div>

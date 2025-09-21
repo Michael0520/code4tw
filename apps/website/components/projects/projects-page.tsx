@@ -11,12 +11,14 @@ import { ExternalLink, Github, Star, GitFork, Search, Filter } from "lucide-reac
 import Link from "next/link"
 import Image from "next/image"
 import { PROJECTS_CONFIG, STATIC_PROJECTS_DATA } from "@/lib/features/projects/config"
+import { useLanguageContext } from "@/components/language-provider"
 
 interface ProjectsPageProps {
   locale: string;
 }
 
 export function ProjectsPage({ locale }: ProjectsPageProps) {
+  const { t } = useLanguageContext()
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [selectedStatus, setSelectedStatus] = useState("all")
@@ -39,7 +41,7 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header locale={locale} />
+      <Header />
       <main>
         {/* Hero Section */}
         <section className="py-16 sm:py-24 bg-gradient-to-br from-background via-background to-muted/20">
@@ -80,7 +82,7 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
                     <SelectContent>
                       {PROJECTS_CONFIG.categories.map((category) => (
                         <SelectItem key={category.value} value={category.value}>
-                          {locale === "zh" ? category.label_zh : category.label_en}
+                          {t(category.labelKey)}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -92,7 +94,7 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
                     <SelectContent>
                       {PROJECTS_CONFIG.statuses.map((status) => (
                         <SelectItem key={status.value} value={status.value}>
-                          {locale === "zh" ? status.label_zh : status.label_en}
+                          {t(status.labelKey)}
                         </SelectItem>
                       ))}
                     </SelectContent>

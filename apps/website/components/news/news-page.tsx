@@ -132,7 +132,7 @@ export function NewsPage({ locale }: NewsPageProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header locale={locale} />
+      <Header />
       <main>
         {/* Hero Section */}
         <section className="py-16 sm:py-24 bg-gradient-to-br from-background via-background to-muted/20">

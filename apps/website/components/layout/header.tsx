@@ -1,28 +1,23 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { LanguageSelector } from "@/components/ui/language-selector"
-import { Menu, Github } from "lucide-react"
-// import { ThemeToggle } from "@/components/theme-toggle" // Disabled for force light mode
+import { Github } from "lucide-react"
 import { GlobalSearch } from "@/components/search/global-search"
-
-interface HeaderProps {
-  locale: string;
-}
+import { LanguageSelector } from "@/components/ui/language-selector"
+import { MobileNav } from "@/components/layout/mobile-nav"
+import { useLanguageContext } from "@/components/language-provider"
 
 const navigation = [
-  { name: "首頁", name_en: "Home", href: "/" },
-  { name: "專案", name_en: "Projects", href: "/projects" },
-  { name: "新聞", name_en: "News", href: "/news" },
-  { name: "活動", name_en: "Events", href: "/events" },
-  { name: "關於我們", name_en: "About", href: "/about" },
+  { key: "nav.home", href: "/" },
+  { key: "nav.projects", href: "/projects" },
+  { key: "nav.news", href: "/news" },
+  { key: "nav.events", href: "/events" },
+  { key: "nav.about", href: "/about" },
 ]
 
-export function Header({ locale }: HeaderProps) {
-  const [isOpen, setIsOpen] = useState(false)
+export function Header() {
+  const { language: locale, t } = useLanguageContext()
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -41,14 +36,14 @@ export function Header({ locale }: HeaderProps) {
         <nav className="hidden md:flex items-center space-x-6">
           {navigation.map((item) => (
             <Link key={item.href} href={`/${locale}${item.href}`} className="text-sm font-medium transition-colors hover:text-primary">
-              {locale === "zh" ? item.name : item.name_en}
+              {t(item.key)}
             </Link>
           ))}
         </nav>
 
         <div className="flex items-center space-x-2">
           <GlobalSearch />
-          <LanguageSelector locale={locale} />
+          <LanguageSelector />
           {/* <ThemeToggle /> */} {/* Disabled for force light mode */}
           <Button variant="ghost" size="sm" asChild className="hidden sm:flex">
             <Link href="https://github.com/g0v" target="_blank" rel="noopener noreferrer">
@@ -56,36 +51,7 @@ export function Header({ locale }: HeaderProps) {
             </Link>
           </Button>
 
-          {/* Mobile Navigation */}
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="sm" className="md:hidden">
-                <Menu className="h-4 w-4" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col space-y-4 mt-8">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={`/${locale}${item.href}`}
-                    className="text-sm font-medium transition-colors hover:text-primary"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {locale === "zh" ? item.name : item.name_en}
-                  </Link>
-                ))}
-                <div className="flex items-center space-x-2 pt-4 border-t">
-                  <LanguageSelector locale={locale} />
-                  <Button variant="ghost" size="sm" asChild>
-                    <Link href="https://github.com/g0v" target="_blank" rel="noopener noreferrer">
-                      <Github className="h-4 w-4" />
-                    </Link>
-                  </Button>
-                </div>
-              </nav>
-            </SheetContent>
-          </Sheet>
+          <MobileNav navigation={navigation} />
         </div>
       </div>
     </header>

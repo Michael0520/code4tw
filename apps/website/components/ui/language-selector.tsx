@@ -10,20 +10,18 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Globe, Check, ChevronDown } from "lucide-react"
-
-interface LanguageSelectorProps {
-  locale: string;
-}
+import { useLanguageContext } from "@/components/language-provider"
 
 const languages = [
-  { code: "zh", name: "Chinese", nativeName: "中文" },
-  { code: "en", name: "English", nativeName: "English" },
+  { code: "zh", name: "Chinese", nativeNameKey: "language.chinese" },
+  { code: "en", name: "English", nativeNameKey: "language.english" },
   // Future language support
-  // { code: "ja", name: "Japanese", nativeName: "日本語" },
-  // { code: "ko", name: "Korean", nativeName: "한국어" },
+  // { code: "ja", name: "Japanese", nativeNameKey: "language.japanese" },
+  // { code: "ko", name: "Korean", nativeNameKey: "language.korean" },
 ] as const
 
-export function LanguageSelector({ locale }: LanguageSelectorProps) {
+export function LanguageSelector() {
+  const { language: locale, t } = useLanguageContext()
   const [isOpen, setIsOpen] = useState(false)
   const router = useRouter()
   const pathname = usePathname()
@@ -43,7 +41,7 @@ export function LanguageSelector({ locale }: LanguageSelectorProps) {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="sm" className="flex gap-1">
           <Globe className="h-4 w-4" />
-          <span>{currentLanguage.nativeName}</span>
+          <span>{t(currentLanguage.nativeNameKey)}</span>
           <ChevronDown className="h-3 w-3 opacity-60" />
         </Button>
       </DropdownMenuTrigger>
@@ -54,7 +52,7 @@ export function LanguageSelector({ locale }: LanguageSelectorProps) {
             onClick={() => handleLanguageChange(language.code)}
             className="flex items-center justify-between cursor-pointer"
           >
-            <span>{language.nativeName}</span>
+            <span>{t(language.nativeNameKey)}</span>
             {language.code === locale && (
               <Check className="h-4 w-4 text-primary" />
             )}

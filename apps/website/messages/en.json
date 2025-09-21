@@ -148,7 +148,23 @@
       "openness": "Openness and transparency in all our work",
       "collaboration": "Collaborative and inclusive community building",
       "innovation": "Innovation for positive social impact",
-      "accessibility": "Accessible and user-centered design"
+      "accessibility": "Accessible and user-centered design",
+      "transparency": {
+        "title": "Government Transparency",
+        "description": "Promoting government information transparency for easier citizen oversight"
+      },
+      "social": {
+        "title": "Social Care",
+        "description": "Caring for disadvantaged groups and using technology to bridge the digital divide"
+      },
+      "action": {
+        "title": "Quick Action",
+        "description": "Responding quickly to social issues and proposing solutions"
+      },
+      "connection": {
+        "title": "Global Connection",
+        "description": "Connecting with international civic tech communities and sharing Taiwan's experience"
+      }
     }
   },
   "common": {
@@ -176,15 +192,18 @@
     "success": "Success"
   },
   "search": {
-    "placeholder": "Search projects, news, events...",
+    "placeholder": "Search projects, events, or pages...",
+    "popular": "Popular results",
     "noResults": "No results found",
+    "tryDifferent": "Try different keywords",
     "navigate": "Navigate",
     "select": "Select",
     "close": "Close",
-    "types": {
+    "type": {
       "project": "Project",
       "news": "News",
-      "event": "Event"
+      "event": "Event",
+      "page": "Page"
     }
   },
   "footer": {
