@@ -25,15 +25,6 @@ export function EventsFilters({ currentFilters, total }: EventsFiltersProps) {
   const [selectedType, setSelectedType] = useState(currentFilters.type || 'all');
   const [selectedStatus, setSelectedStatus] = useState(currentFilters.status || 'all');
 
-  // Debounced search effect
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      updateFilters({ search: searchQuery });
-    }, EVENTS_CONFIG.search.debounceMs);
-
-    return () => clearTimeout(timer);
-  }, [searchQuery, updateFilters]);
-
   const updateFilters = useCallback((newFilters: Record<string, string | undefined>) => {
     const params = new URLSearchParams(searchParams);
 
@@ -49,6 +40,15 @@ export function EventsFilters({ currentFilters, total }: EventsFiltersProps) {
     const url = queryString ? `${pathname}?${queryString}` : pathname;
     router.push(url);
   }, [pathname, router, searchParams]);
+
+  // Debounced search effect
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      updateFilters({ search: searchQuery });
+    }, EVENTS_CONFIG.search.debounceMs);
+
+    return () => clearTimeout(timer);
+  }, [searchQuery, updateFilters]);
 
   const handleTypeChange = (value: string) => {
     setSelectedType(value);

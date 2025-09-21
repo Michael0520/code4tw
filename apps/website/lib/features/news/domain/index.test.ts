@@ -140,9 +140,10 @@ describe('NewsCategory Value Object', () => {
 
   it('should throw error for invalid category', () => {
     // Arrange
-    const invalidCategory = 'invalid-category' as string;
+    const invalidCategory = 'invalid-category';
 
     // Act & Assert
+    // @ts-expect-error Testing invalid category value
     expect(() => new NewsCategory(invalidCategory)).toThrow('Invalid news category: invalid-category');
   });
 

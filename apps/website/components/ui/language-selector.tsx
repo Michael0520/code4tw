@@ -16,9 +16,9 @@ interface LanguageSelectorProps {
 }
 
 const languages = [
-  { code: "zh", name: "中文", nativeName: "中文" },
+  { code: "zh", name: "Chinese", nativeName: "中文" },
   { code: "en", name: "English", nativeName: "English" },
-  // 未來可以加入更多語言
+  // Future language support
   // { code: "ja", name: "Japanese", nativeName: "日本語" },
   // { code: "ko", name: "Korean", nativeName: "한국어" },
 ] as const

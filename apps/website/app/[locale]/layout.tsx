@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Suspense } from "react"
 import { LanguageProvider } from "@/components/language-provider"
+import { getTranslations } from "next-intl/server"
 import "./globals.css"
 
 const inter = Inter({
@@ -18,11 +19,13 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
 })
 
-export const metadata: Metadata = {
-  title: "Code for Taiwan | 台灣零時政府",
-  description:
-    "Code for Taiwan is a civic tech community that brings together developers, designers, and citizens to build digital solutions for social good.",
-  generator: "v0.app",
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const t = await getTranslations({ locale: params.locale, namespace: 'metadata' });
+
+  return {
+    title: t('title'),
+    description: t('description'),
+  };
 }
 
 export default function RootLayout({

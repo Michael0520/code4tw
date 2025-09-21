@@ -43,7 +43,8 @@ describe('ProjectCategory Value Object', () => {
   });
 
   it('should throw error for invalid category', () => {
-    expect(() => new ProjectCategory('invalid' as string)).toThrow(
+    // @ts-expect-error Testing invalid category value
+    expect(() => new ProjectCategory('invalid')).toThrow(
       'Invalid project category: invalid'
     );
   });
@@ -56,7 +57,8 @@ describe('ProjectCategory Value Object', () => {
     ];
 
     testCases.forEach(test => {
-      const category = new ProjectCategory(test.value as string);
+      // @ts-expect-error Testing with string values from test cases
+      const category = new ProjectCategory(test.value);
       expect(category.getDisplayName()).toBe(test.display);
     });
   });
@@ -80,7 +82,8 @@ describe('ProjectStatus Value Object', () => {
   });
 
   it('should throw error for invalid status', () => {
-    expect(() => new ProjectStatus('invalid' as string)).toThrow(
+    // @ts-expect-error Testing invalid status value
+    expect(() => new ProjectStatus('invalid')).toThrow(
       'Invalid project status: invalid'
     );
   });

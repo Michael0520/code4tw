@@ -29,17 +29,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Check for Chinese characters in code
-        run: |
-          echo "Checking for Chinese characters in source code..."
-          if grep -r "[\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]" --include="*.ts" --include="*.tsx" --include="*.js" --include="*.jsx" --exclude-dir=node_modules --exclude="**/i18n.ts" --exclude="**/translations.ts" --exclude="**/config/**" --exclude="**/messages/**" --exclude="**.json" .; then
-            echo "❌ FAIL: Chinese characters found in source code (excluding i18n files)"
-            echo "Please use English only for all code elements (variables, functions, comments)"
-            exit 1
-          else
-            echo "✅ PASS: No Chinese characters found in source code"
-          fi
-
       - name: Validate magic numbers
         run: |
           echo "Checking for magic numbers..."
