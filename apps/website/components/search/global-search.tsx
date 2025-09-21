@@ -22,34 +22,34 @@ const mockSearchResults: SearchResult[] = [
   {
     id: "1",
     title: "vTaiwan",
-    description: "數位法規調適平台，讓公民參與法規制定過程",
+    description: "Digital regulation adaptation platform for citizen participation",
     type: "project",
     url: "/projects/vtaiwan",
-    tags: ["Vue.js", "Node.js", "政策參與"],
+    tags: ["Vue.js", "Node.js", "Policy"],
   },
   {
     id: "2",
-    title: "萌典",
-    description: "開放的線上國語、台語、客語辭典",
+    title: "Moedict",
+    description: "Open online dictionary for Mandarin, Taiwanese, and Hakka",
     type: "project",
     url: "/projects/moedict",
-    tags: ["React", "API", "語言保存"],
+    tags: ["React", "API", "Language"],
   },
   {
     id: "3",
-    title: "g0v 十週年黑客松",
-    description: "慶祝 g0v 社群十週年的特別活動",
+    title: "g0v 10th Anniversary Hackathon",
+    description: "Special event celebrating g0v community's 10th anniversary",
     type: "event",
     url: "/events/g0v-10th-hackathon",
-    tags: ["黑客松", "十週年"],
+    tags: ["Hackathon", "Anniversary"],
   },
   {
     id: "4",
-    title: "開放政府資料新進展",
-    description: "政府資料開放的最新政策與實施狀況",
+    title: "Open Government Data Progress",
+    description: "Latest policies and implementation status of government data openness",
     type: "news",
     url: "/news/open-data-progress",
-    tags: ["開放資料", "政府透明"],
+    tags: ["Open Data", "Transparency"],
   },
 ]
 
@@ -89,16 +89,7 @@ export function GlobalSearch() {
   }, [query])
 
   const getTypeLabel = (type: string) => {
-    switch (type) {
-      case "project":
-        return language === "zh" ? "專案" : "Project"
-      case "news":
-        return language === "zh" ? "新聞" : "News"
-      case "event":
-        return language === "zh" ? "活動" : "Event"
-      default:
-        return type
-    }
+    return t(`search.types.${type}` as any) || type
   }
 
   if (!isOpen) {
@@ -124,7 +115,7 @@ export function GlobalSearch() {
         <div className="flex items-center space-x-2">
           <Search className="h-4 w-4 text-muted-foreground" />
           <Input
-            placeholder={language === "zh" ? "搜尋專案、新聞、活動..." : "Search projects, news, events..."}
+            placeholder={t("search.placeholder")}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="border-0 focus-visible:ring-0 text-base"
@@ -170,7 +161,7 @@ export function GlobalSearch() {
 
         {query.length > 0 && results.length === 0 && (
           <div className="text-center py-8 text-muted-foreground">
-            {language === "zh" ? "沒有找到相關結果" : "No results found"}
+            {t("search.noResults")}
           </div>
         )}
 
@@ -179,17 +170,17 @@ export function GlobalSearch() {
             <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium">
               ↑↓
             </kbd>
-            <span>{language === "zh" ? "導航" : "Navigate"}</span>
+            <span>{t("search.navigate")}</span>
             <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium">
               ↵
             </kbd>
-            <span>{language === "zh" ? "選擇" : "Select"}</span>
+            <span>{t("search.select")}</span>
           </div>
           <div className="flex items-center space-x-2">
             <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium">
               esc
             </kbd>
-            <span>{language === "zh" ? "關閉" : "Close"}</span>
+            <span>{t("search.close")}</span>
           </div>
         </div>
       </div>

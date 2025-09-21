@@ -71,26 +71,61 @@
     "subtitle": "Stay updated with our community activities and achievements",
     "readMore": "Read More",
     "publishedOn": "Published on",
+    "searchPlaceholder": "Search news...",
+    "featured": "Featured",
+    "published": "Published",
+    "recent": "Recent",
+    "noNews": "No news articles found",
+    "loading": "Loading news...",
+    "error": "Failed to load news",
     "categories": {
+      "all": "All Categories",
       "announcement": "Announcement",
       "release": "Release",
       "event": "Event",
-      "community": "Community"
+      "community": "Community",
+      "tutorial": "Tutorial",
+      "update": "Update"
     }
   },
   "events": {
-    "title": "Upcoming Events",
+    "title": "Events",
     "subtitle": "Join our workshops, hackathons, and community gatherings",
+    "searchPlaceholder": "Search events...",
+    "featured": "Featured",
     "register": "Register",
+    "registerNow": "Register Now",
+    "soldOut": "Sold Out",
+    "cancelled": "Cancelled",
     "location": "Location",
     "date": "Date",
     "time": "Time",
     "participants": "Participants",
+    "spotsAvailable": "spots available",
+    "registeredCount": "registered",
+    "peopleRegistered": "people registered",
+    "upcomingEvents": "Upcoming Events",
+    "pastEvents": "Past Events",
+    "noEvents": "No events found",
+    "loading": "Loading events...",
+    "error": "Failed to load events",
+    "hostEvent": "Want to Host an Event?",
+    "hostEventDescription": "If you have ideas to share with the community, feel free to contact us to discuss hosting an event.",
+    "contactUs": "Contact Us",
     "types": {
+      "all": "All Types",
       "workshop": "Workshop",
       "hackathon": "Hackathon",
       "meetup": "Meetup",
+      "training": "Training",
       "conference": "Conference"
+    },
+    "statuses": {
+      "all": "All Status",
+      "upcoming": "Upcoming",
+      "ongoing": "Ongoing",
+      "past": "Past",
+      "cancelled": "Cancelled"
     }
   },
   "about": {
@@ -136,8 +171,24 @@
     "error": "An error occurred",
     "success": "Success"
   },
+  "search": {
+    "placeholder": "Search projects, news, events...",
+    "noResults": "No results found",
+    "navigate": "Navigate",
+    "select": "Select",
+    "close": "Close",
+    "types": {
+      "project": "Project",
+      "news": "News",
+      "event": "Event"
+    }
+  },
   "footer": {
     "description": "Code for Taiwan is part of the global Code for All network, promoting civic technology worldwide.",
+    "newsletter": "Subscribe to Newsletter",
+    "newsletterDescription": "Get the latest news and project updates delivered to your inbox.",
+    "emailPlaceholder": "Enter your email",
+    "subscribe": "Subscribe",
     "links": {
       "about": "About",
       "projects": "Projects",

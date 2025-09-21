@@ -4,10 +4,14 @@ import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Github, Globe } from "lucide-react"
+import { LanguageSelector } from "@/components/ui/language-selector"
+import { Menu, Github } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { useLanguageContext } from "@/components/language-provider"
 import { GlobalSearch } from "@/components/search/global-search"
+
+interface HeaderProps {
+  locale: string;
+}
 
 const navigation = [
   { name: "首頁", name_en: "Home", href: "/" },
@@ -17,42 +21,34 @@ const navigation = [
   { name: "關於我們", name_en: "About", href: "/about" },
 ]
 
-export function Header() {
+export function Header({ locale }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false)
-  const { language, setLanguage } = useLanguageContext()
-
-  const toggleLanguage = () => {
-    setLanguage(language === "zh" ? "en" : "zh")
-  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
       <div className="container flex h-16 items-center justify-between relative">
         <div className="flex items-center space-x-4">
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href={`/${locale}`} className="flex items-center space-x-2">
             <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-sm">C4T</span>
             </div>
-            <span className="font-bold text-lg">{language === "zh" ? "Code for Taiwan" : "Code for Taiwan"}</span>
+            <span className="font-bold text-lg">Code for Taiwan</span>
           </Link>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
           {navigation.map((item) => (
-            <Link key={item.href} href={item.href} className="text-sm font-medium transition-colors hover:text-primary">
-              {language === "zh" ? item.name : item.name_en}
+            <Link key={item.href} href={`/${locale}${item.href}`} className="text-sm font-medium transition-colors hover:text-primary">
+              {locale === "zh" ? item.name : item.name_en}
             </Link>
           ))}
         </nav>
 
         <div className="flex items-center space-x-2">
           <GlobalSearch />
-          <Button variant="ghost" size="sm" onClick={toggleLanguage} className="hidden sm:flex">
-            <Globe className="h-4 w-4 mr-1" />
-            {language === "zh" ? "EN" : "中"}
-          </Button>
+          <LanguageSelector locale={locale} />
           <ThemeToggle />
           <Button variant="ghost" size="sm" asChild className="hidden sm:flex">
             <Link href="https://github.com/g0v" target="_blank" rel="noopener noreferrer">
@@ -72,18 +68,15 @@ export function Header() {
                 {navigation.map((item) => (
                   <Link
                     key={item.href}
-                    href={item.href}
+                    href={`/${locale}${item.href}`}
                     className="text-sm font-medium transition-colors hover:text-primary"
                     onClick={() => setIsOpen(false)}
                   >
-                    {language === "zh" ? item.name : item.name_en}
+                    {locale === "zh" ? item.name : item.name_en}
                   </Link>
                 ))}
                 <div className="flex items-center space-x-2 pt-4 border-t">
-                  <Button variant="ghost" size="sm" onClick={toggleLanguage}>
-                    <Globe className="h-4 w-4 mr-1" />
-                    {language === "zh" ? "EN" : "中"}
-                  </Button>
+                  <LanguageSelector locale={locale} />
                   <Button variant="ghost" size="sm" asChild>
                     <Link href="https://github.com/g0v" target="_blank" rel="noopener noreferrer">
                       <Github className="h-4 w-4" />
