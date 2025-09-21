@@ -1,28 +1,30 @@
-# Turborepo starter
+# Code for Taiwan (Code4TW) Monorepo
 
-This Turborepo starter is maintained by the Turborepo core team.
+Code for Taiwan is an open-source civic technology community dedicated to advancing Taiwan's society through technology innovation.
 
-## Using this example
+## What's Inside?
 
-Run the following command:
-
-```sh
-npx create-turbo@latest
-```
-
-## What's inside?
-
-This Turborepo includes the following packages/apps:
+This Turborepo includes the following packages and applications:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- `website`: Code for Taiwan main website ([Next.js](https://nextjs.org/))
+- `@repo/ui`: Shared React component library
+- `@repo/next-config`: Shared Next.js configuration
+- `@repo/eslint-config`: ESLint configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `@repo/typescript-config`: Shared `tsconfig.json` used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+
+## Architecture Features
+
+The website application follows modern development practices:
+
+- **🏗️ Modular DDD Architecture**: Feature-first structure following 2025 best practices
+- **🌍 Internationalization**: Multi-language support with next-intl (Chinese & English)
+- **⚡ Modern Tech Stack**: Next.js 15, React 19, TypeScript, Tailwind CSS
+- **🧪 Test-Driven Development**: Complete domain layer test coverage
+- **📱 Responsive Design**: Support for all device sizes
 
 ### Utilities
 
@@ -32,96 +34,107 @@ This Turborepo has some additional tools already setup for you:
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- pnpm 8+
+
+### Install Dependencies
+
+```bash
+pnpm install
+```
+
 ### Build
 
 To build all apps and packages, run the following command:
 
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+```bash
+pnpm build
 ```
 
 You can build a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
+```bash
+# Build website only
+pnpm build --filter=website
 ```
 
-### Develop
+### Development
 
 To develop all apps and packages, run the following command:
 
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
+```bash
+pnpm dev
 ```
 
 You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
+```bash
+# Start website development mode (available at http://localhost:3002)
+pnpm dev --filter=website
 ```
 
-### Remote Caching
+### Testing
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+```bash
+# Run all tests
+pnpm test
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+# Run specific package tests
+pnpm test --filter=website
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
+# Run tests in watch mode
+pnpm test:watch --filter=website
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+### Code Quality
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+```bash
+# TypeScript type checking
+pnpm check-types --filter=website
+
+# ESLint checking
+pnpm lint --filter=website
+```
+
+## Project Structure
 
 ```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
+apps/
+├── website/                    # Code for Taiwan main website
+└── packages/
+    ├── ui/                     # Shared UI components
+    ├── next-config/            # Shared Next.js configuration
+    ├── eslint-config/          # ESLint configuration
+    └── typescript-config/      # TypeScript configuration
 ```
+
+### Website Application
+
+The website follows a modular Domain-Driven Design (DDD) architecture:
+
+```
+apps/website/
+├── app/                       # Next.js App Router
+├── components/                # React components
+├── lib/features/              # Business feature modules (DDD)
+│   ├── projects/              # Projects feature
+│   │   ├── domain/            # Domain logic
+│   │   ├── actions/           # Server Actions
+│   │   ├── config/            # Configuration
+│   │   └── utils/             # Utility functions
+│   ├── news/                  # News feature
+│   ├── events/                # Events feature
+│   ├── about/                 # About us
+│   └── home/                  # Homepage
+├── messages/                  # i18n translation files
+└── ARCHITECTURE.md            # Detailed architecture documentation
+```
+
+For detailed architecture information, see `apps/website/ARCHITECTURE.md`.
 
 ## Useful Links
 
@@ -133,3 +146,16 @@ Learn more about the power of Turborepo:
 - [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
 - [Configuration Options](https://turborepo.com/docs/reference/configuration)
 - [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+
+## Contributing
+
+1. Fork this project
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## Contact
+
+- Website: [https://codefortaiwan.org](https://codefortaiwan.org)
+- GitHub: [Code for Taiwan](https://github.com/Michael0520/code4tw)
