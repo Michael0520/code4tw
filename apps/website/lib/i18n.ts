@@ -120,6 +120,20 @@ export const translations: Translations = {
   "events.status.upcoming": { zh: "即將舉行", en: "Upcoming" },
   "events.status.past": { zh: "已結束", en: "Past" },
 
+  // Projects page
+  "projects.title": { zh: "開源專案", en: "Open Source Projects" },
+  "projects.description": { zh: "探索我們的開源專案，每個專案都致力於解決社會問題，歡迎您的參與和貢獻。", en: "Explore our open source projects, each dedicated to solving social problems. Your participation and contributions are welcome." },
+  "projects.search.placeholder": { zh: "搜尋專案...", en: "Search projects..." },
+  "projects.found": { zh: "找到 {count} 個專案", en: "Found {count} projects" },
+  "projects.no_results": { zh: "沒有找到符合條件的專案", en: "No projects found matching your criteria" },
+  "projects.clear_filters": { zh: "清除篩選", en: "Clear Filters" },
+  "projects.source": { zh: "原始碼", en: "Source" },
+  "projects.website": { zh: "網站", en: "Website" },
+  "projects.contribute.title": { zh: "想要貢獻專案？", en: "Want to Contribute?" },
+  "projects.contribute.description": { zh: "我們歡迎各種形式的貢獻，無論是程式碼、設計、文件或是想法。", en: "We welcome all forms of contributions, whether it's code, design, documentation, or ideas." },
+  "projects.view_github": { zh: "查看 GitHub", en: "View GitHub" },
+  "projects.learn_more": { zh: "了解更多", en: "Learn More" },
+
   // Projects categories
   "projects.categories.all": { zh: "全部", en: "All" },
 
@@ -154,17 +168,30 @@ export const translations: Translations = {
   "projects.moedict.description": { zh: "開放的線上國語、台語、客語辭典", en: "Open online dictionary for Mandarin, Taiwanese, and Hakka languages" },
   "projects.cofacts.title": { zh: "Cofacts 真的假的", en: "Cofacts" },
   "projects.cofacts.description": { zh: "協作式事實查核系統，對抗不實訊息", en: "Collaborative fact-checking system combating misinformation" },
+
+  // Footer
+  "footer.copyright": { zh: "© 2024 Code for Taiwan. 致力於用科技讓台灣更美好。", en: "© 2024 Code for Taiwan. Committed to making Taiwan better through technology." },
 }
 
 export function useTranslation(language: Language) {
   return {
-    t: (key: string): string => {
+    t: (key: string, variables?: Record<string, string | number>): string => {
       const translation = translations[key]
       if (!translation) {
         console.warn(`Translation missing for key: ${key}`)
         return key // Return the key itself as fallback for easy debugging
       }
-      return translation[language]
+
+      let text = translation[language]
+
+      // Replace variables like {count}, {name}, etc.
+      if (variables) {
+        Object.entries(variables).forEach(([varKey, varValue]) => {
+          text = text.replace(new RegExp(`\\{${varKey}\\}`, 'g'), String(varValue))
+        })
+      }
+
+      return text
     },
     language,
   }

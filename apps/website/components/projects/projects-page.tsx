@@ -11,14 +11,14 @@ import { ExternalLink, Github, Star, GitFork, Search, Filter } from "lucide-reac
 import Link from "next/link"
 import Image from "next/image"
 import { PROJECTS_CONFIG, STATIC_PROJECTS_DATA } from "@/lib/features/projects/config"
-import { useLanguageContext } from "@/components/language-provider"
+import { useTranslation, type Language } from "@/lib/i18n"
 
 interface ProjectsPageProps {
   locale: string;
 }
 
 export function ProjectsPage({ locale }: ProjectsPageProps) {
-  const { t } = useLanguageContext()
+  const { t } = useTranslation(locale as Language)
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [selectedStatus, setSelectedStatus] = useState("all")
@@ -48,12 +48,10 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
           <div className="container px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl text-balance">
-                {locale === "zh" ? "開源專案" : "Open Source Projects"}
+                {t("projects.title")}
               </h1>
               <p className="mt-6 text-lg leading-8 text-muted-foreground text-pretty">
-                {locale === "zh"
-                  ? "探索我們的開源專案，每個專案都致力於解決社會問題，歡迎您的參與和貢獻。"
-                  : "Explore our open source projects, each dedicated to solving social problems. Your participation and contributions are welcome."}
+                {t("projects.description")}
               </p>
             </div>
           </div>
@@ -67,7 +65,7 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
                 <div className="relative w-full sm:w-80">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
-                    placeholder={locale === "zh" ? "搜尋專案..." : "Search projects..."}
+                    placeholder={t("projects.search.placeholder")}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="pl-10"
@@ -102,9 +100,7 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
                 </div>
               </div>
               <div className="text-sm text-muted-foreground">
-                {locale === "zh"
-                  ? `找到 ${filteredProjects.length} 個專案`
-                  : `Found ${filteredProjects.length} projects`}
+                {t("projects.found", { count: filteredProjects.length })}
               </div>
             </div>
           </div>
