@@ -12,6 +12,10 @@
     "contact": "Contact",
     "language": "Language"
   },
+  "language": {
+    "chinese": "中文",
+    "english": "English"
+  },
   "hero": {
     "badge": "Open Source • Collaboration • Civic Tech",
     "title": "Technology for",
@@ -37,6 +41,15 @@
     "transparency": {
       "title": "Government Transparency",
       "description": "Building tools to make government more transparent and accountable"
+    }
+  },
+  "home": {
+    "projects": {
+      "badge": "Featured Projects",
+      "title": "Our Projects",
+      "description": "Discover the digital solutions we're building for Taiwan",
+      "source": "Source Code",
+      "view": "View Project"
     }
   },
   "projects": {

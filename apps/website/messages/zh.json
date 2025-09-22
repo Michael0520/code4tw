@@ -12,6 +12,10 @@
     "contact": "聯絡我們",
     "language": "語言"
   },
+  "language": {
+    "chinese": "中文",
+    "english": "English"
+  },
   "hero": {
     "badge": "開源 • 協作 • 公民科技",
     "title": "用科技改變",
@@ -37,6 +41,15 @@
     "transparency": {
       "title": "政府透明",
       "description": "打造工具讓政府更加透明且負責任"
+    }
+  },
+  "home": {
+    "projects": {
+      "badge": "精選專案",
+      "title": "我們的專案",
+      "description": "探索我們為台灣打造的數位解決方案",
+      "source": "原始碼",
+      "view": "查看專案"
     }
   },
   "projects": {
