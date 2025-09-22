@@ -6,7 +6,7 @@
 'use server';
 
 import { Project, ProjectService, ProjectData, ProjectCategory, ProjectStatus } from '@/lib/features/projects/domain';
-import { PROJECTS_CONFIG, STATIC_PROJECTS_DATA } from '@/lib/features/projects/config';
+import { PROJECTS_CONFIG, STATIC_PROJECTS_DATA } from '@/lib/features/projects/config/index';
 
 // ============= Types =============
 
@@ -54,8 +54,8 @@ export interface ProjectsResponse {
 function transformToProjectData(rawData: typeof STATIC_PROJECTS_DATA[0]): ProjectData {
   return {
     id: rawData.id.toString(),
-    title: rawData.title,
-    description: rawData.description_zh, // Use Chinese description as primary
+    title: rawData.titleKey, // Store i18n key for title
+    description: rawData.descriptionKey, // Store i18n key for description
     category: rawData.category as typeof ProjectCategory.VALID_CATEGORIES[number],
     status: rawData.status as typeof ProjectStatus.VALID_STATUSES[number],
     tags: rawData.tags,

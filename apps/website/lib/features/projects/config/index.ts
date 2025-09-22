@@ -6,18 +6,18 @@
 export const PROJECTS_CONFIG = {
   // Project Categories
   categories: [
-    { value: 'all', label_zh: '全部', label_en: 'All' },
-    { value: 'governance', label_zh: '政府治理', label_en: 'Governance' },
-    { value: 'transparency', label_zh: '政府透明', label_en: 'Transparency' },
-    { value: 'culture', label_zh: '文化保存', label_en: 'Culture' },
-    { value: 'health', label_zh: '公共衛生', label_en: 'Public Health' }
+    { value: 'all', labelKey: 'projects.categories.all' },
+    { value: 'governance', labelKey: 'projects.categories.governance' },
+    { value: 'transparency', labelKey: 'projects.categories.transparency' },
+    { value: 'culture', labelKey: 'projects.categories.culture' },
+    { value: 'health', labelKey: 'projects.categories.health' }
   ],
 
   // Project Statuses
   statuses: [
-    { value: 'all', label_zh: '全部狀態', label_en: 'All Status' },
-    { value: 'active', label_zh: '進行中', label_en: 'Active' },
-    { value: 'archived', label_zh: '已封存', label_en: 'Archived' }
+    { value: 'all', labelKey: 'projects.statuses.all' },
+    { value: 'active', labelKey: 'common.active' },
+    { value: 'archived', labelKey: 'common.archived' }
   ],
 
   // Popular Tags (for filtering)
@@ -99,25 +99,23 @@ export const PROJECTS_CONFIG = {
     }
   },
 
-  // Messages (can be used with i18n later)
+  // Messages - translation keys
   messages: {
-    noProjects: 'No projects found',
-    loading: 'Loading projects...',
-    error: 'Failed to load projects',
-    searchPlaceholder: 'Search projects...',
-    filterBy: 'Filter by',
-    sortBy: 'Sort by'
+    noProjects: 'projects.messages.noProjects',
+    loading: 'projects.messages.loading',
+    error: 'projects.messages.error',
+    searchPlaceholder: 'projects.messages.searchPlaceholder',
+    filterBy: 'projects.messages.filterBy',
+    sortBy: 'projects.messages.sortBy'
   }
 };
 
-// Static project data matching original design
+// Static project data - all using i18n keys for consistency
 export const STATIC_PROJECTS_DATA = [
   {
     id: 1,
-    title: "vTaiwan",
-    title_en: "vTaiwan",
-    description_zh: "數位法規調適平台，讓公民參與法規制定過程，促進政府與民間的對話",
-    description_en: "Digital platform for regulatory adaptation with citizen participation, facilitating dialogue between government and civil society",
+    titleKey: "projects.vtaiwan.title",
+    descriptionKey: "projects.vtaiwan.description",
     tags: ["Vue.js", "Node.js", "政策參與", "數位民主"],
     category: "governance",
     stars: 245,
@@ -129,10 +127,8 @@ export const STATIC_PROJECTS_DATA = [
   },
   {
     id: 2,
-    title: "萌典",
-    title_en: "Moedict",
-    description_zh: "開放的線上國語、台語、客語辭典，保存台灣多元語言文化",
-    description_en: "Open online dictionary for Mandarin, Taiwanese, and Hakka, preserving Taiwan's diverse linguistic culture",
+    titleKey: "projects.moedict.title",
+    descriptionKey: "projects.moedict.description",
     tags: ["React", "API", "語言保存", "文化"],
     category: "culture",
     stars: 892,
@@ -144,10 +140,8 @@ export const STATIC_PROJECTS_DATA = [
   },
   {
     id: 3,
-    title: "立法院議事錄",
-    title_en: "Legislative Records",
-    description_zh: "立法院會議記錄搜尋與視覺化平台，讓民眾更容易了解立法過程",
-    description_en: "Search and visualization platform for legislative records, making the legislative process more accessible to citizens",
+    titleKey: "projects.legislative.title",
+    descriptionKey: "projects.legislative.description",
     tags: ["Python", "Data Viz", "政府透明", "開放資料"],
     category: "transparency",
     stars: 178,
@@ -159,11 +153,9 @@ export const STATIC_PROJECTS_DATA = [
   },
   {
     id: 4,
-    title: "口罩地圖",
-    title_en: "Mask Map",
-    description_zh: "COVID-19 期間的即時口罩庫存地圖，協助民眾快速找到口罩販售點",
-    description_en: "Real-time mask availability map during COVID-19, helping citizens quickly find mask retailers",
-    tags: ["React", "Maps API", "緊急應變", "公共衛生"],
+    titleKey: "projects.mask.title",
+    descriptionKey: "projects.mask.description",
+    tags: ["React", "Maps API"],
     category: "health",
     stars: 1234,
     forks: 289,
@@ -174,11 +166,9 @@ export const STATIC_PROJECTS_DATA = [
   },
   {
     id: 5,
-    title: "預算視覺化",
-    title_en: "Budget Visualization",
-    description_zh: "政府預算資料視覺化平台，讓複雜的預算資訊變得易懂",
-    description_en: "Government budget data visualization platform, making complex budget information understandable",
-    tags: ["D3.js", "React", "資料視覺化", "財政透明"],
+    titleKey: "projects.budget.title",
+    descriptionKey: "projects.budget.description",
+    tags: ["D3.js", "React"],
     category: "transparency",
     stars: 156,
     forks: 34,
@@ -189,11 +179,9 @@ export const STATIC_PROJECTS_DATA = [
   },
   {
     id: 6,
-    title: "選舉黃頁",
-    title_en: "Election Yellow Pages",
-    description_zh: "候選人資訊整合平台，提供選民完整的候選人背景資料",
-    description_en: "Candidate information integration platform, providing voters with comprehensive candidate background data",
-    tags: ["Next.js", "Database", "選舉", "民主參與"],
+    titleKey: "projects.election.title",
+    descriptionKey: "projects.election.description",
+    tags: ["Next.js", "Database"],
     category: "governance",
     stars: 89,
     forks: 23,

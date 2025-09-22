@@ -10,13 +10,15 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { ExternalLink, Github, Star, GitFork, Search, Filter } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import { PROJECTS_CONFIG, STATIC_PROJECTS_DATA } from "@/lib/features/projects/config"
+import { PROJECTS_CONFIG, STATIC_PROJECTS_DATA } from "@/lib/features/projects/config/index"
+import { useTranslations } from "next-intl"
 
 interface ProjectsPageProps {
   locale: string;
 }
 
 export function ProjectsPage({ locale }: ProjectsPageProps) {
+  const t = useTranslations('projects')
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [selectedStatus, setSelectedStatus] = useState("all")
@@ -24,11 +26,13 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
   const projects = STATIC_PROJECTS_DATA
 
   const filteredProjects = projects.filter((project) => {
+    const projectKey = project.titleKey.replace('projects.', '')
+    const projectTitle = t(`${projectKey}.title`)
+    const projectDescription = t(`${projectKey}.description`)
+
     const matchesSearch =
-      project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      project.title_en.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      project.description_zh.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      project.description_en.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      projectTitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      projectDescription.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()))
 
     const matchesCategory = selectedCategory === "all" || project.category === selectedCategory
@@ -39,19 +43,17 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header locale={locale} />
+      <Header />
       <main>
         {/* Hero Section */}
         <section className="py-16 sm:py-24 bg-gradient-to-br from-background via-background to-muted/20">
           <div className="container px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl text-balance">
-                {locale === "zh" ? "開源專案" : "Open Source Projects"}
+                {t("projects.title")}
               </h1>
               <p className="mt-6 text-lg leading-8 text-muted-foreground text-pretty">
-                {locale === "zh"
-                  ? "探索我們的開源專案，每個專案都致力於解決社會問題，歡迎您的參與和貢獻。"
-                  : "Explore our open source projects, each dedicated to solving social problems. Your participation and contributions are welcome."}
+                {t("projects.description")}
               </p>
             </div>
           </div>
@@ -65,7 +67,7 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
                 <div className="relative w-full sm:w-80">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
-                    placeholder={locale === "zh" ? "搜尋專案..." : "Search projects..."}
+                    placeholder={t("projects.search.placeholder")}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="pl-10"
@@ -80,7 +82,7 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
                     <SelectContent>
                       {PROJECTS_CONFIG.categories.map((category) => (
                         <SelectItem key={category.value} value={category.value}>
-                          {locale === "zh" ? category.label_zh : category.label_en}
+                          {t(category.labelKey)}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -92,7 +94,7 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
                     <SelectContent>
                       {PROJECTS_CONFIG.statuses.map((status) => (
                         <SelectItem key={status.value} value={status.value}>
-                          {locale === "zh" ? status.label_zh : status.label_en}
+                          {t(status.labelKey)}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -100,9 +102,7 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
                 </div>
               </div>
               <div className="text-sm text-muted-foreground">
-                {locale === "zh"
-                  ? `找到 ${filteredProjects.length} 個專案`
-                  : `Found ${filteredProjects.length} projects`}
+                {t("projects.found", { count: filteredProjects.length })}
               </div>
             </div>
           </div>
@@ -120,7 +120,7 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
                   <div className="aspect-video overflow-hidden">
                     <Image
                       src={project.image || "/placeholder.svg"}
-                      alt={locale === "zh" ? project.title : project.title_en}
+                      alt={t(`${project.titleKey.replace('projects.', '')}.title`)}
                       width={400}
                       height={225}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -130,7 +130,7 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <CardTitle className="text-xl mb-2">
-                          {locale === "zh" ? project.title : project.title_en}
+                          {t(`${project.titleKey.replace('projects.', '')}.title`)}
                         </CardTitle>
                         <div className="flex items-center space-x-4 text-sm text-muted-foreground">
                           <div className="flex items-center space-x-1">
@@ -156,7 +156,7 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
-                      {locale === "zh" ? project.description_zh : project.description_en}
+                      {t(`${project.titleKey.replace('projects.', '')}.description`)}
                     </p>
 
                     <div className="flex flex-wrap gap-2 mb-6">

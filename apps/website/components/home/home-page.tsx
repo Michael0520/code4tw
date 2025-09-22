@@ -15,11 +15,11 @@ export async function HomePage({ locale }: HomePageProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header locale={locale} />
+      <Header />
 
       <main>
         <HeroSection locale={locale} />
-        <AboutSection features={homeData.aboutFeatures} locale={locale} />
+        <AboutSection features={homeData.aboutFeatures} />
         <ProjectsSection projects={homeData.projects} locale={locale} />
         <CommunitySection roles={homeData.communityRoles} locale={locale} />
       </main>

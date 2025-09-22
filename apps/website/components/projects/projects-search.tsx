@@ -5,7 +5,7 @@ import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { Search, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { PROJECTS_CONFIG } from '@/lib/features/projects/config';
+import { PROJECTS_CONFIG } from '@/lib/features/projects/config/index';
 
 interface ProjectsSearchProps {
   placeholder?: string;

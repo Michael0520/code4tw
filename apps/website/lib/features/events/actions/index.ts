@@ -293,7 +293,7 @@ export async function getPopularEventTypes(): Promise<{ type: string; count: num
       return {
         type,
         count,
-        displayName: typeConfig?.label || type,
+        displayName: typeConfig?.labelKey || type,
         icon: typeConfig?.icon || '📅'
       };
     });

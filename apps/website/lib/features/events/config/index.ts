@@ -6,21 +6,21 @@
 export const EVENTS_CONFIG = {
   // Event Types
   types: [
-    { value: 'all', label: 'All Types' },
-    { value: 'hackathon', label: 'Hackathon', icon: '⚡', color: 'purple' },
-    { value: 'workshop', label: 'Workshop', icon: '🛠️', color: 'blue' },
-    { value: 'meetup', label: 'Meetup', icon: '👥', color: 'green' },
-    { value: 'training', label: 'Training', icon: '📚', color: 'orange' },
-    { value: 'conference', label: 'Conference', icon: '🎤', color: 'red' }
+    { value: 'all', labelKey: 'events.types.all' },
+    { value: 'hackathon', labelKey: 'events.types.hackathon', icon: '⚡', color: 'purple' },
+    { value: 'workshop', labelKey: 'events.types.workshop', icon: '🛠️', color: 'blue' },
+    { value: 'meetup', labelKey: 'events.types.meetup', icon: '👥', color: 'green' },
+    { value: 'training', labelKey: 'events.types.training', icon: '📚', color: 'orange' },
+    { value: 'conference', labelKey: 'events.types.conference', icon: '🎤', color: 'red' }
   ],
 
   // Event Statuses
   statuses: [
-    { value: 'all', label: 'All Status' },
-    { value: 'upcoming', label: 'Upcoming', color: 'blue' },
-    { value: 'ongoing', label: 'Ongoing', color: 'green' },
-    { value: 'past', label: 'Past', color: 'gray' },
-    { value: 'cancelled', label: 'Cancelled', color: 'red' }
+    { value: 'all', labelKey: 'events.statuses.all' },
+    { value: 'upcoming', labelKey: 'events.statuses.upcoming', color: 'blue' },
+    { value: 'ongoing', labelKey: 'events.statuses.ongoing', color: 'green' },
+    { value: 'past', labelKey: 'events.statuses.past', color: 'gray' },
+    { value: 'cancelled', labelKey: 'events.statuses.cancelled', color: 'red' }
   ],
 
   // Display Settings
@@ -115,20 +115,20 @@ export const EVENTS_CONFIG = {
     }
   },
 
-  // Messages
+  // Messages - translation keys
   messages: {
-    noEvents: 'No events found',
-    loading: 'Loading events...',
-    error: 'Failed to load events',
-    searchPlaceholder: 'Search events...',
-    filterBy: 'Filter by',
-    sortBy: 'Sort by',
-    register: 'Register',
-    soldOut: 'Sold Out',
-    cancelled: 'Cancelled',
-    backToEvents: 'Back to events',
-    spotsAvailable: 'spots available',
-    registeredCount: 'registered'
+    noEvents: 'events.messages.noEvents',
+    loading: 'events.messages.loading',
+    error: 'events.messages.error',
+    searchPlaceholder: 'events.messages.searchPlaceholder',
+    filterBy: 'events.messages.filterBy',
+    sortBy: 'events.messages.sortBy',
+    register: 'events.messages.register',
+    soldOut: 'events.messages.soldOut',
+    cancelled: 'events.messages.cancelled',
+    backToEvents: 'events.messages.backToEvents',
+    spotsAvailable: 'events.messages.spotsAvailable',
+    registeredCount: 'events.messages.registeredCount'
   }
 };
 
