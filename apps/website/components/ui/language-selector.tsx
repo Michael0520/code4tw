@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Globe, Check, ChevronDown } from "lucide-react"
 import { useLanguageContext } from "@/components/language-provider"
+import { useTranslations } from "next-intl"
 
 const languages = [
   { code: "zh", name: "Chinese", nativeNameKey: "language.chinese" },
@@ -21,7 +22,8 @@ const languages = [
 ] as const
 
 export function LanguageSelector() {
-  const { language: locale, t } = useLanguageContext()
+  const { language: locale } = useLanguageContext()
+  const t = useTranslations()
   const [isOpen, setIsOpen] = useState(false)
   const router = useRouter()
   const pathname = usePathname()

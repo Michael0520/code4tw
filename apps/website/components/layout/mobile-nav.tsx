@@ -7,6 +7,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { LanguageSelector } from "@/components/ui/language-selector"
 import { Menu, Github } from "lucide-react"
 import { useLanguageContext } from "@/components/language-provider"
+import { useTranslations } from "next-intl"
 
 interface MobileNavProps {
   navigation: Array<{
@@ -16,7 +17,8 @@ interface MobileNavProps {
 }
 
 export function MobileNav({ navigation }: MobileNavProps) {
-  const { language: locale, t } = useLanguageContext()
+  const { language: locale } = useLanguageContext()
+  const t = useTranslations('nav')
   const [isOpen, setIsOpen] = useState(false)
 
   return (

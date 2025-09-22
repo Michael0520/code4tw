@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { useRouter } from "next/navigation"
 import { useLanguageContext } from "@/components/language-provider"
+import { useTranslations } from "next-intl"
 
 interface SearchResult {
   id: string
@@ -105,7 +106,8 @@ export function GlobalSearch() {
   const [isOpen, setIsOpen] = useState(false)
   const [query, setQuery] = useState("")
   const [results, setResults] = useState<SearchResult[]>([])
-  const { language: locale, t } = useLanguageContext()
+  const { language: locale } = useLanguageContext()
+  const t = useTranslations()
   const router = useRouter()
 
   useEffect(() => {

@@ -10,6 +10,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Calendar, Clock, MapPin, Users, Search, Filter, ArrowRight, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { useTranslations } from "next-intl"
+import { PageHero } from "@/components/shared/page-hero"
+import { PageFooter } from "@/components/shared/page-footer"
+import { NewsletterSignup } from "@/components/shared/newsletter-signup"
 
 interface EventsPageProps {
   locale: string;
@@ -128,6 +132,7 @@ const statuses = [
 ];
 
 export function EventsPage({ locale }: EventsPageProps) {
+  const t = useTranslations('events')
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [selectedStatus, setSelectedStatus] = useState("all")
@@ -152,21 +157,10 @@ export function EventsPage({ locale }: EventsPageProps) {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        {/* Hero Section */}
-        <section className="py-16 sm:py-24 bg-gradient-to-br from-background via-background to-muted/20">
-          <div className="container px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl text-balance">
-                {locale === "zh" ? "活動資訊" : "Events"}
-              </h1>
-              <p className="mt-6 text-lg leading-8 text-muted-foreground text-pretty">
-                {locale === "zh"
-                  ? "參與 Code for Taiwan 的各種活動，包括黑客松、工作坊、會議和課程，與志同道合的夥伴一起學習成長。"
-                  : "Join Code for Taiwan's various events, including hackathons, workshops, conferences, and courses. Learn and grow with like-minded partners."}
-              </p>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          title={t("events.title")}
+          description={t("events.description")}
+        />
 
         {/* Filters Section */}
         <section className="py-8 border-b bg-muted/30">
@@ -176,7 +170,7 @@ export function EventsPage({ locale }: EventsPageProps) {
                 <div className="relative w-full sm:w-80">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
-                    placeholder={locale === "zh" ? "搜尋活動..." : "Search events..."}
+                    placeholder={t("events.search.placeholder")}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="pl-10"
@@ -191,7 +185,7 @@ export function EventsPage({ locale }: EventsPageProps) {
                     <SelectContent>
                       {categories.map((category) => (
                         <SelectItem key={category.value} value={category.value}>
-                          {locale === "zh" ? category.label_zh : category.label_en}
+                          {t(`events.types.${category.value}`)}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -203,7 +197,7 @@ export function EventsPage({ locale }: EventsPageProps) {
                     <SelectContent>
                       {statuses.map((status) => (
                         <SelectItem key={status.value} value={status.value}>
-                          {locale === "zh" ? status.label_zh : status.label_en}
+                          {t(`events.status.${status.value}`)}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -211,9 +205,7 @@ export function EventsPage({ locale }: EventsPageProps) {
                 </div>
               </div>
               <div className="text-sm text-muted-foreground">
-                {locale === "zh"
-                  ? `找到 ${filteredEvents.length} 個活動`
-                  : `Found ${filteredEvents.length} events`}
+                {t("events.found", { count: filteredEvents.length })}
               </div>
             </div>
           </div>
@@ -224,7 +216,7 @@ export function EventsPage({ locale }: EventsPageProps) {
           <section className="py-16">
             <div className="container px-4 sm:px-6 lg:px-8">
               <div className="mx-auto max-w-4xl">
-                <Badge className="mb-4">{locale === "zh" ? "精選活動" : "Featured Event"}</Badge>
+                <Badge className="mb-4">{t("events.featured.badge")}</Badge>
                 <Card className="overflow-hidden border-0 bg-card/80 backdrop-blur-sm">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                     <div className="aspect-video lg:aspect-square overflow-hidden">
@@ -370,43 +362,15 @@ export function EventsPage({ locale }: EventsPageProps) {
           </div>
         </section>
 
-        {/* Newsletter Signup */}
-        <section className="py-16">
-          <div className="container px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-foreground mb-4">
-                {locale === "zh" ? "訂閱活動通知" : "Subscribe to Event Updates"}
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                {locale === "zh"
-                  ? "第一時間獲得最新活動資訊和報名通知。"
-                  : "Get the latest event information and registration notifications."}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <Input
-                  type="email"
-                  placeholder={locale === "zh" ? "輸入您的電子郵件" : "Enter your email"}
-                  className="flex-1"
-                />
-                <Button>{locale === "zh" ? "訂閱" : "Subscribe"}</Button>
-              </div>
-            </div>
-          </div>
-        </section>
+        <NewsletterSignup
+          title={t("events.subscribe.title")}
+          description={t("events.subscribe.description")}
+          emailPlaceholder={t("events.subscribe.placeholder")}
+          buttonText={t("events.subscribe.button")}
+        />
       </main>
 
-      {/* Simple Footer */}
-      <footer className="border-t bg-muted/30">
-        <div className="container px-4 py-8 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-sm text-muted-foreground">
-              {locale === "zh"
-                ? "© 2024 Code for Taiwan. 致力於用科技讓台灣更美好。"
-                : "© 2024 Code for Taiwan. Committed to making Taiwan better through technology."}
-            </p>
-          </div>
-        </div>
-      </footer>
+      <PageFooter copyrightText={t("events.footer")} />
     </div>
   )
 }

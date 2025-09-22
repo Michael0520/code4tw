@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Calendar, Clock, User, Search, Filter, ArrowRight } from "lucide-react"
 import Image from "next/image"
+import { useTranslations } from "next-intl"
 
 interface NewsPageProps {
   locale: string;
@@ -112,6 +113,7 @@ const categories = [
 ];
 
 export function NewsPage({ locale }: NewsPageProps) {
+  const t = useTranslations('news')
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("all")
 
@@ -139,12 +141,10 @@ export function NewsPage({ locale }: NewsPageProps) {
           <div className="container px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl text-balance">
-                {locale === "zh" ? "最新消息" : "Latest News"}
+                {t("title")}
               </h1>
               <p className="mt-6 text-lg leading-8 text-muted-foreground text-pretty">
-                {locale === "zh"
-                  ? "掌握 Code for Taiwan 的最新動態，包括專案更新、活動資訊和政策發展。"
-                  : "Stay updated with Code for Taiwan's latest developments, including project updates, event information, and policy developments."}
+                {t("subtitle")}
               </p>
             </div>
           </div>
@@ -158,7 +158,7 @@ export function NewsPage({ locale }: NewsPageProps) {
                 <div className="relative w-full sm:w-80">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
-                    placeholder={locale === "zh" ? "搜尋新聞..." : "Search news..."}
+                    placeholder={t("searchPlaceholder")}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="pl-10"

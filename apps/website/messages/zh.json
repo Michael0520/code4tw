@@ -63,6 +63,30 @@
       "planning": "規劃中",
       "archived": "已封存"
     },
+    "vtaiwan": {
+      "title": "vTaiwan",
+      "description": "數位法規調適平台，讓公民參與法規制定過程，促進政府與民間的對話"
+    },
+    "moedict": {
+      "title": "萌典",
+      "description": "開放的線上國語、台語、客語辭典，保存台灣多元語言文化"
+    },
+    "legislative": {
+      "title": "立法院議事錄",
+      "description": "立法院會議記錄搜尋與視覺化平台，讓民眾更容易了解立法過程"
+    },
+    "mask": {
+      "title": "口罩地圖",
+      "description": "即時顯示藥局口罩庫存的地圖應用"
+    },
+    "budget": {
+      "title": "中央政府總預算",
+      "description": "政府預算視覺化，讓公民更容易了解政府支出"
+    },
+    "election": {
+      "title": "選舉資料平台",
+      "description": "候選人與選舉資訊整合平台"
+    },
     "stats": {
       "total": "總專案數",
       "active": "進行中",

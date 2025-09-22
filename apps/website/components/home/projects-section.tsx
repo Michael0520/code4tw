@@ -1,7 +1,7 @@
 "use client"
 
 import type { Project } from "@/lib/features/home/config";
-import { useTranslation, type Language } from "@/lib/i18n";
+import { useTranslations } from "next-intl";
 
 interface ProjectsSectionProps {
   projects: Project[];
@@ -9,7 +9,7 @@ interface ProjectsSectionProps {
 }
 
 export function ProjectsSection({ projects, locale }: ProjectsSectionProps) {
-  const { t } = useTranslation(locale as Language);
+  const t = useTranslations('home');
 
   return (
     <section className="py-24 sm:py-32 bg-muted/30">

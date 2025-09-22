@@ -10,15 +10,15 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { ExternalLink, Github, Star, GitFork, Search, Filter } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import { PROJECTS_CONFIG, STATIC_PROJECTS_DATA } from "@/lib/features/projects/config"
-import { useTranslation, type Language } from "@/lib/i18n"
+import { PROJECTS_CONFIG, STATIC_PROJECTS_DATA } from "@/lib/features/projects/config/index"
+import { useTranslations } from "next-intl"
 
 interface ProjectsPageProps {
   locale: string;
 }
 
 export function ProjectsPage({ locale }: ProjectsPageProps) {
-  const { t } = useTranslation(locale as Language)
+  const t = useTranslations('projects')
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [selectedStatus, setSelectedStatus] = useState("all")
@@ -26,11 +26,13 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
   const projects = STATIC_PROJECTS_DATA
 
   const filteredProjects = projects.filter((project) => {
+    const projectKey = project.titleKey.replace('projects.', '')
+    const projectTitle = t(`${projectKey}.title`)
+    const projectDescription = t(`${projectKey}.description`)
+
     const matchesSearch =
-      project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      project.title_en.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      project.description_zh.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      project.description_en.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      projectTitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      projectDescription.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()))
 
     const matchesCategory = selectedCategory === "all" || project.category === selectedCategory
@@ -118,7 +120,7 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
                   <div className="aspect-video overflow-hidden">
                     <Image
                       src={project.image || "/placeholder.svg"}
-                      alt={locale === "zh" ? project.title : project.title_en}
+                      alt={t(`${project.titleKey.replace('projects.', '')}.title`)}
                       width={400}
                       height={225}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -128,7 +130,7 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <CardTitle className="text-xl mb-2">
-                          {locale === "zh" ? project.title : project.title_en}
+                          {t(`${project.titleKey.replace('projects.', '')}.title`)}
                         </CardTitle>
                         <div className="flex items-center space-x-4 text-sm text-muted-foreground">
                           <div className="flex items-center space-x-1">
@@ -154,7 +156,7 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
-                      {locale === "zh" ? project.description_zh : project.description_en}
+                      {t(`${project.titleKey.replace('projects.', '')}.description`)}
                     </p>
 
                     <div className="flex flex-wrap gap-2 mb-6">

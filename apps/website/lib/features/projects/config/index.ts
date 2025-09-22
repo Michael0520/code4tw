@@ -110,14 +110,12 @@ export const PROJECTS_CONFIG = {
   }
 };
 
-// Static project data matching original design
+// Static project data - all using i18n keys for consistency
 export const STATIC_PROJECTS_DATA = [
   {
     id: 1,
-    title: "vTaiwan",
-    title_en: "vTaiwan",
-    description_zh: "數位法規調適平台，讓公民參與法規制定過程，促進政府與民間的對話",
-    description_en: "Digital platform for regulatory adaptation with citizen participation, facilitating dialogue between government and civil society",
+    titleKey: "projects.vtaiwan.title",
+    descriptionKey: "projects.vtaiwan.description",
     tags: ["Vue.js", "Node.js", "政策參與", "數位民主"],
     category: "governance",
     stars: 245,
@@ -129,10 +127,8 @@ export const STATIC_PROJECTS_DATA = [
   },
   {
     id: 2,
-    title: "萌典",
-    title_en: "Moedict",
-    description_zh: "開放的線上國語、台語、客語辭典，保存台灣多元語言文化",
-    description_en: "Open online dictionary for Mandarin, Taiwanese, and Hakka, preserving Taiwan's diverse linguistic culture",
+    titleKey: "projects.moedict.title",
+    descriptionKey: "projects.moedict.description",
     tags: ["React", "API", "語言保存", "文化"],
     category: "culture",
     stars: 892,
@@ -144,10 +140,8 @@ export const STATIC_PROJECTS_DATA = [
   },
   {
     id: 3,
-    title: "立法院議事錄",
-    title_en: "Legislative Records",
-    description_zh: "立法院會議記錄搜尋與視覺化平台，讓民眾更容易了解立法過程",
-    description_en: "Search and visualization platform for legislative records, making the legislative process more accessible to citizens",
+    titleKey: "projects.legislative.title",
+    descriptionKey: "projects.legislative.description",
     tags: ["Python", "Data Viz", "政府透明", "開放資料"],
     category: "transparency",
     stars: 178,

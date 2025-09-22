@@ -1,14 +1,14 @@
 "use client"
 
 import type { AboutFeature } from "@/lib/features/home/config";
-import { useLanguageContext } from "@/components/language-provider";
+import { useTranslations } from "next-intl";
 
 interface AboutSectionProps {
   features: AboutFeature[];
 }
 
 export function AboutSection({ features }: AboutSectionProps) {
-  const { t } = useLanguageContext();
+  const t = useTranslations('home');
 
   return (
     <section className="py-24 sm:py-32">

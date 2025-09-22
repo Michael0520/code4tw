@@ -3,7 +3,7 @@
  * Validation and utility functions for Projects features
  */
 
-import { PROJECTS_CONFIG } from '@/lib/features/projects/config';
+import { PROJECTS_CONFIG } from '@/lib/features/projects/config/index';
 
 export interface ProjectFilters {
   category?: string;

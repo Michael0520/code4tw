@@ -1,14 +1,14 @@
 "use client"
 
 import Link from "next/link";
-import { useTranslation, type Language } from "@/lib/i18n";
+import { useTranslations } from "next-intl";
 
 interface HeroSectionProps {
   locale: string;
 }
 
 export function HeroSection({ locale }: HeroSectionProps) {
-  const { t } = useTranslation(locale as Language);
+  const t = useTranslations('hero');
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/20">

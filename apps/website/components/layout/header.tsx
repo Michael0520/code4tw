@@ -7,6 +7,7 @@ import { GlobalSearch } from "@/components/search/global-search"
 import { LanguageSelector } from "@/components/ui/language-selector"
 import { MobileNav } from "@/components/layout/mobile-nav"
 import { useLanguageContext } from "@/components/language-provider"
+import { useTranslations } from "next-intl"
 
 const navigation = [
   { key: "nav.home", href: "/" },
@@ -17,7 +18,8 @@ const navigation = [
 ]
 
 export function Header() {
-  const { language: locale, t } = useLanguageContext()
+  const { language: locale } = useLanguageContext()
+  const t = useTranslations('nav')
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">

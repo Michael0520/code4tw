@@ -63,6 +63,30 @@
       "planning": "Planning",
       "archived": "Archived"
     },
+    "vtaiwan": {
+      "title": "vTaiwan",
+      "description": "Digital platform for regulatory adaptation with citizen participation, facilitating dialogue between government and civil society"
+    },
+    "moedict": {
+      "title": "Moedict",
+      "description": "Open online dictionary for Mandarin, Taiwanese, and Hakka, preserving Taiwan's diverse linguistic culture"
+    },
+    "legislative": {
+      "title": "Legislative Records",
+      "description": "Search and visualization platform for legislative records, making the legislative process more accessible to citizens"
+    },
+    "mask": {
+      "title": "Mask Map",
+      "description": "Real-time map application showing pharmacy mask inventory"
+    },
+    "budget": {
+      "title": "Government Budget",
+      "description": "Government budget visualization to help citizens understand government spending"
+    },
+    "election": {
+      "title": "Election Data Platform",
+      "description": "Integrated platform for candidate and election information"
+    },
     "stats": {
       "total": "Total Projects",
       "active": "Active",
