@@ -1,9 +1,8 @@
 "use client";
 
-import type { CommunityRole } from "@/lib/features/home/config";
 import { useTranslation } from "react-i18next";
 
-export function CommunitySection({ roles }: { roles: CommunityRole[] }) {
+export function CommunitySection({ roles }: { roles: readonly string[] }) {
   const { t } = useTranslation();
 
   return (
@@ -32,10 +31,10 @@ export function CommunitySection({ roles }: { roles: CommunityRole[] }) {
             <div className="flex flex-wrap justify-center gap-2">
               {roles.map((role) => (
                 <span
-                  key={role.id}
+                  key={role}
                   className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium"
                 >
-                  {role.title}
+                  {role}
                 </span>
               ))}
             </div>

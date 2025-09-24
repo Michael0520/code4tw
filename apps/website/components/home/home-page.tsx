@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { getHomeData } from "@/lib/features/home/actions";
-import type { AboutFeature, Project, CommunityRole } from "@/lib/features/home/config";
+import type { AboutFeature, Project } from "@/lib/features/home/config";
 import { Header } from "@/components/layout/header";
 import { HeroSection } from "./hero-section";
 import { AboutSection } from "./about-section";
@@ -20,7 +20,7 @@ export function HomePage({ locale }: HomePageProps) {
   const [homeData, setHomeData] = useState<{
     aboutFeatures: AboutFeature[];
     projects: Project[];
-    communityRoles: CommunityRole[];
+    communityRoles: readonly string[];
   } | null>(null);
 
   useEffect(() => {
