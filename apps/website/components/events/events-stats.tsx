@@ -1,7 +1,7 @@
 'use client';
 
 import { Calendar, Clock, Users, TrendingUp } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import { StatsGrid, type StatItem } from '@/components/shared/stats-grid';
 
 interface EventsStatsProps {
@@ -19,7 +19,7 @@ interface EventsStatsProps {
 }
 
 export function EventsStats({ stats }: EventsStatsProps) {
-  const t = useTranslations();
+  const { t } = useTranslation();
 
   const statsItems: StatItem[] = [
     {

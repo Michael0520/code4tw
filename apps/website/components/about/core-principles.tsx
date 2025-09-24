@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import { OrganizationPrincipleDto } from '@/lib/features/about/actions';
 import { FeatureGrid } from '@/components/shared/feature-grid';
 
@@ -9,7 +9,7 @@ interface CorePrinciplesProps {
 }
 
 export function CorePrinciples({ principles }: CorePrinciplesProps) {
-  const t = useTranslations();
+  const { t } = useTranslation();
 
   return (
     <FeatureGrid

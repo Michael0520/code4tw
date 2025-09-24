@@ -7,7 +7,7 @@
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Filter } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import { NEWS_CONFIG } from '@/lib/features/news/config';
 
 interface NewsFiltersProps {
@@ -23,7 +23,7 @@ export function NewsFilters({
   selectedSort,
   onSortChange
 }: NewsFiltersProps) {
-  const t = useTranslations();
+  const { t } = useTranslation();
 
   return (
     <div className="flex flex-col sm:flex-row gap-4 items-center">

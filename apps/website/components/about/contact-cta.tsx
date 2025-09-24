@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 import { OrganizationDto } from '@/lib/features/about/actions';
 import { ABOUT_CONFIG } from '@/lib/features/about/config';
@@ -10,7 +10,7 @@ interface ContactCTAProps {
 }
 
 export function ContactCTA({ organization }: ContactCTAProps) {
-  const t = useTranslations();
+  const { t } = useTranslation();
 
   return (
     <section className="py-16">

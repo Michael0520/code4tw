@@ -3,7 +3,7 @@
  * Display news statistics and metrics
  */
 
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import type { NewsResponse } from '@/lib/features/news/actions';
 import { StatsGrid, type StatItem } from '@/components/shared/stats-grid';
 
@@ -13,7 +13,7 @@ interface NewsStatsProps {
 }
 
 export function NewsStats({ stats, totalShown }: NewsStatsProps) {
-  const t = useTranslations();
+  const { t } = useTranslation();
 
   const statsItems: StatItem[] = [
     {

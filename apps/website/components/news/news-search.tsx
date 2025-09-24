@@ -8,7 +8,7 @@
 import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import { NEWS_CONFIG } from '@/lib/features/news/config';
 
 interface NewsSearchProps {
@@ -17,7 +17,7 @@ interface NewsSearchProps {
 }
 
 export function NewsSearch({ onSearch, placeholder }: NewsSearchProps) {
-  const t = useTranslations();
+  const { t } = useTranslation();
   const [query, setQuery] = useState('');
 
   useEffect(() => {

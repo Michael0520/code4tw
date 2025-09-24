@@ -7,7 +7,7 @@ import { Card, CardHeader, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Calendar, Clock, User, ArrowRight } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import type { NewsDto } from '@/lib/features/news/actions';
 
 interface NewsListProps {
@@ -16,7 +16,7 @@ interface NewsListProps {
 }
 
 export function NewsList({ articles, showFeatured = false }: NewsListProps) {
-  const t = useTranslations();
+  const { t } = useTranslation();
 
   const featuredArticle = showFeatured ? articles.find(article => article.isFeatured) : null;
   const regularArticles = showFeatured

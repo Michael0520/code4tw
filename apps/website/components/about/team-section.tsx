@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import Image from 'next/image';
 import { TeamMemberDto } from '@/lib/features/about/actions';
 import { Card, CardContent } from '@/components/ui/card';
@@ -18,7 +18,7 @@ interface TeamSectionProps {
 }
 
 export function TeamSection({ team, stats }: TeamSectionProps) {
-  const t = useTranslations();
+  const { t } = useTranslation();
 
   if (team.length === 0) {
     return null;
@@ -53,7 +53,7 @@ export function TeamSection({ team, stats }: TeamSectionProps) {
           <Card className="text-center border-0 bg-card/80 backdrop-blur-sm">
             <CardContent className="p-4">
               <div className="text-2xl font-bold text-primary">{stats.valuesCount}</div>
-              <div className="text-sm text-muted-foreground">{t('about.values')}</div>
+              <div className="text-sm text-muted-foreground">{t('about.valuesLabel')}</div>
             </CardContent>
           </Card>
           <Card className="text-center border-0 bg-card/80 backdrop-blur-sm">

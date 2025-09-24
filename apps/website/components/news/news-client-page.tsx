@@ -5,7 +5,7 @@
 
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { NewsSearch } from './news-search';
@@ -25,7 +25,7 @@ interface NewsClientPageProps {
 }
 
 export function NewsClientPage({ newsData, searchParams, showFeatured }: NewsClientPageProps) {
-  const t = useTranslations();
+  const { t } = useTranslation();
   const router = useRouter();
 
   const updateSearchParams = (key: string, value: string) => {

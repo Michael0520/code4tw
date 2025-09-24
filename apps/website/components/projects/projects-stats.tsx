@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import { Activity, Archive, GitFork, Star } from 'lucide-react';
 import { StatsGrid, type StatItem } from '@/components/shared/stats-grid';
 
@@ -14,7 +14,7 @@ interface ProjectsStatsProps {
 }
 
 export default function ProjectsStats({ stats }: ProjectsStatsProps) {
-  const t = useTranslations();
+  const { t } = useTranslation();
 
   const statItems: StatItem[] = [
     {

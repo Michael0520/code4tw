@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Calendar, Clock, MapPin, Users, ExternalLink } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import { EventDto } from '@/lib/features/events/actions';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -15,7 +15,7 @@ interface EventsListProps {
 }
 
 export function EventsList({ events, variant = 'grid' }: EventsListProps) {
-  const t = useTranslations();
+  const { t } = useTranslation();
 
   if (events.length === 0) {
     return (

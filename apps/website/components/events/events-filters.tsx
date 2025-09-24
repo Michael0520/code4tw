@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Search, Filter, X } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import { EventFilters } from '@/lib/features/events/actions';
 import { EVENTS_CONFIG } from '@/lib/features/events/config';
 
@@ -16,7 +16,7 @@ interface EventsFiltersProps {
 }
 
 export function EventsFilters({ currentFilters, total }: EventsFiltersProps) {
-  const t = useTranslations();
+  const { t } = useTranslation();
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();

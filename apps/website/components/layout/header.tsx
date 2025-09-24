@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { LanguageSelector } from "@/components/ui/language-selector"
 import { Menu, Github } from "lucide-react"
+import { useTranslation } from "react-i18next"
 // import { ThemeToggle } from "@/components/theme-toggle" // Disabled for force light mode
 import { GlobalSearch } from "@/components/search/global-search"
 
@@ -14,15 +15,16 @@ interface HeaderProps {
 }
 
 const navigation = [
-  { name: "首頁", name_en: "Home", href: "/" },
-  { name: "專案", name_en: "Projects", href: "/projects" },
-  { name: "新聞", name_en: "News", href: "/news" },
-  { name: "活動", name_en: "Events", href: "/events" },
-  { name: "關於我們", name_en: "About", href: "/about" },
+  { key: "home", href: "/" },
+  { key: "projects", href: "/projects" },
+  { key: "news", href: "/news" },
+  { key: "events", href: "/events" },
+  { key: "about", href: "/about" },
 ]
 
 export function Header({ locale }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false)
+  const { t } = useTranslation()
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -41,7 +43,7 @@ export function Header({ locale }: HeaderProps) {
         <nav className="hidden md:flex items-center space-x-6">
           {navigation.map((item) => (
             <Link key={item.href} href={`/${locale}${item.href}`} className="text-sm font-medium transition-colors hover:text-primary">
-              {locale === "zh" ? item.name : item.name_en}
+              {t(`navigation.${item.key}`)}
             </Link>
           ))}
         </nav>
@@ -72,7 +74,7 @@ export function Header({ locale }: HeaderProps) {
                     className="text-sm font-medium transition-colors hover:text-primary"
                     onClick={() => setIsOpen(false)}
                   >
-                    {locale === "zh" ? item.name : item.name_en}
+                    {t(`navigation.${item.key}`)}
                   </Link>
                 ))}
                 <div className="flex items-center space-x-2 pt-4 border-t">
