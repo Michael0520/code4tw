@@ -1,4 +1,7 @@
 import createNextConfig from '@repo/next-config/base';
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = createNextConfig({
@@ -7,4 +10,4 @@ const nextConfig = createNextConfig({
   unoptimizedImages: true,
 });
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

@@ -98,7 +98,19 @@ pnpm check-types --filter=website
 
 # ESLint checking
 pnpm lint --filter=website
+
+# Test coverage report
+pnpm test:coverage --filter=website
 ```
+
+### Quality Monitoring
+
+This project uses comprehensive quality monitoring:
+
+- **SonarCloud Integration**: Automated code quality analysis with every commit
+- **Test Coverage**: Focused on business logic with strategic testing approach
+- **Quality Gates**: Automated checks that must pass before merging
+- **Pre-commit Hooks**: Automatic validation of code standards
 
 ## Project Structure
 

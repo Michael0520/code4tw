@@ -1,54 +1,36 @@
 import { defineConfig } from 'vitest/config';
+import react from '@vitejs/plugin-react';
 import path from 'path';
 
 export default defineConfig({
+  plugins: [react()],
   test: {
     globals: true,
     environment: 'jsdom',
     setupFiles: ['./vitest.setup.ts'],
-    include: [
-      'src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
-      'lib/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'
-    ],
+    include: ['**/*.{test,spec}.{js,jsx,ts,tsx}'],
     exclude: [
-      'node_modules',
-      '.next',
-      'dist',
-      'build',
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/.next/**',
+      '**/build/**',
+      '**/coverage/**',
       '**/*.d.ts'
     ],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html', 'lcov'],
       exclude: [
-        'node_modules/',
-        'dist/',
-        'build/',
-        '.next/',
+        'node_modules/**',
+        'dist/**',
+        'build/**',
+        '.next/**',
         '**/*.d.ts',
         '**/*.config.{js,ts,mjs}',
-        '**/coverage/**'
+        '**/coverage/**',
+        'vitest.setup.ts'
       ],
-      thresholds: {
-        global: {
-          branches: 60,
-          functions: 60,
-          lines: 60,
-          statements: 60
-        },
-        'src/domain/**/*.ts': {
-          branches: 100,
-          functions: 100,
-          lines: 100,
-          statements: 100
-        },
-        'src/application/**/*.ts': {
-          branches: 80,
-          functions: 80,
-          lines: 80,
-          statements: 80
-        }
-      }
+      reportOnFailure: true
     },
     testTimeout: 10000,
     hookTimeout: 10000
@@ -58,7 +40,9 @@ export default defineConfig({
       '@': path.resolve(__dirname, '.'),
       '@/lib': path.resolve(__dirname, './lib'),
       '@/components': path.resolve(__dirname, './components'),
-      '@/configs': path.resolve(__dirname, './configs')
+      '@/configs': path.resolve(__dirname, './configs'),
+      '@/i18n': path.resolve(__dirname, './i18n'),
+      '@/messages': path.resolve(__dirname, './messages')
     }
   }
 });

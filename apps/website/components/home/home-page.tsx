@@ -1,13 +1,12 @@
 "use client";
 
 import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import { getHomeData } from "@/lib/features/home/actions";
-import type { AboutFeature, Project } from "@/lib/features/home/config";
-import { Header } from "@/components/layout/header";
+import type { AboutFeature } from "@/lib/features/home/config";
+import { SimpleHeader } from "@/components/layout/simple-header";
 import { HeroSection } from "./hero-section";
 import { AboutSection } from "./about-section";
-import { ProjectsSection } from "./projects-section";
 import { CommunitySection } from "./community-section";
 import { useState } from "react";
 
@@ -16,20 +15,16 @@ interface HomePageProps {
 }
 
 export function HomePage({ locale }: HomePageProps) {
-  const { t, i18n } = useTranslation();
+  const t = useTranslations('footer.legal');
   const [homeData, setHomeData] = useState<{
     aboutFeatures: AboutFeature[];
-    projects: Project[];
     communityRoles: readonly string[];
   } | null>(null);
 
   useEffect(() => {
-    // Change language based on locale
-    i18n.changeLanguage(locale);
-
     // Load home data
     getHomeData().then(setHomeData);
-  }, [locale, i18n]);
+  }, []);
 
   if (!homeData) {
     return <div>Loading...</div>;
@@ -37,12 +32,11 @@ export function HomePage({ locale }: HomePageProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header locale={locale} />
+      <SimpleHeader locale={locale} />
 
       <main>
-        <HeroSection locale={locale} />
+        <HeroSection />
         <AboutSection features={homeData.aboutFeatures} />
-        <ProjectsSection projects={homeData.projects} />
         <CommunitySection roles={homeData.communityRoles} />
       </main>
 
@@ -51,7 +45,7 @@ export function HomePage({ locale }: HomePageProps) {
         <div className="container px-4 py-8 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-sm text-muted-foreground">
-              {t('footer.legal.copyright')}
+              {t('copyright')}
             </p>
           </div>
         </div>

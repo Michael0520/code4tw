@@ -1,4 +1,4 @@
-import Link from "next/link";
+import {Link} from "@/i18n/navigation";
 import type { HomeFeature } from "@/lib/features/home/config";
 
 interface FeaturesGridProps {
@@ -38,7 +38,7 @@ export function FeaturesGrid({ features, locale }: FeaturesGridProps) {
           return (
             <Link
               key={feature.id}
-              href={`/${locale}${feature.link}`}
+              href={feature.link}
               className="group p-8 rounded-xl bg-card border border-border hover:border-primary/20 hover:shadow-lg transition-all duration-300"
             >
               <div className="text-4xl mb-6 text-center group-hover:scale-110 transition-transform">

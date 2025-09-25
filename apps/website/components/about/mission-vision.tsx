@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import { OrganizationDto } from '@/lib/features/about/actions';
 
 interface MissionVisionProps {
@@ -8,7 +8,7 @@ interface MissionVisionProps {
 }
 
 export function MissionVision({ organization }: MissionVisionProps) {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <section className="py-16 bg-muted/30">

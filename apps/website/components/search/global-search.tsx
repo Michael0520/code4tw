@@ -6,14 +6,14 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { useTranslation } from "react-i18next"
+import { useTranslations } from "next-intl"
 import Link from "next/link"
 
 interface SearchResult {
   id: string
   title: string
   description: string
-  type: "project" | "news" | "event"
+  type: "general"
   url: string
   tags?: string[]
 }
@@ -21,35 +21,19 @@ interface SearchResult {
 const mockSearchResults: SearchResult[] = [
   {
     id: "1",
-    title: "vTaiwan",
-    description: "Digital regulation adaptation platform for citizen participation",
-    type: "project",
-    url: "/projects/vtaiwan",
-    tags: ["Vue.js", "Node.js", "Policy"],
+    title: "About Code for Taiwan",
+    description: "Learn about our mission to build better Taiwan through technology and collaboration",
+    type: "general",
+    url: "/about",
+    tags: ["Community", "Mission", "Vision"],
   },
   {
     id: "2",
-    title: "Moedict",
-    description: "Open online dictionary for Mandarin, Taiwanese, and Hakka",
-    type: "project",
-    url: "/projects/moedict",
-    tags: ["React", "API", "Language"],
-  },
-  {
-    id: "3",
-    title: "g0v 10th Anniversary Hackathon",
-    description: "Special event celebrating g0v community's 10th anniversary",
-    type: "event",
-    url: "/events/g0v-10th-hackathon",
-    tags: ["Hackathon", "Anniversary"],
-  },
-  {
-    id: "4",
-    title: "Open Government Data Progress",
-    description: "Latest policies and implementation status of government data openness",
-    type: "news",
-    url: "/news/open-data-progress",
-    tags: ["Open Data", "Transparency"],
+    title: "Join Our Community",
+    description: "Get involved with Code for Taiwan and contribute to civic technology projects",
+    type: "general",
+    url: "/about#community",
+    tags: ["Community", "Volunteer", "Participate"],
   },
 ]
 
@@ -57,7 +41,7 @@ export function GlobalSearch() {
   const [isOpen, setIsOpen] = useState(false)
   const [query, setQuery] = useState("")
   const [results, setResults] = useState<SearchResult[]>([])
-  const { t } = useTranslation()
+  const t = useTranslations()
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {

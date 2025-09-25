@@ -1,12 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
+import {Link} from "@/i18n/navigation"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { LanguageSelector } from "@/components/ui/language-selector"
 import { Menu, Github } from "lucide-react"
-import { useTranslation } from "react-i18next"
+import { useTranslations } from "next-intl"
 // import { ThemeToggle } from "@/components/theme-toggle" // Disabled for force light mode
 import { GlobalSearch } from "@/components/search/global-search"
 
@@ -16,22 +16,19 @@ interface HeaderProps {
 
 const navigation = [
   { key: "home", href: "/" },
-  { key: "projects", href: "/projects" },
-  { key: "news", href: "/news" },
-  { key: "events", href: "/events" },
   { key: "about", href: "/about" },
 ]
 
 export function Header({ locale }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false)
-  const { t } = useTranslation()
+  const t = useTranslations()
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
       <div className="container flex h-16 items-center justify-between relative">
         <div className="flex items-center space-x-4">
-          <Link href={`/${locale}`} className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2">
             <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-sm">C4T</span>
             </div>
@@ -42,7 +39,7 @@ export function Header({ locale }: HeaderProps) {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
           {navigation.map((item) => (
-            <Link key={item.href} href={`/${locale}${item.href}`} className="text-sm font-medium transition-colors hover:text-primary">
+            <Link key={item.href} href={item.href} className="text-sm font-medium transition-colors hover:text-primary">
               {t(`navigation.${item.key}`)}
             </Link>
           ))}
@@ -70,7 +67,7 @@ export function Header({ locale }: HeaderProps) {
                 {navigation.map((item) => (
                   <Link
                     key={item.href}
-                    href={`/${locale}${item.href}`}
+                    href={item.href}
                     className="text-sm font-medium transition-colors hover:text-primary"
                     onClick={() => setIsOpen(false)}
                   >

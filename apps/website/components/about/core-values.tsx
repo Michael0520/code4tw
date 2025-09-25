@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import { CoreValueDto } from '@/lib/features/about/actions';
 import { FeatureGrid } from '@/components/shared/feature-grid';
 
@@ -9,7 +9,7 @@ interface CoreValuesProps {
 }
 
 export function CoreValues({ values }: CoreValuesProps) {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <FeatureGrid

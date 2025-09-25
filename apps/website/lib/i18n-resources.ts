@@ -8,9 +8,6 @@ export const resources = {
       },
       navigation: {
         home: "Home",
-        projects: "Projects",
-        news: "News",
-        events: "Events",
         about: "About",
         contact: "Contact",
         language: "Language"
@@ -21,7 +18,7 @@ export const resources = {
         titleHighlight: "Social Good",
         description: "Code for Taiwan is an open civic tech community that brings together developers, designers, and citizens to build digital solutions for government transparency and social good.",
         joinUs: "Join Us",
-        viewProjects: "View Projects"
+        viewGitHub: "View GitHub"
       },
       about: {
         title: "About Code for Taiwan",
@@ -54,22 +51,6 @@ export const resources = {
         },
         valuesDescription: "The core values that drive our community and projects."
       },
-      projects: {
-        badge: "Project Showcase",
-        title: "Our Open Source Projects",
-        description: "These projects showcase how we use technology to solve social problems. Every project welcomes community contributions.",
-        sourceCode: "Source Code",
-        view: "View",
-        stats: {
-          total: "Total Projects",
-          active: "Active Projects",
-          stars: "GitHub Stars",
-          forks: "GitHub Forks"
-        },
-        categories: {
-          all: "All Categories"
-        }
-      },
       community: {
         badge: "Community Participation",
         title: "Join Our Community",
@@ -83,16 +64,12 @@ export const resources = {
         }
       },
       search: {
-        placeholder: "Search projects, events, news...",
+        placeholder: "Search content...",
         noResults: "No results found",
         navigate: "navigate",
         select: "select",
         close: "close",
-        types: {
-          project: "Project",
-          news: "News",
-          event: "Event"
-        }
+        types: {}
       },
       common: {
         search: "Search",
@@ -103,43 +80,6 @@ export const resources = {
         showing: "Showing",
         noResults: "No results found"
       },
-      events: {
-        register: "Register",
-        registerNow: "Register Now",
-        featured: "Featured",
-        noEvents: "No events found",
-        peopleRegistered: "people registered",
-        soldOut: "Sold Out",
-        registeredCount: "registered",
-        spotsAvailable: "spots available",
-        searchPlaceholder: "Search events...",
-        upcomingEvents: "Upcoming Events",
-        showing: "Showing {{count}} events",
-        stats: {
-          total: "Total Events",
-          active: "Active Events",
-          totalCapacity: "Total Capacity",
-          totalRegistered: "Total Registered"
-        },
-        types: {
-          workshop: "Workshop",
-          meetup: "Meetup",
-          hackathon: "Hackathon",
-          conference: "Conference"
-        },
-        statuses: {
-          upcoming: "Upcoming",
-          ongoing: "Ongoing",
-          past: "Past"
-        }
-      },
-      news: {
-        featured: "Featured",
-        readMore: "Read More",
-        searchPlaceholder: "Search news...",
-        published: "Published",
-        recent: "Recent"
-      }
     }
   },
   zh: {
@@ -150,9 +90,6 @@ export const resources = {
       },
       navigation: {
         home: "首頁",
-        projects: "專案",
-        news: "新聞",
-        events: "活動",
         about: "關於我們",
         contact: "聯絡我們",
         language: "語言"
@@ -163,7 +100,7 @@ export const resources = {
         titleHighlight: "台灣社會",
         description: "Code for Taiwan 是一個開放的公民科技社群，匯聚開發者、設計師與公民，共同打造數位解決方案，讓政府更透明、社會更美好。",
         joinUs: "加入我們",
-        viewProjects: "查看專案"
+        viewGitHub: "查看 GitHub"
       },
       about: {
         title: "關於 Code for Taiwan",
@@ -196,22 +133,6 @@ export const resources = {
         },
         valuesDescription: "驅動我們社群和專案的核心價值。"
       },
-      projects: {
-        badge: "專案展示",
-        title: "我們的開源專案",
-        description: "這些專案展現了我們如何運用科技解決社會問題，每個專案都歡迎社群貢獻。",
-        sourceCode: "原始碼",
-        view: "查看",
-        stats: {
-          total: "總專案數",
-          active: "活躍專案",
-          stars: "GitHub 星標",
-          forks: "GitHub 分支"
-        },
-        categories: {
-          all: "所有分類"
-        }
-      },
       community: {
         badge: "社群參與",
         title: "加入我們的社群",
@@ -225,16 +146,12 @@ export const resources = {
         }
       },
       search: {
-        placeholder: "搜尋專案、活動、新聞...",
+        placeholder: "搜尋內容...",
         noResults: "找不到結果",
         navigate: "導航",
         select: "選擇",
         close: "關閉",
-        types: {
-          project: "專案",
-          news: "新聞",
-          event: "活動"
-        }
+        types: {}
       },
       common: {
         search: "搜尋",
@@ -245,43 +162,6 @@ export const resources = {
         showing: "顯示",
         noResults: "找不到結果"
       },
-      events: {
-        register: "報名",
-        registerNow: "立即報名",
-        featured: "精選",
-        noEvents: "找不到活動",
-        peopleRegistered: "人已報名",
-        soldOut: "已額滿",
-        registeredCount: "已報名",
-        spotsAvailable: "名額可用",
-        searchPlaceholder: "搜尋活動...",
-        upcomingEvents: "即將舉行的活動",
-        showing: "顯示 {{count}} 個活動",
-        stats: {
-          total: "總活動數",
-          active: "進行中活動",
-          totalCapacity: "總容納人數",
-          totalRegistered: "總報名人數"
-        },
-        types: {
-          workshop: "工作坊",
-          meetup: "聚會",
-          hackathon: "黑客松",
-          conference: "會議"
-        },
-        statuses: {
-          upcoming: "即將舉行",
-          ongoing: "進行中",
-          past: "已結束"
-        }
-      },
-      news: {
-        featured: "精選",
-        readMore: "閱讀更多",
-        searchPlaceholder: "搜尋新聞...",
-        published: "已發布",
-        recent: "最近"
-      }
     }
   }
 } as const;
