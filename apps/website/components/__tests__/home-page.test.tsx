@@ -3,7 +3,7 @@
  */
 import { describe, it, expect, vi } from 'vitest'
 import { render, waitFor } from '@testing-library/react'
-import { HomePage } from '../home/home-page'
+import { HomePage } from '@/lib/features/home/components/home-page'
 
 // Mock next-intl
 vi.mock('next-intl', () => ({
@@ -19,23 +19,23 @@ vi.mock('@/lib/features/home/actions', () => ({
 }))
 
 // Mock child components
-vi.mock('../home/hero-section', () => ({
+vi.mock('@/lib/features/home/components/hero-section', () => ({
   HeroSection: () => <div data-testid="hero-section">Hero</div>,
 }))
 
-vi.mock('../home/about-section', () => ({
+vi.mock('@/lib/features/home/components/about-section', () => ({
   AboutSection: () => <div data-testid="about-section">About</div>,
 }))
 
-vi.mock('../home/community-section', () => ({
+vi.mock('@/lib/features/home/components/community-section', () => ({
   CommunitySection: () => <div data-testid="community-section">Community</div>,
 }))
 
-vi.mock('../layout/footer', () => ({
+vi.mock('@/components/layout/footer', () => ({
   Footer: () => <footer data-testid="footer">Footer</footer>,
 }))
 
-vi.mock('../layout/simple-header', () => ({
+vi.mock('@/components/layout/simple-header', () => ({
   SimpleHeader: ({ locale }: { locale: string }) => (
     <header data-testid="simple-header">{locale}</header>
   ),
