@@ -7,14 +7,14 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./vitest.setup.ts'],
     include: [
-      'src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
-      'lib/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'
+      './**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'
     ],
     exclude: [
-      'node_modules',
-      '.next',
-      'dist',
-      'build',
+      '**/node_modules/**',
+      '**/.next/**',
+      '**/dist/**',
+      '**/build/**',
+      '**/coverage/**',
       '**/*.d.ts'
     ],
     coverage: {
@@ -58,7 +58,9 @@ export default defineConfig({
       '@': path.resolve(__dirname, '.'),
       '@/lib': path.resolve(__dirname, './lib'),
       '@/components': path.resolve(__dirname, './components'),
-      '@/configs': path.resolve(__dirname, './configs')
+      '@/configs': path.resolve(__dirname, './configs'),
+      '@/i18n': path.resolve(__dirname, './i18n'),
+      '@/messages': path.resolve(__dirname, './messages')
     }
   }
 });
