@@ -2,7 +2,7 @@
  * @vitest-environment jsdom
  */
 import { describe, it, expect, vi } from 'vitest'
-import { render } from '@testing-library/react'
+import { render, waitFor } from '@testing-library/react'
 import { HomePage } from '../home/home-page'
 
 // Mock next-intl
@@ -42,24 +42,42 @@ vi.mock('../layout/simple-header', () => ({
 }))
 
 describe('HomePage Component', () => {
-  it('should render all main sections', () => {
-    const { getByTestId } = render(<HomePage locale="en" />)
+  it('should render all main sections after loading', async () => {
+    const { getByTestId, queryByText } = render(<HomePage locale="en" />)
 
-    expect(getByTestId('hero-section')).toBeInTheDocument()
+    // Initially shows loading
+    expect(queryByText('Loading...')).toBeInTheDocument()
+
+    // Wait for data to load and sections to appear
+    await waitFor(() => {
+      expect(getByTestId('hero-section')).toBeInTheDocument()
+    })
+
     expect(getByTestId('about-section')).toBeInTheDocument()
     expect(getByTestId('community-section')).toBeInTheDocument()
   })
 
-  it('should render with proper structure', () => {
-    const { container } = render(<HomePage locale="en" />)
+  it('should render with proper structure after loading', async () => {
+    const { container, queryByText } = render(<HomePage locale="en" />)
 
-    expect(container.firstChild).toHaveClass('min-h-screen')
+    // Wait for loading to complete
+    await waitFor(() => {
+      expect(queryByText('Loading...')).not.toBeInTheDocument()
+    })
+
+    expect(container.querySelector('.min-h-screen')).toBeInTheDocument()
   })
 
-  it('should pass locale to child components', () => {
-    const { getByTestId } = render(<HomePage locale="zh" />)
+  it('should pass locale to child components after loading', async () => {
+    const { getByTestId, queryByText } = render(<HomePage locale="zh" />)
 
-    // Verify that sections are rendered (they would receive data internally)
+    // Wait for loading to complete
+    await waitFor(() => {
+      expect(queryByText('Loading...')).not.toBeInTheDocument()
+    })
+
+    // Verify that sections are rendered
     expect(getByTestId('hero-section')).toBeInTheDocument()
+    expect(getByTestId('simple-header')).toHaveTextContent('zh')
   })
 })

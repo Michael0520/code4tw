@@ -40,24 +40,27 @@ vi.mock('../search/global-search', () => ({
 
 describe('Header Component', () => {
   it('should render header with correct structure', () => {
-    const { getByText, getByTestId } = render(<Header locale="en" />)
+    const { getByText, getAllByTestId, getByTestId } = render(<Header locale="en" />)
 
     expect(getByText('Code for Taiwan')).toBeInTheDocument()
-    expect(getByTestId('language-selector')).toBeInTheDocument()
+    expect(getAllByTestId('language-selector')).toHaveLength(2) // Desktop and mobile versions
     expect(getByTestId('global-search')).toBeInTheDocument()
   })
 
   it('should render navigation items', () => {
-    const { getByText } = render(<Header locale="en" />)
+    const { getAllByText } = render(<Header locale="en" />)
 
-    expect(getByText('navigation.home')).toBeInTheDocument()
-    expect(getByText('navigation.about')).toBeInTheDocument()
+    expect(getAllByText('navigation.home')).toHaveLength(2) // Desktop and mobile
+    expect(getAllByText('navigation.about')).toHaveLength(2) // Desktop and mobile
   })
 
   it('should pass correct locale to LanguageSelector', () => {
-    const { getByTestId } = render(<Header locale="zh" />)
+    const { getAllByTestId } = render(<Header locale="zh" />)
 
-    expect(getByTestId('language-selector')).toHaveTextContent('zh')
+    const languageSelectors = getAllByTestId('language-selector')
+    expect(languageSelectors).toHaveLength(2)
+    expect(languageSelectors[0]).toHaveTextContent('zh')
+    expect(languageSelectors[1]).toHaveTextContent('zh')
   })
 
   it('should render mobile navigation', () => {
