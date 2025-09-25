@@ -35,7 +35,7 @@ export function HomePage({ locale }: HomePageProps) {
       <SimpleHeader locale={locale} />
 
       <main>
-        <HeroSection locale={locale} />
+        <HeroSection />
         <AboutSection features={homeData.aboutFeatures} />
         <CommunitySection roles={homeData.communityRoles} />
       </main>

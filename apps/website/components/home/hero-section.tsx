@@ -3,11 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from '@/i18n/navigation';
 
-interface HeroSectionProps {
-  locale: string;
-}
-
-export function HeroSection({ locale }: HeroSectionProps) {
+export function HeroSection() {
   const t = useTranslations('hero');
 
   return (
