@@ -6,8 +6,9 @@ import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Suspense } from "react"
 import { notFound } from "next/navigation"
-import { I18nProvider } from '@/components/providers/i18n-provider'
-import { getMetadata, type Locale } from '@/lib/i18n-server'
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages, getTranslations } from 'next-intl/server';
+import { routing } from '@/i18n/routing';
 import "./globals.css"
 
 const inter = Inter({
@@ -22,7 +23,12 @@ const jetbrainsMono = JetBrains_Mono({
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return getMetadata(locale as Locale);
+  const t = await getTranslations({locale, namespace: 'metadata'});
+
+  return {
+    title: t('title'),
+    description: t('description'),
+  };
 }
 
 export default async function RootLayout({
@@ -35,20 +41,23 @@ export default async function RootLayout({
   const { locale } = await params;
 
   // Validate that the incoming locale parameter is valid
-  const locales = ['en', 'zh'];
-  if (!locales.includes(locale)) {
+  if (!routing.locales.includes(locale as any)) {
     notFound();
   }
+
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages();
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`font-sans ${inter.variable} ${jetbrainsMono.variable} antialiased min-h-screen`}>
         <Suspense fallback={null}>
-          <I18nProvider>
+          <NextIntlClientProvider messages={messages}>
             <ThemeProvider attribute="class" forcedTheme="light" disableTransitionOnChange>
               <div className="min-h-screen flex flex-col">{children}</div>
             </ThemeProvider>
-          </I18nProvider>
+          </NextIntlClientProvider>
           <Analytics />
         </Suspense>
       </body>

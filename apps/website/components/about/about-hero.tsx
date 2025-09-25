@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import { OrganizationDto } from '@/lib/features/about/actions';
 
 interface AboutHeroProps {
@@ -8,7 +8,7 @@ interface AboutHeroProps {
 }
 
 export function AboutHero({ organization }: AboutHeroProps) {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <section className="py-16 sm:py-24 relative overflow-hidden">

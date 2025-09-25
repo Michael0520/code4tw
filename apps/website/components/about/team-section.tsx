@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { TeamMemberDto } from '@/lib/features/about/actions';
 import { Card, CardContent } from '@/components/ui/card';
@@ -18,7 +18,7 @@ interface TeamSectionProps {
 }
 
 export function TeamSection({ team, stats }: TeamSectionProps) {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   if (team.length === 0) {
     return null;

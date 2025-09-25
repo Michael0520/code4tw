@@ -1,24 +1,24 @@
 "use client";
 
 import type { AboutFeature } from "@/lib/features/home/config";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
 
 export function AboutSection({ features }: { features: AboutFeature[] }) {
-  const { t } = useTranslation();
+  const t = useTranslations('about');
 
   return (
     <section className="py-24 sm:py-32">
       <div className="container px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <div className="mb-4 inline-flex items-center rounded-full border px-3 py-1 text-sm">
-            {t('about.title')}
+            {t('title')}
           </div>
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            {t('about.subtitle')}
+            {t('subtitle')}
           </h2>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            {t('about.mission.description')}
+            {t('mission.description')}
           </p>
         </div>
 

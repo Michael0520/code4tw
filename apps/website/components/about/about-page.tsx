@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Users, Target, Heart, Globe, Github, ExternalLink, CheckCircle } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { useTranslations } from "next-intl"
 
 interface AboutPageProps {
   locale: string;
@@ -119,6 +120,7 @@ const values = [
 ];
 
 export function AboutPage({ locale }: AboutPageProps) {
+  const t = useTranslations();
   return (
     <div className="min-h-screen bg-background">
       <Header locale={locale} />
@@ -128,12 +130,10 @@ export function AboutPage({ locale }: AboutPageProps) {
           <div className="container px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl text-balance">
-                {locale === "zh" ? "關於我們" : "About Us"}
+                {t('about.aboutUsTitle')}
               </h1>
               <p className="mt-6 text-lg leading-8 text-muted-foreground text-pretty">
-                {locale === "zh"
-                  ? "Code for Taiwan 是一個致力於推動公民科技發展的社群，透過開源協作的方式，用科技解決社會問題，讓台灣更美好。"
-                  : "Code for Taiwan is a community dedicated to advancing civic technology through open source collaboration, using technology to solve social problems and make Taiwan better."}
+                {t('about.aboutUsDescription')}
               </p>
             </div>
           </div>
@@ -145,30 +145,28 @@ export function AboutPage({ locale }: AboutPageProps) {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold tracking-tight text-foreground mb-6">
-                  {locale === "zh" ? "我們的使命" : "Our Mission"}
+                  {t('about.ourMission')}
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  {locale === "zh"
-                    ? "透過開源技術與公民參與，建立更透明、更有效率的政府治理模式，讓每個人都能參與改變社會的過程。"
-                    : "Through open source technology and civic participation, we build more transparent and efficient governance models, enabling everyone to participate in changing society."}
+                  {t('about.missionDescription')}
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-primary" />
                     <span className="text-muted-foreground">
-                      {locale === "zh" ? "推動政府資料開放" : "Promoting open government data"}
+                      {t('about.missionPoints.openData')}
                     </span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-primary" />
                     <span className="text-muted-foreground">
-                      {locale === "zh" ? "建立公民參與平台" : "Building citizen participation platforms"}
+                      {t('about.missionPoints.participation')}
                     </span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-primary" />
                     <span className="text-muted-foreground">
-                      {locale === "zh" ? "培育公民科技人才" : "Cultivating civic tech talent"}
+                      {t('about.missionPoints.talent')}
                     </span>
                   </div>
                 </div>
@@ -176,7 +174,7 @@ export function AboutPage({ locale }: AboutPageProps) {
               <div className="relative">
                 <Image
                   src="/about-mission-collaboration.jpg"
-                  alt={locale === "zh" ? "團隊協作" : "Team collaboration"}
+                  alt={t('about.teamCollaboration')}
                   width={500}
                   height={300}
                   className="rounded-lg shadow-lg"
@@ -191,12 +189,10 @@ export function AboutPage({ locale }: AboutPageProps) {
           <div className="container px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight text-foreground mb-4">
-                {locale === "zh" ? "核心價值" : "Core Values"}
+                {t('about.coreValues')}
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                {locale === "zh"
-                  ? "我們秉持開放、協作、關懷、連結的精神，致力於用科技創造正面的社會影響。"
-                  : "We uphold the spirit of openness, collaboration, care, and connection, committed to creating positive social impact through technology."}
+                {t('about.coreValuesDescription')}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -226,12 +222,10 @@ export function AboutPage({ locale }: AboutPageProps) {
           <div className="container px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight text-foreground mb-4">
-                {locale === "zh" ? "我們的成果" : "Our Achievements"}
+                {t('about.ourAchievements')}
               </h2>
               <p className="text-lg text-muted-foreground">
-                {locale === "zh"
-                  ? "十多年來，我們與社群夥伴共同創造的影響力"
-                  : "The impact we've created together with our community partners over the years"}
+                {t('about.achievementsDescription')}
               </p>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -257,12 +251,10 @@ export function AboutPage({ locale }: AboutPageProps) {
           <div className="container px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight text-foreground mb-4">
-                {locale === "zh" ? "核心團隊" : "Core Team"}
+                {t('about.coreTeam')}
               </h2>
               <p className="text-lg text-muted-foreground">
-                {locale === "zh"
-                  ? "推動台灣公民科技發展的重要推手"
-                  : "Key figures driving Taiwan's civic technology development"}
+                {t('about.coreTeamDescription')}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -308,23 +300,21 @@ export function AboutPage({ locale }: AboutPageProps) {
           <div className="container px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-bold tracking-tight text-foreground mb-4">
-                {locale === "zh" ? "加入我們" : "Join Us"}
+                {t('about.joinUsTitle')}
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                {locale === "zh"
-                  ? "不論你是開發者、設計師、專案經理，或是對公民科技有興趣的一般民眾，都歡迎加入我們的行列。"
-                  : "Whether you're a developer, designer, project manager, or citizen interested in civic technology, you're welcome to join us."}
+                {t('about.joinUsFullDescription')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" asChild>
                   <Link href="https://github.com/g0v" target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-4 w-4" />
-                    {locale === "zh" ? "查看 GitHub" : "View GitHub"}
+                    {t('about.viewGitHub')}
                   </Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
                   <Link href="https://join.g0v.tw" target="_blank" rel="noopener noreferrer">
-                    {locale === "zh" ? "加入社群" : "Join Community"}
+                    {t('about.joinCommunity')}
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -339,9 +329,7 @@ export function AboutPage({ locale }: AboutPageProps) {
         <div className="container px-4 py-8 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-sm text-muted-foreground">
-              {locale === "zh"
-                ? "© 2024 Code for Taiwan. 致力於用科技讓台灣更美好。"
-                : "© 2024 Code for Taiwan. Committed to making Taiwan better through technology."}
+              {t('about.copyright')}
             </p>
           </div>
         </div>

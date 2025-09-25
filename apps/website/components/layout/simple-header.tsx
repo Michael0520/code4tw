@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { LanguageSelector } from "@/components/ui/language-selector"
 import { Separator } from "@/components/ui/separator"
@@ -13,7 +12,8 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu"
 import { Github, Menu } from "lucide-react"
-import { useTranslation } from "react-i18next"
+import { useTranslations } from "next-intl"
+import {Link} from '@/i18n/navigation'
 
 interface SimpleHeaderProps {
   locale: string;
@@ -26,7 +26,7 @@ const navigation = [
 
 export function SimpleHeader({ locale }: SimpleHeaderProps) {
   const [isOpen, setIsOpen] = useState(false)
-  const { t } = useTranslation()
+  const t = useTranslations('navigation')
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/85">
@@ -34,7 +34,7 @@ export function SimpleHeader({ locale }: SimpleHeaderProps) {
       <div className="container relative flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link
-          href={`/${locale}`}
+          href="/"
           className="group flex items-center space-x-3 transition-all duration-200 hover:scale-105"
         >
           <div className="relative">
@@ -60,10 +60,10 @@ export function SimpleHeader({ locale }: SimpleHeaderProps) {
               <NavigationMenuItem key={item.href}>
                 <NavigationMenuLink asChild>
                   <Link
-                    href={`/${locale}${item.href}`}
+                    href={item.href}
                     className="group relative inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-accent/80 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 hover:scale-105 hover:shadow-md"
                   >
-                    <span className="relative z-10">{t(`navigation.${item.key}`)}</span>
+                    <span className="relative z-10">{t(item.key)}</span>
                     <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary/10 via-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-primary/20 to-transparent blur opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
                   </Link>
@@ -124,14 +124,14 @@ export function SimpleHeader({ locale }: SimpleHeaderProps) {
                   {navigation.map((item, index) => (
                     <Link
                       key={item.href}
-                      href={`/${locale}${item.href}`}
+                      href={item.href}
                       className="group relative text-base font-medium transition-all duration-300 hover:text-primary py-4 px-4 rounded-xl hover:bg-accent/60 hover:scale-105 -mx-3 hover:shadow-md"
                       onClick={() => setIsOpen(false)}
                       style={{
                         animationDelay: `${index * 50}ms`,
                       }}
                     >
-                      <span className="relative z-10">{t(`navigation.${item.key}`)}</span>
+                      <span className="relative z-10">{t(item.key)}</span>
                       <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/5 via-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </Link>
                   ))}

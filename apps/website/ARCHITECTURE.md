@@ -1,229 +1,162 @@
-# Code for Taiwan Website - Architecture Documentation
+# Website Architecture Documentation
 
-## 🏗️ Project Overview
+## Overview
 
-The Code for Taiwan website is a modern, multilingual civic technology platform built to showcase g0v's projects, news, events, and mission. This is a Next.js 15 application following Domain-Driven Design (DDD) principles with a focus on internationalization and accessibility.
+This document details the architecture of the Code for Taiwan website, which has been optimized for SEO with Static Site Generation (SSG) and internationalization (i18n) using Next.js 15 App Router and next-intl.
 
-## 📍 Routes & Pages
+## Core Architecture Principles
 
-### Page Structure
-The application uses Next.js 15 App Router with internationalized routing:
+### 1. Static Site Generation (SSG)
+- **Rendering Mode**: SSG with client-side hydration
+- **Build-time Generation**: All pages pre-rendered at build time
+- **SEO Optimization**: Full HTML content available for search engines
+- **Performance**: Lightning-fast page loads with pre-generated static files
+
+### 2. Internationalization (i18n)
+- **Library**: next-intl (recommended for Next.js 15 App Router)
+- **Supported Locales**: English (en), Traditional Chinese (zh)
+- **Default Locale**: English (en)
+- **Routing Strategy**: Always show locale prefix in URL
+
+### 3. App Router Structure
+- **Framework**: Next.js 15.5.3 with App Router
+- **Bundler**: Turbopack for development
+- **Language**: TypeScript 5.9.2
+- **UI Library**: shadcn/ui with Radix UI primitives
+
+## Current Page Structure
+
+### Simplified Route Architecture
+After recent refactoring, the application now focuses on core pages only:
 
 ```
 /[locale]/               # Homepage (zh/en)
-├── /projects            # Projects showcase page
-├── /news               # News and updates page
-├── /events             # Events and activities page
 └── /about              # About organization page
 ```
 
 ### Supported Routes
 | Route | Chinese (zh) | English (en) | Description |
 |-------|-------------|--------------|-------------|
-| `/` | `/zh` | `/en` | Homepage with hero, features, projects showcase |
-| `/projects` | `/zh/projects` | `/en/projects` | Open source projects gallery |
-| `/news` | `/zh/news` | `/en/news` | Latest news and articles |
-| `/events` | `/zh/events` | `/en/events` | Upcoming and past events |
-| `/about` | `/zh/about` | `/en/about` | Organization mission, team, values |
+| `/` | `/zh` | `/en` | Homepage with hero and organization showcase |
+| `/about` | `/zh/about` | `/en/about` | Organization mission, principles, and values |
 
-### Internationalization (i18n)
-- **Supported Locales**: `zh` (Traditional Chinese), `en` (English)
-- **Default Locale**: Chinese (`zh`)
-- **Framework**: `next-intl` for message handling
-- **Message Files**: `./messages/zh.json`, `./messages/en.json`
+**Note**: Projects, News, and Events pages were removed to simplify the website structure and focus on core organizational content.
 
-## 🏛️ Architecture
-
-### Domain-Driven Design (DDD) Structure
+## File Structure
 
 ```
 apps/website/
-├── app/                          # Next.js App Router
-│   └── [locale]/                 # Internationalized routes
-│       ├── layout.tsx            # Root layout with providers
-│       ├── page.tsx              # Homepage
-│       ├── projects/
-│       │   ├── page.tsx          # Projects page
-│       │   └── loading.tsx       # Loading UI
-│       ├── news/
-│       │   ├── page.tsx          # News page
-│       │   └── loading.tsx       # Loading UI
-│       ├── events/
-│       │   ├── page.tsx          # Events page
-│       │   └── loading.tsx       # Loading UI
-│       └── about/
-│           └── page.tsx          # About page
-│
-├── components/                   # React Components (Presentation Layer)
-│   ├── ui/                      # Reusable UI components (shadcn/ui)
+├── app/
+│   ├── [locale]/          # Locale-based routing
+│   │   ├── layout.tsx     # Root layout with i18n provider
+│   │   ├── page.tsx       # Home page with SSG
+│   │   └── about/
+│   │       └── page.tsx   # About page with SSG
+│   ├── globals.css        # Global styles
+│   └── favicon.ico
+├── i18n/
+│   ├── routing.ts         # Core routing configuration
+│   ├── request.ts         # Server-side i18n config
+│   └── navigation.ts      # Client-side navigation utilities
+├── messages/
+│   ├── en.json           # English translations
+│   └── zh.json           # Chinese translations
+├── components/
+│   ├── layout/
+│   │   └── header.tsx    # Internationalized header
+│   ├── home/
+│   │   └── home-page.tsx # Home page content
+│   ├── about/
+│   │   ├── about-page.tsx
+│   │   ├── about-hero.tsx
+│   │   ├── core-principles.tsx
+│   │   ├── core-values.tsx
+│   │   └── mission-vision.tsx
+│   ├── ui/               # shadcn/ui components
 │   │   ├── button.tsx
-│   │   ├── card.tsx
-│   │   ├── input.tsx
-│   │   ├── select.tsx
-│   │   ├── badge.tsx
-│   │   ├── skeleton.tsx
 │   │   ├── sheet.tsx
-│   │   ├── dropdown-menu.tsx
-│   │   ├── language-selector.tsx
-│   │   └── loading-spinner.tsx
-│   │
-│   ├── layout/                  # Layout components
-│   │   ├── header.tsx           # Main navigation header
-│   │   └── footer.tsx           # Site footer
-│   │
-│   ├── home/                    # Homepage components
-│   │   ├── home-page.tsx        # Main homepage container
-│   │   ├── hero-section.tsx     # Hero banner
-│   │   ├── features-grid.tsx    # Features showcase
-│   │   ├── about-section.tsx    # About preview
-│   │   ├── projects-section.tsx # Projects preview
-│   │   └── community-section.tsx # Community CTA
-│   │
-│   ├── projects/                # Projects page components
-│   │   ├── projects-page.tsx    # Main projects container
-│   │   ├── projects-list.tsx    # Projects grid
-│   │   ├── project-card.tsx     # Individual project card
-│   │   ├── projects-filters.tsx # Filtering controls
-│   │   ├── projects-search.tsx  # Search functionality
-│   │   └── projects-stats.tsx   # Statistics display
-│   │
-│   ├── news/                    # News page components
-│   │   ├── news-page.tsx        # Main news container
-│   │   ├── news-list.tsx        # News articles grid
-│   │   ├── news-filters.tsx     # Category filters
-│   │   ├── news-search.tsx      # News search
-│   │   ├── news-stats.tsx       # Article statistics
-│   │   └── news-client-page.tsx # Client-side components
-│   │
-│   ├── events/                  # Events page components
-│   │   ├── events-page.tsx      # Main events container
-│   │   ├── events-list.tsx      # Events grid
-│   │   ├── events-filters.tsx   # Event filters
-│   │   └── events-stats.tsx     # Event statistics
-│   │
-│   ├── about/                   # About page components
-│   │   ├── about-page.tsx       # Main about container
-│   │   ├── about-hero.tsx       # About hero section
-│   │   ├── mission-vision.tsx   # Mission statement
-│   │   ├── core-principles.tsx  # Core principles
-│   │   ├── core-values.tsx      # Organization values
-│   │   ├── team-section.tsx     # Team members
-│   │   └── contact-cta.tsx      # Contact call-to-action
-│   │
-│   ├── search/                  # Global search
-│   │   └── global-search.tsx    # Site-wide search component
-│   │
-│   ├── sections/                # Shared section components
-│   │   ├── hero-section.tsx     # Reusable hero sections
-│   │   ├── about-section.tsx    # About previews
-│   │   ├── projects-section.tsx # Project showcases
-│   │   └── community-section.tsx # Community sections
-│   │
-│   ├── theme-provider.tsx       # Dark/light theme context
-│   ├── language-provider.tsx    # i18n language context
-│   └── theme-toggle.tsx         # Theme switcher component
-│
-├── lib/                         # Domain-Driven Design Core
-│   ├── features/                # Feature-based domain modules (2025 Best Practice)
-│   │   ├── home/               # Homepage domain logic
-│   │   │   ├── config/         # Homepage configuration module
-│   │   │   │   └── index.ts    # Configuration and static data
-│   │   │   └── actions/        # Homepage server actions module
-│   │   │       └── index.ts    # Homepage use cases
-│   │   ├── projects/           # Projects domain module
-│   │   │   ├── domain/         # Project entities and business logic
-│   │   │   │   ├── index.ts    # Project entities and value objects
-│   │   │   │   └── index.test.ts # Domain logic tests
-│   │   │   ├── config/         # Project configuration module
-│   │   │   │   └── index.ts    # Project configuration and static data
-│   │   │   ├── actions/        # Project server actions module
-│   │   │   │   ├── index.ts    # Project server actions (Use Cases)
-│   │   │   │   └── index.test.ts # Actions tests
-│   │   │   └── utils/          # Project utilities module
-│   │   │       ├── index.ts    # Project utility functions
-│   │   │       └── index.test.ts # Utility tests
-│   │   ├── news/               # News domain module
-│   │   │   ├── domain/         # News entities and business logic
-│   │   │   │   ├── index.ts    # News entities and value objects
-│   │   │   │   └── index.test.ts # Domain logic tests
-│   │   │   ├── config/         # News configuration module
-│   │   │   │   └── index.ts    # News configuration and static data
-│   │   │   ├── actions/        # News server actions module
-│   │   │   │   ├── index.ts    # News server actions
-│   │   │   │   └── index.test.ts # Actions tests
-│   │   │   └── utils/          # News utilities module
-│   │   │       ├── index.ts    # News utility functions
-│   │   │       └── index.test.ts # Utility tests
-│   │   ├── events/             # Events domain module
-│   │   │   ├── domain/         # Event entities and business logic
-│   │   │   │   ├── index.ts    # Event entities and value objects
-│   │   │   │   └── index.test.ts # Domain logic tests
-│   │   │   ├── config/         # Events configuration module
-│   │   │   │   └── index.ts    # Events configuration and static data
-│   │   │   ├── actions/        # Events server actions module
-│   │   │   │   ├── index.ts    # Events server actions
-│   │   │   │   └── index.test.ts # Actions tests
-│   │   │   └── utils/          # Events utilities module
-│   │   │       ├── index.ts    # Events utility functions
-│   │   │       └── index.test.ts # Utility tests
-│   │   └── about/              # About domain module
-│   │       ├── domain/         # About page entities
-│   │       │   ├── index.ts    # About page entities and logic
-│   │       │   └── index.test.ts # Domain tests
-│   │       ├── config/         # About configuration module
-│   │       │   └── index.ts    # About page configuration
-│   │       ├── actions/        # About server actions module
-│   │       │   ├── index.ts    # About page server actions
-│   │       │   └── index.test.ts # Actions tests
-│   │       └── utils/          # About utilities module
-│   │           ├── index.ts    # About utility functions
-│   │           └── index.test.ts # Utility tests
-│   ├── utils.ts                # Common utility functions
-│   └── i18n.ts                 # Internationalization config
-│
-├── public/                      # Static assets
-│   ├── images/                  # Project and news images
-│   ├── placeholder.svg          # Placeholder graphics
-│   └── grid-pattern.jpg         # Background patterns
-│
-├── styles/                      # Global styles
-│   └── globals.css              # Global CSS and Tailwind imports
-│
-├── messages/                    # i18n message files
-│   ├── zh.json                  # Traditional Chinese translations
-│   └── en.json                  # English translations
-│
-├── i18n.ts                      # i18n configuration
-├── next.config.mjs              # Next.js configuration
-├── tailwind.config.ts           # Tailwind CSS configuration
-├── tsconfig.json                # TypeScript configuration
-└── package.json                 # Dependencies and scripts
+│   │   └── language-selector.tsx
+│   ├── search/
+│   │   └── global-search.tsx
+│   └── shared/
+│       └── feature-grid.tsx
+├── lib/
+│   ├── features/
+│   │   ├── home/
+│   │   │   ├── config/
+│   │   │   │   └── index.ts
+│   │   │   └── actions/
+│   │   │       └── index.ts
+│   │   └── about/
+│   │       ├── config/
+│   │       │   └── index.ts
+│   │       └── actions/
+│   │           └── index.ts
+│   ├── i18n-resources.ts
+│   └── i18n-server.ts
+├── middleware.ts         # Automatic language detection
+├── next.config.mjs       # Next.js configuration with i18n
+└── package.json
 ```
 
-### Layer Responsibilities
+## Internationalization Implementation
 
-#### 1. **Presentation Layer** (`components/`)
-- **UI Components**: Reusable interface elements (buttons, cards, inputs)
-- **Page Components**: Complete page layouts and containers
-- **Layout Components**: Navigation, headers, footers
-- **Theme Management**: Dark/light mode and styling
+### Core Configuration Files
 
-#### 2. **Application Layer** (`app/`)
-- **Routing**: Next.js App Router with internationalized paths
-- **Page Coordination**: Server components orchestrating page rendering
-- **Loading States**: Suspense and loading UI management
+#### 1. Routing Configuration (`i18n/routing.ts`)
+```typescript
+import {defineRouting} from 'next-intl/routing';
 
-#### 3. **Domain Layer** (`lib/features/`)
-- **Domain Entities**: Core business objects (Project, Event, News)
-- **Value Objects**: Immutable domain concepts (ProjectId, EventDate, etc.)
-- **Domain Services**: Business logic orchestration
-- **Configuration**: Domain-specific settings and static data
-- **Server Actions**: Use case implementations and data access
+export const routing = defineRouting({
+  locales: ['en', 'zh'],
+  defaultLocale: 'en',
+  localePrefix: 'always'
+});
+```
 
-#### 4. **Infrastructure Layer** (`lib/`, `public/`)
-- **Utilities**: Helper functions and common logic
-- **Assets**: Static files, images, and resources
-- **Configuration**: Build and deployment settings
+**Key Features:**
+- Defines supported locales
+- Sets default locale for fallback
+- Enforces locale prefix in all URLs
+
+#### 2. Server Configuration (`i18n/request.ts`)
+```typescript
+import {notFound} from 'next/navigation';
+import {getRequestConfig} from 'next-intl/server';
+import {routing} from './routing';
+
+export default getRequestConfig(async ({requestLocale}) => {
+  let locale = await requestLocale;
+
+  if (!locale || !routing.locales.includes(locale as any)) {
+    locale = routing.defaultLocale;
+  }
+
+  return {
+    locale,
+    messages: (await import(`../messages/${locale}.json`)).default
+  };
+});
+```
+
+**Key Features:**
+- Handles server-side locale resolution
+- Loads appropriate message files
+- Provides fallback mechanism
+
+#### 3. Navigation Utilities (`i18n/navigation.ts`)
+```typescript
+import {createNavigation} from 'next-intl/navigation';
+import {routing} from './routing';
+
+export const {Link, redirect, usePathname, useRouter} =
+  createNavigation(routing);
+```
+
+**Key Features:**
+- Type-safe navigation components
+- Automatic locale-aware routing
+- Compatible with App Router
 
 ## 🏗️ Domain-Driven Design Implementation (2025 Enhanced)
 
