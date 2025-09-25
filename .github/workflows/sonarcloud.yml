@@ -38,6 +38,12 @@ jobs:
           pnpm test:coverage
         continue-on-error: true
 
+      - name: List coverage files for debugging
+        run: |
+          echo "Checking coverage files..."
+          find . -name "lcov.info" -type f
+          ls -la apps/website/coverage/ || echo "Coverage directory not found"
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
