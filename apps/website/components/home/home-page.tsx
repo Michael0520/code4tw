@@ -3,11 +3,10 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { getHomeData } from "@/lib/features/home/actions";
-import type { AboutFeature, Project } from "@/lib/features/home/config";
-import { Header } from "@/components/layout/header";
+import type { AboutFeature } from "@/lib/features/home/config";
+import { SimpleHeader } from "@/components/layout/simple-header";
 import { HeroSection } from "./hero-section";
 import { AboutSection } from "./about-section";
-import { ProjectsSection } from "./projects-section";
 import { CommunitySection } from "./community-section";
 import { useState } from "react";
 
@@ -19,7 +18,6 @@ export function HomePage({ locale }: HomePageProps) {
   const { t, i18n } = useTranslation();
   const [homeData, setHomeData] = useState<{
     aboutFeatures: AboutFeature[];
-    projects: Project[];
     communityRoles: readonly string[];
   } | null>(null);
 
@@ -37,12 +35,11 @@ export function HomePage({ locale }: HomePageProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header locale={locale} />
+      <SimpleHeader locale={locale} />
 
       <main>
         <HeroSection locale={locale} />
         <AboutSection features={homeData.aboutFeatures} />
-        <ProjectsSection projects={homeData.projects} />
         <CommunitySection roles={homeData.communityRoles} />
       </main>
 

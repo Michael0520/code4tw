@@ -16,9 +16,6 @@ interface HeaderProps {
 
 const navigation = [
   { key: "home", href: "/" },
-  { key: "projects", href: "/projects" },
-  { key: "news", href: "/news" },
-  { key: "events", href: "/events" },
   { key: "about", href: "/about" },
 ]
 

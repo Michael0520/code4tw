@@ -38,16 +38,20 @@ export function ContactCTA({ organization }: ContactCTAProps) {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link
-                href="/projects"
+                href="https://join.g0v.tw"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
               >
-                {t('common.viewMore')} {t('navigation.projects')}
+                {t('about.joinUs')}
               </Link>
               <Link
-                href="/events"
+                href="https://github.com/g0v"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-md border border-input bg-background px-6 py-3 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
               >
-                {t('events.register')} {t('navigation.events')}
+                {t('about.getInTouch')}
               </Link>
             </div>
 

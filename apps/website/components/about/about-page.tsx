@@ -4,7 +4,7 @@ import { Header } from "@/components/layout/header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Users, Target, Heart, Globe, Github, ExternalLink, ArrowRight, CheckCircle } from "lucide-react"
+import { Users, Target, Heart, Globe, Github, ExternalLink, CheckCircle } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -52,10 +52,10 @@ const achievements = [
   {
     id: 1,
     number: "500+",
-    label_zh: "專案數量",
-    label_en: "Projects",
-    description_zh: "累積完成的公民科技專案",
-    description_en: "Civic tech projects completed",
+    label_zh: "社群成員",
+    label_en: "Community Members",
+    description_zh: "活躍的社群貢獻者",
+    description_en: "Active community contributors",
   },
   {
     id: 2,
@@ -323,14 +323,8 @@ export function AboutPage({ locale }: AboutPageProps) {
                   </Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <Link href={`/${locale}/projects`}>
-                    {locale === "zh" ? "瀏覽專案" : "Browse Projects"}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button variant="outline" size="lg" asChild>
-                  <Link href={`/${locale}/events`}>
-                    {locale === "zh" ? "參與活動" : "Join Events"}
+                  <Link href="https://join.g0v.tw" target="_blank" rel="noopener noreferrer">
+                    {locale === "zh" ? "加入社群" : "Join Community"}
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

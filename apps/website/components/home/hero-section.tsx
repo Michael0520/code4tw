@@ -42,7 +42,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-md border border-input bg-background px-6 py-3 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
             >
-              {t('hero.viewProjects')}
+              {t('hero.viewGitHub')}
             </Link>
           </div>
         </div>

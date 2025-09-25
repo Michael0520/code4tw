@@ -11,9 +11,7 @@ export function Footer() {
   const footerLinks = {
     community: [
       { name_zh: "關於我們", name_en: "About Us", href: "/about" },
-      { name_zh: "專案", name_en: "Projects", href: "/projects" },
-      { name_zh: "新聞", name_en: "News", href: "/news" },
-      { name_zh: "活動", name_en: "Events", href: "/events" },
+      { name_zh: "加入社群", name_en: "Join Community", href: "https://join.g0v.tw" },
     ],
     resources: [
       { name_zh: "開發指南", name_en: "Developer Guide", href: "/guide" },
