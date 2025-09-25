@@ -6,7 +6,6 @@ interface PageProps {
 
 import { routing } from '@/i18n/routing';
 
-// SSG: 從 i18n 配置自動生成支援的語言路由
 export async function generateStaticParams() {
   return routing.locales.map((locale) => ({
     locale
