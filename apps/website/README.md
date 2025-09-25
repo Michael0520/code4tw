@@ -1,30 +1,156 @@
-# Code for Taiwan Landing Page
+# Code for Taiwan Website
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+The main website for Code for Taiwan civic technology community, built with modern web technologies and following Domain-Driven Design principles.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/michael0520s-projects/v0-code-for-taiwan-landing-page)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/9lC2Umo3A3g)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Michael0520_code4tw&metric=alert_status)](https://sonarcloud.io/dashboard?id=Michael0520_code4tw)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Michael0520_code4tw&metric=coverage)](https://sonarcloud.io/dashboard?id=Michael0520_code4tw)
 
-## Overview
+## Tech Stack
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript 5.9
+- **Styling**: Tailwind CSS 4.1
+- **UI Components**: Radix UI + shadcn/ui
+- **Internationalization**: next-intl (English & Chinese)
+- **Testing**: Vitest + React Testing Library
+- **Quality**: ESLint + SonarCloud
+- **Package Manager**: pnpm
+
+## Architecture
+
+This application follows a modular Domain-Driven Design (DDD) architecture:
+
+```
+apps/website/
+├── app/                       # Next.js App Router pages
+├── components/                # React components
+│   ├── ui/                    # Base UI components (shadcn/ui)
+│   ├── layout/                # Layout components
+│   ├── home/                  # Homepage components
+│   └── __tests__/             # Component tests
+├── lib/features/              # Business feature modules (DDD)
+│   ├── home/                  # Homepage feature
+│   ├── projects/              # Projects management
+│   ├── news/                  # News & updates
+│   ├── events/                # Events management
+│   └── about/                 # About us content
+├── messages/                  # i18n translation files
+├── i18n/                      # Internationalization config
+└── vitest.config.ts           # Test configuration
+```
+
+## Development
+
+### Prerequisites
+
+- Node.js 18+
+- pnpm 8+
+
+### Getting Started
+
+```bash
+# Install dependencies (from monorepo root)
+pnpm install
+
+# Start development server
+pnpm dev --filter=website
+
+# Or run from this directory
+cd apps/website
+pnpm dev
+```
+
+The website will be available at http://localhost:3002
+
+### Available Scripts
+
+```bash
+# Development
+pnpm dev                    # Start development server with Turbopack
+pnpm build                  # Build for production
+pnpm start                  # Start production server
+
+# Testing
+pnpm test                   # Run all tests
+pnpm test:watch             # Run tests in watch mode
+pnpm test:coverage          # Generate coverage report
+
+# Code Quality
+pnpm lint                   # Run ESLint
+pnpm check-types            # TypeScript type checking
+```
+
+## Features
+
+### 🌍 Internationalization
+- Full support for English and Traditional Chinese
+- Dynamic locale switching
+- SEO-optimized with proper hreflang tags
+
+### ⚡ Performance
+- Next.js 15 with Turbopack for fast development
+- App Router for optimized routing
+- Server-side rendering and static generation
+
+### 🧪 Testing Strategy
+- Component testing with React Testing Library
+- Strategic test coverage focusing on business logic
+- Vitest for fast test execution
+- Mocked dependencies for reliable tests
+
+### 📊 Code Quality
+- SonarCloud integration for continuous quality monitoring
+- ESLint with strict TypeScript rules
+- Pre-commit hooks for code quality enforcement
+- Automated quality gates in CI/CD
+
+## Project Structure
+
+### Feature Modules (DDD)
+Each feature follows Domain-Driven Design principles:
+
+```
+lib/features/[feature]/
+├── domain/                 # Business logic and rules
+├── actions/                # Server Actions (use cases)
+├── config/                 # Feature configuration
+└── utils/                  # Utility functions
+```
+
+### Component Organization
+- **UI Components**: Reusable base components from shadcn/ui
+- **Layout Components**: Header, footer, navigation
+- **Feature Components**: Business-specific components
+- **Page Components**: Complete page implementations
+
+## Contributing
+
+1. Follow the established DDD architecture
+2. Write tests for new features
+3. Ensure TypeScript strict mode compliance
+4. Use English for all code and comments
+5. Follow the commit message conventions
+
+### Code Standards
+- **English Only**: All code, comments, and documentation in English
+- **Test-Driven Development**: Write tests before implementation
+- **Type Safety**: Strict TypeScript with no `any` types
+- **Component Design**: Single responsibility principle
+- **Performance**: Consider loading and runtime performance
 
 ## Deployment
 
-Your project is live at:
+This website is part of the Code4TW monorepo and follows the deployment strategy defined at the repository root level.
 
-**[https://vercel.com/michael0520s-projects/v0-code-for-taiwan-landing-page](https://vercel.com/michael0520s-projects/v0-code-for-taiwan-landing-page)**
+## Quality Monitoring
 
-## Build your app
+- **SonarCloud Dashboard**: [View Quality Metrics](https://sonarcloud.io/dashboard?id=Michael0520_code4tw)
+- **Coverage Reports**: Generated with each test run
+- **Quality Gates**: Must pass for all pull requests
+- **Security Scanning**: Automated dependency and code security checks
 
-Continue building your app on:
+## Links
 
-**[https://v0.app/chat/projects/9lC2Umo3A3g](https://v0.app/chat/projects/9lC2Umo3A3g)**
-
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+- [Code for Taiwan](https://codefortaiwan.org) - Main website
+- [GitHub Repository](https://github.com/Michael0520/code4tw) - Source code
+- [Architecture Documentation](./ARCHITECTURE.md) - Detailed architecture guide

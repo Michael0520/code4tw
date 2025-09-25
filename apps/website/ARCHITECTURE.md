@@ -245,6 +245,14 @@ lib/features/[feature]/
 - **Autoprefixer** - CSS vendor prefixes
 - **Turbopack** - Fast development builds
 
+### Testing & Quality Assurance
+- **Vitest** - Fast unit testing framework with React support
+- **@vitejs/plugin-react** - React testing integration
+- **React Testing Library** - Component testing utilities
+- **@testing-library/jest-dom** - Custom Jest matchers
+- **SonarCloud** - Continuous code quality monitoring
+- **Husky** - Git hooks for pre-commit quality checks
+
 ### Component Libraries
 - **@radix-ui/react-** - Full suite of accessible components:
   - Dialog, Dropdown Menu, Select, Tabs
@@ -280,6 +288,65 @@ lib/features/[feature]/
 - **React Context**: Theme and language providers
 - **Server State**: Next.js server components for data fetching
 - **Client State**: React hooks for interactive components
+
+## 🧪 Testing Strategy
+
+### Test Architecture
+The project follows a strategic testing approach focused on business value:
+
+#### **Component Testing with React Testing Library**
+- **Framework**: Vitest + React Testing Library + @vitejs/plugin-react
+- **Philosophy**: Test behavior, not implementation details
+- **Focus Areas**: User interactions, state changes, accessibility
+
+#### **Test Structure**
+```
+components/
+├── __tests__/
+│   ├── layout.test.tsx        # Header/layout component tests
+│   └── home-page.test.tsx     # Homepage integration tests
+└── [component-files]
+```
+
+#### **Testing Priorities**
+1. **Critical Business Logic** (100% coverage target)
+   - Domain entities and business rules
+   - Data transformations and validations
+
+2. **User Interface Logic** (Strategic coverage)
+   - Component rendering with different props
+   - User interaction workflows
+   - Conditional display logic
+
+3. **Integration Points** (Key scenarios)
+   - i18n message rendering
+   - Navigation between pages
+   - Theme and language switching
+
+#### **Quality Monitoring**
+- **SonarCloud Integration**: Automated quality gates on every PR
+- **Coverage Reports**: Generated with `vitest --coverage`
+- **Pre-commit Hooks**: Automated test running before commits
+- **Strategic Exclusions**: UI components without business logic excluded from coverage metrics
+
+### Test Configuration
+```typescript
+// vitest.config.ts - Official Vitest setup
+export default defineConfig({
+  plugins: [react()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./vitest.setup.ts'],
+    include: ['**/*.{test,spec}.{js,jsx,ts,tsx}'],
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json', 'html', 'lcov'],
+      reportOnFailure: true
+    }
+  }
+});
+```
 
 ## 🔄 Data Flow
 
