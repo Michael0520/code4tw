@@ -2,8 +2,6 @@
 
 The main website for Code for Taiwan civic technology community, built with modern web technologies and following Domain-Driven Design principles.
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Michael0520_code4tw&metric=alert_status)](https://sonarcloud.io/dashboard?id=Michael0520_code4tw)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Michael0520_code4tw&metric=coverage)](https://sonarcloud.io/dashboard?id=Michael0520_code4tw)
 
 ## Tech Stack
 
@@ -13,7 +11,7 @@ The main website for Code for Taiwan civic technology community, built with mode
 - **UI Components**: Radix UI + shadcn/ui
 - **Internationalization**: next-intl (English & Chinese)
 - **Testing**: Vitest + React Testing Library
-- **Quality**: ESLint + SonarCloud
+- **Quality**: ESLint + TypeScript strict mode
 - **Package Manager**: pnpm
 
 ## Architecture
@@ -99,10 +97,9 @@ pnpm check-types            # TypeScript type checking
 - Mocked dependencies for reliable tests
 
 ### 📊 Code Quality
-- SonarCloud integration for continuous quality monitoring
 - ESLint with strict TypeScript rules
 - Pre-commit hooks for code quality enforcement
-- Automated quality gates in CI/CD
+- Automated quality checks in CI/CD
 
 ## Project Structure
 
@@ -144,10 +141,9 @@ This website is part of the Code4TW monorepo and follows the deployment strategy
 
 ## Quality Monitoring
 
-- **SonarCloud Dashboard**: [View Quality Metrics](https://sonarcloud.io/dashboard?id=Michael0520_code4tw)
-- **Coverage Reports**: Generated with each test run
-- **Quality Gates**: Must pass for all pull requests
-- **Security Scanning**: Automated dependency and code security checks
+- **Coverage Reports**: Generated with each test run using Vitest
+- **Code Quality**: ESLint and TypeScript strict mode validation
+- **Security Scanning**: Automated dependency security checks
 
 ## Links
 

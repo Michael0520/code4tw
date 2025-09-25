@@ -107,9 +107,8 @@ pnpm test:coverage --filter=website
 
 This project uses comprehensive quality monitoring:
 
-- **SonarCloud Integration**: Automated code quality analysis with every commit
 - **Test Coverage**: Focused on business logic with strategic testing approach
-- **Quality Gates**: Automated checks that must pass before merging
+- **Code Quality Checks**: TypeScript, ESLint, and automated testing
 - **Pre-commit Hooks**: Automatic validation of code standards
 
 ## Project Structure
@@ -171,4 +170,3 @@ Learn more about the power of Turborepo:
 
 - Website: [https://codefortaiwan.org](https://codefortaiwan.org)
 - GitHub: [Code for Taiwan](https://github.com/Michael0520/code4tw)
-# Test pre-commit hook

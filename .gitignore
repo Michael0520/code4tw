@@ -36,3 +36,9 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
+
+# Development tools and IDE files
+.cursorindexingignore
+.mcp.json
+.specstory/
+.claude/
