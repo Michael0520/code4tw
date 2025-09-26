@@ -153,7 +153,7 @@ const Photo = ({ src, onClick }: PhotoProps) => {
 
 const Banners = () => {
   const camera = useCamera()
-  const [target, setTarget] = React.useState<utils.CameraTarget>(null)
+  const [target, setTarget] = React.useState<utils.CameraTarget | null>(null)
   const clock = useClock({
     defaultValue: Date.now(),
     reverse: false,

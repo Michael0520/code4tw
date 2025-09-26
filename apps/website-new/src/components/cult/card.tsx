@@ -25,7 +25,7 @@ export function GradientCard({
   children,
 }: CardProps) {
   return (
-    <motion.div
+    <div
       className={cn(
         "relative  shadow-sm   h-[550px] w-full md:w-[400px] rounded-[28px]   border border-black/5",
         textColor
@@ -34,6 +34,7 @@ export function GradientCard({
         backgroundImage: gradient,
       }}
     >
+      <motion.div>
       <div className="absolute inset-0 p-8 flex flex-col justify-between">
         <div className="flex flex-col space-y-3">
           <p className=" text-lg font-black leading-[1.2353641176] tracking-wide  ">
@@ -67,6 +68,7 @@ export function GradientCard({
         </div>
         {children}
       </div>
-    </motion.div>
+      </motion.div>
+    </div>
   )
 }

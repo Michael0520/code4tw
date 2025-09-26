@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react"
 import { motion, useAnimation, useInView } from "framer-motion"
 
 interface RevealAnimationProps {
-  children: JSX.Element
+  children: React.ReactElement
   width?: "fit-content" | "100%"
   delay?: number
   slideTransition?: any // Custom transition for the slide
@@ -29,7 +29,7 @@ export const RevealAnimation = ({
   const contentControls = useAnimation()
   const slideControls = useAnimation()
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
+  const isInView = useInView(ref as any, { once: true })
 
   useEffect(() => {
     if (isInView) {
@@ -70,14 +70,15 @@ export const RevealAnimation = ({
       >
         {children}
       </motion.div>
-      <motion.div
-        className="absolute inset-0 bg-black dark:bg-neutral-100 z-[1000] rounded-l-xl"
-        variants={slideVariants}
-        initial="hidden"
-        animate={slideControls}
-        transition={slideTransition}
-        style={{ originX: 0 }}
-      />
+      <div className="absolute inset-0 bg-black dark:bg-neutral-100 z-[1000] rounded-l-xl">
+        <motion.div
+          variants={slideVariants}
+          initial="hidden"
+          animate={slideControls}
+          transition={slideTransition}
+          style={{ originX: 0 }}
+        />
+      </div>
     </div>
   )
 }

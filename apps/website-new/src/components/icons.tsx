@@ -1,4 +1,4 @@
-export function ShadCnIcon(props) {
+export function ShadCnIcon(props: any) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
       <path fill="none" d="M0 0h256v256H0z" />
@@ -11,7 +11,7 @@ export function ShadCnIcon(props) {
   )
 }
 
-export function OpenAIIcon(props) {
+export function OpenAIIcon(props: any) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,7 @@ export function OpenAIIcon(props) {
   )
 }
 
-export function StripeIcon(props) {
+export function StripeIcon(props: any) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ export function StripeIcon(props) {
   )
 }
 
-export function SupabaseIcon(props) {
+export function SupabaseIcon(props: any) {
   return (
     <svg
       viewBox="0 0 109 113"
@@ -93,7 +93,7 @@ export function SupabaseIcon(props) {
     </svg>
   )
 }
-export function VercelIcon(props) {
+export function VercelIcon(props: any) {
   return (
     <svg
       viewBox="0 0 256 222"
@@ -108,7 +108,7 @@ export function VercelIcon(props) {
   )
 }
 
-export function NextjsIcon(props) {
+export function NextjsIcon(props: any) {
   return (
     <svg
       viewBox="0 0 256 256"

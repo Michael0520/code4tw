@@ -61,18 +61,19 @@ export const Camera = ({ children, ...otherProps }: CameraProps) => {
         className="overflow-hidden"
         {...otherProps}
       >
-        <motion.div
-          className="w-full h-full"
-          ref={contentRef}
-          style={{
-            translate,
-            transformOrigin,
-            scale: camera.motionValues.zoom,
-            rotate: camera.motionValues.rotation,
-          }}
-        >
-          {children}
-        </motion.div>
+        <div className="w-full h-full">
+          <motion.div
+            ref={contentRef}
+            style={{
+              translate,
+              transformOrigin,
+              scale: camera.motionValues.zoom,
+              rotate: camera.motionValues.rotation,
+            }}
+          >
+            {children}
+          </motion.div>
+        </div>
       </motion.div>
     </CameraContext.Provider>
   )

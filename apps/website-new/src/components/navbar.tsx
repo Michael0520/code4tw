@@ -3,10 +3,14 @@
 import { useCallback, useState } from "react"
 import { motion } from "framer-motion"
 
-export function Navbar({ activeSection }) {
+interface NavbarProps {
+  activeSection: string
+}
+
+export function Navbar({ activeSection }: NavbarProps) {
   const [activeTab, setActiveTab] = useState("hero")
 
-  const handleTabClick = useCallback((id) => {
+  const handleTabClick = useCallback((id: string) => {
     const section = document.querySelector(`#${id}`)
     if (section) {
       section.scrollIntoView({ behavior: "smooth" })
@@ -99,7 +103,11 @@ export function Navbar({ activeSection }) {
   )
 }
 
-function CultIcon(props) {
+interface IconProps {
+  className?: string
+}
+
+function CultIcon(props: IconProps) {
   return (
     <svg
       width="24"
@@ -118,7 +126,7 @@ function CultIcon(props) {
     </svg>
   )
 }
-function RocketIcon(props) {
+function RocketIcon(props: IconProps) {
   return (
     <svg
       width="24"
@@ -137,7 +145,7 @@ function RocketIcon(props) {
     </svg>
   )
 }
-function CodeIcon(props) {
+function CodeIcon(props: IconProps) {
   return (
     <svg
       width="24"
@@ -156,7 +164,7 @@ function CodeIcon(props) {
     </svg>
   )
 }
-function DollarIcon(props) {
+function DollarIcon(props: IconProps) {
   return (
     <svg
       width="24"
