@@ -1,15 +1,15 @@
 {
   "Error": {
-    "description": "<p>很抱歉，我們遇到了錯誤。</p><p>您可以嘗試<retry>重新載入</retry>您正在瀏覽的頁面。</p>",
-    "title": "出了點問題！"
+    "description": "<p>很抱歉，我們遇到了錯誤。</p><p>您可以嘗試<retry>重新載入頁面</retry>。</p>",
+    "title": "發生錯誤！"
   },
   "IndexPage": {
     "title": "Code for Taiwan",
     "subtitle": "為更好的社會建立數位基礎設施",
     "description": "我們是一個公民科技社群，致力於創造開源解決方案，以改善政府透明度、公民參與和公共服務。",
     "hero": {
-      "headline": "科技為善",
-      "subheadline": "加入我們，透過科技建立更透明、更參與式的民主",
+      "headline": "科技創造社會價值",
+      "subheadline": "加入我們，透過科技建立更透明、更具參與性的民主",
       "cta": "立即參與",
       "learn_more": "了解更多"
     },
@@ -123,37 +123,11 @@
     "title": "Code for Taiwan - 為更好的社會建立數位基礎設施",
     "description": "Code for Taiwan 是一個公民科技社群，致力於創造開源解決方案，以改善政府透明度、公民參與和公共服務。"
   },
-  "LocaleSwitcher": {
-    "label": "更改語言",
-    "locale": "{locale, select, zh {🇹🇼 中文} en {🇺🇸 English} other {Unknown}}"
-  },
   "Manifest": {
     "name": "Code for Taiwan"
   },
-  "Navigation": {
-    "home": "首頁",
-    "pathnames": "路徑名稱"
-  },
   "NotFoundPage": {
-    "description": "請仔細檢查瀏覽器網址列，或使用導航前往已知頁面。",
+    "description": "請檢查瀏覽器網址列或使用導航前往已知頁面。",
     "title": "找不到頁面"
-  },
-  "PageLayout": {
-    "links": {
-      "docs": {
-        "description": "在官方文件中了解更多關於 next-intl 的資訊。",
-        "href": "https://next-intl.dev",
-        "title": "文件"
-      },
-      "source": {
-        "description": "在 GitHub 上瀏覽此範例的原始碼。",
-        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
-        "title": "原始碼"
-      }
-    }
-  },
-  "PathnamesPage": {
-    "description": "<p>路徑名稱也已國際化。</p><p>如果您使用預設語言英文，您將在此頁面的瀏覽器網址列中看到 <code>/en/pathnames</code>。</p><p>如果您將語言更改為中文，網址將相應地本地化（<code>/zh/路径名</code>）。</p>",
-    "title": "路徑名稱"
   }
 }

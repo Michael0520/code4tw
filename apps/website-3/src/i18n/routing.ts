@@ -4,9 +4,6 @@ export const routing = defineRouting({
   locales: ['en', 'zh'],
   defaultLocale: 'en',
   pathnames: {
-    '/': '/',
-    '/pathnames': {
-      zh: '/路径名'
-    }
+    '/': '/'
   }
 });
