@@ -1,0 +1,90 @@
+{
+  "Error": {
+    "description": "<p>很抱歉，我們遇到了錯誤。</p><p>您可以嘗試<retry>重新載入</retry>您正在瀏覽的頁面。</p>",
+    "title": "出了點問題！"
+  },
+  "IndexPage": {
+    "title": "Code for Taiwan",
+    "subtitle": "為更好的社會建立數位基礎設施",
+    "description": "我們是一個公民科技社群，致力於創造開源解決方案，以改善政府透明度、公民參與和公共服務。",
+    "hero": {
+      "headline": "科技為善",
+      "subheadline": "加入我們，透過科技建立更透明、更參與式的民主",
+      "cta": "立即參與",
+      "learn_more": "了解更多"
+    },
+    "features": {
+      "title": "我們的工作",
+      "open_source": {
+        "title": "開源專案",
+        "description": "我們開發和維護能解決真實公民需求的開源工具"
+      },
+      "community": {
+        "title": "社群建設",
+        "description": "我們將技術人員、設計師和公民聚集在一起，共同協作公民專案"
+      },
+      "transparency": {
+        "title": "政府透明度",
+        "description": "我們致力於讓政府資料對公民更加開放和易懂"
+      },
+      "education": {
+        "title": "公民教育",
+        "description": "我們組織工作坊和活動，促進數位素養和公民參與"
+      }
+    },
+    "projects": {
+      "title": "精選專案",
+      "view_all": "檢視所有專案"
+    },
+    "join": {
+      "title": "加入我們的社群",
+      "description": "無論您是開發者、設計師、資料分析師，或是關心台灣未來的公民，我們的社群都有您的位置。",
+      "developer": "我是開發者",
+      "designer": "我是設計師",
+      "citizen": "我是公民"
+    },
+    "stats": {
+      "contributors": "活躍貢獻者",
+      "projects": "開源專案",
+      "events": "舉辦活動",
+      "impact": "影響公民"
+    }
+  },
+  "LocaleLayout": {
+    "title": "Code for Taiwan - 為更好的社會建立數位基礎設施",
+    "description": "Code for Taiwan 是一個公民科技社群，致力於創造開源解決方案，以改善政府透明度、公民參與和公共服務。"
+  },
+  "LocaleSwitcher": {
+    "label": "更改語言",
+    "locale": "{locale, select, zh {🇹🇼 中文} en {🇺🇸 English} other {Unknown}}"
+  },
+  "Manifest": {
+    "name": "Code for Taiwan"
+  },
+  "Navigation": {
+    "home": "首頁",
+    "pathnames": "路徑名稱"
+  },
+  "NotFoundPage": {
+    "description": "請仔細檢查瀏覽器網址列，或使用導航前往已知頁面。",
+    "title": "找不到頁面"
+  },
+  "PageLayout": {
+    "links": {
+      "docs": {
+        "description": "在官方文件中了解更多關於 next-intl 的資訊。",
+        "href": "https://next-intl.dev",
+        "title": "文件"
+      },
+      "source": {
+        "description": "在 GitHub 上瀏覽此範例的原始碼。",
+        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
+        "title": "原始碼"
+      }
+    }
+  },
+  "PathnamesPage": {
+    "description": "<p>路徑名稱也已國際化。</p><p>如果您使用預設語言英文，您將在此頁面的瀏覽器網址列中看到 <code>/en/pathnames</code>。</p><p>如果您將語言更改為中文，網址將相應地本地化（<code>/zh/路径名</code>）。</p>",
+    "title": "路徑名稱"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "Error": {
+    "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
+    "title": "Something went wrong!"
+  },
+  "IndexPage": {
+    "title": "Code for Taiwan",
+    "subtitle": "Building Digital Infrastructure for a Better Society",
+    "description": "We are a civic tech community dedicated to creating open-source solutions that improve government transparency, civic engagement, and public services.",
+    "hero": {
+      "headline": "Technology for Social Good",
+      "subheadline": "Join us in building a more transparent and participatory democracy through technology",
+      "cta": "Get Involved",
+      "learn_more": "Learn More"
+    },
+    "features": {
+      "title": "What We Do",
+      "open_source": {
+        "title": "Open Source Projects",
+        "description": "We develop and maintain open-source tools that address real civic needs"
+      },
+      "community": {
+        "title": "Community Building",
+        "description": "We bring together technologists, designers, and citizens to collaborate on civic projects"
+      },
+      "transparency": {
+        "title": "Government Transparency",
+        "description": "We work to make government data more accessible and understandable to citizens"
+      },
+      "education": {
+        "title": "Civic Education",
+        "description": "We organize workshops and events to promote digital literacy and civic participation"
+      }
+    },
+    "projects": {
+      "title": "Featured Projects",
+      "view_all": "View All Projects"
+    },
+    "join": {
+      "title": "Join Our Community",
+      "description": "Whether you're a developer, designer, data analyst, or simply a citizen who cares about Taiwan's future, there's a place for you in our community.",
+      "developer": "I'm a Developer",
+      "designer": "I'm a Designer",
+      "citizen": "I'm a Citizen"
+    },
+    "stats": {
+      "contributors": "Active Contributors",
+      "projects": "Open Source Projects",
+      "events": "Events Organized",
+      "impact": "Citizens Impacted"
+    }
+  },
+  "LocaleLayout": {
+    "title": "Code for Taiwan - Building Digital Infrastructure for a Better Society",
+    "description": "Code for Taiwan is a civic tech community dedicated to creating open-source solutions that improve government transparency, civic engagement, and public services."
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, zh {🇹🇼 中文} en {🇺🇸 English} other {Unknown}}"
+  },
+  "Manifest": {
+    "name": "Code for Taiwan"
+  },
+  "Navigation": {
+    "home": "Home",
+    "pathnames": "Pathnames"
+  },
+  "NotFoundPage": {
+    "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
+    "title": "Page not found"
+  },
+  "PageLayout": {
+    "links": {
+      "docs": {
+        "description": "Learn more about next-intl in the official docs.",
+        "href": "https://next-intl.dev",
+        "title": "Docs"
+      },
+      "source": {
+        "description": "Browse the source code of this example on GitHub.",
+        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
+        "title": "Source code"
+      }
+    }
+  },
+  "PathnamesPage": {
+    "description": "<p>The pathnames are internationalized too.</p><p>If you're using the default language English, you'll see <code>/en/pathnames</code> in the browser address bar on this page.</p><p>If you change the locale to German, the URL is localized accordingly (<code>/de/pfadnamen</code>).</p>",
+    "title": "Pathnames"
+  }
+}
