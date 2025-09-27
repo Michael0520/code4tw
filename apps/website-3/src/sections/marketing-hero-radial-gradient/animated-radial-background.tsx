@@ -69,12 +69,12 @@ export function AnimatedRadialGradientBackground({
   Breathing = false,
   gradientColors = [
     '#000000',
-    '#2979FF',
-    '#FF80AB',
-    '#FF6D00',
-    '#FFD600',
-    '#00E676',
-    '#3D5AFE'
+    '#000095',
+    '#F2BAFF',
+    '#FF8398',
+    '#FE0000',
+    '#B10303',
+    '#500000'
   ],
   gradientStops = [35, 50, 60, 70, 80, 90, 100],
   animationSpeed = 0.02,

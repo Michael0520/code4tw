@@ -13,24 +13,53 @@
       "cta": "Get Involved",
       "learn_more": "Learn More"
     },
-    "features": {
-      "title": "What We Do",
-      "open_source": {
-        "title": "Open Source Projects",
-        "description": "We develop and maintain open-source tools that address real civic needs"
-      },
-      "community": {
-        "title": "Community Building",
-        "description": "We bring together technologists, designers, and citizens to collaborate on civic projects"
-      },
-      "transparency": {
-        "title": "Government Transparency",
-        "description": "We work to make government data more accessible and understandable to citizens"
-      },
-      "education": {
-        "title": "Civic Education",
-        "description": "We organize workshops and events to promote digital literacy and civic participation"
+    "about": {
+      "title": "Building a Better Taiwan Through Technology and Collaboration",
+      "subtitle": "Through collaborative civic tech development, we promote transparency, accountability, and civic engagement in Taiwan.",
+      "values": {
+        "open_source": {
+          "title": "Open Source",
+          "description": "All projects are open source and welcome contributions from the community"
+        },
+        "community_driven": {
+          "title": "Community Driven",
+          "description": "Diverse community of volunteers working together for social impact"
+        },
+        "innovation": {
+          "title": "Innovation",
+          "description": "Innovative solutions for social challenges using modern technology"
+        },
+        "transparency": {
+          "title": "Government Transparency",
+          "description": "Building tools to make government more transparent and accountable"
+        }
       }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Common questions about Code for Taiwan",
+      "questions": [
+        {
+          "question": "What is Code for Taiwan?",
+          "answer": "Code for Taiwan is a civic tech community dedicated to solving social problems through open-source technology, promoting government transparency and civic engagement. We bring together technologists, designers, and citizens who care about society to create meaningful digital solutions."
+        },
+        {
+          "question": "Can I participate without a technical background?",
+          "answer": "Absolutely! We welcome participants from all backgrounds. Besides engineers and designers, we also need skills in project management, content editing, community management, policy research, and more. Everyone can contribute to improving Taiwan's digital infrastructure."
+        },
+        {
+          "question": "How can I start participating in Code for Taiwan projects?",
+          "answer": "You can start by attending our hackathon events, joining our Slack discussion groups, or directly checking out our open-source projects on GitHub. We regularly host beginner-friendly workshops to help everyone get familiar with our collaboration process."
+        },
+        {
+          "question": "Are all Code for Taiwan projects free?",
+          "answer": "Yes, all our projects are open source and freely available to the public. We believe transparency and openness are core values of a democratic society, so our code, data, and resources are open to everyone."
+        },
+        {
+          "question": "How can I contact the Code for Taiwan team?",
+          "answer": "You can reach us through our official website, social media platforms, or by directly attending our physical events. We also welcome you to join our online community to discuss and exchange ideas with other participants."
+        }
+      ]
     },
     "projects": {
       "title": "Featured Projects",
@@ -38,16 +67,56 @@
     },
     "join": {
       "title": "Join Our Community",
-      "description": "Whether you're a developer, designer, data analyst, or simply a citizen who cares about Taiwan's future, there's a place for you in our community.",
-      "developer": "I'm a Developer",
-      "designer": "I'm a Designer",
-      "citizen": "I'm a Citizen"
+      "description": "Participate in community activities through various channels and work together with like-minded partners for Taiwan's digital democracy.",
+      "tag": "Community Participation",
+      "section": {
+        "title": "Join Our Team",
+        "description": "Whether you're a developer, designer, or a citizen concerned about social issues, we welcome your participation. Let's use technology to make Taiwan better together!"
+      },
+      "roles": {
+        "developers": "Developers",
+        "designers": "Designers",
+        "data_scientists": "Data Scientists",
+        "project_managers": "Project Managers",
+        "community_organizers": "Community Organizers"
+      }
     },
     "stats": {
       "contributors": "Active Contributors",
       "projects": "Open Source Projects",
       "events": "Events Organized",
       "impact": "Citizens Impacted"
+    }
+  },
+  "Footer": {
+    "tagline": "Building a better Taiwan through technology and collaboration.",
+    "projects": {
+      "title": "Projects",
+      "g0v": "g0v.tw",
+      "vTaiwan": "vTaiwan",
+      "democracy_tools": "Democracy Tools",
+      "transparency": "Government Transparency"
+    },
+    "community": {
+      "title": "Community",
+      "slack": "Slack Community",
+      "discord": "Discord Chat",
+      "events": "Events",
+      "hackathons": "Hackathons"
+    },
+    "resources": {
+      "title": "Resources",
+      "docs": "Documentation",
+      "awesome_taiwan": "Awesome Taiwan",
+      "contribute": "Contributing Guide",
+      "blog": "Blog"
+    },
+    "copyright": "© 2025 Code for Taiwan. All rights reserved.",
+    "links": {
+      "contact": "Contact",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
     }
   },
   "LocaleLayout": {
