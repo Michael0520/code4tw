@@ -1,9 +1,9 @@
 {
-  "name": "website-3",
+  "name": "website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo --port 3006",
+    "dev": "next dev --turbo --port 3000",
     "lint": "eslint src && prettier src --check",
     "test": "pnpm run test:playwright && pnpm run test:jest",
     "test:playwright": "playwright test",

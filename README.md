@@ -8,7 +8,7 @@ This Turborepo includes the following packages and applications:
 
 ### Apps and Packages
 
-- `website-3`: Code for Taiwan main website ([Next.js](https://nextjs.org/) with next-intl)
+- `website`: Code for Taiwan main website ([Next.js](https://nextjs.org/) with next-intl)
 - `@repo/ui`: Shared React component library
 - `@repo/next-config`: Shared Next.js configuration
 - `@repo/eslint-config`: ESLint configurations (includes `eslint-config-next` and `eslint-config-prettier`)
@@ -59,7 +59,7 @@ You can build a specific package by using a [filter](https://turborepo.com/docs/
 
 ```bash
 # Build website only
-pnpm build --filter=website-3
+pnpm build --filter=website
 ```
 
 ### Development
@@ -74,7 +74,7 @@ You can develop a specific package by using a [filter](https://turborepo.com/doc
 
 ```bash
 # Start website development mode (available at http://localhost:3000)
-pnpm dev --filter=website-3
+pnpm dev --filter=website
 ```
 
 ### Testing
@@ -84,23 +84,23 @@ pnpm dev --filter=website-3
 pnpm test
 
 # Run specific package tests
-pnpm test --filter=website-3
+pnpm test --filter=website
 
 # Run tests in watch mode
-pnpm test:watch --filter=website-3
+pnpm test:watch --filter=website
 ```
 
 ### Code Quality
 
 ```bash
 # TypeScript type checking
-pnpm check-types --filter=website-3
+pnpm check-types --filter=website
 
 # ESLint checking
-pnpm lint --filter=website-3
+pnpm lint --filter=website
 
 # Test coverage report
-pnpm test:coverage --filter=website-3
+pnpm test:coverage --filter=website
 ```
 
 ### Quality Monitoring
@@ -115,7 +115,7 @@ This project uses comprehensive quality monitoring:
 
 ```
 apps/
-├── website-3/                  # Code for Taiwan main website
+├── website/                  # Code for Taiwan main website
 └── packages/
     ├── ui/                     # Shared UI components
     ├── next-config/            # Shared Next.js configuration
@@ -128,7 +128,7 @@ apps/
 The website follows a modern multilingual architecture:
 
 ```
-apps/website-3/
+apps/website/
 ├── src/
 │   ├── app/[locale]/          # Localized routing
 │   ├── components/            # React components
@@ -138,7 +138,7 @@ apps/website-3/
 └── README.md                  # Application documentation
 ```
 
-For detailed information, see `apps/website-3/README.md`.
+For detailed information, see `apps/website/README.md`.
 
 ## Useful Links
 
