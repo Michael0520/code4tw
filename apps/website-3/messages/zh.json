@@ -43,7 +43,7 @@
       "values": {
         "open_source": {
           "title": "Open Source",
-          "description": "所有專案都是開源的，歡迎來自社群的貢獻"
+          "description": "所有內容都是開源的，歡迎來自社群的貢獻"
         },
         "community_driven": {
           "title": "Community Driven",
@@ -69,15 +69,15 @@
         },
         {
           "question": "我沒有技術背景，可以參與嗎？",
-          "answer": "當然可以！我們歡迎各種背景的參與者。除了工程師和設計師，我們也需要專案管理、內容編輯、社群經營、政策研究等各種技能。每個人都可以為改善台灣的數位基礎設施貢獻一份力量。"
+          "answer": "當然可以！我們歡迎各種背景的參與者。除了工程師和設計師，我們也需要協調管理、內容編輯、社群經營、政策研究等各種技能。每個人都可以透過學習程式思維來提升自己的工作效率。"
         },
         {
-          "question": "如何開始參與 Code for Taiwan 的專案？",
-          "answer": "您可以透過參加我們的黑客松活動、加入我們的 Slack 討論群組、或是直接在 GitHub 上查看我們的開源專案開始參與。我們定期舉辦新手友善的工作坊，幫助大家熟悉協作流程。"
+          "question": "如何開始學習程式思維？",
+          "answer": "您可以透過參加我們的工作坊、加入我們的 Discord 討論群組、或是直接在 GitHub 上查看我們的學習資源開始學習。我們定期舉辦新手友善的課程，幫助大家建立程式思維。"
         },
         {
-          "question": "Code for Taiwan 的專案都是免費的嗎？",
-          "answer": "是的，我們所有的專案都是開源且免費提供給公眾使用。我們相信透明度和開放性是民主社會的核心價值，因此我們的程式碼、資料和資源都對所有人開放。"
+          "question": "Code for Taiwan 的學習資源都是免費的嗎？",
+          "answer": "是的，我們所有的學習資源都是開源且免費提供給公眾使用。我們相信知識普及是縮小城鄉差距的關鍵，因此我們的教材、工具和資源都對所有人開放。"
         },
         {
           "question": "如何聯繫 Code for Taiwan 團隊？",
@@ -86,8 +86,8 @@
       ]
     },
     "projects": {
-      "title": "精選專案",
-      "view_all": "檢視所有專案"
+      "title": "學習資源",
+      "view_all": "檢視所有資源"
     },
     "join": {
       "title": "Community",
@@ -102,13 +102,13 @@
       },
       "roles": {
         "developers": "開發者",
-        "developers_description": "建構開源工具並為公民科技專案貢獻程式碼",
+        "developers_description": "建構開源工具並推廣程式思維",
         "designers": "設計師",
         "designers_description": "創造友善的使用者介面並提升數位體驗",
         "data_scientists": "資料科學家",
         "data_scientists_description": "分析開放資料並產出公共利益的洞察",
-        "project_managers": "專案經理",
-        "project_managers_description": "協調團隊並推動專案從概念到完成",
+        "project_managers": "協調推廣者",
+        "project_managers_description": "協調團隊並推動程式思維普及化",
         "community_organizers": "社群組織者",
         "community_organizers_description": "連結人群並促進跨社群的協作"
       },
@@ -116,7 +116,7 @@
     },
     "stats": {
       "contributors": "活躍貢獻者",
-      "projects": "開源專案",
+      "projects": "學習資源",
       "events": "舉辦活動",
       "impact": "影響公民"
     }
@@ -124,7 +124,7 @@
   "Footer": {
     "tagline": "透過科技與協作，打造更好的台灣。",
     "projects": {
-      "title": "專案",
+      "title": "學習資源",
       "g0v": "g0v 零時政府",
       "vTaiwan": "vTaiwan 虛擬台灣",
       "democracy_tools": "民主工具",
@@ -132,7 +132,7 @@
     },
     "community": {
       "title": "社群",
-      "slack": "Slack 討論區",
+      "slack": "Discord 討論區",
       "discord": "Discord 聊天室",
       "events": "活動",
       "hackathons": "黑客松"

@@ -43,7 +43,7 @@
       "values": {
         "open_source": {
           "title": "Open Source",
-          "description": "All projects are open source and welcome contributions from the community"
+          "description": "All content is open source and welcome contributions from the community"
         },
         "community_driven": {
           "title": "Community Driven",
@@ -69,15 +69,15 @@
         },
         {
           "question": "Can I participate without a technical background?",
-          "answer": "Absolutely! We welcome participants from all backgrounds. Besides engineers and designers, we also need skills in project management, content editing, community management, policy research, and more. Everyone can contribute to improving Taiwan's digital infrastructure."
+          "answer": "Absolutely! We welcome participants from all backgrounds. Besides engineers and designers, we also need skills in coordination, content editing, community management, policy research, and more. Everyone can learn programming thinking to improve their work efficiency."
         },
         {
-          "question": "How can I start participating in Code for Taiwan projects?",
-          "answer": "You can start by attending our hackathon events, joining our Slack discussion groups, or directly checking out our open-source projects on GitHub. We regularly host beginner-friendly workshops to help everyone get familiar with our collaboration process."
+          "question": "How can I start learning programming thinking?",
+          "answer": "You can start by attending our workshops, joining our Discord discussion groups, or directly checking out our learning resources on GitHub. We regularly host beginner-friendly courses to help everyone develop programming thinking."
         },
         {
-          "question": "Are all Code for Taiwan projects free?",
-          "answer": "Yes, all our projects are open source and freely available to the public. We believe transparency and openness are core values of a democratic society, so our code, data, and resources are open to everyone."
+          "question": "Are all Code for Taiwan learning resources free?",
+          "answer": "Yes, all our learning resources are open source and freely available to the public. We believe knowledge dissemination is key to bridging the urban-rural gap, so our materials, tools, and resources are open to everyone."
         },
         {
           "question": "How can I contact the Code for Taiwan team?",
@@ -86,8 +86,8 @@
       ]
     },
     "projects": {
-      "title": "Featured Projects",
-      "view_all": "View All Projects"
+      "title": "Learning Resources",
+      "view_all": "View All Resources"
     },
     "join": {
       "title": "Community",
@@ -102,13 +102,13 @@
       },
       "roles": {
         "developers": "Developers",
-        "developers_description": "Build open-source tools and contribute code to civic tech projects",
+        "developers_description": "Build open-source tools and promote programming thinking",
         "designers": "Designers",
         "designers_description": "Create user-friendly interfaces and improve digital experiences",
         "data_scientists": "Data Scientists",
         "data_scientists_description": "Analyze open data and generate insights for public good",
-        "project_managers": "Project Managers",
-        "project_managers_description": "Coordinate teams and drive projects from concept to completion",
+        "project_managers": "Coordination Promoters",
+        "project_managers_description": "Coordinate teams and promote programming thinking popularization",
         "community_organizers": "Community Organizers",
         "community_organizers_description": "Connect people and foster collaboration across communities"
       },
@@ -116,7 +116,7 @@
     },
     "stats": {
       "contributors": "Active Contributors",
-      "projects": "Open Source Projects",
+      "projects": "Learning Resources",
       "events": "Events Organized",
       "impact": "Citizens Impacted"
     }
@@ -124,7 +124,7 @@
   "Footer": {
     "tagline": "Building a better Taiwan through technology and collaboration.",
     "projects": {
-      "title": "Projects",
+      "title": "Learning Resources",
       "g0v": "g0v.tw",
       "vTaiwan": "vTaiwan",
       "democracy_tools": "Democracy Tools",
@@ -132,7 +132,7 @@
     },
     "community": {
       "title": "Community",
-      "slack": "Slack Community",
+      "slack": "Discord Community",
       "discord": "Discord Chat",
       "events": "Events",
       "hackathons": "Hackathons"
