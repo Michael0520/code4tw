@@ -8,7 +8,7 @@ This Turborepo includes the following packages and applications:
 
 ### Apps and Packages
 
-- `website`: Code for Taiwan main website ([Next.js](https://nextjs.org/))
+- `website-3`: Code for Taiwan main website ([Next.js](https://nextjs.org/) with next-intl)
 - `@repo/ui`: Shared React component library
 - `@repo/next-config`: Shared Next.js configuration
 - `@repo/eslint-config`: ESLint configurations (includes `eslint-config-next` and `eslint-config-prettier`)
@@ -59,7 +59,7 @@ You can build a specific package by using a [filter](https://turborepo.com/docs/
 
 ```bash
 # Build website only
-pnpm build --filter=website
+pnpm build --filter=website-3
 ```
 
 ### Development
@@ -73,8 +73,8 @@ pnpm dev
 You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
 
 ```bash
-# Start website development mode (available at http://localhost:3002)
-pnpm dev --filter=website
+# Start website development mode (available at http://localhost:3000)
+pnpm dev --filter=website-3
 ```
 
 ### Testing
@@ -84,23 +84,23 @@ pnpm dev --filter=website
 pnpm test
 
 # Run specific package tests
-pnpm test --filter=website
+pnpm test --filter=website-3
 
 # Run tests in watch mode
-pnpm test:watch --filter=website
+pnpm test:watch --filter=website-3
 ```
 
 ### Code Quality
 
 ```bash
 # TypeScript type checking
-pnpm check-types --filter=website
+pnpm check-types --filter=website-3
 
 # ESLint checking
-pnpm lint --filter=website
+pnpm lint --filter=website-3
 
 # Test coverage report
-pnpm test:coverage --filter=website
+pnpm test:coverage --filter=website-3
 ```
 
 ### Quality Monitoring
@@ -115,7 +115,7 @@ This project uses comprehensive quality monitoring:
 
 ```
 apps/
-├── website/                    # Code for Taiwan main website
+├── website-3/                  # Code for Taiwan main website
 └── packages/
     ├── ui/                     # Shared UI components
     ├── next-config/            # Shared Next.js configuration
@@ -125,27 +125,20 @@ apps/
 
 ### Website Application
 
-The website follows a modular Domain-Driven Design (DDD) architecture:
+The website follows a modern multilingual architecture:
 
 ```
-apps/website/
-├── app/                       # Next.js App Router
-├── components/                # React components
-├── lib/features/              # Business feature modules (DDD)
-│   ├── projects/              # Projects feature
-│   │   ├── domain/            # Domain logic
-│   │   ├── actions/           # Server Actions
-│   │   ├── config/            # Configuration
-│   │   └── utils/             # Utility functions
-│   ├── news/                  # News feature
-│   ├── events/                # Events feature
-│   ├── about/                 # About us
-│   └── home/                  # Homepage
-├── messages/                  # i18n translation files
-└── ARCHITECTURE.md            # Detailed architecture documentation
+apps/website-3/
+├── src/
+│   ├── app/[locale]/          # Localized routing
+│   ├── components/            # React components
+│   ├── config/                # Application configuration
+│   └── i18n/                  # Internationalization setup
+├── messages/                  # Translation files (zh.json, en.json)
+└── README.md                  # Application documentation
 ```
 
-For detailed architecture information, see `apps/website/ARCHITECTURE.md`.
+For detailed information, see `apps/website-3/README.md`.
 
 ## Useful Links
 
