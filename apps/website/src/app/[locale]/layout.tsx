@@ -29,26 +29,57 @@ export async function generateMetadata(
     namespace: 'LocaleLayout'
   });
 
+  // Generate proper URLs for each locale
+  const baseUrl = siteConfig.url;
+  const currentUrl = locale === 'en' ? baseUrl : `${baseUrl}/${locale}`;
+
   return {
     title: t('title'),
     description: t('description'),
     keywords: siteConfig.metadata.keywords,
     authors: siteConfig.metadata.authors,
+    metadataBase: new URL(siteConfig.url),
+    alternates: {
+      canonical: currentUrl,
+      languages: {
+        'en': baseUrl,
+        'zh': `${baseUrl}/zh`
+      }
+    },
     openGraph: {
       title: t('title'),
       description: t('description'),
-      locale: locale,
+      locale: locale === 'zh' ? 'zh_TW' : 'en_US',
       type: siteConfig.openGraph.type,
       siteName: siteConfig.openGraph.siteName,
-      url: siteConfig.url
+      url: currentUrl,
+      images: [
+        {
+          url: '/opengraph-image',
+          width: 1200,
+          height: 630,
+          alt: t('title')
+        }
+      ]
     },
     twitter: {
       card: siteConfig.twitter.card,
       site: siteConfig.twitter.site,
       creator: siteConfig.twitter.creator,
       title: t('title'),
-      description: t('description')
+      description: t('description'),
+      images: ['/opengraph-image']
     }
+  };
+}
+
+export async function generateViewport() {
+  return {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+    themeColor: '#000095'
   };
 }
 

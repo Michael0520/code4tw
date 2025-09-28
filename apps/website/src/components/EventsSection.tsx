@@ -5,12 +5,13 @@ import {motion} from 'framer-motion';
 import {ArrowRight} from 'lucide-react';
 import {Ripple} from '@/components/ui/ripple';
 import {BrandKeywordHighlight} from '@/components/BrandKeywordHighlight';
+import {siteConfig} from '@/config/site';
 
 export function EventsSection() {
   const t = useTranslations('IndexPage.events');
 
   const handleViewEvents = () => {
-    window.open('https://luma.com/user/code4tw', '_blank');
+    window.open(siteConfig.social.events, '_blank');
   };
 
   return (

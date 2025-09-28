@@ -13,6 +13,7 @@ import Image from 'next/image';
 import {Code, Palette, Database, Calendar, Users} from 'lucide-react';
 import {BrandKeywordHighlight} from './BrandKeywordHighlight';
 import TextAnimate from './TextAnimate';
+import {siteConfig} from '@/config/site';
 
 // Enhanced SplitText animation component (currently unused)
 /*
@@ -440,7 +441,7 @@ export function JoinSectionImmersive() {
                 className="inline-flex h-14 items-center justify-center rounded-full bg-[#000095] px-8 font-medium text-white shadow-lg hover:shadow-xl hover:bg-[#0000b3] transition-all"
                 strength={40}
                 onClick={() =>
-                  window.open('https://discord.gg/pRFjDXeFyv', '_blank')
+                  window.open(siteConfig.social.discord, '_blank')
                 }
               >
                 {t('join.cta')}

@@ -18,7 +18,10 @@ export const siteConfig = {
   social: {
     facebook: 'https://www.facebook.com/CFTcodefortaiwan/',
     discord: 'https://discord.gg/pRFjDXeFyv',
-    events: 'https://luma.com/0ckf5dio',
+    events: 'https://luma.com/user/code4tw',
+    threads: 'https://www.threads.com/@code4tw',
+    instagram: 'https://www.instagram.com/code4tw/',
+    youtube: 'https://www.youtube.com/@CodeforTaiwan',
     github: 'https://github.com/codefortaiwan'
   },
 

@@ -12,6 +12,7 @@ import {AboutSectionBento} from '@/components/AboutSectionBento';
 import {BrandKeywordHighlight} from '@/components/BrandKeywordHighlight';
 import {EventsSection} from '@/components/EventsSection';
 import {motion} from 'framer-motion';
+import {siteConfig} from '@/config/site';
 
 export default function IndexPage({params}: PageProps<'/[locale]'>) {
   const {} = use(params);
@@ -165,7 +166,7 @@ export default function IndexPage({params}: PageProps<'/[locale]'>) {
                   <button
                     onClick={() => {
                       console.log('Opening Discord...');
-                      window.open('https://discord.gg/pRFjDXeFyv', '_blank');
+                      window.open(siteConfig.social.discord, '_blank');
                     }}
                     className="relative z-[100] inline-flex h-14 items-center justify-center rounded-full bg-white px-8 font-medium text-[#000095] shadow-lg hover:shadow-xl hover:bg-gray-100 transition-all duration-300 hover:scale-105 cursor-pointer"
                     type="button"
