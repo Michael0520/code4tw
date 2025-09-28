@@ -21,14 +21,14 @@ export default function IndexPage({params}: PageProps<'/[locale]'>) {
   const joinRef = useRef<HTMLElement | null>(null);
   const faqRef = useRef<HTMLElement | null>(null);
 
-  const sectionRefs = {
-    hero: heroRef,
-    about: aboutRef,
-    join: joinRef,
-    faq: faqRef
-  };
-
   useEffect(() => {
+    const sectionRefs = {
+      hero: heroRef,
+      about: aboutRef,
+      join: joinRef,
+      faq: faqRef
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

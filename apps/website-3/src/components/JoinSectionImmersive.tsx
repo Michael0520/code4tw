@@ -4,18 +4,18 @@ import {
   AnimatePresence,
   motion,
   useReducedMotion,
-  useSpring,
-  type Variants
+  useSpring
 } from 'motion/react';
 import type React from 'react';
 import {useEffect, useRef, useState} from 'react';
 import {useTranslations} from 'next-intl';
 import Image from 'next/image';
-import {Code, Palette, Database, Calendar, Users, Heart} from 'lucide-react';
-import {BrandKeywordHighlight, BRAND_KEYWORDS} from './BrandKeywordHighlight';
+import {Code, Palette, Database, Calendar, Users} from 'lucide-react';
+import {BrandKeywordHighlight} from './BrandKeywordHighlight';
 import TextAnimate from './TextAnimate';
 
-// Enhanced SplitText animation component
+// Enhanced SplitText animation component (currently unused)
+/*
 const SplitText = ({
   text,
   className = '',
@@ -37,7 +37,7 @@ const SplitText = ({
   once?: boolean;
   animationType?: 'chars' | 'words' | 'lines';
 }) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, {once, amount: threshold});
   const prefersReducedMotion = useReducedMotion();
 
@@ -49,7 +49,7 @@ const SplitText = ({
 
   const container: Variants = {
     hidden: {opacity: 0},
-    visible: (i = 1) => ({
+    visible: () => ({
       opacity: 1,
       transition: {
         staggerChildren,
@@ -70,7 +70,7 @@ const SplitText = ({
       rotateX: 0,
       transition: {
         duration,
-        ease
+        ease: ease as any
       }
     }
   };
@@ -137,7 +137,7 @@ const SplitText = ({
       ref={ref}
       transition={{
         duration,
-        ease,
+        ease: ease as any,
         delay
       }}
     >
@@ -145,16 +145,18 @@ const SplitText = ({
     </motion.span>
   );
 };
+*/
 
 // Custom hook for checking if element is in view
 function useInView(
-  ref: React.RefObject<HTMLElement>,
+  ref: React.RefObject<HTMLElement | HTMLDivElement | null>,
   options: {once?: boolean; amount?: number}
 ) {
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    if (!ref.current) return;
+    const element = ref.current;
+    if (!element) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -169,12 +171,10 @@ function useInView(
       }
     );
 
-    observer.observe(ref.current);
+    observer.observe(element);
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
+      observer.unobserve(element);
     };
   }, [ref, options.amount, options.once]);
 
@@ -186,7 +186,7 @@ const MagneticButton = ({
   children,
   className = '',
   strength = 30,
-  href = '#',
+  // href = '#',
   onClick
 }: {
   children: React.ReactNode;
@@ -269,7 +269,7 @@ const RoleCard = ({
   description: string;
   delay?: number;
 }) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, {once: true, amount: 0.5});
 
   return (

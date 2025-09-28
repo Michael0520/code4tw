@@ -1,13 +1,8 @@
 'use client';
 
 import {motion} from 'framer-motion';
-import Image from 'next/image';
 import {useTranslations} from 'next-intl';
 import {
-  Code2,
-  Users,
-  Lightbulb,
-  Eye,
   Github,
   Globe,
   Database,
@@ -19,7 +14,7 @@ import {
 // Tech Stack Animation - Open Source Card
 export const TechStackSkeleton = () => {
   return (
-    <div className="flex flex-1 w-full h-full min-h-[6rem] flex-row gap-2 p-1">
+    <div className="flex w-full min-h-[6rem] max-h-[10rem] flex-row gap-2 p-1">
       {/* GitHub Card */}
       <motion.div
         whileHover={{y: -8, rotate: -3}}
@@ -84,7 +79,7 @@ export const GradientSkeleton = () => {
         repeat: Infinity,
         ease: 'easeInOut'
       }}
-      className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl flex-col relative overflow-hidden"
+      className="flex w-full min-h-[6rem] max-h-[10rem] rounded-xl flex-col relative overflow-hidden"
       style={{
         background:
           'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)',
@@ -127,7 +122,7 @@ export const TestimonialsSkeleton = () => {
       initial="initial"
       animate="animate"
       whileHover="hover"
-      className="flex flex-1 w-full h-full min-h-[6rem] flex-row gap-2 p-2"
+      className="flex w-full min-h-[6rem] max-h-[10rem] flex-row gap-2 p-2"
     >
       <motion.div
         variants={first}
@@ -191,18 +186,18 @@ export const MessageSkeleton = () => {
   const t = useTranslations('IndexPage');
   const variants = {
     initial: {x: 0, scale: 1},
-    animate: {x: 5, scale: 1.02, transition: {duration: 0.3, type: 'spring'}}
+    animate: {x: 5, scale: 1.02, transition: {duration: 0.3, type: 'spring' as const}}
   };
   const variantsSecond = {
     initial: {x: 0, scale: 1},
-    animate: {x: -5, scale: 1.02, transition: {duration: 0.3, type: 'spring'}}
+    animate: {x: -5, scale: 1.02, transition: {duration: 0.3, type: 'spring' as const}}
   };
 
   return (
     <motion.div
       initial="initial"
       whileHover="animate"
-      className="flex flex-1 w-full h-full min-h-[6rem] bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-xl p-4 flex-col gap-3 relative overflow-hidden"
+      className="flex w-full min-h-[6rem] max-h-[10rem] bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-xl p-4 flex-col gap-3 relative overflow-hidden"
     >
       {/* Animated background dots */}
       <div className="absolute inset-0 opacity-20">
@@ -251,7 +246,7 @@ export const AISkeleton = () => {
     <motion.div
       initial={{opacity: 0}}
       animate={{opacity: 1}}
-      className="flex flex-1 w-full h-full min-h-[6rem] bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100 rounded-xl p-5 flex-col justify-center items-center relative overflow-hidden"
+      className="flex w-full min-h-[6rem] max-h-[10rem] bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100 rounded-xl p-5 flex-col justify-center items-center relative overflow-hidden"
     >
       {/* Floating particles */}
       {[...Array(3)].map((_, i) => (

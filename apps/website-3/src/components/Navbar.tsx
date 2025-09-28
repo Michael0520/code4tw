@@ -1,6 +1,6 @@
 'use client';
 
-import {useCallback, useState} from 'react';
+import {useCallback} from 'react';
 import {motion} from 'framer-motion';
 import Image from 'next/image';
 import {useTranslations} from 'next-intl';
@@ -9,15 +9,13 @@ interface NavbarProps {
   activeSection: string;
 }
 
-export function Navbar({activeSection}: NavbarProps) {
-  const [activeTab, setActiveTab] = useState('hero');
+export function Navbar({}: NavbarProps) {
   const t = useTranslations('IndexPage.navigation');
 
   const handleTabClick = useCallback((id: string) => {
     const section = document.querySelector(`#${id}`);
     if (section) {
       section.scrollIntoView({behavior: 'smooth'});
-      setActiveTab(id);
     }
   }, []);
 
@@ -32,7 +30,7 @@ export function Navbar({activeSection}: NavbarProps) {
           alt="Code for Taiwan"
           width={20}
           height={20}
-          className={activeSection === 'hero' ? 'opacity-100' : 'opacity-70'}
+          className="opacity-100"
         />
       )
     },
@@ -40,33 +38,21 @@ export function Navbar({activeSection}: NavbarProps) {
       id: 'about',
       label: t('about'),
       icon: (
-        <InfoIcon
-          className={`h-5 w-5 ${
-            activeSection === 'about' ? 'text-white' : 'text-white/70'
-          }`}
-        />
+        <InfoIcon className="h-5 w-5 text-white" />
       )
     },
     {
       id: 'join',
       label: t('join'),
       icon: (
-        <UsersIcon
-          className={`h-5 w-5 ${
-            activeSection === 'join' ? 'text-white' : 'text-white/70'
-          }`}
-        />
+        <UsersIcon className="h-5 w-5 text-white" />
       )
     },
     {
       id: 'faq',
       label: t('faq'),
       icon: (
-        <QuestionIcon
-          className={`h-5 w-5 ${
-            activeSection === 'faq' ? 'text-white' : 'text-white/70'
-          }`}
-        />
+        <QuestionIcon className="h-5 w-5 text-white" />
       )
     }
   ];
@@ -75,8 +61,6 @@ export function Navbar({activeSection}: NavbarProps) {
     <div className="flex sticky top-0 z-50 bg-black/80 backdrop-blur-md px-1 py-[3px] rounded-full border border-white/20 shadow-lg">
       <ul className="flex w-full justify-between gap-1 md:gap-2">
         {tabs.map((tab) => {
-          const isActive = activeTab === tab.id || activeSection === tab.id;
-
           return (
             <motion.button
               key={tab.id}
@@ -84,22 +68,9 @@ export function Navbar({activeSection}: NavbarProps) {
               className="relative flex items-center justify-center md:justify-start gap-0 md:gap-2 px-3 md:px-4 py-2 text-sm md:text-base cursor-pointer font-medium outline-none transition-all hover:bg-white/5 focus-visible:outline-2"
               style={{WebkitTapHighlightColor: 'transparent'}}
             >
-              {isActive && (
-                <motion.div
-                  layoutId="highlight"
-                  className="absolute inset-0 bg-white/20 pointer-events-none"
-                  style={{borderRadius: 9999}}
-                  transition={{type: 'spring', bounce: 0.2, duration: 0.6}}
-                />
-              )}
-
-              <div className="z-20 flex items-center gap-0 md:gap-2 pointer-events-none">
+              <div className="flex items-center gap-0 md:gap-2 pointer-events-none">
                 {tab.icon}
-                <span
-                  className={`hidden md:block font-medium transition-colors ${
-                    isActive ? 'text-white' : 'text-white/70'
-                  }`}
-                >
+                <span className="hidden md:block font-medium text-white">
                   {tab.label}
                 </span>
               </div>
@@ -112,6 +83,8 @@ export function Navbar({activeSection}: NavbarProps) {
 }
 
 // Icon components matching the cult-landing-page SVGs
+// HomeIcon component commented out as it's currently unused
+/*
 function HomeIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
@@ -131,6 +104,7 @@ function HomeIcon(props: React.SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+*/
 
 function InfoIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
