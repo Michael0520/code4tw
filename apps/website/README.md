@@ -1,4 +1,4 @@
-# Website-3 - Code4TW International Website
+# Website - Code4TW International Website
 
 A modern, multilingual website built with Next.js 15 and next-intl for the Code4TW project.
 
@@ -22,7 +22,7 @@ A modern, multilingual website built with Next.js 15 and next-intl for the Code4
 ## 📁 Project Structure
 
 ```
-website-3/
+website/
 ├── src/
 │   ├── app/                    # Next.js App Router
 │   │   ├── [locale]/           # Dynamic locale routing

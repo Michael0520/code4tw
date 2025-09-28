@@ -1,8 +1,0 @@
-{
-  "buildCommand": "pnpm build --filter=website",
-  "installCommand": "pnpm install",
-  "framework": "nextjs",
-  "outputDirectory": "apps/website/.next",
-  "rootDirectory": "apps/website",
-  "ignoreCommand": "git diff HEAD^ HEAD --quiet ."
-}
