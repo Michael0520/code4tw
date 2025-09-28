@@ -10,7 +10,29 @@ export default async function manifest(): Promise<MetadataRoute.Manifest> {
 
   return {
     name: t('name'),
+    short_name: 'Code4TW',
+    description: t('description'),
     start_url: '/',
-    theme_color: '#101E33'
+    display: 'standalone',
+    background_color: '#ffffff',
+    theme_color: '#000095',
+    icons: [
+      {
+        src: '/logo-square.svg',
+        sizes: '208x208',
+        type: 'image/svg+xml',
+        purpose: 'any maskable'
+      },
+      {
+        src: '/logo-square.svg',
+        sizes: '192x192',
+        type: 'image/svg+xml',
+      },
+      {
+        src: '/logo-square.svg',
+        sizes: '512x512',
+        type: 'image/svg+xml',
+      }
+    ]
   };
 }

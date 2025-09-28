@@ -1,0 +1,11 @@
+"use client";
+
+import FeaturesSection from "./feature-section";
+
+export default function Home() {
+  return (
+    <main className="flex h-screen w-full items-center justify-center">
+      <FeaturesSection />
+    </main>
+  );
+}

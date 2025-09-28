@@ -7,6 +7,12 @@
     "title": "Code for Taiwan",
     "subtitle": "Building Digital Infrastructure for a Better Society",
     "description": "We are a civic tech community dedicated to creating open-source solutions that improve government transparency, civic engagement, and public services.",
+    "navigation": {
+      "home": "Home",
+      "about": "About",
+      "join": "Join",
+      "faq": "FAQ"
+    },
     "hero": {
       "headline": "Technology for Social Good",
       "subheadline": "Join us in building a more transparent and participatory democracy through technology",
@@ -16,6 +22,24 @@
     "about": {
       "title": "Building a Better Taiwan Through Technology and Collaboration",
       "subtitle": "Through collaborative civic tech development, we promote transparency, accountability, and civic engagement in Taiwan.",
+      "civic_tech": "Civic Tech",
+      "civic_tech_zh": "Civic Technology",
+      "testimonials": {
+        "opensource_collaboration": "Open source makes collaboration simple",
+        "transparency_changes": "Transparency changes everything",
+        "tech_creates_value": "Technology creates value",
+        "developer": "Developer",
+        "citizen": "Citizen",
+        "designer": "Designer"
+      },
+      "message_card": {
+        "user_message": "We need more transparent government information...",
+        "join_message": "Join us! Transform Taiwan with technology"
+      },
+      "ai_card": {
+        "title": "AI-Driven Innovation",
+        "description": "Latest AI technology analysis"
+      },
       "values": {
         "open_source": {
           "title": "Open Source",
@@ -66,20 +90,29 @@
       "view_all": "View All Projects"
     },
     "join": {
-      "title": "Join Our Community",
+      "title": "Community",
       "description": "Participate in community activities through various channels and work together with like-minded partners for Taiwan's digital democracy.",
       "tag": "Community Participation",
       "section": {
         "title": "Join Our Team",
-        "description": "Whether you're a developer, designer, or a citizen concerned about social issues, we welcome your participation. Let's use technology to make Taiwan better together!"
+        "description": "Whether you're a developer, designer, or a citizen concerned about social issues, we welcome your participation. Let's use technology to make Taiwan better together!",
+        "cta_title": "Join Our Movement",
+        "cta_description_line1": "Join Code for Taiwan Now",
+        "cta_description_line2": "Transform Society with Technology"
       },
       "roles": {
         "developers": "Developers",
+        "developers_description": "Build open-source tools and contribute code to civic tech projects",
         "designers": "Designers",
+        "designers_description": "Create user-friendly interfaces and improve digital experiences",
         "data_scientists": "Data Scientists",
+        "data_scientists_description": "Analyze open data and generate insights for public good",
         "project_managers": "Project Managers",
-        "community_organizers": "Community Organizers"
-      }
+        "project_managers_description": "Coordinate teams and drive projects from concept to completion",
+        "community_organizers": "Community Organizers",
+        "community_organizers_description": "Connect people and foster collaboration across communities"
+      },
+      "cta": "Join Our Community"
     },
     "stats": {
       "contributors": "Active Contributors",

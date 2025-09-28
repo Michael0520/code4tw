@@ -1,187 +1,200 @@
-import {Locale, useTranslations} from 'next-intl';
-import {setRequestLocale} from 'next-intl/server';
-import {use} from 'react';
+'use client';
+
+import {useTranslations} from 'next-intl';
+import {use, useEffect, useRef, useState} from 'react';
 import {AnimatedRadialGradientBackground} from '@/sections/marketing-hero-radial-gradient/animated-radial-background';
-import {Code, Users, Lightbulb, Eye} from 'lucide-react';
 import {FAQSection} from '@/components/FAQSection';
 import {Footer} from '@/components/Footer';
+import {Navbar} from '@/components/Navbar';
+import {LanguageSelector} from '@/components/LanguageSelector';
+import {JoinSectionImmersive} from '@/components/JoinSectionImmersive';
+import {AboutSectionBento} from '@/components/AboutSectionBento';
+import {TextAnimate} from '@/components/TextAnimate';
+import {BrandKeywordHighlight, BRAND_KEYWORDS} from '@/components/BrandKeywordHighlight';
+import {motion} from 'framer-motion';
 
 export default function IndexPage({params}: PageProps<'/[locale]'>) {
   const {locale} = use(params);
+  const [activeSection, setActiveSection] = useState('hero');
 
-  // Enable static rendering
-  setRequestLocale(locale as Locale);
+  const heroRef = useRef<HTMLElement | null>(null);
+  const aboutRef = useRef<HTMLElement | null>(null);
+  const joinRef = useRef<HTMLElement | null>(null);
+  const faqRef = useRef<HTMLElement | null>(null);
+
+  const sectionRefs = {
+    hero: heroRef,
+    about: aboutRef,
+    join: joinRef,
+    faq: faqRef,
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    Object.values(sectionRefs).forEach((ref) => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => {
+      Object.values(sectionRefs).forEach((ref) => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      });
+    };
+  }, []);
 
   const t = useTranslations('IndexPage');
 
+  const scrollToAbout = () => {
+    aboutRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <div className="min-h-screen">
-      {/* Custom Layout without Container */}
-      {/* Hero Section with Animated Background */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <>
+      {/* Navbar with positioning wrapper */}
+      <div className="fixed bottom-10 md:top-10 left-1/2 -translate-x-1/2 z-[9999] pointer-events-none will-change-transform">
+        <motion.div
+          initial={{ opacity: 0, y: -120 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 120 }}
+          transition={{ duration: 1.6, delay: 0.9, type: 'spring' }}
+          className="pointer-events-auto"
+          style={{ contain: 'layout style paint' }}
+        >
+          <Navbar activeSection={activeSection} />
+        </motion.div>
+      </div>
+
+      {/* Language Selector positioned separately */}
+      <div className="fixed top-10 right-10 z-[9999] will-change-transform pointer-events-auto">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.6, delay: 1.1, type: 'spring' }}
+        >
+          <LanguageSelector />
+        </motion.div>
+      </div>
+
+      {/* Main content */}
+      <main className="overflow-x-hidden">
+        <div className="overflow-x-hidden">
+          {/* Custom Layout without Container */}
+          {/* Hero Section with Animated Background */}
+          <section id="hero" ref={heroRef} className="relative h-[100dvh] flex items-center justify-center overflow-hidden">
         <AnimatedRadialGradientBackground
           Breathing={true}
-          containerClassName="absolute inset-0"
+          containerClassName="absolute inset-0 z-0"
         />
-        <div className="relative z-10 text-center text-white px-4 w-full">
-          <h1 className="text-6xl md:text-7xl font-bold mb-6">{t('title')}</h1>
-          <p className="text-2xl md:text-3xl text-gray-200 mb-4">
-            {t('subtitle')}
-          </p>
-          <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-4xl mx-auto">
-            {t('description')}
-          </p>
+        <div className="relative z-10 text-center text-white px-4 w-full pointer-events-none">
+          <div className="pointer-events-auto">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-4xl md:text-5xl font-bold mb-6 text-white"
+          >
+            <BrandKeywordHighlight
+              text={t('title')}
+              keywords={['Taiwan', 'Code']}
+              normalClassName="text-white"
+              brandKeywordClassName="font-brand text-white"
+              animate={true}
+            />
+          </motion.h1>
+          <motion.p
+            className="text-lg md:text-xl text-gray-200 mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            <BrandKeywordHighlight
+              text={t('subtitle')}
+              keywords={['Digital', 'Technology', 'Society']}
+              normalClassName="text-gray-200"
+              brandKeywordClassName="font-brand text-gray-200"
+              animate={true}
+            />
+          </motion.p>
+          <motion.p
+            className="text-base md:text-lg text-gray-300 mb-12 max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.1 }}
+          >
+            <BrandKeywordHighlight
+              text={t('description')}
+              keywords={['technology', 'transparency', 'civic', 'open-source']}
+              normalClassName="text-gray-300"
+              brandKeywordClassName="font-brand text-gray-300"
+              animate={true}
+            />
+          </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="px-8 py-4 bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl text-white font-semibold text-lg hover:bg-white/30 transition-all duration-300 transform hover:scale-105">
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center relative z-[100] pointer-events-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.3 }}
+          >
+            <button
+              onClick={() => {
+                console.log('Opening Discord...');
+                window.open('https://discord.gg/pRFjDXeFyv', '_blank');
+              }}
+              className="relative z-[100] inline-flex h-14 items-center justify-center rounded-full bg-white px-8 font-medium text-[#000095] shadow-lg hover:shadow-xl hover:bg-gray-100 transition-all duration-300 hover:scale-105 cursor-pointer"
+              type="button"
+            >
               {t('hero.cta')}
             </button>
-            <button className="px-8 py-4 bg-transparent border-2 border-white/50 rounded-xl text-white font-semibold text-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105">
+            <button
+              onClick={() => {
+                console.log('Scrolling to about...');
+                scrollToAbout();
+              }}
+              className="relative z-[100] inline-flex h-14 items-center justify-center rounded-full border-2 border-white/50 bg-transparent px-8 font-medium text-white hover:bg-white/10 hover:border-white/70 transition-all duration-300 hover:scale-105 cursor-pointer"
+              type="button"
+            >
               {t('hero.learn_more')}
             </button>
+          </motion.div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-4 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-6">{t('about.title')}</h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            {t('about.subtitle')}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          <div className="bg-green-50 rounded-2xl p-8 text-center hover:bg-green-100 transition-colors duration-300">
-            <div className="w-16 h-16 bg-green-600 rounded-xl mx-auto mb-6 flex items-center justify-center">
-              <Code className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-xl font-semibold mb-4">
-              {t('about.values.open_source.title')}
-            </h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              {t('about.values.open_source.description')}
-            </p>
-          </div>
-
-          <div className="bg-green-50 rounded-2xl p-8 text-center hover:bg-green-100 transition-colors duration-300">
-            <div className="w-16 h-16 bg-green-600 rounded-xl mx-auto mb-6 flex items-center justify-center">
-              <Users className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-xl font-semibold mb-4">
-              {t('about.values.community_driven.title')}
-            </h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              {t('about.values.community_driven.description')}
-            </p>
-          </div>
-
-          <div className="bg-green-50 rounded-2xl p-8 text-center hover:bg-green-100 transition-colors duration-300">
-            <div className="w-16 h-16 bg-green-600 rounded-xl mx-auto mb-6 flex items-center justify-center">
-              <Lightbulb className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-xl font-semibold mb-4">
-              {t('about.values.innovation.title')}
-            </h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              {t('about.values.innovation.description')}
-            </p>
-          </div>
-
-          <div className="bg-green-50 rounded-2xl p-8 text-center hover:bg-green-100 transition-colors duration-300">
-            <div className="w-16 h-16 bg-green-600 rounded-xl mx-auto mb-6 flex items-center justify-center">
-              <Eye className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-xl font-semibold mb-4">
-              {t('about.values.transparency.title')}
-            </h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              {t('about.values.transparency.description')}
-            </p>
-          </div>
-        </div>
-
-        {/* Stats integrated into About section */}
-        <div className="bg-gray-50 rounded-2xl p-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-green-600">500+</div>
-              <div className="text-gray-600">{t('stats.contributors')}</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-green-600">50+</div>
-              <div className="text-gray-600">{t('stats.projects')}</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-green-600">200+</div>
-              <div className="text-gray-600">{t('stats.events')}</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-green-600">100K+</div>
-              <div className="text-gray-600">{t('stats.impact')}</div>
-            </div>
-          </div>
-        </div>
+      <section id="about" ref={aboutRef}>
+        <AboutSectionBento />
       </section>
 
       {/* Join Section */}
-      <section className="py-20 px-4 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-600 text-sm rounded-full mb-6">
-            {t('join.tag')}
-          </div>
-          <h2 className="text-4xl font-bold mb-6">{t('join.title')}</h2>
-          <p className="text-gray-600 text-xl max-w-4xl mx-auto">
-            {t('join.description')}
-          </p>
-        </div>
-
-        <div className="bg-green-50 rounded-3xl p-12 max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold mb-6">
-              {t('join.section.title')}
-            </h3>
-            <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-              {t('join.section.description')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            <button className="bg-white p-6 rounded-2xl text-center hover:bg-gray-50 transition-all duration-300 group hover:shadow-lg">
-              <div className="text-lg font-semibold text-gray-800 group-hover:text-green-600 transition-colors">
-                {t('join.roles.developers')}
-              </div>
-            </button>
-            <button className="bg-white p-6 rounded-2xl text-center hover:bg-gray-50 transition-all duration-300 group hover:shadow-lg">
-              <div className="text-lg font-semibold text-gray-800 group-hover:text-green-600 transition-colors">
-                {t('join.roles.designers')}
-              </div>
-            </button>
-            <button className="bg-white p-6 rounded-2xl text-center hover:bg-gray-50 transition-all duration-300 group hover:shadow-lg">
-              <div className="text-lg font-semibold text-gray-800 group-hover:text-green-600 transition-colors">
-                {t('join.roles.data_scientists')}
-              </div>
-            </button>
-            <button className="bg-white p-6 rounded-2xl text-center hover:bg-gray-50 transition-all duration-300 group hover:shadow-lg">
-              <div className="text-lg font-semibold text-gray-800 group-hover:text-green-600 transition-colors">
-                {t('join.roles.project_managers')}
-              </div>
-            </button>
-            <button className="bg-white p-6 rounded-2xl text-center hover:bg-gray-50 transition-all duration-300 group hover:shadow-lg col-span-2 md:col-span-1">
-              <div className="text-lg font-semibold text-gray-800 group-hover:text-green-600 transition-colors">
-                {t('join.roles.community_organizers')}
-              </div>
-            </button>
-          </div>
-        </div>
+      <section id="join" ref={joinRef}>
+        <JoinSectionImmersive />
       </section>
+    </div>
 
-      {/* FAQ Section */}
-      <FAQSection />
+      {/* FAQ Section - Outside main container for full width */}
+      <section id="faq" ref={faqRef} className="relative">
+        <FAQSection />
+      </section>
 
       {/* Footer */}
       <Footer />
-    </div>
+      </main>
+    </>
   );
 }

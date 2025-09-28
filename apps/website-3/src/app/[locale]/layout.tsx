@@ -3,10 +3,17 @@ import {Locale, hasLocale, NextIntlClientProvider} from 'next-intl';
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {clsx} from 'clsx';
 import {Inter} from 'next/font/google';
+import localFont from 'next/font/local';
 import {routing} from '@/i18n/routing';
+import {siteConfig} from '@/config/site';
 import './styles.css';
 
 const inter = Inter({subsets: ['latin']});
+
+const brand = localFont({
+  variable: '--font-brand',
+  src: '../../fonts/Array-Bold.woff2',
+});
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
@@ -25,15 +32,20 @@ export async function generateMetadata(
   return {
     title: t('title'),
     description: t('description'),
+    keywords: siteConfig.metadata.keywords,
+    authors: siteConfig.metadata.authors,
     openGraph: {
       title: t('title'),
       description: t('description'),
       locale: locale,
-      type: 'website',
-      siteName: 'Code for Taiwan'
+      type: siteConfig.openGraph.type,
+      siteName: siteConfig.openGraph.siteName,
+      url: siteConfig.url
     },
     twitter: {
-      card: 'summary_large_image',
+      card: siteConfig.twitter.card,
+      site: siteConfig.twitter.site,
+      creator: siteConfig.twitter.creator,
       title: t('title'),
       description: t('description')
     }
@@ -55,8 +67,10 @@ export default async function LocaleLayout({
 
   return (
     <html className="h-full" lang={locale}>
-      <body className={clsx(inter.className, 'flex h-full flex-col')}>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+      <body className={clsx(inter.className, brand.variable, 'flex h-full flex-col')}>
+        <NextIntlClientProvider>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );

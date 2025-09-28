@@ -1,6 +1,7 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import {useTranslations} from 'next-intl';
-import {Github, Twitter, Youtube, ExternalLink} from 'lucide-react';
+import {Facebook, MessageCircle, Calendar, Mail, ExternalLink} from 'lucide-react';
 
 export function Footer() {
   const t = useTranslations('Footer');
@@ -9,84 +10,19 @@ export function Footer() {
     <footer className="bg-gray-50 border-t border-gray-200 py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Logo and Tagline */}
-          <div className="lg:col-span-1">
+          <div className="md:col-span-1">
             <div className="flex items-center mb-4">
-              <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-sm">C4</span>
-              </div>
-              <span className="text-xl font-bold text-gray-900">
-                code for taiwan
-              </span>
+              <Image
+                src="/logo-full.svg"
+                alt="Code for Taiwan"
+                width={200}
+                height={40}
+                className="h-10 w-auto"
+              />
             </div>
             <p className="text-gray-600 text-sm mb-6">{t('tagline')}</p>
-
-            {/* Social Links */}
-            <div className="flex space-x-4">
-              <Link
-                href="https://twitter.com/codefortaiwan"
-                className="text-gray-400 hover:text-gray-600 transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5" />
-              </Link>
-              <Link
-                href="https://github.com/codefortaiwan"
-                className="text-gray-400 hover:text-gray-600 transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="w-5 h-5" />
-              </Link>
-              <Link
-                href="https://youtube.com/@codefortaiwan"
-                className="text-gray-400 hover:text-gray-600 transition-colors"
-                aria-label="YouTube"
-              >
-                <Youtube className="w-5 h-5" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Projects */}
-          <div>
-            <h3 className="font-semibold text-gray-900 mb-4 uppercase text-sm tracking-wider">
-              {t('projects.title')}
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/projects/g0v"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
-                >
-                  {t('projects.g0v')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/projects/vTaiwan"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
-                >
-                  {t('projects.vTaiwan')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/projects/democracy-tools"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
-                >
-                  {t('projects.democracy_tools')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/projects/transparency"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
-                >
-                  {t('projects.transparency')}
-                </Link>
-              </li>
-            </ul>
           </div>
 
           {/* Community */}
@@ -97,82 +33,55 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="https://slack.codefortaiwan.org"
+                  href="https://www.facebook.com/CFTcodefortaiwan/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-600 hover:text-gray-900 transition-colors text-sm flex items-center"
                 >
-                  {t('community.slack')}
+                  <Facebook className="w-4 h-4 mr-2" />
+                  Facebook
                   <ExternalLink className="w-3 h-3 ml-1" />
                 </Link>
               </li>
               <li>
                 <Link
-                  href="https://discord.gg/codefortaiwan"
+                  href="https://discord.gg/pRFjDXeFyv"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-600 hover:text-gray-900 transition-colors text-sm flex items-center"
                 >
+                  <MessageCircle className="w-4 h-4 mr-2" />
                   {t('community.discord')}
                   <ExternalLink className="w-3 h-3 ml-1" />
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/events"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
+                  href="https://luma.com/0ckf5dio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm flex items-center"
                 >
+                  <Calendar className="w-4 h-4 mr-2" />
                   {t('community.events')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/hackathons"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
-                >
-                  {t('community.hackathons')}
+                  <ExternalLink className="w-3 h-3 ml-1" />
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Contact */}
           <div>
             <h3 className="font-semibold text-gray-900 mb-4 uppercase text-sm tracking-wider">
-              {t('resources.title')}
+              {t('links.contact')}
             </h3>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="https://docs.codefortaiwan.org"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm flex items-center"
-                >
-                  {t('resources.docs')}
-                  <ExternalLink className="w-3 h-3 ml-1" />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://github.com/codefortaiwan/awesome-taiwan"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm flex items-center"
-                >
-                  {t('resources.awesome_taiwan')}
-                  <ExternalLink className="w-3 h-3 ml-1" />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contribute"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
-                >
-                  {t('resources.contribute')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
-                >
-                  {t('resources.blog')}
-                </Link>
-              </li>
-            </ul>
+            <a
+              href="mailto:codefortaiwan.org@gmail.com"
+              className="text-gray-600 hover:text-gray-900 transition-colors text-sm flex items-center"
+            >
+              <Mail className="w-4 h-4 mr-2" />
+              codefortaiwan.org@gmail.com
+            </a>
           </div>
         </div>
 
@@ -184,12 +93,6 @@ export function Footer() {
 
           <div className="flex space-x-6">
             <Link
-              href="/contact"
-              className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
-            >
-              {t('links.contact')}
-            </Link>
-            <Link
               href="/privacy"
               className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
             >
@@ -200,12 +103,6 @@ export function Footer() {
               className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
             >
               {t('links.terms')}
-            </Link>
-            <Link
-              href="/support"
-              className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
-            >
-              {t('links.support')}
             </Link>
           </div>
         </div>

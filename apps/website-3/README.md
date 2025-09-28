@@ -216,6 +216,14 @@ Part of the Code4TW project.
 - [next-intl Documentation](https://next-intl-docs.vercel.app/)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 
+## 📞 Contact
+
+- **Email**: codefortaiwan.org@gmail.com
+- **Facebook**: [CFTcodefortaiwan](https://www.facebook.com/CFTcodefortaiwan/)
+- **Discord**: [Join our community](https://discord.gg/pRFjDXeFyv)
+- **Events**: [Luma Calendar](https://luma.com/0ckf5dio)
+- **GitHub**: [codefortaiwan](https://github.com/codefortaiwan)
+
 ---
 
 **Port**: 3006 (Development)
