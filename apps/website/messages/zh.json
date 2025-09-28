@@ -10,6 +10,7 @@
     "navigation": {
       "home": "首頁",
       "about": "關於",
+      "events": "活動",
       "join": "加入",
       "faq": "FAQ"
     },
@@ -84,6 +85,24 @@
           "answer": "您可以透過我們的官方網站、社群媒體平台，或是直接參加我們的實體活動與我們聯繫。我們也歡迎您加入我們的線上社群，與其他參與者交流討論。"
         }
       ]
+    },
+    "events": {
+      "title": "Explore Our Events",
+      "subtitle": "參與我們的工作坊、黑客松與社群聚會，一起用科技創造改變",
+      "cta_button": "檢視所有活動",
+      "view_all": "檢視所有活動",
+      "upcoming": "即將舉辦",
+      "past": "過去的活動",
+      "register": "報名參加",
+      "learn_more": "了解更多",
+      "no_upcoming": "目前沒有即將舉辦的活動",
+      "no_past": "沒有過去的活動記錄",
+      "types": {
+        "workshop": "工作坊",
+        "hackathon": "黑客松",
+        "meetup": "聚會",
+        "conference": "研討會"
+      }
     },
     "projects": {
       "title": "學習資源",

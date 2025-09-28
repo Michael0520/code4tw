@@ -45,7 +45,9 @@ module.exports = {
   				700: '#00006b',
   				800: '#000056',
   				900: '#000040'
-  			}
+  			},
+  			background: 'hsl(var(--background))',
+  			foreground: 'hsl(var(--foreground))'
   		},
   		typography: {
   			// Display text (hero sections, major headings)
@@ -89,11 +91,20 @@ module.exports = {
   				to: {
   					height: '0'
   				}
+  			},
+  			'ripple': {
+  				'0%, 100%': {
+  					transform: 'scale(1)',
+  				},
+  				'50%': {
+  					transform: 'scale(0.9)',
+  				}
   			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			'ripple': 'ripple 4s ease-in-out infinite'
   		}
   	}
   },

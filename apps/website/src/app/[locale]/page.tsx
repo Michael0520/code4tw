@@ -10,6 +10,7 @@ import {LanguageSelector} from '@/components/LanguageSelector';
 import {JoinSectionImmersive} from '@/components/JoinSectionImmersive';
 import {AboutSectionBento} from '@/components/AboutSectionBento';
 import {BrandKeywordHighlight} from '@/components/BrandKeywordHighlight';
+import {EventsSection} from '@/components/EventsSection';
 import {motion} from 'framer-motion';
 
 export default function IndexPage({params}: PageProps<'/[locale]'>) {
@@ -18,6 +19,7 @@ export default function IndexPage({params}: PageProps<'/[locale]'>) {
 
   const heroRef = useRef<HTMLElement | null>(null);
   const aboutRef = useRef<HTMLElement | null>(null);
+  const eventsRef = useRef<HTMLElement | null>(null);
   const joinRef = useRef<HTMLElement | null>(null);
   const faqRef = useRef<HTMLElement | null>(null);
 
@@ -25,6 +27,7 @@ export default function IndexPage({params}: PageProps<'/[locale]'>) {
     const sectionRefs = {
       hero: heroRef,
       about: aboutRef,
+      events: eventsRef,
       join: joinRef,
       faq: faqRef
     };
@@ -187,6 +190,11 @@ export default function IndexPage({params}: PageProps<'/[locale]'>) {
           {/* About Section */}
           <section id="about" ref={aboutRef}>
             <AboutSectionBento />
+          </section>
+
+          {/* Events Section */}
+          <section id="events" ref={eventsRef}>
+            <EventsSection />
           </section>
 
           {/* Join Section */}
