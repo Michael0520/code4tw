@@ -1,8 +1,13 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
-import { BentoGrid, BentoGridItem, BentoGridItemCta, BentoImageCard } from './BentoGrid';
+import {useTranslations} from 'next-intl';
+import {motion} from 'framer-motion';
+import {
+  BentoGrid,
+  BentoGridItem,
+  BentoGridItemCta,
+  BentoImageCard
+} from './BentoGrid';
 import {
   TechStackSkeleton,
   GradientSkeleton,
@@ -10,13 +15,12 @@ import {
   MessageSkeleton,
   AISkeleton
 } from './BentoCards';
-import { BrandKeywordHighlight, BRAND_KEYWORDS } from './BrandKeywordHighlight';
+import {BrandKeywordHighlight} from './BrandKeywordHighlight';
 import {
   Code2,
   Users,
   Lightbulb,
   Eye,
-  ArrowRight,
   Globe,
   Sparkles,
   Heart,
@@ -37,15 +41,18 @@ export function AboutSectionBento() {
         <span className="text-base md:text-lg leading-[1.5] text-gray-600">
           {t('about.values.open_source.description')}
           <motion.span
-            whileHover={{ scale: 1.1 }}
-            className="inline-flex items-center ml-1.5 bg-gradient-to-r from-[#000095] to-blue-600 text-white px-2 py-0.5 rounded-full text-[10px] font-black shadow-sm">
+            whileHover={{scale: 1.1}}
+            className="inline-flex items-center ml-1.5 bg-gradient-to-r from-[#000095] to-blue-600 text-white px-2 py-0.5 rounded-full text-[10px] font-black shadow-sm"
+          >
             100% OPEN
           </motion.span>
         </span>
       ),
       header: <TechStackSkeleton />,
-      className: "md:col-span-1 md:row-span-1 group",
-      icon: <Code2 className="h-4 w-4 text-[#000095] group-hover:text-blue-700 transition-colors" />,
+      className: 'md:col-span-1 md:row-span-1 group',
+      icon: (
+        <Code2 className="h-4 w-4 text-[#000095] group-hover:text-blue-700 transition-colors" />
+      )
     },
     {
       title: (
@@ -59,8 +66,10 @@ export function AboutSectionBento() {
         </span>
       ),
       header: <TestimonialsSkeleton />,
-      className: "md:col-span-2 md:row-span-1 group",
-      icon: <Users className="h-4 w-4 text-blue-600 group-hover:text-blue-700 transition-colors" />,
+      className: 'md:col-span-2 md:row-span-1 group',
+      icon: (
+        <Users className="h-4 w-4 text-blue-600 group-hover:text-blue-700 transition-colors" />
+      )
     },
     {
       title: (
@@ -74,8 +83,10 @@ export function AboutSectionBento() {
         </span>
       ),
       header: <AISkeleton />,
-      className: "md:col-span-1 md:row-span-1 group",
-      icon: <Lightbulb className="h-4 w-4 text-yellow-600 group-hover:text-yellow-700 transition-colors" />,
+      className: 'md:col-span-1 md:row-span-1 group',
+      icon: (
+        <Lightbulb className="h-4 w-4 text-yellow-600 group-hover:text-yellow-700 transition-colors" />
+      )
     },
     {
       title: (
@@ -89,9 +100,11 @@ export function AboutSectionBento() {
         </span>
       ),
       header: <GradientSkeleton />,
-      className: "md:col-span-1 md:row-span-1 group",
-      icon: <Eye className="h-4 w-4 text-purple-600 group-hover:text-purple-700 transition-colors" />,
-    },
+      className: 'md:col-span-1 md:row-span-1 group',
+      icon: (
+        <Eye className="h-4 w-4 text-purple-600 group-hover:text-purple-700 transition-colors" />
+      )
+    }
   ];
 
   const ctaCard = {
@@ -99,9 +112,9 @@ export function AboutSectionBento() {
       <motion.span
         className="text-lg md:text-xl font-black"
         animate={{
-          color: ['#000095', '#0000b3', '#000080', '#0000b3', '#000095'],
+          color: ['#000095', '#0000b3', '#000080', '#0000b3', '#000095']
         }}
-        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        transition={{duration: 3, repeat: Infinity, ease: 'easeInOut'}}
       >
         {t('join.section.cta_title')} →
       </motion.span>
@@ -116,8 +129,8 @@ export function AboutSectionBento() {
       </span>
     ),
     header: <MessageSkeleton />,
-    className: "md:col-span-1 md:row-span-1 group relative overflow-hidden",
-    icon: <Heart className="h-4 w-4 text-red-500 animate-pulse" />,
+    className: 'md:col-span-1 md:row-span-1 group relative overflow-hidden',
+    icon: <Heart className="h-4 w-4 text-red-500 animate-pulse" />
   };
 
   return (
@@ -129,24 +142,24 @@ export function AboutSectionBento() {
           className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-200 to-indigo-200 rounded-full mix-blend-multiply filter blur-2xl opacity-30"
           animate={{
             x: [0, 100, 0],
-            y: [0, -50, 0],
+            y: [0, -50, 0]
           }}
           transition={{
             duration: 20,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: 'easeInOut'
           }}
         />
         <motion.div
           className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-200 to-pink-200 rounded-full mix-blend-multiply filter blur-2xl opacity-30"
           animate={{
             x: [0, -100, 0],
-            y: [0, 50, 0],
+            y: [0, 50, 0]
           }}
           transition={{
             duration: 25,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: 'easeInOut'
           }}
         />
       </div>
@@ -179,10 +192,10 @@ export function AboutSectionBento() {
 
         {/* Modern Bento Grid */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          initial={{opacity: 0, y: 20}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true}}
+          transition={{duration: 0.6}}
         >
           <BentoGrid className="md:auto-rows-[18rem]">
             <BentoImageCard
@@ -190,9 +203,7 @@ export function AboutSectionBento() {
               description={t('about.civic_tech_zh')}
               className="md:col-span-1 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 hover:from-blue-100 hover:via-indigo-100 hover:to-blue-200 transition-all duration-300"
             >
-              <motion.div
-                className="relative"
-              >
+              <motion.div className="relative">
                 <Globe className="h-16 w-16 md:h-20 md:w-20 text-[#000095] drop-shadow-lg" />
                 <Sparkles className="h-5 w-5 md:h-6 md:w-6 text-yellow-500 absolute -top-1 -right-1 animate-pulse" />
               </motion.div>
@@ -201,13 +212,13 @@ export function AboutSectionBento() {
             {items.map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+                initial={{opacity: 0, scale: 0.9}}
+                whileInView={{opacity: 1, scale: 1}}
+                viewport={{once: true}}
                 transition={{
                   duration: 0.5,
                   delay: i * 0.1,
-                  type: "spring",
+                  type: 'spring',
                   stiffness: 100
                 }}
               >
@@ -222,13 +233,13 @@ export function AboutSectionBento() {
             ))}
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              initial={{opacity: 0, scale: 0.9}}
+              whileInView={{opacity: 1, scale: 1}}
+              viewport={{once: true}}
               transition={{
                 duration: 0.5,
                 delay: 0.5,
-                type: "spring",
+                type: 'spring',
                 stiffness: 100
               }}
             >
