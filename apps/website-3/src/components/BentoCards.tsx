@@ -191,11 +191,11 @@ export const MessageSkeleton = () => {
   const t = useTranslations('IndexPage');
   const variants = {
     initial: {x: 0, scale: 1},
-    animate: {x: 5, scale: 1.02, transition: {duration: 0.3, type: 'spring'}}
+    animate: {x: 5, scale: 1.02, transition: {duration: 0.3, type: 'spring' as const}}
   };
   const variantsSecond = {
     initial: {x: 0, scale: 1},
-    animate: {x: -5, scale: 1.02, transition: {duration: 0.3, type: 'spring'}}
+    animate: {x: -5, scale: 1.02, transition: {duration: 0.3, type: 'spring' as const}}
   };
 
   return (
