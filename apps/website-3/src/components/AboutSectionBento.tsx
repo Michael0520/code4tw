@@ -173,7 +173,7 @@ export function AboutSectionBento() {
                 text="Building a Better Taiwan Through Technology and Collaboration"
                 keywords={['Technology', 'Collaboration']}
                 normalClassName="text-black"
-                brandKeywordClassName="font-brand bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 bg-clip-text text-transparent"
+                brandKeywordClassName="font-brand "
                 animate={false}
               />
             </span>
@@ -197,7 +197,7 @@ export function AboutSectionBento() {
           viewport={{once: true}}
           transition={{duration: 0.6}}
         >
-          <BentoGrid className="md:auto-rows-[18rem]">
+          <BentoGrid className="md:auto-rows-[minmax(16rem,auto)]">
             <BentoImageCard
               text={t('about.civic_tech')}
               description={t('about.civic_tech_zh')}
