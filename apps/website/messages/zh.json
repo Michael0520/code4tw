@@ -1,101 +1,166 @@
 {
-  "metadata": {
-    "title": "Code for Taiwan | 台灣零時政府",
-    "description": "Code for Taiwan 是一個開放的公民科技社群，匯聚開發者、設計師與公民，共同打造數位解決方案，讓政府更透明、社會更美好。"
+  "Error": {
+    "description": "<p>很抱歉，我們遇到了錯誤。</p><p>您可以嘗試<retry>重新載入頁面</retry>。</p>",
+    "title": "發生錯誤！"
   },
-  "navigation": {
-    "home": "首頁",
-    "about": "關於我們",
-    "contact": "聯絡我們",
-    "language": "語言"
-  },
-  "hero": {
-    "badge": "開源 • 協作 • 公民科技",
-    "title": "用科技改變 ",
-    "titleHighlight": "台灣社會",
-    "description": "Code for Taiwan 是一個開放的公民科技社群，匯聚開發者、設計師與公民，共同打造數位解決方案，讓政府更透明、社會更美好。",
-    "joinUs": "加入我們",
-    "viewGitHub": "查看 GitHub"
-  },
-  "about": {
-    "title": "關於 Code for Taiwan",
-    "subtitle": "透過科技與協作，打造更好的台灣",
-    "mission": {
-      "description": "透過公民科技的協作開發，促進台灣的透明度、問責制和公民參與。"
+  "IndexPage": {
+    "title": "Code for Taiwan",
+    "subtitle": "為更好的社會建立數位基礎設施",
+    "description": "我們是一個公民科技社群，致力於創造開源解決方案，以改善政府透明度、公民參與和公共服務。",
+    "navigation": {
+      "home": "首頁",
+      "about": "關於",
+      "join": "加入",
+      "faq": "FAQ"
     },
-    "foundedYear": "成立於",
-    "yearsOld": "年",
-    "joinUs": "加入我們的社群",
-    "joinUsDescription": "不論你是開發者、設計師、或是關心社會議題的公民，我們都歡迎你的參與。讓我們一起用科技讓台灣更美好！",
-    "getInTouch": "聯絡我們",
-    "corePrinciples": "核心原則",
-    "corePrinciplesDescription": "指引我們工作和社群的基本原則。",
-    "organizationDescription": "我們對台灣數位未來的使命與願景。",
-    "team": "我們的團隊",
-    "teamDescription": "認識 Code for Taiwan 背後的成員。",
-    "activeMembers": "活躍成員",
-    "principles": "原則",
-    "valuesLabel": "價值",
-    "audiences": {
-      "developers": "開發者",
-      "designers": "設計師",
-      "citizens": "公民",
-      "students": "學生",
-      "researchers": "研究者"
+    "hero": {
+      "headline": "科技創造社會價值",
+      "subheadline": "加入我們，透過科技建立更透明、更具參與性的民主",
+      "cta": "立即參與",
+      "learn_more": "了解更多"
     },
-    "values": {
-      "title": "我們的價值"
+    "about": {
+      "title": "透過科技與協作，打造更好的台灣",
+      "subtitle": "透過公民科技的協作開發，促進台灣的透明度、問責制和公民參與。",
+      "civic_tech": "Civic Tech",
+      "civic_tech_zh": "公民科技",
+      "testimonials": {
+        "opensource_collaboration": "開源讓協作變得簡單",
+        "transparency_changes": "透明度改變一切",
+        "tech_creates_value": "科技創造價值",
+        "developer": "Developer",
+        "citizen": "Citizen",
+        "designer": "Designer"
+      },
+      "message_card": {
+        "user_message": "我們需要更透明的政府資訊...",
+        "join_message": "加入我們！用科技改變台灣"
+      },
+      "ai_card": {
+        "title": "AI 驅動創新",
+        "description": "最新 AI 技術分析"
+      },
+      "values": {
+        "open_source": {
+          "title": "Open Source",
+          "description": "所有內容都是開源的，歡迎來自社群的貢獻"
+        },
+        "community_driven": {
+          "title": "Community Driven",
+          "description": "多元化的志工社群為了社會影響力而共同協作"
+        },
+        "innovation": {
+          "title": "Innovation",
+          "description": "使用現代技術為社會挑戰提供創新解決方案"
+        },
+        "transparency": {
+          "title": "Government Transparency",
+          "description": "建立工具讓政府更透明和負責任"
+        }
+      }
     },
-    "valuesDescription": "驅動我們社群和專案的核心價值。",
-    "aboutUsTitle": "關於我們",
-    "aboutUsDescription": "Code for Taiwan 是一個致力於推動公民科技發展的社群，透過開源協作的方式，用科技解決社會問題，讓台灣更美好。",
-    "ourMission": "我們的使命",
-    "missionDescription": "透過公民科技的協作開發，促進台灣的透明度、問責制和公民參與。",
-    "missionPoints": {
-      "openData": "推動政府資料開放",
-      "participation": "建立公民參與平台",
-      "talent": "培育公民科技人才"
+    "faq": {
+      "title": "常見問題",
+      "subtitle": "關於 Code for Taiwan 的常見問題解答",
+      "questions": [
+        {
+          "question": "什麼是 Code for Taiwan？",
+          "answer": "Code for Taiwan 是一個公民科技社群，致力於透過開源技術解決社會問題，促進政府透明度和公民參與。我們將技術人員、設計師和關心社會的公民聚集在一起，共同創造有意義的數位解決方案。"
+        },
+        {
+          "question": "我沒有技術背景，可以參與嗎？",
+          "answer": "當然可以！我們歡迎各種背景的參與者。除了工程師和設計師，我們也需要協調管理、內容編輯、社群經營、政策研究等各種技能。每個人都可以透過學習程式思維來提升自己的工作效率。"
+        },
+        {
+          "question": "如何開始學習程式思維？",
+          "answer": "您可以透過參加我們的工作坊、加入我們的 Discord 討論群組、或是直接在 GitHub 上查看我們的學習資源開始學習。我們定期舉辦新手友善的課程，幫助大家建立程式思維。"
+        },
+        {
+          "question": "Code for Taiwan 的學習資源都是免費的嗎？",
+          "answer": "是的，我們所有的學習資源都是開源且免費提供給公眾使用。我們相信知識普及是縮小城鄉差距的關鍵，因此我們的教材、工具和資源都對所有人開放。"
+        },
+        {
+          "question": "如何聯繫 Code for Taiwan 團隊？",
+          "answer": "您可以透過我們的官方網站、社群媒體平台，或是直接參加我們的實體活動與我們聯繫。我們也歡迎您加入我們的線上社群，與其他參與者交流討論。"
+        }
+      ]
     },
-    "teamCollaboration": "團隊協作",
-    "coreValues": "核心價值",
-    "coreValuesDescription": "我們秉持開放、協作、關懷、連結的精神，致力於用科技創造正面的社會影響。",
-    "ourAchievements": "我們的成果",
-    "achievementsDescription": "十多年來，我們與社群夥伴共同創造的影響力",
-    "coreTeam": "核心團隊",
-    "coreTeamDescription": "推動台灣公民科技發展的重要推手",
-    "joinUsTitle": "加入我們",
-    "joinUsFullDescription": "不論你是開發者、設計師、專案經理，或是對公民科技有興趣的一般民眾，都歡迎加入我們的行列。",
-    "viewGitHub": "查看 GitHub",
-    "joinCommunity": "加入社群",
-    "copyright": "© 2024 Code for Taiwan. 致力於用科技讓台灣更美好。"
-  },
-  "community": {
-    "badge": "社群參與",
-    "title": "加入我們的社群",
-    "description": "透過多種管道參與社群活動，與志同道合的夥伴一起為台灣的數位民主努力。",
-    "joinTitle": "加入我們的行列",
-    "joinDescription": "不論你是開發者、設計師、或是關心社會議題的公民，我們都歡迎你的參與。讓我們一起用科技讓台灣更美好！"
-  },
-  "footer": {
-    "legal": {
-      "copyright": "© 2024 Code for Taiwan. 保留所有權利。"
+    "projects": {
+      "title": "學習資源",
+      "view_all": "檢視所有資源"
+    },
+    "join": {
+      "title": "Community",
+      "description": "透過多種管道參與社群活動，與志同道合的夥伴一起為台灣的數位民主努力。",
+      "tag": "社群參與",
+      "section": {
+        "title": "加入我們的行列",
+        "description": "不論你是開發者、設計師、或是關心社會議題的公民，我們都歡迎你的參與。讓我們一起用科技讓台灣更美好！",
+        "cta_title": "加入我們的行列",
+        "cta_description_line1": "立即加入 Code for Taiwan",
+        "cta_description_line2": "用科技改變社會"
+      },
+      "roles": {
+        "developers": "開發者",
+        "developers_description": "建構開源工具並推廣程式思維",
+        "designers": "設計師",
+        "designers_description": "創造友善的使用者介面並提升數位體驗",
+        "data_scientists": "資料科學家",
+        "data_scientists_description": "分析開放資料並產出公共利益的洞察",
+        "project_managers": "協調推廣者",
+        "project_managers_description": "協調團隊並推動程式思維普及化",
+        "community_organizers": "社群組織者",
+        "community_organizers_description": "連結人群並促進跨社群的協作"
+      },
+      "cta": "加入社群"
+    },
+    "stats": {
+      "contributors": "活躍貢獻者",
+      "projects": "學習資源",
+      "events": "舉辦活動",
+      "impact": "影響公民"
     }
   },
-  "search": {
-    "placeholder": "搜尋內容...",
-    "noResults": "找不到結果",
-    "navigate": "導航",
-    "select": "選擇",
-    "close": "關閉",
-    "types": {}
+  "Footer": {
+    "tagline": "透過科技與協作，打造更好的台灣。",
+    "projects": {
+      "title": "學習資源",
+      "g0v": "g0v 零時政府",
+      "vTaiwan": "vTaiwan 虛擬台灣",
+      "democracy_tools": "民主工具",
+      "transparency": "政府透明度"
+    },
+    "community": {
+      "title": "社群",
+      "slack": "Discord 討論區",
+      "discord": "Discord 聊天室",
+      "events": "活動",
+      "hackathons": "黑客松"
+    },
+    "resources": {
+      "title": "資源",
+      "docs": "開發文件",
+      "awesome_taiwan": "台灣資源集",
+      "contribute": "如何貢獻",
+      "blog": "部落格"
+    },
+    "copyright": "© 2025 Code for Taiwan. 版權所有。",
+    "links": {
+      "contact": "聯繫我們",
+      "privacy": "隱私政策",
+      "terms": "使用條款",
+      "support": "支援"
+    }
   },
-  "common": {
-    "search": "搜尋",
-    "viewMore": "查看更多",
-    "reset": "重設",
-    "filter": "篩選",
-    "sort": "排序",
-    "showing": "顯示",
-    "noResults": "找不到結果"
+  "LocaleLayout": {
+    "title": "Code for Taiwan - 為更好的社會建立數位基礎設施",
+    "description": "Code for Taiwan 是一個公民科技社群，致力於創造開源解決方案，以改善政府透明度、公民參與和公共服務。"
+  },
+  "Manifest": {
+    "name": "Code for Taiwan"
+  },
+  "NotFoundPage": {
+    "description": "請檢查瀏覽器網址列或使用導航前往已知頁面。",
+    "title": "找不到頁面"
   }
 }

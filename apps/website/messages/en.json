@@ -1,101 +1,166 @@
 {
-  "metadata": {
-    "title": "Code for Taiwan | Taiwan g0v",
-    "description": "Code for Taiwan is an open civic tech community that brings together developers, designers, and citizens to build digital solutions for government transparency and social good."
+  "Error": {
+    "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
+    "title": "Something went wrong!"
   },
-  "navigation": {
-    "home": "Home",
-    "about": "About",
-    "contact": "Contact",
-    "language": "Language"
-  },
-  "hero": {
-    "badge": "Open Source • Collaboration • Civic Tech",
-    "title": "Technology for ",
-    "titleHighlight": "Social Good",
-    "description": "Code for Taiwan is an open civic tech community that brings together developers, designers, and citizens to build digital solutions for government transparency and social good.",
-    "joinUs": "Join Us",
-    "viewGitHub": "View GitHub"
-  },
-  "about": {
-    "title": "About Code for Taiwan",
-    "subtitle": "Building better Taiwan through technology and collaboration",
-    "mission": {
-      "description": "We foster transparency, accountability, and citizen participation in Taiwan through collaborative development of civic technology."
+  "IndexPage": {
+    "title": "Code for Taiwan",
+    "subtitle": "Building Digital Infrastructure for a Better Society",
+    "description": "We are a civic tech community dedicated to creating open-source solutions that improve government transparency, civic engagement, and public services.",
+    "navigation": {
+      "home": "Home",
+      "about": "About",
+      "join": "Join",
+      "faq": "FAQ"
     },
-    "foundedYear": "Founded",
-    "yearsOld": "years old",
-    "joinUs": "Join Our Community",
-    "joinUsDescription": "Whether you're a developer, designer, or citizen who cares about social issues, we welcome your participation. Let's use technology to make Taiwan better together!",
-    "getInTouch": "Get in Touch",
-    "corePrinciples": "Core Principles",
-    "corePrinciplesDescription": "The fundamental principles that guide our work and community.",
-    "organizationDescription": "Our mission and vision for Taiwan's digital future.",
-    "team": "Our Team",
-    "teamDescription": "Meet the people behind Code for Taiwan.",
-    "activeMembers": "Active Members",
-    "principles": "Principles",
-    "valuesLabel": "Values",
-    "audiences": {
-      "developers": "Developers",
-      "designers": "Designers",
-      "citizens": "Citizens",
-      "students": "Students",
-      "researchers": "Researchers"
+    "hero": {
+      "headline": "Technology for Social Good",
+      "subheadline": "Join us in building a more transparent and participatory democracy through technology",
+      "cta": "Get Involved",
+      "learn_more": "Learn More"
     },
-    "values": {
-      "title": "Our Values"
+    "about": {
+      "title": "Building a Better Taiwan Through Technology and Collaboration",
+      "subtitle": "Through collaborative civic tech development, we promote transparency, accountability, and civic engagement in Taiwan.",
+      "civic_tech": "Civic Tech",
+      "civic_tech_zh": "Civic Technology",
+      "testimonials": {
+        "opensource_collaboration": "Open source makes collaboration simple",
+        "transparency_changes": "Transparency changes everything",
+        "tech_creates_value": "Technology creates value",
+        "developer": "Developer",
+        "citizen": "Citizen",
+        "designer": "Designer"
+      },
+      "message_card": {
+        "user_message": "We need more transparent government information...",
+        "join_message": "Join us! Transform Taiwan with technology"
+      },
+      "ai_card": {
+        "title": "AI-Driven Innovation",
+        "description": "Latest AI technology analysis"
+      },
+      "values": {
+        "open_source": {
+          "title": "Open Source",
+          "description": "All content is open source and welcome contributions from the community"
+        },
+        "community_driven": {
+          "title": "Community Driven",
+          "description": "Diverse community of volunteers working together for social impact"
+        },
+        "innovation": {
+          "title": "Innovation",
+          "description": "Innovative solutions for social challenges using modern technology"
+        },
+        "transparency": {
+          "title": "Government Transparency",
+          "description": "Building tools to make government more transparent and accountable"
+        }
+      }
     },
-    "valuesDescription": "The core values that drive our community and projects.",
-    "aboutUsTitle": "About Us",
-    "aboutUsDescription": "Code for Taiwan is a community dedicated to advancing civic technology through open source collaboration, using technology to solve social problems and make Taiwan better.",
-    "ourMission": "Our Mission",
-    "missionDescription": "We foster transparency, accountability, and citizen participation in Taiwan through collaborative development of civic technology.",
-    "missionPoints": {
-      "openData": "Promoting open government data",
-      "participation": "Building citizen participation platforms",
-      "talent": "Cultivating civic tech talent"
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Common questions about Code for Taiwan",
+      "questions": [
+        {
+          "question": "What is Code for Taiwan?",
+          "answer": "Code for Taiwan is a civic tech community dedicated to solving social problems through open-source technology, promoting government transparency and civic engagement. We bring together technologists, designers, and citizens who care about society to create meaningful digital solutions."
+        },
+        {
+          "question": "Can I participate without a technical background?",
+          "answer": "Absolutely! We welcome participants from all backgrounds. Besides engineers and designers, we also need skills in coordination, content editing, community management, policy research, and more. Everyone can learn programming thinking to improve their work efficiency."
+        },
+        {
+          "question": "How can I start learning programming thinking?",
+          "answer": "You can start by attending our workshops, joining our Discord discussion groups, or directly checking out our learning resources on GitHub. We regularly host beginner-friendly courses to help everyone develop programming thinking."
+        },
+        {
+          "question": "Are all Code for Taiwan learning resources free?",
+          "answer": "Yes, all our learning resources are open source and freely available to the public. We believe knowledge dissemination is key to bridging the urban-rural gap, so our materials, tools, and resources are open to everyone."
+        },
+        {
+          "question": "How can I contact the Code for Taiwan team?",
+          "answer": "You can reach us through our official website, social media platforms, or by directly attending our physical events. We also welcome you to join our online community to discuss and exchange ideas with other participants."
+        }
+      ]
     },
-    "teamCollaboration": "Team collaboration",
-    "coreValues": "Core Values",
-    "coreValuesDescription": "We uphold the spirit of openness, collaboration, care, and connection, committed to creating positive social impact through technology.",
-    "ourAchievements": "Our Achievements",
-    "achievementsDescription": "The impact we've created together with our community partners over the years",
-    "coreTeam": "Core Team",
-    "coreTeamDescription": "Key figures driving Taiwan's civic technology development",
-    "joinUsTitle": "Join Us",
-    "joinUsFullDescription": "Whether you're a developer, designer, project manager, or citizen interested in civic technology, you're welcome to join us.",
-    "viewGitHub": "View GitHub",
-    "joinCommunity": "Join Community",
-    "copyright": "© 2024 Code for Taiwan. Committed to making Taiwan better through technology."
-  },
-  "community": {
-    "badge": "Community Participation",
-    "title": "Join Our Community",
-    "description": "Participate in community activities through various channels and work with like-minded partners for Taiwan's digital democracy.",
-    "joinTitle": "Join Our Ranks",
-    "joinDescription": "Whether you're a developer, designer, or a citizen who cares about social issues, we welcome your participation. Let's use technology to make Taiwan better together!"
-  },
-  "footer": {
-    "legal": {
-      "copyright": "© 2024 Code for Taiwan. All rights reserved."
+    "projects": {
+      "title": "Learning Resources",
+      "view_all": "View All Resources"
+    },
+    "join": {
+      "title": "Community",
+      "description": "Participate in community activities through various channels and work together with like-minded partners for Taiwan's digital democracy.",
+      "tag": "Community Participation",
+      "section": {
+        "title": "Join Our Team",
+        "description": "Whether you're a developer, designer, or a citizen concerned about social issues, we welcome your participation. Let's use technology to make Taiwan better together!",
+        "cta_title": "Join Our Movement",
+        "cta_description_line1": "Join Code for Taiwan Now",
+        "cta_description_line2": "Transform Society with Technology"
+      },
+      "roles": {
+        "developers": "Developers",
+        "developers_description": "Build open-source tools and promote programming thinking",
+        "designers": "Designers",
+        "designers_description": "Create user-friendly interfaces and improve digital experiences",
+        "data_scientists": "Data Scientists",
+        "data_scientists_description": "Analyze open data and generate insights for public good",
+        "project_managers": "Coordination Promoters",
+        "project_managers_description": "Coordinate teams and promote programming thinking popularization",
+        "community_organizers": "Community Organizers",
+        "community_organizers_description": "Connect people and foster collaboration across communities"
+      },
+      "cta": "Join Our Community"
+    },
+    "stats": {
+      "contributors": "Active Contributors",
+      "projects": "Learning Resources",
+      "events": "Events Organized",
+      "impact": "Citizens Impacted"
     }
   },
-  "search": {
-    "placeholder": "Search content...",
-    "noResults": "No results found",
-    "navigate": "navigate",
-    "select": "select",
-    "close": "close",
-    "types": {}
+  "Footer": {
+    "tagline": "Building a better Taiwan through technology and collaboration.",
+    "projects": {
+      "title": "Learning Resources",
+      "g0v": "g0v.tw",
+      "vTaiwan": "vTaiwan",
+      "democracy_tools": "Democracy Tools",
+      "transparency": "Government Transparency"
+    },
+    "community": {
+      "title": "Community",
+      "slack": "Discord Community",
+      "discord": "Discord Chat",
+      "events": "Events",
+      "hackathons": "Hackathons"
+    },
+    "resources": {
+      "title": "Resources",
+      "docs": "Documentation",
+      "awesome_taiwan": "Awesome Taiwan",
+      "contribute": "Contributing Guide",
+      "blog": "Blog"
+    },
+    "copyright": "© 2025 Code for Taiwan. All rights reserved.",
+    "links": {
+      "contact": "Contact",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
   },
-  "common": {
-    "search": "Search",
-    "viewMore": "View More",
-    "reset": "Reset",
-    "filter": "Filter",
-    "sort": "Sort",
-    "showing": "Showing",
-    "noResults": "No results found"
+  "LocaleLayout": {
+    "title": "Code for Taiwan - Building Digital Infrastructure for a Better Society",
+    "description": "Code for Taiwan is a civic tech community dedicated to creating open-source solutions that improve government transparency, civic engagement, and public services."
+  },
+  "Manifest": {
+    "name": "Code for Taiwan"
+  },
+  "NotFoundPage": {
+    "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
+    "title": "Page not found"
   }
 }

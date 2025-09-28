@@ -8,7 +8,7 @@ This Turborepo includes the following packages and applications:
 
 ### Apps and Packages
 
-- `website`: Code for Taiwan main website ([Next.js](https://nextjs.org/))
+- `website`: Code for Taiwan main website ([Next.js](https://nextjs.org/) with next-intl)
 - `@repo/ui`: Shared React component library
 - `@repo/next-config`: Shared Next.js configuration
 - `@repo/eslint-config`: ESLint configurations (includes `eslint-config-next` and `eslint-config-prettier`)
@@ -73,7 +73,7 @@ pnpm dev
 You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
 
 ```bash
-# Start website development mode (available at http://localhost:3002)
+# Start website development mode (available at http://localhost:3000)
 pnpm dev --filter=website
 ```
 
@@ -115,7 +115,7 @@ This project uses comprehensive quality monitoring:
 
 ```
 apps/
-├── website/                    # Code for Taiwan main website
+├── website/                  # Code for Taiwan main website
 └── packages/
     ├── ui/                     # Shared UI components
     ├── next-config/            # Shared Next.js configuration
@@ -125,27 +125,20 @@ apps/
 
 ### Website Application
 
-The website follows a modular Domain-Driven Design (DDD) architecture:
+The website follows a modern multilingual architecture:
 
 ```
 apps/website/
-├── app/                       # Next.js App Router
-├── components/                # React components
-├── lib/features/              # Business feature modules (DDD)
-│   ├── projects/              # Projects feature
-│   │   ├── domain/            # Domain logic
-│   │   ├── actions/           # Server Actions
-│   │   ├── config/            # Configuration
-│   │   └── utils/             # Utility functions
-│   ├── news/                  # News feature
-│   ├── events/                # Events feature
-│   ├── about/                 # About us
-│   └── home/                  # Homepage
-├── messages/                  # i18n translation files
-└── ARCHITECTURE.md            # Detailed architecture documentation
+├── src/
+│   ├── app/[locale]/          # Localized routing
+│   ├── components/            # React components
+│   ├── config/                # Application configuration
+│   └── i18n/                  # Internationalization setup
+├── messages/                  # Translation files (zh.json, en.json)
+└── README.md                  # Application documentation
 ```
 
-For detailed architecture information, see `apps/website/ARCHITECTURE.md`.
+For detailed information, see `apps/website/README.md`.
 
 ## Useful Links
 

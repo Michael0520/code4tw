@@ -1,152 +1,233 @@
-# Code for Taiwan Website
+# Website - Code4TW International Website
 
-The main website for Code for Taiwan civic technology community, built with modern web technologies and following Domain-Driven Design principles.
+A modern, multilingual website built with Next.js 15 and next-intl for the Code4TW project.
 
+## 🚀 Features
 
-## Tech Stack
+- **Multi-language Support**: Full internationalization with English and Traditional Chinese
+- **SSG/SSR Ready**: Static Site Generation with dynamic routing
+- **Modern Stack**: Next.js 15.5.3 with App Router
+- **Type Safe**: Full TypeScript support
+- **Responsive Design**: Tailwind CSS for styling
+- **SEO Optimized**: Per-locale metadata and sitemap generation
 
-- **Framework**: Next.js 15 with App Router
-- **Language**: TypeScript 5.9
-- **Styling**: Tailwind CSS 4.1
-- **UI Components**: Radix UI + shadcn/ui
-- **Internationalization**: next-intl (English & Chinese)
-- **Testing**: Vitest + React Testing Library
-- **Quality**: ESLint + TypeScript strict mode
-- **Package Manager**: pnpm
+## 🛠️ Tech Stack
 
-## Architecture
+- **Framework**: [Next.js 15.5.3](https://nextjs.org/)
+- **Internationalization**: [next-intl 4.0.0](https://next-intl-docs.vercel.app/)
+- **Styling**: [Tailwind CSS 3.4.4](https://tailwindcss.com/)
+- **Language**: [TypeScript 5.5.3](https://www.typescriptlang.org/)
+- **Package Manager**: [pnpm](https://pnpm.io/)
 
-This application follows a modular Domain-Driven Design (DDD) architecture:
+## 📁 Project Structure
 
 ```
-apps/website/
-├── app/                       # Next.js App Router pages
-├── components/                # React components
-│   ├── ui/                    # Base UI components (shadcn/ui)
-│   ├── layout/                # Layout components
-│   ├── home/                  # Homepage components
-│   └── __tests__/             # Component tests
-├── lib/features/              # Business feature modules (DDD)
-│   ├── home/                  # Homepage feature
-│   ├── projects/              # Projects management
-│   ├── news/                  # News & updates
-│   ├── events/                # Events management
-│   └── about/                 # About us content
-├── messages/                  # i18n translation files
-├── i18n/                      # Internationalization config
-└── vitest.config.ts           # Test configuration
+website/
+├── src/
+│   ├── app/                    # Next.js App Router
+│   │   ├── [locale]/           # Dynamic locale routing
+│   │   │   ├── layout.tsx      # Locale-specific layout
+│   │   │   ├── page.tsx        # Home page
+│   │   │   ├── error.tsx       # Error boundary
+│   │   │   ├── not-found.tsx   # 404 page
+│   │   │   └── pathnames/      # Example sub-route
+│   │   └── layout.tsx          # Root layout
+│   ├── components/             # React components
+│   │   ├── Navigation.tsx      # Main navigation
+│   │   ├── LocaleSwitcher.tsx  # Language switcher
+│   │   └── PageLayout.tsx      # Page wrapper
+│   ├── i18n/                   # Internationalization config
+│   │   ├── routing.ts          # Routing configuration
+│   │   └── request.ts          # Request helpers
+│   └── middleware.ts           # Next.js middleware
+├── messages/                   # Translation files
+│   ├── en.json                # English translations
+│   └── zh.json                # Chinese translations
+└── public/                    # Static assets
 ```
 
-## Development
+## 🚦 Getting Started
 
 ### Prerequisites
 
-- Node.js 18+
-- pnpm 8+
+- Node.js >= 20.0.0
+- pnpm (installed globally)
 
-### Getting Started
+### Development
 
 ```bash
-# Install dependencies (from monorepo root)
+# Install dependencies
 pnpm install
 
-# Start development server
-pnpm dev --filter=website
-
-# Or run from this directory
-cd apps/website
+# Start development server (port 3006)
 pnpm dev
+
+# The app will be available at:
+# - English: http://localhost:3006/en
+# - Chinese: http://localhost:3006/zh
 ```
 
-The website will be available at http://localhost:3002
-
-### Available Scripts
+### Building for Production
 
 ```bash
-# Development
-pnpm dev                    # Start development server with Turbopack
-pnpm build                  # Build for production
-pnpm start                  # Start production server
+# Create production build
+pnpm build
 
-# Testing
-pnpm test                   # Run all tests
-pnpm test:watch             # Run tests in watch mode
-pnpm test:coverage          # Generate coverage report
-
-# Code Quality
-pnpm lint                   # Run ESLint
-pnpm check-types            # TypeScript type checking
+# Start production server
+pnpm start
 ```
 
-## Features
+### Running Tests
 
-### 🌍 Internationalization
-- Full support for English and Traditional Chinese
-- Dynamic locale switching
-- SEO-optimized with proper hreflang tags
+```bash
+# Run all tests
+pnpm test
 
-### ⚡ Performance
-- Next.js 15 with Turbopack for fast development
-- App Router for optimized routing
-- Server-side rendering and static generation
+# Run Jest tests
+pnpm test:jest
 
-### 🧪 Testing Strategy
-- Component testing with React Testing Library
-- Strategic test coverage focusing on business logic
-- Vitest for fast test execution
-- Mocked dependencies for reliable tests
-
-### 📊 Code Quality
-- ESLint with strict TypeScript rules
-- Pre-commit hooks for code quality enforcement
-- Automated quality checks in CI/CD
-
-## Project Structure
-
-### Feature Modules (DDD)
-Each feature follows Domain-Driven Design principles:
-
-```
-lib/features/[feature]/
-├── domain/                 # Business logic and rules
-├── actions/                # Server Actions (use cases)
-├── config/                 # Feature configuration
-└── utils/                  # Utility functions
+# Run Playwright tests
+pnpm test:playwright
 ```
 
-### Component Organization
-- **UI Components**: Reusable base components from shadcn/ui
-- **Layout Components**: Header, footer, navigation
-- **Feature Components**: Business-specific components
-- **Page Components**: Complete page implementations
+### Code Quality
 
-## Contributing
+```bash
+# Lint code
+pnpm lint
 
-1. Follow the established DDD architecture
-2. Write tests for new features
-3. Ensure TypeScript strict mode compliance
-4. Use English for all code and comments
-5. Follow the commit message conventions
+# Type checking
+pnpm check-types
+```
 
-### Code Standards
-- **English Only**: All code, comments, and documentation in English
-- **Test-Driven Development**: Write tests before implementation
-- **Type Safety**: Strict TypeScript with no `any` types
-- **Component Design**: Single responsibility principle
-- **Performance**: Consider loading and runtime performance
+## 🌐 Internationalization
 
-## Deployment
+The app supports multiple languages with automatic locale detection and routing:
 
-This website is part of the Code4TW monorepo and follows the deployment strategy defined at the repository root level.
+### Supported Locales
 
-## Quality Monitoring
+- **English** (`en`) - Default
+- **Traditional Chinese** (`zh`)
 
-- **Coverage Reports**: Generated with each test run using Vitest
-- **Code Quality**: ESLint and TypeScript strict mode validation
-- **Security Scanning**: Automated dependency security checks
+### Adding New Translations
 
-## Links
+1. Add translation keys to `messages/en.json` and `messages/zh.json`
+2. Use translations in components:
 
-- [Code for Taiwan](https://codefortaiwan.org) - Main website
-- [GitHub Repository](https://github.com/Michael0520/code4tw) - Source code
-- [Architecture Documentation](./ARCHITECTURE.md) - Detailed architecture guide
+```tsx
+import {useTranslations} from 'next-intl';
+
+export default function Component() {
+  const t = useTranslations('ComponentNamespace');
+  return <h1>{t('title')}</h1>;
+}
+```
+
+### Dynamic Routes
+
+The app supports localized pathnames:
+
+- `/en/pathnames` → `/zh/路径名`
+
+Configure in `src/i18n/routing.ts`:
+
+```ts
+pathnames: {
+  '/pathnames': {
+    en: '/pathnames',
+    zh: '/路径名'
+  }
+}
+```
+
+## 📝 Environment Variables
+
+No environment variables are required for basic operation. The app uses configuration files for all settings.
+
+## 🔧 Configuration
+
+Key configuration files:
+
+- `src/i18n/routing.ts` - Locale and routing configuration
+- `src/config.ts` - Application configuration
+- `next.config.ts` - Next.js configuration
+- `tailwind.config.js` - Tailwind CSS configuration
+
+## 🏗️ Architecture Decisions
+
+### Why next-intl?
+
+- Full App Router support
+- Static rendering capabilities
+- Type-safe translations
+- Automatic locale negotiation
+- Built-in formatting utilities
+
+### Static Site Generation (SSG)
+
+All pages are statically generated at build time for both locales using `generateStaticParams()`. This provides:
+
+- Fast page loads
+- Better SEO
+- Lower hosting costs
+- Offline capability
+
+### Middleware-based Routing
+
+The middleware handles:
+
+- Locale detection from browser preferences
+- Automatic redirects to localized URLs
+- Default locale handling
+- 404 redirects for invalid locales
+
+## 📦 Deployment
+
+The app can be deployed to any platform that supports Next.js:
+
+- Vercel (recommended)
+- Netlify
+- AWS Amplify
+- Docker containers
+- Node.js servers
+
+### Build Output
+
+After building, the app generates:
+
+- Static HTML files for all routes in both languages
+- Optimized JavaScript bundles
+- CSS files
+- Static assets in `public/`
+
+## 🤝 Contributing
+
+1. Follow the existing code structure
+2. Add translations for both languages
+3. Test with both locales
+4. Ensure TypeScript types are correct
+5. Run linting before committing
+
+## 📄 License
+
+Part of the Code4TW project.
+
+## 🔗 Related Links
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [next-intl Documentation](https://next-intl-docs.vercel.app/)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+
+## 📞 Contact
+
+- **Email**: codefortaiwan.org@gmail.com
+- **Facebook**: [CFTcodefortaiwan](https://www.facebook.com/CFTcodefortaiwan/)
+- **Discord**: [Join our community](https://discord.gg/pRFjDXeFyv)
+- **Events**: [Luma Calendar](https://luma.com/0ckf5dio)
+- **GitHub**: [codefortaiwan](https://github.com/codefortaiwan)
+
+---
+
+**Port**: 3006 (Development)
+**Supported Locales**: English (en), Traditional Chinese (zh)
+**Framework**: Next.js 15.5.3 with App Router
