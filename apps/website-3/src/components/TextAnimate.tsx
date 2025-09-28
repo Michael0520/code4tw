@@ -28,7 +28,7 @@ interface Props extends HTMLMotionProps<'div'> {
 
 const viewport = {once: true, margin: '0px 0px -200px'};
 
-const animationVariants = {
+const animationVariants: Record<AnimationType, {container: Variants; child: Variants}> = {
   fadeIn: {
     container: {
       hidden: {opacity: 0},

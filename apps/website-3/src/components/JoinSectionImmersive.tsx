@@ -37,7 +37,7 @@ const SplitText = ({
   once?: boolean;
   animationType?: 'chars' | 'words' | 'lines';
 }) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, {once, amount: threshold});
   const prefersReducedMotion = useReducedMotion();
 
@@ -70,7 +70,7 @@ const SplitText = ({
       rotateX: 0,
       transition: {
         duration,
-        ease
+        ease: ease as any
       }
     }
   };
@@ -137,7 +137,7 @@ const SplitText = ({
       ref={ref}
       transition={{
         duration,
-        ease,
+        ease: ease as any,
         delay
       }}
     >
@@ -148,7 +148,7 @@ const SplitText = ({
 
 // Custom hook for checking if element is in view
 function useInView(
-  ref: React.RefObject<HTMLElement>,
+  ref: React.RefObject<HTMLElement | HTMLDivElement | null>,
   options: {once?: boolean; amount?: number}
 ) {
   const [isInView, setIsInView] = useState(false);
@@ -269,7 +269,7 @@ const RoleCard = ({
   description: string;
   delay?: number;
 }) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, {once: true, amount: 0.5});
 
   return (
