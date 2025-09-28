@@ -1,7 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import {useTranslations} from 'next-intl';
-import {Facebook, MessageCircle, Calendar, Mail, ExternalLink} from 'lucide-react';
+import {
+  Facebook,
+  MessageCircle,
+  Calendar,
+  Mail,
+  ExternalLink
+} from 'lucide-react';
 
 export function Footer() {
   const t = useTranslations('Footer');

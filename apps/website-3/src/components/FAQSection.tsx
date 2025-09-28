@@ -48,9 +48,7 @@ export function FAQSection() {
               className="border-x border-b-0 border-black/10 rounded-md md:px-4"
             >
               <AccordionTrigger className="text-xl md:text-2xl text-left pr-4 md:pr-0 font-medium">
-                <span className="px-6 md:px-2">
-                  {item.question}
-                </span>
+                <span className="px-6 md:px-2">{item.question}</span>
               </AccordionTrigger>
               <AccordionContent className="text-base md:text-lg font-semibold text-neutral-300 px-4">
                 {item.answer}

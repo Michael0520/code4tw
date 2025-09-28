@@ -175,6 +175,7 @@ All pages are statically generated at build time for both locales using `generat
 ### Middleware-based Routing
 
 The middleware handles:
+
 - Locale detection from browser preferences
 - Automatic redirects to localized URLs
 - Default locale handling
@@ -193,6 +194,7 @@ The app can be deployed to any platform that supports Next.js:
 ### Build Output
 
 After building, the app generates:
+
 - Static HTML files for all routes in both languages
 - Optimized JavaScript bundles
 - CSS files

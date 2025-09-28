@@ -1,11 +1,11 @@
 'use client';
 
-import { cn } from "@/lib/utils";
-import React from "react";
+import {cn} from '@/lib/utils';
+import React from 'react';
 
 export const BentoGrid = ({
   className,
-  children,
+  children
 }: {
   className?: string;
   children?: React.ReactNode;
@@ -13,7 +13,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full",
+        'grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full',
         className
       )}
     >
@@ -27,7 +27,7 @@ export const BentoGridItem = ({
   title,
   description,
   header,
-  icon,
+  icon
 }: {
   className?: string;
   title?: string | React.ReactNode;
@@ -38,19 +38,15 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "row-span-1 rounded-2xl group/bento hover:shadow-xl transition-all duration-300 shadow-sm p-4 md:p-6 bg-gradient-to-br from-white to-gray-50 border border-gray-200/60 justify-between flex flex-col gap-4 relative overflow-hidden min-h-0",
+        'row-span-1 rounded-2xl group/bento hover:shadow-xl transition-all duration-300 shadow-sm p-4 md:p-6 bg-gradient-to-br from-white to-gray-50 border border-gray-200/60 justify-between flex flex-col gap-4 relative overflow-hidden min-h-0',
         className
       )}
     >
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/50 to-gray-50/30 opacity-0 group-hover/bento:opacity-100 transition-opacity duration-300" />
-      <div className="relative z-10">
-        {header}
-      </div>
+      <div className="relative z-10">{header}</div>
       <div className="group-hover/bento:translate-x-1 transition-transform duration-200 relative z-10">
         {icon}
-        <div className="font-bold text-neutral-800 mb-1 mt-2">
-          {title}
-        </div>
+        <div className="font-bold text-neutral-800 mb-1 mt-2">{title}</div>
         <div className="font-normal text-neutral-600 dark:text-neutral-300">
           {description}
         </div>
@@ -64,7 +60,7 @@ export const BentoGridItemCta = ({
   title,
   description,
   header,
-  icon,
+  icon
 }: {
   className?: string;
   title?: string | React.ReactNode;
@@ -75,22 +71,16 @@ export const BentoGridItemCta = ({
   return (
     <div
       className={cn(
-        "row-span-1 rounded-2xl group/bento hover:shadow-2xl transition-all duration-300 shadow-md p-4 md:p-6 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 border-2 border-blue-300/60 justify-between flex flex-col gap-4 relative overflow-hidden min-h-0",
+        'row-span-1 rounded-2xl group/bento hover:shadow-2xl transition-all duration-300 shadow-md p-4 md:p-6 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 border-2 border-blue-300/60 justify-between flex flex-col gap-4 relative overflow-hidden min-h-0',
         className
       )}
     >
       <div className="absolute inset-0 bg-gradient-to-t from-blue-200/20 to-transparent opacity-0 group-hover/bento:opacity-100 transition-opacity duration-500" />
-      <div className="relative z-10">
-        {header}
-      </div>
+      <div className="relative z-10">{header}</div>
       <div className="group-hover/bento:translate-x-1 group-hover/bento:scale-105 transition-all duration-300 relative z-10">
         {icon}
-        <div className="font-black text-blue-900 mb-1 mt-2">
-          {title}
-        </div>
-        <div className="font-medium text-blue-700">
-          {description}
-        </div>
+        <div className="font-black text-blue-900 mb-1 mt-2">{title}</div>
+        <div className="font-medium text-blue-700">{description}</div>
       </div>
     </div>
   );
@@ -100,7 +90,7 @@ export const BentoImageCard = ({
   text,
   description,
   className,
-  children,
+  children
 }: {
   text?: string;
   description?: string;
@@ -110,9 +100,9 @@ export const BentoImageCard = ({
   return (
     <div
       className={cn(
-        "row-span-1 rounded-2xl relative group/bento hover:shadow-2xl transition-all duration-300 shadow-md",
-        "bg-gradient-to-br from-blue-100 via-indigo-50 to-blue-200",
-        "border border-blue-300/60 overflow-hidden",
+        'row-span-1 rounded-2xl relative group/bento hover:shadow-2xl transition-all duration-300 shadow-md',
+        'bg-gradient-to-br from-blue-100 via-indigo-50 to-blue-200',
+        'border border-blue-300/60 overflow-hidden',
         className
       )}
     >

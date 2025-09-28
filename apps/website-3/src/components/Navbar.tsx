@@ -1,22 +1,22 @@
 'use client';
 
-import { useCallback, useState } from 'react';
-import { motion } from 'framer-motion';
+import {useCallback, useState} from 'react';
+import {motion} from 'framer-motion';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import {useTranslations} from 'next-intl';
 
 interface NavbarProps {
   activeSection: string;
 }
 
-export function Navbar({ activeSection }: NavbarProps) {
+export function Navbar({activeSection}: NavbarProps) {
   const [activeTab, setActiveTab] = useState('hero');
   const t = useTranslations('IndexPage.navigation');
 
   const handleTabClick = useCallback((id: string) => {
     const section = document.querySelector(`#${id}`);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({behavior: 'smooth'});
       setActiveTab(id);
     }
   }, []);
@@ -34,7 +34,7 @@ export function Navbar({ activeSection }: NavbarProps) {
           height={20}
           className={activeSection === 'hero' ? 'opacity-100' : 'opacity-70'}
         />
-      ),
+      )
     },
     {
       id: 'about',
@@ -42,12 +42,10 @@ export function Navbar({ activeSection }: NavbarProps) {
       icon: (
         <InfoIcon
           className={`h-5 w-5 ${
-            activeSection === 'about'
-              ? 'text-white'
-              : 'text-white/70'
+            activeSection === 'about' ? 'text-white' : 'text-white/70'
           }`}
         />
-      ),
+      )
     },
     {
       id: 'join',
@@ -55,12 +53,10 @@ export function Navbar({ activeSection }: NavbarProps) {
       icon: (
         <UsersIcon
           className={`h-5 w-5 ${
-            activeSection === 'join'
-              ? 'text-white'
-              : 'text-white/70'
+            activeSection === 'join' ? 'text-white' : 'text-white/70'
           }`}
         />
-      ),
+      )
     },
     {
       id: 'faq',
@@ -68,13 +64,11 @@ export function Navbar({ activeSection }: NavbarProps) {
       icon: (
         <QuestionIcon
           className={`h-5 w-5 ${
-            activeSection === 'faq'
-              ? 'text-white'
-              : 'text-white/70'
+            activeSection === 'faq' ? 'text-white' : 'text-white/70'
           }`}
         />
-      ),
-    },
+      )
+    }
   ];
 
   return (
@@ -88,22 +82,24 @@ export function Navbar({ activeSection }: NavbarProps) {
               key={tab.id}
               onClick={() => handleTabClick(tab.id)}
               className="relative flex items-center justify-center md:justify-start gap-0 md:gap-2 px-3 md:px-4 py-2 text-sm md:text-base cursor-pointer font-medium outline-none transition-all hover:bg-white/5 focus-visible:outline-2"
-              style={{ WebkitTapHighlightColor: 'transparent' }}
+              style={{WebkitTapHighlightColor: 'transparent'}}
             >
               {isActive && (
                 <motion.div
                   layoutId="highlight"
                   className="absolute inset-0 bg-white/20 pointer-events-none"
-                  style={{ borderRadius: 9999 }}
-                  transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
+                  style={{borderRadius: 9999}}
+                  transition={{type: 'spring', bounce: 0.2, duration: 0.6}}
                 />
               )}
 
               <div className="z-20 flex items-center gap-0 md:gap-2 pointer-events-none">
                 {tab.icon}
-                <span className={`hidden md:block font-medium transition-colors ${
-                  isActive ? 'text-white' : 'text-white/70'
-                }`}>
+                <span
+                  className={`hidden md:block font-medium transition-colors ${
+                    isActive ? 'text-white' : 'text-white/70'
+                  }`}
+                >
                   {tab.label}
                 </span>
               </div>

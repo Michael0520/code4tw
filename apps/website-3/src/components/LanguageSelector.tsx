@@ -1,12 +1,12 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
-import { Globe } from 'lucide-react';
-import { useState, useRef, useEffect } from 'react';
+import {usePathname, useRouter} from 'next/navigation';
+import {Globe} from 'lucide-react';
+import {useState, useRef, useEffect} from 'react';
 
 const languages = [
-  { code: 'zh', label: '中文' },
-  { code: 'en', label: 'English' },
+  {code: 'zh', label: '中文'},
+  {code: 'en', label: 'English'}
 ];
 
 export function LanguageSelector() {
@@ -21,7 +21,10 @@ export function LanguageSelector() {
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -47,13 +50,13 @@ export function LanguageSelector() {
       >
         <Globe className="w-4 h-4" />
         <span className="hidden sm:inline">
-          {languages.find(lang => lang.code === currentLocale)?.label}
+          {languages.find((lang) => lang.code === currentLocale)?.label}
         </span>
       </button>
 
       {isOpen && (
         <div className="absolute top-full mt-2 right-0 bg-white rounded-lg shadow-lg py-1 min-w-[120px] z-50">
-          {languages.map(lang => (
+          {languages.map((lang) => (
             <button
               key={lang.code}
               onClick={() => handleLanguageChange(lang.code)}

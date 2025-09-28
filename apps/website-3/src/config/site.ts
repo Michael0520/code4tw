@@ -1,8 +1,10 @@
 export const siteConfig = {
   // Site metadata
   name: 'Code for Taiwan',
-  title: 'Code for Taiwan - Building Digital Infrastructure for a Better Society',
-  description: 'Code for Taiwan is a civic tech community dedicated to creating open-source solutions that improve government transparency, civic engagement, and public services.',
+  title:
+    'Code for Taiwan - Building Digital Infrastructure for a Better Society',
+  description:
+    'Code for Taiwan is a civic tech community dedicated to creating open-source solutions that improve government transparency, civic engagement, and public services.',
   url: 'https://codefortaiwan.org',
 
   // Organization info
@@ -17,12 +19,12 @@ export const siteConfig = {
     facebook: 'https://www.facebook.com/CFTcodefortaiwan/',
     discord: 'https://discord.gg/pRFjDXeFyv',
     events: 'https://luma.com/0ckf5dio',
-    github: 'https://github.com/codefortaiwan',
+    github: 'https://github.com/codefortaiwan'
   },
 
   // Contact information
   contact: {
-    email: 'codefortaiwan.org@gmail.com',
+    email: 'codefortaiwan.org@gmail.com'
   },
 
   // External links

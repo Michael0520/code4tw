@@ -1,7 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
+import {motion} from 'framer-motion';
+import {ReactNode} from 'react';
 
 interface BrandKeywordHighlightProps {
   text: string;
@@ -29,8 +29,8 @@ export function BrandKeywordHighlight({
   return (
     <span className={className}>
       {parts.map((part, index) => {
-        const isKeyword = keywords.some(keyword =>
-          part.toLowerCase() === keyword.toLowerCase()
+        const isKeyword = keywords.some(
+          (keyword) => part.toLowerCase() === keyword.toLowerCase()
         );
 
         if (isKeyword) {
@@ -38,13 +38,13 @@ export function BrandKeywordHighlight({
             <motion.span
               key={index}
               className={`${brandKeywordClassName} ${normalClassName} align-baseline`}
-              style={{ lineHeight: 'inherit' }}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
+              style={{lineHeight: 'inherit'}}
+              initial={{opacity: 0, scale: 0.8}}
+              animate={{opacity: 1, scale: 1}}
               transition={{
                 duration: 0.6,
                 delay: index * 0.1,
-                type: "spring",
+                type: 'spring',
                 stiffness: 100
               }}
             >
@@ -54,7 +54,7 @@ export function BrandKeywordHighlight({
             <span
               key={index}
               className={`${brandKeywordClassName} ${normalClassName} align-baseline`}
-              style={{ lineHeight: 'inherit' }}
+              style={{lineHeight: 'inherit'}}
             >
               {part}
             </span>
@@ -86,5 +86,14 @@ export const BRAND_KEYWORDS = {
   values: ['Transparency', 'Collaboration', 'Democracy', 'Participation'],
 
   // Common combinations
-  common: ['Taiwan', 'Code', 'Technology', 'Innovation', 'Community', 'Open Source', 'Transform', 'Digital']
+  common: [
+    'Taiwan',
+    'Code',
+    'Technology',
+    'Innovation',
+    'Community',
+    'Open Source',
+    'Transform',
+    'Digital'
+  ]
 } as const;

@@ -1,11 +1,11 @@
-import { ImageResponse } from 'next/og';
+import {ImageResponse} from 'next/og';
 
 export const runtime = 'edge';
 
 export const alt = 'Code for Taiwan';
 export const size = {
   width: 1200,
-  height: 630,
+  height: 630
 };
 
 export const contentType = 'image/png';
@@ -23,7 +23,7 @@ export default async function Image() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          color: 'white',
+          color: 'white'
         }}
       >
         <div
@@ -31,7 +31,7 @@ export default async function Image() {
             fontSize: 180,
             fontWeight: 'bold',
             marginBottom: 20,
-            textShadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
+            textShadow: '0 4px 6px rgba(0, 0, 0, 0.3)'
           }}
         >
           C4
@@ -40,7 +40,7 @@ export default async function Image() {
           style={{
             fontSize: 60,
             fontWeight: 600,
-            letterSpacing: '-0.02em',
+            letterSpacing: '-0.02em'
           }}
         >
           Code for Taiwan
@@ -49,7 +49,7 @@ export default async function Image() {
           style={{
             fontSize: 32,
             marginTop: 20,
-            opacity: 0.9,
+            opacity: 0.9
           }}
         >
           透過科技與協作，打造更好的台灣
@@ -57,7 +57,7 @@ export default async function Image() {
       </div>
     ),
     {
-      ...size,
+      ...size
     }
   );
 }

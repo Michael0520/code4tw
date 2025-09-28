@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import FeaturesSection from "./feature-section";
+import FeaturesSection from './feature-section';
 
 export default function Home() {
   return (

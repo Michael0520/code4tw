@@ -12,7 +12,7 @@ const inter = Inter({subsets: ['latin']});
 
 const brand = localFont({
   variable: '--font-brand',
-  src: '../../fonts/Array-Bold.woff2',
+  src: '../../fonts/Array-Bold.woff2'
 });
 
 export function generateStaticParams() {
@@ -67,10 +67,14 @@ export default async function LocaleLayout({
 
   return (
     <html className="h-full" lang={locale}>
-      <body className={clsx(inter.className, brand.variable, 'flex h-full flex-col')}>
-        <NextIntlClientProvider>
-          {children}
-        </NextIntlClientProvider>
+      <body
+        className={clsx(
+          inter.className,
+          brand.variable,
+          'flex h-full flex-col'
+        )}
+      >
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
   );

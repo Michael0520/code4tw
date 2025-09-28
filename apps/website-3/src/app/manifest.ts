@@ -11,7 +11,7 @@ export default async function manifest(): Promise<MetadataRoute.Manifest> {
   return {
     name: t('name'),
     short_name: 'Code4TW',
-    description: t('description'),
+    description: t('name'),
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
@@ -21,17 +21,17 @@ export default async function manifest(): Promise<MetadataRoute.Manifest> {
         src: '/logo-square.svg',
         sizes: '208x208',
         type: 'image/svg+xml',
-        purpose: 'any maskable'
+        purpose: 'maskable'
       },
       {
         src: '/logo-square.svg',
         sizes: '192x192',
-        type: 'image/svg+xml',
+        type: 'image/svg+xml'
       },
       {
         src: '/logo-square.svg',
         sizes: '512x512',
-        type: 'image/svg+xml',
+        type: 'image/svg+xml'
       }
     ]
   };

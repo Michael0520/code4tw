@@ -7,16 +7,16 @@ This directory contains the centralized configuration for the Code for Taiwan we
 Import the site config in your components:
 
 ```typescript
-import { siteConfig } from '@/config/site';
+import {siteConfig} from '@/config/site';
 
 // Access social links
-console.log(siteConfig.social.github);  // https://github.com/codefortaiwan
+console.log(siteConfig.social.github); // https://github.com/codefortaiwan
 
 // Access metadata
-console.log(siteConfig.name);  // Code for Taiwan
+console.log(siteConfig.name); // Code for Taiwan
 
 // Access copyright info
-const year = siteConfig.copyright.year;  // 2025
+const year = siteConfig.copyright.year; // 2025
 ```
 
 ## Configuration Structure
@@ -116,5 +116,5 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 The configuration is fully typed. You can import types:
 
 ```typescript
-import type { SiteConfig, SocialPlatform } from '@/config/site';
+import type {SiteConfig, SocialPlatform} from '@/config/site';
 ```
