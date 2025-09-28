@@ -10,6 +10,7 @@
     "navigation": {
       "home": "Home",
       "about": "About",
+      "events": "Events",
       "join": "Join",
       "faq": "FAQ"
     },
@@ -84,6 +85,24 @@
           "answer": "You can reach us through our official website, social media platforms, or by directly attending our physical events. We also welcome you to join our online community to discuss and exchange ideas with other participants."
         }
       ]
+    },
+    "events": {
+      "title": "Explore Our Events",
+      "subtitle": "Join our workshops, hackathons, and community meetups to create change through technology",
+      "cta_button": "View All Events",
+      "view_all": "View All Events",
+      "upcoming": "Upcoming",
+      "past": "Past Events",
+      "register": "Register",
+      "learn_more": "Learn More",
+      "no_upcoming": "No upcoming events at the moment",
+      "no_past": "No past events to display",
+      "types": {
+        "workshop": "Workshop",
+        "hackathon": "Hackathon",
+        "meetup": "Meetup",
+        "conference": "Conference"
+      }
     },
     "projects": {
       "title": "Learning Resources",
