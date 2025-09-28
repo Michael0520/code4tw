@@ -4,18 +4,18 @@ import {
   AnimatePresence,
   motion,
   useReducedMotion,
-  useSpring,
-  type Variants
+  useSpring
 } from 'motion/react';
 import type React from 'react';
 import {useEffect, useRef, useState} from 'react';
 import {useTranslations} from 'next-intl';
 import Image from 'next/image';
-import {Code, Palette, Database, Calendar, Users, Heart} from 'lucide-react';
-import {BrandKeywordHighlight, BRAND_KEYWORDS} from './BrandKeywordHighlight';
+import {Code, Palette, Database, Calendar, Users} from 'lucide-react';
+import {BrandKeywordHighlight} from './BrandKeywordHighlight';
 import TextAnimate from './TextAnimate';
 
-// Enhanced SplitText animation component
+// Enhanced SplitText animation component (currently unused)
+/*
 const SplitText = ({
   text,
   className = '',
@@ -49,7 +49,7 @@ const SplitText = ({
 
   const container: Variants = {
     hidden: {opacity: 0},
-    visible: (i = 1) => ({
+    visible: () => ({
       opacity: 1,
       transition: {
         staggerChildren,
@@ -145,6 +145,7 @@ const SplitText = ({
     </motion.span>
   );
 };
+*/
 
 // Custom hook for checking if element is in view
 function useInView(
@@ -154,7 +155,8 @@ function useInView(
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    if (!ref.current) return;
+    const element = ref.current;
+    if (!element) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -169,12 +171,10 @@ function useInView(
       }
     );
 
-    observer.observe(ref.current);
+    observer.observe(element);
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
+      observer.unobserve(element);
     };
   }, [ref, options.amount, options.once]);
 
@@ -186,7 +186,7 @@ const MagneticButton = ({
   children,
   className = '',
   strength = 30,
-  href = '#',
+  // href = '#',
   onClick
 }: {
   children: React.ReactNode;

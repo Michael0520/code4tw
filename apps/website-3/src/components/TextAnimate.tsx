@@ -4,8 +4,6 @@ import {FC} from 'react';
 import {
   HTMLMotionProps,
   motion,
-  useAnimation,
-  useInView,
   Variants
 } from 'framer-motion';
 
@@ -26,7 +24,7 @@ interface Props extends HTMLMotionProps<'div'> {
   duration?: number;
 }
 
-const viewport = {once: true, margin: '0px 0px -200px'};
+// const viewport = {once: true, margin: '0px 0px -200px'}; // Currently unused
 
 const animationVariants: Record<AnimationType, {container: Variants; child: Variants}> = {
   fadeIn: {

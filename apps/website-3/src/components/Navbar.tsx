@@ -1,6 +1,6 @@
 'use client';
 
-import {useCallback, useState} from 'react';
+import {useCallback} from 'react';
 import {motion} from 'framer-motion';
 import Image from 'next/image';
 import {useTranslations} from 'next-intl';
@@ -9,7 +9,7 @@ interface NavbarProps {
   activeSection: string;
 }
 
-export function Navbar({activeSection}: NavbarProps) {
+export function Navbar({}: NavbarProps) {
   const t = useTranslations('IndexPage.navigation');
 
   const handleTabClick = useCallback((id: string) => {
@@ -83,6 +83,8 @@ export function Navbar({activeSection}: NavbarProps) {
 }
 
 // Icon components matching the cult-landing-page SVGs
+// HomeIcon component commented out as it's currently unused
+/*
 function HomeIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
@@ -102,6 +104,7 @@ function HomeIcon(props: React.SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+*/
 
 function InfoIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
