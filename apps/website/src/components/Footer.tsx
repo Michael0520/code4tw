@@ -137,12 +137,8 @@ export function Footer() {
           </div>
 
           <div className="flex space-x-6">
-            <span className="text-sm text-gray-500">
-              {t('links.privacy')}
-            </span>
-            <span className="text-sm text-gray-500">
-              {t('links.terms')}
-            </span>
+            <span className="text-sm text-gray-500">{t('links.privacy')}</span>
+            <span className="text-sm text-gray-500">{t('links.terms')}</span>
           </div>
         </div>
       </div>

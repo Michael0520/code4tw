@@ -37,30 +37,22 @@ export function Navbar({}: NavbarProps) {
     {
       id: 'about',
       label: t('about'),
-      icon: (
-        <InfoIcon className="h-5 w-5 text-white" />
-      )
+      icon: <InfoIcon className="h-5 w-5 text-white" />
     },
     {
       id: 'events',
       label: t('events'),
-      icon: (
-        <CalendarIcon className="h-5 w-5 text-white" />
-      )
+      icon: <CalendarIcon className="h-5 w-5 text-white" />
     },
     {
       id: 'join',
       label: t('join'),
-      icon: (
-        <UsersIcon className="h-5 w-5 text-white" />
-      )
+      icon: <UsersIcon className="h-5 w-5 text-white" />
     },
     {
       id: 'faq',
       label: t('faq'),
-      icon: (
-        <QuestionIcon className="h-5 w-5 text-white" />
-      )
+      icon: <QuestionIcon className="h-5 w-5 text-white" />
     }
   ];
 

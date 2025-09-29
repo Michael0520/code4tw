@@ -34,7 +34,10 @@ export async function generateMetadata(
   const currentUrl = locale === 'en' ? baseUrl : `${baseUrl}/${locale}`;
 
   // Get OpenGraph locale format from config mapping
-  const ogLocale = siteConfig.locales.openGraphMap[locale as keyof typeof siteConfig.locales.openGraphMap];
+  const ogLocale =
+    siteConfig.locales.openGraphMap[
+      locale as keyof typeof siteConfig.locales.openGraphMap
+    ];
 
   return {
     title: t('title'),
@@ -45,8 +48,8 @@ export async function generateMetadata(
     alternates: {
       canonical: currentUrl,
       languages: {
-        'en': baseUrl,
-        'zh': `${baseUrl}/zh`
+        en: baseUrl,
+        zh: `${baseUrl}/zh`
       }
     },
     openGraph: {

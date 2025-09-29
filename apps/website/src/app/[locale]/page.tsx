@@ -13,6 +13,7 @@ import {BrandKeywordHighlight} from '@/components/BrandKeywordHighlight';
 import {EventsSection} from '@/components/EventsSection';
 import {motion} from 'framer-motion';
 import {siteConfig} from '@/config/site';
+import {Button} from '@/components/ui/button';
 
 export default function IndexPage() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -162,26 +163,32 @@ export default function IndexPage() {
                   animate={{opacity: 1, y: 0}}
                   transition={{duration: 0.8, delay: 1.3}}
                 >
-                  <button
+                  <Button
                     onClick={() => {
                       console.log('Opening Discord...');
                       window.open(siteConfig.social.discord, '_blank');
                     }}
-                    className="relative z-[100] inline-flex h-14 items-center justify-center rounded-full bg-white px-8 font-medium text-[#000095] shadow-lg hover:shadow-xl hover:bg-gray-100 transition-all duration-300 hover:scale-105 cursor-pointer"
+                    variant="primary-white"
+                    size="xl"
+                    rounded="full"
+                    className="relative z-[100]"
                     type="button"
                   >
                     {t('hero.cta')}
-                  </button>
-                  <button
+                  </Button>
+                  <Button
                     onClick={() => {
                       console.log('Scrolling to about...');
                       scrollToAbout();
                     }}
-                    className="relative z-[100] inline-flex h-14 items-center justify-center rounded-full border-2 border-white/50 bg-transparent px-8 font-medium text-white hover:bg-white/10 hover:border-white/70 transition-all duration-300 hover:scale-105 cursor-pointer"
+                    variant="outline-white"
+                    size="xl"
+                    rounded="full"
+                    className="relative z-[100]"
                     type="button"
                   >
                     {t('hero.learn_more')}
-                  </button>
+                  </Button>
                 </motion.div>
               </div>
             </div>

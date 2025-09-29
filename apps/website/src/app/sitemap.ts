@@ -9,10 +9,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const sitemapEntries: MetadataRoute.Sitemap = [];
 
   // Add root page for each locale
-  routing.locales.forEach(locale => {
-    const url = locale === routing.defaultLocale
-      ? baseUrl
-      : `${baseUrl}/${locale}`;
+  routing.locales.forEach((locale) => {
+    const url =
+      locale === routing.defaultLocale ? baseUrl : `${baseUrl}/${locale}`;
 
     sitemapEntries.push({
       url,
@@ -20,13 +19,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: locale === routing.defaultLocale ? 1.0 : 0.9,
       alternates: {
-        languages: routing.locales.reduce((acc, lang) => {
-          const langUrl = lang === routing.defaultLocale
-            ? baseUrl
-            : `${baseUrl}/${lang}`;
-          acc[lang] = langUrl;
-          return acc;
-        }, {} as Record<string, string>)
+        languages: routing.locales.reduce(
+          (acc, lang) => {
+            const langUrl =
+              lang === routing.defaultLocale ? baseUrl : `${baseUrl}/${lang}`;
+            acc[lang] = langUrl;
+            return acc;
+          },
+          {} as Record<string, string>
+        )
       }
     });
   });
