@@ -12,7 +12,7 @@ export const Ripple = React.memo(function Ripple({
   mainCircleSize = 210,
   mainCircleOpacity = 0.24,
   numCircles = 8,
-  className,
+  className
 }: RippleProps) {
   return (
     <div
@@ -45,7 +45,7 @@ export const Ripple = React.memo(function Ripple({
                   0 0 ${glowSize * 1.5}px rgba(100, 100, 255, ${glowIntensity * 0.5}),
                   inset 0 0 ${glowSize / 2}px rgba(100, 100, 255, ${glowIntensity * 0.4})
                 `,
-                '--index': i,
+                '--index': i
               } as CSSProperties
             }
           />

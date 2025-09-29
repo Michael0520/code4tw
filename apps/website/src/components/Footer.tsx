@@ -6,8 +6,11 @@ import {
   MessageCircle,
   Calendar,
   Mail,
-  ExternalLink
+  ExternalLink,
+  Youtube,
+  Instagram
 } from 'lucide-react';
+import {siteConfig} from '@/config/site';
 
 export function Footer() {
   const t = useTranslations('Footer');
@@ -39,7 +42,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="https://www.facebook.com/CFTcodefortaiwan/"
+                  href={siteConfig.social.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-gray-900 transition-colors text-sm flex items-center"
@@ -51,7 +54,43 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="https://discord.gg/pRFjDXeFyv"
+                  href={siteConfig.social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm flex items-center"
+                >
+                  <Instagram className="w-4 h-4 mr-2" />
+                  Instagram
+                  <ExternalLink className="w-3 h-3 ml-1" />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={siteConfig.social.threads}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm flex items-center"
+                >
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  Threads
+                  <ExternalLink className="w-3 h-3 ml-1" />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={siteConfig.social.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm flex items-center"
+                >
+                  <Youtube className="w-4 h-4 mr-2" />
+                  YouTube
+                  <ExternalLink className="w-3 h-3 ml-1" />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={siteConfig.social.discord}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-gray-900 transition-colors text-sm flex items-center"
@@ -63,7 +102,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="https://luma.com/0ckf5dio"
+                  href={siteConfig.social.events}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-gray-900 transition-colors text-sm flex items-center"
@@ -82,11 +121,11 @@ export function Footer() {
               {t('links.contact')}
             </h3>
             <a
-              href="mailto:codefortaiwan.org@gmail.com"
+              href={`mailto:${siteConfig.contact.email}`}
               className="text-gray-600 hover:text-gray-900 transition-colors text-sm flex items-center"
             >
               <Mail className="w-4 h-4 mr-2" />
-              codefortaiwan.org@gmail.com
+              {siteConfig.contact.email}
             </a>
           </div>
         </div>
@@ -98,12 +137,8 @@ export function Footer() {
           </div>
 
           <div className="flex space-x-6">
-            <span className="text-sm text-gray-500">
-              {t('links.privacy')}
-            </span>
-            <span className="text-sm text-gray-500">
-              {t('links.terms')}
-            </span>
+            <span className="text-sm text-gray-500">{t('links.privacy')}</span>
+            <span className="text-sm text-gray-500">{t('links.terms')}</span>
           </div>
         </div>
       </div>

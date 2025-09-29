@@ -2,15 +2,17 @@
 
 import {useTranslations} from 'next-intl';
 import {motion} from 'framer-motion';
-import {ArrowRight} from 'lucide-react';
+import {ExternalLink} from 'lucide-react';
 import {Ripple} from '@/components/ui/ripple';
 import {BrandKeywordHighlight} from '@/components/BrandKeywordHighlight';
+import {siteConfig} from '@/config/site';
+import {Button} from '@/components/ui/button';
 
 export function EventsSection() {
   const t = useTranslations('IndexPage.events');
 
   const handleViewEvents = () => {
-    window.open('https://luma.com/user/code4tw', '_blank');
+    window.open(siteConfig.social.events, '_blank');
   };
 
   return (
@@ -18,18 +20,10 @@ export function EventsSection() {
       {/* Ripple effect background */}
       {/* Responsive Ripple effect - smaller on mobile */}
       <div className="md:hidden">
-        <Ripple
-          mainCircleSize={120}
-          mainCircleOpacity={0.6}
-          numCircles={6}
-        />
+        <Ripple mainCircleSize={120} mainCircleOpacity={0.6} numCircles={6} />
       </div>
       <div className="hidden md:block">
-        <Ripple
-          mainCircleSize={210}
-          mainCircleOpacity={0.6}
-          numCircles={8}
-        />
+        <Ripple mainCircleSize={210} mainCircleOpacity={0.6} numCircles={8} />
       </div>
 
       {/* Content */}
@@ -81,13 +75,16 @@ export function EventsSection() {
             }}
             viewport={{once: true}}
           >
-            <button
+            <Button
               onClick={handleViewEvents}
-              className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-medium text-gray-900 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
+              variant="primary-white"
+              size="xl"
+              rounded="full"
+              className="group text-gray-900"
             >
-              <span className="relative z-10">{t('cta_button')}</span>
-              <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </button>
+              <span>{t('cta_button')}</span>
+              <ExternalLink className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Button>
           </motion.div>
         </motion.div>
       </div>
