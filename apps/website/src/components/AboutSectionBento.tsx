@@ -40,12 +40,6 @@ export function AboutSectionBento() {
       description: (
         <span className="text-base md:text-lg leading-[1.5] text-gray-600">
           {t('about.values.open_source.description')}
-          <motion.span
-            whileHover={{scale: 1.1}}
-            className="inline-flex items-center ml-1.5 bg-gradient-to-r from-[#000095] to-blue-600 text-white px-2 py-0.5 rounded-full text-[10px] font-black shadow-sm"
-          >
-            100% OPEN
-          </motion.span>
         </span>
       ),
       header: <TechStackSkeleton />,
