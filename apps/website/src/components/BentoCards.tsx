@@ -72,7 +72,7 @@ export const GradientSkeleton = () => {
         repeat: Infinity,
         ease: 'easeInOut'
       }}
-      className="flex w-full min-h-[6rem] max-h-[10rem] rounded-xl flex-col relative overflow-hidden"
+      className="flex w-full min-h-[6rem] max-h-[10rem] rounded-xl items-center justify-center relative overflow-hidden"
       style={{
         background:
           'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)',
@@ -89,7 +89,6 @@ export const GradientSkeleton = () => {
           repeat: Infinity,
           ease: 'easeInOut'
         }}
-        className="h-full w-full rounded-xl flex items-center justify-center"
       >
         <Server className="h-12 w-12 md:h-14 md:w-14 text-white drop-shadow-md" />
       </motion.div>
@@ -130,9 +129,6 @@ export const TestimonialsSkeleton = () => {
         <p className="text-xs text-center font-bold text-gray-800 mt-2 leading-tight">
           {t('about.testimonials.opensource_collaboration')}
         </p>
-        <span className="bg-[#000095] text-white text-xs rounded-full px-2 py-0.5 mt-2 font-bold shadow-sm">
-          {t('about.testimonials.developer')}
-        </span>
       </motion.div>
 
       <motion.div
@@ -148,9 +144,6 @@ export const TestimonialsSkeleton = () => {
         <p className="text-xs text-center font-bold text-gray-800 mt-2 leading-tight">
           {t('about.testimonials.transparency_changes')}
         </p>
-        <span className="bg-black text-white text-xs rounded-full px-2 py-0.5 mt-2 font-bold shadow-sm">
-          {t('about.testimonials.citizen')}
-        </span>
       </motion.div>
 
       <motion.div
@@ -166,9 +159,6 @@ export const TestimonialsSkeleton = () => {
         <p className="text-xs text-center font-bold text-gray-800 mt-2 leading-tight">
           {t('about.testimonials.tech_creates_value')}
         </p>
-        <span className="bg-gradient-to-r from-blue-400 to-blue-600 text-white text-xs rounded-full px-2 py-0.5 mt-2 font-bold shadow-sm">
-          {t('about.testimonials.designer')}
-        </span>
       </motion.div>
     </motion.div>
   );

@@ -665,7 +665,7 @@ export function JoinSectionImmersive() {
           animate={{opacity: 1, y: 0}}
           className="mt-24"
           initial={{opacity: 0, y: 20}}
-          transition={{duration: 0.8, delay: 1.2}}
+          transition={{duration: 0.8, delay: 0.3}}
         >
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {roles.map((role, i) => (
@@ -674,7 +674,7 @@ export function JoinSectionImmersive() {
                 icon={role.icon}
                 title={role.title}
                 description={role.description}
-                delay={1.3 + i * 0.1}
+                delay={0.3 + i * 0.05}
               />
             ))}
           </div>
