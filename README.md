@@ -37,6 +37,7 @@ This Turborepo has some additional tools already setup for you:
 ## 📚 Documentation
 
 For detailed documentation, see the [docs](./docs/) directory:
+
 - [Setup Guides](./docs/setup/) - Configuration for SonarCloud, PostHog, etc.
 - [Development Guidelines](./docs/development/) - Code review checklist and best practices
 
