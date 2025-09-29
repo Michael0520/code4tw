@@ -98,7 +98,9 @@ export function EventsSection() {
               rounded="full"
               className="group text-gray-900"
             >
-              <span>{showCalendar ? t('hide_calendar') : t('show_calendar')}</span>
+              <span>
+                {showCalendar ? t('hide_calendar') : t('show_calendar')}
+              </span>
               {showCalendar ? (
                 <Minus className="w-4 h-4 ml-2" />
               ) : (

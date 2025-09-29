@@ -70,7 +70,7 @@ export default function IndexPage() {
   return (
     <>
       {/* Navbar with positioning wrapper */}
-      <div className="fixed bottom-10 md:top-10 left-1/2 -translate-x-1/2 z-[9999] pointer-events-none will-change-transform">
+      <div className="fixed bottom-10 md:top-10 left-1/2 -translate-x-1/2 z-[9999] pointer-events-none">
         <motion.div
           initial={{opacity: 0, y: -120}}
           animate={{opacity: 1, y: 0}}
@@ -84,7 +84,7 @@ export default function IndexPage() {
       </div>
 
       {/* Language Selector positioned separately */}
-      <div className="fixed top-10 right-10 z-[9999] will-change-transform pointer-events-auto">
+      <div className="fixed top-10 right-10 z-[9999] pointer-events-auto">
         <motion.div
           initial={{opacity: 0, y: -20}}
           animate={{opacity: 1, y: 0}}
