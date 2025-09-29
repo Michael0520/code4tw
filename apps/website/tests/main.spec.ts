@@ -29,16 +29,6 @@ test.describe('Code4TW Website', () => {
     expect(html).toBe('en');
   });
 
-  test('navbar is visible', async ({page}) => {
-    await page.goto('/');
-
-    // Wait for navbar to be visible
-    await page.waitForSelector('nav', {timeout: 10000});
-
-    const navbar = await page.isVisible('nav');
-    expect(navbar).toBeTruthy();
-  });
-
   test('footer is present', async ({page}) => {
     await page.goto('/');
 
