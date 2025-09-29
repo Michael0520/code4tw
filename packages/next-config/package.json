@@ -7,18 +7,15 @@
     "./base": {
       "import": "./next.config.base.mjs",
       "require": "./next.config.base.js"
-    },
-    "./configs": {
-      "import": "./next.config.base.mjs",
-      "require": "./next.config.base.js"
-    },
-    "./next": "./node_modules/next",
-    "./next-themes": "./node_modules/next-themes"
+    }
   },
   "dependencies": {
     "next": "^15.5.0",
-    "next-themes": "latest",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "next-intl": "^4.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.5.3"
   }
 }

@@ -13,6 +13,7 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@repo/next-config": "workspace:*",
     "@radix-ui/react-accordion": "1.2.2",
     "@radix-ui/react-slot": "^1.2.3",
     "class-variance-authority": "^0.7.1",
@@ -20,7 +21,6 @@
     "framer-motion": "^12.23.22",
     "lucide-react": "^0.454.0",
     "motion": "^12.23.22",
-    "next": "^15.5.0",
     "next-intl": "^4.0.0",
     "posthog-js": "^1.268.6",
     "posthog-node": "^5.9.1",
@@ -44,6 +44,7 @@
     "eslint-config-next": "^15.5.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "next": "^15.5.0",
     "postcss": "^8.5.3",
     "prettier": "^3.3.3",
     "typescript": "^5.5.3"
