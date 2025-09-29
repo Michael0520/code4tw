@@ -116,7 +116,7 @@ export function AboutSectionBento() {
         }}
         transition={{duration: 3, repeat: Infinity, ease: 'easeInOut'}}
       >
-        {t('join.section.cta_title')} →
+        {t('join.section.cta_title')}
       </motion.span>
     ),
     description: (
