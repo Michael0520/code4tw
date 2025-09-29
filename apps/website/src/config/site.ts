@@ -18,7 +18,10 @@ export const siteConfig = {
   social: {
     facebook: 'https://www.facebook.com/CFTcodefortaiwan/',
     discord: 'https://discord.gg/pRFjDXeFyv',
-    events: 'https://luma.com/0ckf5dio',
+    events: 'https://luma.com/user/code4tw',
+    threads: 'https://www.threads.com/@code4tw',
+    instagram: 'https://www.instagram.com/code4tw/',
+    youtube: 'https://www.youtube.com/@CodeforTaiwan',
     github: 'https://github.com/codefortaiwan'
   },
 
@@ -71,7 +74,7 @@ export const siteConfig = {
     locale: 'zh_TW',
     alternateLocale: 'en_US',
     siteName: 'Code for Taiwan',
-    image: '/og-image.png'
+    image: '/og-image.jpg'
   },
 
   // Twitter/X card settings (keeping for compatibility)
@@ -84,7 +87,12 @@ export const siteConfig = {
   // Supported locales
   locales: {
     default: 'zh',
-    supported: ['zh', 'en'] as const
+    supported: ['zh', 'en'] as const,
+    // Mapping for OpenGraph locale formats
+    openGraphMap: {
+      zh: 'zh_TW',
+      en: 'en_US'
+    } as const
   }
 } as const;
 

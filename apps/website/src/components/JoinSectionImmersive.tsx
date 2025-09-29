@@ -6,7 +6,7 @@ import {
   useReducedMotion,
   useSpring
 } from 'motion/react';
-import type React from 'react';
+import React from 'react';
 import {useEffect, useRef, useState} from 'react';
 import {useTranslations} from 'next-intl';
 import Image from 'next/image';
@@ -14,6 +14,8 @@ import {Code, Palette, Database, Calendar, Users} from 'lucide-react';
 import {BrandKeywordHighlight} from './BrandKeywordHighlight';
 import TextAnimate from './TextAnimate';
 import {usePostHog} from '@/hooks/usePostHog';
+import {siteConfig} from '@/config/site';
+import {Button} from '@/components/ui/button';
 
 // Enhanced SplitText animation component (currently unused)
 /*
@@ -182,16 +184,14 @@ function useInView(
   return isInView;
 }
 
-// Magnetic button component
+// Magnetic button component (wrapper for button effects)
 const MagneticButton = ({
   children,
-  className = '',
   strength = 30,
   // href = '#',
   onClick
 }: {
   children: React.ReactNode;
-  className?: string;
   strength?: number;
   href?: string;
   onClick?: () => void;
@@ -231,17 +231,16 @@ const MagneticButton = ({
       onMouseMove={handleMouseMove}
       ref={buttonRef}
     >
-      <motion.button
-        className={`relative block ${className}`}
-        onClick={onClick}
+      <motion.div
         style={{
           x: xSpring,
           y: ySpring
         }}
         whileTap={{scale: 0.98}}
+        onClick={onClick}
       >
         {children}
-      </motion.button>
+      </motion.div>
 
       <AnimatePresence>
         {isHovered && !prefersReducedMotion && (
@@ -439,25 +438,37 @@ export function JoinSectionImmersive() {
               className="flex flex-wrap gap-4"
             >
               <MagneticButton
-                className="inline-flex h-14 items-center justify-center rounded-full bg-[#000095] px-8 font-medium text-white shadow-lg hover:shadow-xl hover:bg-[#0000b3] transition-all"
                 strength={40}
                 onClick={() => {
                   trackCTAClick('Join Discord', 'join_section');
-                  window.open('https://discord.gg/pRFjDXeFyv', '_blank');
+                  window.open(siteConfig.social.discord, '_blank');
                 }}
               >
-                {t('join.cta')}
+                <Button
+                  variant="primary-brand"
+                  size="xl"
+                  rounded="full"
+                  type="button"
+                >
+                  {t('join.cta')}
+                </Button>
               </MagneticButton>
 
               <MagneticButton
-                className="inline-flex h-14 items-center justify-center rounded-full border-2 border-gray-300 bg-white px-8 font-medium text-gray-900 hover:border-blue-500 transition-colors"
                 strength={30}
                 onClick={() => {
                   const faqSection = document.getElementById('faq');
                   faqSection?.scrollIntoView({behavior: 'smooth'});
                 }}
               >
-                {t('hero.learn_more')}
+                <Button
+                  variant="outline-gray"
+                  size="xl"
+                  rounded="full"
+                  type="button"
+                >
+                  {t('hero.learn_more')}
+                </Button>
               </MagneticButton>
             </motion.div>
           </div>

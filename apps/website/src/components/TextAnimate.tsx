@@ -1,11 +1,7 @@
 'use client';
 
 import {FC} from 'react';
-import {
-  HTMLMotionProps,
-  motion,
-  Variants
-} from 'framer-motion';
+import {HTMLMotionProps, motion, Variants} from 'framer-motion';
 
 type AnimationType =
   | 'fadeIn'
@@ -26,7 +22,10 @@ interface Props extends HTMLMotionProps<'div'> {
 
 // const viewport = {once: true, margin: '0px 0px -200px'}; // Currently unused
 
-const animationVariants: Record<AnimationType, {container: Variants; child: Variants}> = {
+const animationVariants: Record<
+  AnimationType,
+  {container: Variants; child: Variants}
+> = {
   fadeIn: {
     container: {
       hidden: {opacity: 0},
