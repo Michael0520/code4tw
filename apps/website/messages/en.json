@@ -94,6 +94,8 @@
       "show_calendar": "Show Event Calendar",
       "hide_calendar": "Hide Calendar",
       "view_all_luma": "View All Events on Luma",
+      "loading_events": "Loading events...",
+      "calendar_unavailable": "Unable to load events calendar",
       "upcoming": "Upcoming",
       "past": "Past Events",
       "register": "Register",
@@ -113,6 +115,7 @@
     },
     "join": {
       "title": "Community",
+      "subtitle": "Join our",
       "description": "Participate in community activities through various channels and work together with like-minded partners for Taiwan's digital democracy.",
       "tag": "Community Participation",
       "section": {

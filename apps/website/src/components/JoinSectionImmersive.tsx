@@ -390,7 +390,7 @@ export function JoinSectionImmersive() {
               />
 
               <TextAnimate
-                text="Frequently Asked "
+                text={t('join.subtitle')}
                 type="shiftInUp"
                 className="text-3xl md:text-4xl font-bold tracking-tight mt-4 "
               />
