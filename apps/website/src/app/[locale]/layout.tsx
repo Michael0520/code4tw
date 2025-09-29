@@ -9,6 +9,11 @@ import {siteConfig} from '@/config/site';
 import {PHProvider} from '@/providers/PosthogProvider';
 import './styles.css';
 
+type LayoutProps<T extends string = string> = {
+  children: React.ReactNode;
+  params: Promise<{locale: string}>;
+};
+
 const inter = Inter({subsets: ['latin']});
 
 const brand = localFont({
