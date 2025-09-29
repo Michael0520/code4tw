@@ -57,7 +57,7 @@ export function Navbar({}: NavbarProps) {
   ];
 
   return (
-    <div className="flex sticky top-0 z-50 bg-black/80 backdrop-blur-md px-1.5 py-1 md:px-2 md:py-1 rounded-full border border-white/20 shadow-lg min-w-[240px] md:min-w-fit">
+    <nav className="flex sticky top-0 z-50 bg-black/80 backdrop-blur-md px-1.5 py-1 md:px-2 md:py-1 rounded-full border border-white/20 shadow-lg min-w-[240px] md:min-w-fit">
       <ul className="flex w-full justify-between gap-0.5 md:gap-1">
         {tabs.map((tab) => {
           return (
@@ -77,7 +77,7 @@ export function Navbar({}: NavbarProps) {
           );
         })}
       </ul>
-    </div>
+    </nav>
   );
 }
 

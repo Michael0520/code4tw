@@ -29,6 +29,17 @@ test.describe('Code4TW Website', () => {
     expect(html).toBe('en');
   });
 
+  test('navbar is present', async ({page}) => {
+    await page.goto('/');
+
+    // Wait for animations to complete (0.9s delay + 1.6s duration from page.tsx line 78)
+    await page.waitForTimeout(3000);
+
+    // Check if nav element exists
+    const navbar = await page.locator('nav').count();
+    expect(navbar).toBeGreaterThan(0);
+  });
+
   test('footer is present', async ({page}) => {
     await page.goto('/');
 
