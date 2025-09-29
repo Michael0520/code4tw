@@ -87,7 +87,12 @@ export const siteConfig = {
   // Supported locales
   locales: {
     default: 'zh',
-    supported: ['zh', 'en'] as const
+    supported: ['zh', 'en'] as const,
+    // Mapping for OpenGraph locale formats
+    openGraphMap: {
+      zh: 'zh_TW',
+      en: 'en_US'
+    } as const
   }
 } as const;
 

@@ -1,7 +1,7 @@
 'use client';
 
 import {useTranslations} from 'next-intl';
-import {use, useEffect, useRef, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import {AnimatedRadialGradientBackground} from '@/sections/marketing-hero-radial-gradient/animated-radial-background';
 import {FAQSection} from '@/components/FAQSection';
 import {Footer} from '@/components/Footer';
@@ -14,8 +14,7 @@ import {EventsSection} from '@/components/EventsSection';
 import {motion} from 'framer-motion';
 import {siteConfig} from '@/config/site';
 
-export default function IndexPage({params}: PageProps<'/[locale]'>) {
-  const {} = use(params);
+export default function IndexPage() {
   const [activeSection, setActiveSection] = useState('hero');
 
   const heroRef = useRef<HTMLElement | null>(null);

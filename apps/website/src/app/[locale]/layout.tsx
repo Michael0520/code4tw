@@ -33,6 +33,9 @@ export async function generateMetadata(
   const baseUrl = siteConfig.url;
   const currentUrl = locale === 'en' ? baseUrl : `${baseUrl}/${locale}`;
 
+  // Get OpenGraph locale format from config mapping
+  const ogLocale = siteConfig.locales.openGraphMap[locale as keyof typeof siteConfig.locales.openGraphMap];
+
   return {
     title: t('title'),
     description: t('description'),
@@ -49,13 +52,13 @@ export async function generateMetadata(
     openGraph: {
       title: t('title'),
       description: t('description'),
-      locale: locale === 'zh' ? 'zh_TW' : 'en_US',
+      locale: ogLocale,
       type: siteConfig.openGraph.type,
       siteName: siteConfig.openGraph.siteName,
       url: currentUrl,
       images: [
         {
-          url: '/og-image.jpg',
+          url: siteConfig.openGraph.image,
           width: 1200,
           height: 630,
           alt: t('title')
@@ -68,7 +71,7 @@ export async function generateMetadata(
       creator: siteConfig.twitter.creator,
       title: t('title'),
       description: t('description'),
-      images: ['/og-image.jpg']
+      images: [siteConfig.openGraph.image]
     }
   };
 }
