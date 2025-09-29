@@ -93,10 +93,10 @@ export function EventsSection() {
           >
             <Button
               onClick={handleToggleCalendar}
-              variant={showCalendar ? "outline-white" : "primary-white"}
+              variant="primary-white"
               size="xl"
               rounded="full"
-              className="group"
+              className="group text-gray-900"
             >
               <span>{showCalendar ? t('hide_calendar') : t('show_calendar')}</span>
               {showCalendar ? (
