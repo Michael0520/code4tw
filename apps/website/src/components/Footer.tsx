@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import {useTranslations} from 'next-intl';
@@ -8,9 +10,11 @@ import {
   Mail,
   ExternalLink
 } from 'lucide-react';
+import {usePostHog} from '@/hooks/usePostHog';
 
 export function Footer() {
   const t = useTranslations('Footer');
+  const {trackSocialClick} = usePostHog();
 
   return (
     <footer className="bg-gray-50 border-t border-gray-200 py-16 px-4">
@@ -43,6 +47,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-gray-900 transition-colors text-sm flex items-center"
+                  onClick={() => trackSocialClick('Facebook', 'footer')}
                 >
                   <Facebook className="w-4 h-4 mr-2" />
                   Facebook
@@ -55,6 +60,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-gray-900 transition-colors text-sm flex items-center"
+                  onClick={() => trackSocialClick('Discord', 'footer')}
                 >
                   <MessageCircle className="w-4 h-4 mr-2" />
                   {t('community.discord')}
@@ -67,6 +73,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-gray-900 transition-colors text-sm flex items-center"
+                  onClick={() => trackSocialClick('Events', 'footer')}
                 >
                   <Calendar className="w-4 h-4 mr-2" />
                   {t('community.events')}

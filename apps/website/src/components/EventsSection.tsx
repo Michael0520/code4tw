@@ -5,11 +5,14 @@ import {motion} from 'framer-motion';
 import {ArrowRight} from 'lucide-react';
 import {Ripple} from '@/components/ui/ripple';
 import {BrandKeywordHighlight} from '@/components/BrandKeywordHighlight';
+import {usePostHog} from '@/hooks/usePostHog';
 
 export function EventsSection() {
   const t = useTranslations('IndexPage.events');
+  const {trackCTAClick} = usePostHog();
 
   const handleViewEvents = () => {
+    trackCTAClick('View Events', 'events_section');
     window.open('https://luma.com/user/code4tw', '_blank');
   };
 
