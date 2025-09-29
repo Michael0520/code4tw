@@ -34,6 +34,12 @@ This Turborepo has some additional tools already setup for you:
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 
+## 📚 Documentation
+
+For detailed documentation, see the [docs](./docs/) directory:
+- [Setup Guides](./docs/setup/) - Configuration for SonarCloud, PostHog, etc.
+- [Development Guidelines](./docs/development/) - Code review checklist and best practices
+
 ## Getting Started
 
 ### Prerequisites
