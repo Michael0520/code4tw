@@ -198,7 +198,7 @@ export const MessageSkeleton = () => {
     <motion.div
       initial="initial"
       whileHover="animate"
-      className="flex w-full min-h-[6rem] max-h-[10rem] bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-xl p-4 flex-col gap-3 relative overflow-hidden"
+      className="flex w-full min-h-[6rem] bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-xl p-4 flex-col gap-3 relative overflow-hidden"
     >
       {/* Animated background dots */}
       <div className="absolute inset-0 opacity-20">
