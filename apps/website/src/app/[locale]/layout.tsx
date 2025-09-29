@@ -6,8 +6,7 @@ import {Inter} from 'next/font/google';
 import localFont from 'next/font/local';
 import {routing} from '@/i18n/routing';
 import {siteConfig} from '@/config/site';
-import {PHProvider, PostHogPageview} from '@/providers/PosthogProvider';
-import {Suspense} from 'react';
+import {PHProvider} from '@/providers/PosthogProvider';
 import './styles.css';
 
 const inter = Inter({subsets: ['latin']});
@@ -77,9 +76,6 @@ export default async function LocaleLayout({
         )}
       >
         <PHProvider>
-          <Suspense>
-            <PostHogPageview />
-          </Suspense>
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </PHProvider>
       </body>
