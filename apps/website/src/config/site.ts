@@ -74,7 +74,7 @@ export const siteConfig = {
     locale: 'zh_TW',
     alternateLocale: 'en_US',
     siteName: 'Code for Taiwan',
-    image: '/og-image.png'
+    image: '/og-image.jpg'
   },
 
   // Twitter/X card settings (keeping for compatibility)

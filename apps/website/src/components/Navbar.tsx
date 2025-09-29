@@ -26,7 +26,7 @@ export function Navbar({}: NavbarProps) {
       label: t('home'),
       icon: (
         <Image
-          src="/CodeforTaiwan-mono-inverse-1x1.svg"
+          src="/logo-mono-inverse.svg"
           alt="Code for Taiwan"
           width={20}
           height={20}

@@ -55,7 +55,7 @@ export async function generateMetadata(
       url: currentUrl,
       images: [
         {
-          url: '/opengraph-image',
+          url: '/og-image.jpg',
           width: 1200,
           height: 630,
           alt: t('title')
@@ -68,7 +68,7 @@ export async function generateMetadata(
       creator: siteConfig.twitter.creator,
       title: t('title'),
       description: t('description'),
-      images: ['/opengraph-image']
+      images: ['/og-image.jpg']
     }
   };
 }
