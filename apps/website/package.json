@@ -22,6 +22,8 @@
     "motion": "^12.23.22",
     "next": "^15.5.0",
     "next-intl": "^4.0.0",
+    "posthog-js": "^1.268.6",
+    "posthog-node": "^5.9.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^2.5.5",

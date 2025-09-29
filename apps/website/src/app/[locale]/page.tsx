@@ -12,11 +12,13 @@ import {AboutSectionBento} from '@/components/AboutSectionBento';
 import {BrandKeywordHighlight} from '@/components/BrandKeywordHighlight';
 import {EventsSection} from '@/components/EventsSection';
 import {motion} from 'framer-motion';
+import {usePostHog} from '@/hooks/usePostHog';
 import {siteConfig} from '@/config/site';
 import {Button} from '@/components/ui/button';
 
 export default function IndexPage() {
   const [activeSection, setActiveSection] = useState('hero');
+  const {trackCTAClick} = usePostHog();
 
   const heroRef = useRef<HTMLElement | null>(null);
   const aboutRef = useRef<HTMLElement | null>(null);
@@ -166,6 +168,7 @@ export default function IndexPage() {
                   <Button
                     onClick={() => {
                       console.log('Opening Discord...');
+                      trackCTAClick('Join Discord', 'hero_section');
                       window.open(siteConfig.social.discord, '_blank');
                     }}
                     variant="primary-white"

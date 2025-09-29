@@ -13,6 +13,7 @@ import Image from 'next/image';
 import {Code, Palette, Database, Calendar, Users} from 'lucide-react';
 import {BrandKeywordHighlight} from './BrandKeywordHighlight';
 import TextAnimate from './TextAnimate';
+import {usePostHog} from '@/hooks/usePostHog';
 import {siteConfig} from '@/config/site';
 import {Button} from '@/components/ui/button';
 
@@ -309,6 +310,7 @@ export function JoinSectionImmersive() {
   const t = useTranslations('IndexPage');
   const prefersReducedMotion = useReducedMotion();
   const containerRef = useRef<HTMLDivElement>(null);
+  const {trackCTAClick} = usePostHog();
 
   const roles = [
     {
@@ -437,7 +439,10 @@ export function JoinSectionImmersive() {
             >
               <MagneticButton
                 strength={40}
-                onClick={() => window.open(siteConfig.social.discord, '_blank')}
+                onClick={() => {
+                  trackCTAClick('Join Discord', 'join_section');
+                  window.open(siteConfig.social.discord, '_blank');
+                }}
               >
                 <Button
                   variant="primary-brand"
