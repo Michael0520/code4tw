@@ -1,6 +1,7 @@
 'use client';
 
 import {useState, useEffect} from 'react';
+import {useTranslations} from 'next-intl';
 import {motion} from 'framer-motion';
 import {Calendar, Loader2} from 'lucide-react';
 import {usePostHog} from '@/hooks/usePostHog';
@@ -17,6 +18,7 @@ export function LumaEventCalendar({
   height = 600,
   mobileHeight = 500
 }: LumaEventCalendarProps) {
+  const t = useTranslations('IndexPage.events');
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const {trackEvent} = usePostHog();
@@ -48,16 +50,14 @@ export function LumaEventCalendar({
     return (
       <div className="flex flex-col items-center justify-center py-12 px-4">
         <Calendar className="w-12 h-12 text-gray-400 mb-4" />
-        <p className="text-gray-400 text-center">
-          Unable to load events calendar.
-        </p>
+        <p className="text-gray-400 text-center">{t('calendar_unavailable')}</p>
         <a
           href="https://luma.com/user/code4tw"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white hover:text-gray-300 underline mt-2"
         >
-          View events on Luma →
+          {t('view_all_luma')}
         </a>
       </div>
     );
@@ -75,7 +75,7 @@ export function LumaEventCalendar({
         >
           <div className="flex flex-col items-center">
             <Loader2 className="w-8 h-8 text-white animate-spin mb-3" />
-            <p className="text-gray-400 text-sm">Loading events...</p>
+            <p className="text-gray-400 text-sm">{t('loading_events')}</p>
           </div>
         </motion.div>
       )}

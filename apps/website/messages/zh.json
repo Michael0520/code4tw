@@ -94,6 +94,8 @@
       "show_calendar": "顯示活動日曆",
       "hide_calendar": "隱藏活動日曆",
       "view_all_luma": "在 Luma 查看完整活動",
+      "loading_events": "載入活動中...",
+      "calendar_unavailable": "無法載入活動日曆",
       "upcoming": "即將舉辦",
       "past": "過去的活動",
       "register": "報名參加",
