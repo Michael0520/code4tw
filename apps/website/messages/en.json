@@ -26,9 +26,9 @@
       "civic_tech": "Civic Tech",
       "civic_tech_zh": "Civic Technology",
       "testimonials": {
-        "opensource_collaboration": "Open source makes collaboration simple",
-        "transparency_changes": "Transparency changes everything",
-        "tech_creates_value": "Technology creates value",
+        "opensource_collaboration": "Developer",
+        "transparency_changes": "Citizen",
+        "tech_creates_value": "Designer",
         "developer": "Developer",
         "citizen": "Citizen",
         "designer": "Designer"
