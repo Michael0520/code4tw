@@ -28,10 +28,7 @@
       "testimonials": {
         "opensource_collaboration": "開發者",
         "transparency_changes": "公民",
-        "tech_creates_value": "設計師",
-        "developer": "Developer",
-        "citizen": "Citizen",
-        "designer": "Designer"
+        "tech_creates_value": "設計師"
       },
       "message_card": {
         "user_message": "我們需要更透明的政府資訊...",
@@ -89,38 +86,17 @@
     "events": {
       "title": "Explore Our Events",
       "subtitle": "參與我們的工作坊、黑客松與社群聚會，一起用科技創造改變",
-      "cta_button": "檢視所有活動",
-      "view_all": "檢視所有活動",
       "show_calendar": "顯示活動日曆",
       "hide_calendar": "隱藏活動日曆",
       "view_all_luma": "在 Luma 查看完整活動",
       "loading_events": "載入活動中...",
-      "calendar_unavailable": "無法載入活動日曆",
-      "upcoming": "即將舉辦",
-      "past": "過去的活動",
-      "register": "報名參加",
-      "learn_more": "了解更多",
-      "no_upcoming": "目前沒有即將舉辦的活動",
-      "no_past": "沒有過去的活動記錄",
-      "types": {
-        "workshop": "工作坊",
-        "hackathon": "黑客松",
-        "meetup": "聚會",
-        "conference": "研討會"
-      }
-    },
-    "projects": {
-      "title": "學習資源",
-      "view_all": "檢視所有資源"
+      "calendar_unavailable": "無法載入活動日曆"
     },
     "join": {
       "title": "Community",
       "subtitle": "Join our",
       "description": "透過多種管道參與社群活動，與志同道合的夥伴一起為台灣的數位民主努力。",
-      "tag": "社群參與",
       "section": {
-        "title": "加入我們的行列",
-        "description": "不論你是開發者、設計師、或是關心社會議題的公民，我們都歡迎你的參與。讓我們一起用科技讓台灣更美好！",
         "cta_title": "加入我們的行列",
         "cta_description_line1": "立即加入 Code for Taiwan",
         "cta_description_line2": "用科技改變社會"
@@ -138,43 +114,20 @@
         "community_organizers_description": "連結人群並促進跨社群的協作"
       },
       "cta": "加入社群"
-    },
-    "stats": {
-      "contributors": "活躍貢獻者",
-      "projects": "學習資源",
-      "events": "舉辦活動",
-      "impact": "影響公民"
     }
   },
   "Footer": {
     "tagline": "透過科技與協作，打造更好的台灣。",
-    "projects": {
-      "title": "學習資源",
-      "g0v": "g0v 零時政府",
-      "vTaiwan": "vTaiwan 虛擬台灣",
-      "democracy_tools": "民主工具",
-      "transparency": "政府透明度"
-    },
     "community": {
       "title": "社群",
-      "slack": "Discord 討論區",
       "discord": "Discord 聊天室",
-      "events": "活動",
-      "hackathons": "黑客松"
-    },
-    "resources": {
-      "title": "資源",
-      "docs": "開發文件",
-      "awesome_taiwan": "台灣資源集",
-      "contribute": "如何貢獻",
-      "blog": "部落格"
+      "events": "活動"
     },
     "copyright": "© 2025 Code for Taiwan. 版權所有。",
     "links": {
       "contact": "聯繫我們",
       "privacy": "隱私政策",
-      "terms": "使用條款",
-      "support": "支援"
+      "terms": "使用條款"
     }
   },
   "LocaleLayout": {
