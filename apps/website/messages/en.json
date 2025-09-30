@@ -15,8 +15,6 @@
       "faq": "FAQ"
     },
     "hero": {
-      "headline": "Technology for Social Good",
-      "subheadline": "Join us in building a more transparent and participatory democracy through technology",
       "cta": "Get Involved",
       "learn_more": "Learn More"
     },
@@ -28,10 +26,7 @@
       "testimonials": {
         "opensource_collaboration": "Developer",
         "transparency_changes": "Citizen",
-        "tech_creates_value": "Designer",
-        "developer": "Developer",
-        "citizen": "Citizen",
-        "designer": "Designer"
+        "tech_creates_value": "Designer"
       },
       "message_card": {
         "user_message": "We need more transparent government information...",
@@ -61,8 +56,6 @@
       }
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Common questions about Code for Taiwan",
       "questions": [
         {
           "question": "What is Code for Taiwan?",
@@ -89,38 +82,17 @@
     "events": {
       "title": "Explore Our Events",
       "subtitle": "Join our workshops, hackathons, and community meetups to create change through technology",
-      "cta_button": "View All Events",
-      "view_all": "View All Events",
       "show_calendar": "Show Event Calendar",
       "hide_calendar": "Hide Calendar",
       "view_all_luma": "View All Events on Luma",
       "loading_events": "Loading events...",
-      "calendar_unavailable": "Unable to load events calendar",
-      "upcoming": "Upcoming",
-      "past": "Past Events",
-      "register": "Register",
-      "learn_more": "Learn More",
-      "no_upcoming": "No upcoming events at the moment",
-      "no_past": "No past events to display",
-      "types": {
-        "workshop": "Workshop",
-        "hackathon": "Hackathon",
-        "meetup": "Meetup",
-        "conference": "Conference"
-      }
-    },
-    "projects": {
-      "title": "Learning Resources",
-      "view_all": "View All Resources"
+      "calendar_unavailable": "Unable to load events calendar"
     },
     "join": {
       "title": "Community",
       "subtitle": "Join our",
       "description": "Participate in community activities through various channels and work together with like-minded partners for Taiwan's digital democracy.",
-      "tag": "Community Participation",
       "section": {
-        "title": "Join Our Team",
-        "description": "Whether you're a developer, designer, or a citizen concerned about social issues, we welcome your participation. Let's use technology to make Taiwan better together!",
         "cta_title": "Join Our Movement",
         "cta_description_line1": "Join Code for Taiwan Now",
         "cta_description_line2": "Transform Society with Technology"
@@ -138,43 +110,20 @@
         "community_organizers_description": "Connect people and foster collaboration across communities"
       },
       "cta": "Join Our Community"
-    },
-    "stats": {
-      "contributors": "Active Contributors",
-      "projects": "Learning Resources",
-      "events": "Events Organized",
-      "impact": "Citizens Impacted"
     }
   },
   "Footer": {
     "tagline": "Building a better Taiwan through technology and collaboration.",
-    "projects": {
-      "title": "Learning Resources",
-      "g0v": "g0v.tw",
-      "vTaiwan": "vTaiwan",
-      "democracy_tools": "Democracy Tools",
-      "transparency": "Government Transparency"
-    },
     "community": {
       "title": "Community",
-      "slack": "Discord Community",
       "discord": "Discord Chat",
-      "events": "Events",
-      "hackathons": "Hackathons"
-    },
-    "resources": {
-      "title": "Resources",
-      "docs": "Documentation",
-      "awesome_taiwan": "Awesome Taiwan",
-      "contribute": "Contributing Guide",
-      "blog": "Blog"
+      "events": "Events"
     },
     "copyright": "© 2025 Code for Taiwan. All rights reserved.",
     "links": {
       "contact": "Contact",
       "privacy": "Privacy",
-      "terms": "Terms",
-      "support": "Support"
+      "terms": "Terms"
     }
   },
   "LocaleLayout": {
