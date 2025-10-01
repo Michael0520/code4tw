@@ -10,19 +10,26 @@
     "test": "turbo run test",
     "test:watch": "turbo run test:watch",
     "test:coverage": "turbo run test:coverage",
+    "deps:check": "taze -r",
+    "deps:update": "taze -r -w",
+    "deps:major": "taze major -r -w",
+    "deps:minor": "taze minor -r -w",
+    "deps:patch": "taze patch -r -w",
+    "deps:latest": "taze latest -r -w",
     "prepare": "husky"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@vitest/coverage-v8": "^2.1.8",
+    "husky": "^9.1.7",
+    "jsdom": "^26.0.0",
     "prettier": "^3.6.2",
+    "taze": "^19.7.0",
     "turbo": "^2.5.6",
     "typescript": "5.9.2",
-    "vitest": "^2.1.8",
-    "@vitest/coverage-v8": "^2.1.8",
-    "@testing-library/react": "^16.1.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/user-event": "^14.5.2",
-    "jsdom": "^26.0.0",
-    "husky": "^9.1.7"
+    "vitest": "^2.1.8"
   },
   "packageManager": "pnpm@9.0.0",
   "engines": {

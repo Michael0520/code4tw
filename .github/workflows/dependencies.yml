@@ -1,0 +1,204 @@
+name: Update Dependencies
+
+on:
+  schedule:
+    # Run every Monday at 01:00 UTC (09:00 Taiwan time)
+    - cron: '0 1 * * 1'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Update mode (default, major, minor, patch, latest)'
+        required: false
+        default: 'default'
+        type: choice
+        options:
+          - default
+          - major
+          - minor
+          - patch
+          - latest
+
+env:
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+
+jobs:
+  update-dependencies:
+    name: Check and Update Dependencies
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.0.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check for dependency updates
+        id: check
+        run: |
+          echo "Checking for dependency updates..."
+          MODE="${{ github.event.inputs.mode || 'default' }}"
+
+          if [ "$MODE" = "default" ]; then
+            pnpm taze -r -w
+          else
+            pnpm taze $MODE -r -w
+          fi
+
+          echo "mode=$MODE" >> $GITHUB_OUTPUT
+
+      - name: Run tests
+        run: pnpm test:coverage
+        continue-on-error: true
+        id: test
+
+      - name: Run linter
+        run: pnpm lint
+        continue-on-error: true
+        id: lint
+
+      - name: Check types
+        run: pnpm check-types
+        continue-on-error: true
+        id: typecheck
+
+      - name: Build project
+        run: pnpm build
+        continue-on-error: true
+        id: build
+
+      - name: Generate update summary
+        id: summary
+        run: |
+          echo "# Dependency Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Update Mode**: \`${{ steps.check.outputs.mode }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## Quality Checks" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- Tests: ${{ steps.test.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Linter: ${{ steps.lint.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Type Check: ${{ steps.typecheck.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Build: ${{ steps.build.outcome }}" >> $GITHUB_STEP_SUMMARY
+
+      - name: Create Pull Request
+        id: create-pr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: |
+            chore(deps): update dependencies (${{ steps.check.outputs.mode }} mode)
+
+            Automated dependency updates using taze in ${{ steps.check.outputs.mode }} mode.
+
+            Quality checks:
+            - Tests: ${{ steps.test.outcome }}
+            - Linter: ${{ steps.lint.outcome }}
+            - Type Check: ${{ steps.typecheck.outcome }}
+            - Build: ${{ steps.build.outcome }}
+          branch: deps/automated-updates
+          delete-branch: true
+          title: 'chore(deps): automated dependency updates (${{ steps.check.outputs.mode }})'
+          body: |
+            ## 🤖 Automated Dependency Updates
+
+            This PR contains automated dependency updates checked by **taze**.
+
+            ### Update Configuration
+            - **Mode**: `${{ steps.check.outputs.mode }}`
+            - **Triggered**: ${{ github.event_name == 'schedule' && 'Scheduled (Weekly)' || 'Manual' }}
+            - **Date**: ${{ github.event.head_commit.timestamp }}
+
+            ### Quality Checks Results
+
+            | Check | Status |
+            |-------|--------|
+            | Tests | ${{ steps.test.outcome == 'success' && '✅ Passed' || '❌ Failed' }} |
+            | Linter | ${{ steps.lint.outcome == 'success' && '✅ Passed' || '❌ Failed' }} |
+            | Type Check | ${{ steps.typecheck.outcome == 'success' && '✅ Passed' || '❌ Failed' }} |
+            | Build | ${{ steps.build.outcome == 'success' && '✅ Passed' || '❌ Failed' }} |
+
+            ### ⚠️ Review Required
+
+            Please carefully review the following before merging:
+
+            - [ ] Check `package.json` changes for major version bumps
+            - [ ] Review changelog/release notes for breaking changes
+            - [ ] Verify all quality checks passed
+            - [ ] Test critical user flows manually if needed
+            - [ ] Update documentation if dependency changes affect usage
+
+            ### 📚 Configuration
+
+            This update follows the rules defined in `taze.config.ts`:
+            - Excluded packages: Next.js, React, TypeScript, Testing libraries
+            - Monorepo recursive mode enabled
+            - Package-specific update modes applied
+
+            ### 🔗 Resources
+
+            - [Taze Documentation](https://github.com/antfu-collective/taze)
+            - [Dependency Update Guidelines](./docs/development/DEPENDENCY_UPDATES.md)
+
+            ---
+
+            🤖 Generated by [taze](https://github.com/antfu-collective/taze) via GitHub Actions
+          labels: |
+            dependencies
+            automated
+            ${{ steps.test.outcome == 'success' && steps.lint.outcome == 'success' && steps.typecheck.outcome == 'success' && steps.build.outcome == 'success' && 'safe-to-merge' || 'needs-review' }}
+          assignees: ${{ github.repository_owner }}
+
+      - name: Comment on PR if checks failed
+        if: steps.test.outcome != 'success' || steps.lint.outcome != 'success' || steps.typecheck.outcome != 'success' || steps.build.outcome != 'success'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            if ('${{ steps.create-pr.outputs.pull-request-number }}') {
+              github.rest.issues.createComment({
+                issue_number: ${{ steps.create-pr.outputs.pull-request-number }},
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `## ⚠️ Quality Checks Failed
+
+                Some quality checks did not pass after dependency updates:
+
+                - Tests: ${{ steps.test.outcome }}
+                - Linter: ${{ steps.lint.outcome }}
+                - Type Check: ${{ steps.typecheck.outcome }}
+                - Build: ${{ steps.build.outcome }}
+
+                **Action Required**: Please review the failures and fix any issues before merging.
+
+                You may need to:
+                1. Update code to match new dependency APIs
+                2. Fix lint/type errors introduced by updates
+                3. Update tests for breaking changes
+                4. Exclude problematic packages in \`taze.config.ts\`
+                `
+              });
+            }
+
+      - name: Output PR details
+        if: steps.create-pr.outputs.pull-request-number
+        run: |
+          echo "✅ Pull Request created successfully!"
+          echo "PR Number: ${{ steps.create-pr.outputs.pull-request-number }}"
+          echo "PR URL: ${{ steps.create-pr.outputs.pull-request-url }}"
