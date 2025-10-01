@@ -46,6 +46,9 @@ export async function generateMetadata(
     keywords: siteConfig.metadata.keywords,
     authors: siteConfig.metadata.authors,
     metadataBase: new URL(siteConfig.url),
+    verification: {
+      google: '2CvgG0Lxzp7YM4wq2J97HtoBOeE9pcz0iYFHbHjotys'
+    },
     alternates: {
       canonical: currentUrl,
       languages: {
