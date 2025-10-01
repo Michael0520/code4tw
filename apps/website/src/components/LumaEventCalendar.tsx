@@ -110,7 +110,7 @@ export function LumaEventCalendar({
       {/* Responsive styles for mobile */}
       <style jsx>{`
         @media (max-width: 768px) {
-          div[style*="height"] {
+          div[style*='height'] {
             height: ${typeof mobileHeight === 'number'
               ? `${mobileHeight}px`
               : mobileHeight} !important;

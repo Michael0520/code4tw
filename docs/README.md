@@ -5,13 +5,17 @@ Welcome to the Code4TW documentation. This directory contains all project docume
 ## 📚 Documentation Structure
 
 ### [Setup Guides](./setup/)
+
 Configuration and setup documentation for various tools and services:
+
 - [SonarCloud Setup](./setup/SONARCLOUD_SETUP.md) - Code quality monitoring configuration
 - [PostHog Setup](./setup/POSTHOG_SETUP.md) - Analytics platform configuration
 - [PostHog Domains](./setup/POSTHOG_DOMAINS.md) - Domain configuration for PostHog
 
 ### [Development](./development/)
+
 Development guidelines and best practices:
+
 - [Code Review Checklist](./development/CODE_REVIEW_CHECKLIST.md) - Comprehensive checklist for code reviews
 
 ## 🔗 Quick Links
@@ -23,6 +27,7 @@ Development guidelines and best practices:
 ## 📖 Contributing
 
 When adding new documentation:
+
 1. Place setup/configuration docs in `setup/`
 2. Place development guidelines in `development/`
 3. Update this README with a link to your new document

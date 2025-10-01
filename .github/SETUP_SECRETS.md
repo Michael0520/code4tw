@@ -7,9 +7,11 @@ This guide explains how to configure the required secrets for GitHub Actions CI/
 ### 1. Turborepo Remote Cache Secrets
 
 #### `TURBO_TOKEN`
+
 **Purpose**: Authentication token for Vercel Remote Cache
 
 **How to get it**:
+
 ```bash
 # Login to Vercel via Turborepo CLI
 pnpm dlx turbo login
@@ -19,10 +21,12 @@ pnpm dlx turbo link
 ```
 
 After login, you can find your token at:
+
 - Vercel Dashboard → Settings → Tokens
 - Create a new token with "Read and Write" access
 
 **How to set in GitHub**:
+
 1. Go to your repository Settings
 2. Navigate to `Secrets and variables` → `Actions`
 3. Click `New repository secret`
@@ -31,9 +35,11 @@ After login, you can find your token at:
 6. Click `Add secret`
 
 #### `TURBO_TEAM`
+
 **Purpose**: Your Vercel team slug for remote cache scoping
 
 **How to get it**:
+
 ```bash
 # After running `turbo link`, your team slug is displayed
 # Or find it in Vercel Dashboard URL:
@@ -41,6 +47,7 @@ After login, you can find your token at:
 ```
 
 **How to set in GitHub**:
+
 1. Go to your repository Settings
 2. Navigate to `Secrets and variables` → `Actions`
 3. Click `New repository secret`
@@ -53,15 +60,18 @@ After login, you can find your token at:
 ### 2. Code Coverage Secret (Optional)
 
 #### `CODECOV_TOKEN`
+
 **Purpose**: Upload test coverage reports to Codecov
 
 **How to get it**:
+
 1. Go to https://codecov.io
 2. Sign in with GitHub
 3. Add your repository
 4. Copy the upload token
 
 **How to set in GitHub**:
+
 1. Repository Settings → `Secrets and variables` → `Actions`
 2. Click `New repository secret`
 3. Name: `CODECOV_TOKEN`
@@ -77,6 +87,7 @@ After login, you can find your token at:
 After setting up secrets, you can verify the setup:
 
 ### Check Secrets are Set
+
 1. Go to repository Settings
 2. Navigate to `Secrets and variables` → `Actions`
 3. You should see:
@@ -85,6 +96,7 @@ After setting up secrets, you can verify the setup:
    - ⚙️ `CODECOV_TOKEN` (optional)
 
 ### Test CI Workflow
+
 1. Create a new branch
 2. Make a small change
 3. Push and create a Pull Request
@@ -95,13 +107,16 @@ After setting up secrets, you can verify the setup:
    - ✅ Build job
 
 ### Verify Remote Cache is Working
+
 In the GitHub Actions logs, you should see:
+
 ```
 • Remote caching enabled
 Cache hit, replaying logs ...
 ```
 
 If you see "Remote caching disabled", check:
+
 1. `TURBO_TOKEN` is set correctly
 2. `TURBO_TEAM` matches your Vercel team
 3. Token has correct permissions
@@ -111,24 +126,30 @@ If you see "Remote caching disabled", check:
 ## Troubleshooting
 
 ### "Remote caching disabled"
+
 **Cause**: Missing or invalid `TURBO_TOKEN` or `TURBO_TEAM`
 
 **Solution**:
+
 1. Verify secrets are set in GitHub
 2. Check token is valid: `turbo login` again
 3. Ensure team slug is correct
 
 ### "unauthorized" error
+
 **Cause**: Invalid or expired token
 
 **Solution**:
+
 1. Generate a new token in Vercel Dashboard
 2. Update `TURBO_TOKEN` secret in GitHub
 
 ### CI fails with "pnpm: command not found"
+
 **Cause**: pnpm setup step failed
 
 **Solution**:
+
 - Workflow already includes `pnpm/action-setup@v4`
 - Check Node.js version is correct (18+)
 
@@ -144,5 +165,6 @@ After setting up secrets:
 4. ✅ Monitor cache hit rates in Actions logs
 
 For more information:
+
 - [Turborepo CI Documentation](https://turborepo.com/docs/guides/ci-vendors/github-actions)
 - [Vercel Remote Cache](https://vercel.com/docs/monorepos/remote-caching)

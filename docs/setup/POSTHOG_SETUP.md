@@ -11,6 +11,7 @@
    - Copy your Project API Key (starts with `phc_`)
 
 3. **Configure Environment Variables**
+
    ```bash
    # Create .env.local file
    cp .env.local.example .env.local
@@ -20,6 +21,7 @@
    ```
 
 4. **Verify Installation**
+
    ```bash
    # Start development server
    pnpm dev
