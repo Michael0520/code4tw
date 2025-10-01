@@ -27,7 +27,10 @@ export function usePostHog() {
     });
   };
 
-  const trackPageView = (pageName: string, properties?: Record<string, any>) => {
+  const trackPageView = (
+    pageName: string,
+    properties?: Record<string, any>
+  ) => {
     trackEvent('page_viewed', {
       page_name: pageName,
       ...properties

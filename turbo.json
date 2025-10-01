@@ -6,7 +6,7 @@
   "globalEnv": ["NODE_ENV", "API_BASE_URL"],
   "remoteCache": {
     "enabled": true,
-    "signature": true,
+    "signature": false,
     "timeout": 30,
     "uploadTimeout": 60
   },

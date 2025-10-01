@@ -1,4 +1,5 @@
 import {notFound} from 'next/navigation';
+import type {ReactNode} from 'react';
 import {Locale, hasLocale, NextIntlClientProvider} from 'next-intl';
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {clsx} from 'clsx';
@@ -20,9 +21,9 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
 }
 
-export async function generateMetadata(
-  props: Omit<LayoutProps<'/[locale]'>, 'children'>
-) {
+export async function generateMetadata(props: {
+  params: Promise<{locale: string}>;
+}) {
   const {locale} = await props.params;
 
   const t = await getTranslations({
@@ -96,7 +97,10 @@ export async function generateViewport() {
 export default async function LocaleLayout({
   children,
   params
-}: LayoutProps<'/[locale]'>) {
+}: {
+  children: ReactNode;
+  params: Promise<{locale: string}>;
+}) {
   // Ensure that the incoming `locale` is valid
   const {locale} = await params;
   if (!hasLocale(routing.locales, locale)) {

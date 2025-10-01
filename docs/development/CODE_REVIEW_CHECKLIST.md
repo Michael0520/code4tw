@@ -3,6 +3,7 @@
 ## 🚫 Critical Requirements (Must Pass)
 
 ### English-Only Codebase
+
 - [ ] **No Chinese characters** in variable names, function names, class names
 - [ ] **No Chinese characters** in comments or documentation
 - [ ] **No Chinese characters** in commit messages
@@ -10,6 +11,7 @@
 - [ ] All identifiers use proper English words (not transliterated Chinese)
 
 ### Test-Driven Development (TDD)
+
 - [ ] **Tests written before implementation** (Red-Green-Refactor cycle followed)
 - [ ] **Domain layer**: 100% test coverage
 - [ ] **Application layer**: 80%+ test coverage
@@ -18,6 +20,7 @@
 - [ ] **No test modifications** to make failing code pass (tests are immutable contracts)
 
 ### Domain-Driven Design (DDD) Architecture
+
 - [ ] **Clear layer separation**: Domain, Application, Infrastructure, Presentation
 - [ ] **Dependency rule respected**: Dependencies point inward (UI → App → Domain)
 - [ ] **Domain layer pure**: No external dependencies (no database, API, UI dependencies)
@@ -26,6 +29,7 @@
 - [ ] **Repository interfaces** in Domain, implementations in Infrastructure
 
 ### Configuration-Driven Development
+
 - [ ] **No magic numbers**: All constants have semantic names and are configurable
 - [ ] **Business rules externalized**: Logic in configuration objects, not hardcoded
 - [ ] **Feature flags used**: For conditional functionality
@@ -35,6 +39,7 @@
 ## 📋 Code Quality Standards
 
 ### Function Design
+
 - [ ] **Single Responsibility**: Each function has one clear purpose
 - [ ] **Pure functions preferred**: No side effects when possible
 - [ ] **Max 3 parameters**: Use objects for complex parameter sets
@@ -43,6 +48,7 @@
 - [ ] **Max complexity 10**: Reduce nested conditionals and loops
 
 ### Error Handling
+
 - [ ] **Result pattern used**: Return success/failure objects instead of throwing
 - [ ] **Type-safe errors**: Use discriminated unions for error types
 - [ ] **Meaningful error messages**: Include context and next steps
@@ -50,6 +56,7 @@
 - [ ] **Domain errors separate**: Business logic errors vs system errors
 
 ### TypeScript Standards
+
 - [ ] **No `any` type**: All types explicitly defined
 - [ ] **Strict mode enabled**: Full TypeScript strict configuration
 - [ ] **Return types explicit**: All functions have explicit return types
@@ -57,6 +64,7 @@
 - [ ] **Readonly where appropriate**: Immutable data structures preferred
 
 ### Naming Conventions
+
 - [ ] **Files**: kebab-case (`user-service.ts`)
 - [ ] **Directories**: kebab-case (`value-objects/`)
 - [ ] **Variables/Functions**: camelCase (`getUserById`)
@@ -67,6 +75,7 @@
 ## 🏗️ Architecture Compliance
 
 ### DDD Layer Verification
+
 - [ ] **Domain entities**: No infrastructure dependencies
 - [ ] **Value objects**: Immutable and self-validating
 - [ ] **Repository interfaces**: Abstract, no implementation details
@@ -75,6 +84,7 @@
 - [ ] **Presentation**: Depends only on application layer
 
 ### Test Structure
+
 - [ ] **Test files co-located**: `__tests__` folder next to source
 - [ ] **Test naming**: Descriptive describe blocks and test cases
 - [ ] **Factory functions**: For creating test data
@@ -82,6 +92,7 @@
 - [ ] **Setup/teardown**: Proper test environment management
 
 ### Configuration Architecture
+
 - [ ] **Centralized config**: Single configuration entry point
 - [ ] **Environment overrides**: Environment variables override defaults
 - [ ] **Type-safe config**: All configuration typed
@@ -91,6 +102,7 @@
 ## 🔍 Code Review Process
 
 ### Before Review
+
 - [ ] **Self-review completed**: Author has reviewed their own code
 - [ ] **Tests passing**: All tests pass locally
 - [ ] **Linting clean**: No ESLint errors or warnings
@@ -98,6 +110,7 @@
 - [ ] **Build successful**: Code builds without errors
 
 ### During Review
+
 - [ ] **Architecture alignment**: Follows DDD principles
 - [ ] **Test quality**: Tests are comprehensive and well-written
 - [ ] **Configuration usage**: Business logic properly externalized
@@ -105,6 +118,7 @@
 - [ ] **Security considerations**: No exposed secrets or vulnerabilities
 
 ### Review Comments
+
 - [ ] **Constructive feedback**: Specific, actionable suggestions
 - [ ] **Learning opportunities**: Explain better patterns when suggesting changes
 - [ ] **Praise good practices**: Acknowledge well-written code
