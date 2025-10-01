@@ -1,6 +1,8 @@
 {
   "$schema": "https://turborepo.com/schema.json",
   "ui": "tui",
+  "daemon": true,
+  "envMode": "strict",
   "globalEnv": ["NODE_ENV", "API_BASE_URL"],
   "remoteCache": {
     "enabled": true,
@@ -20,16 +22,19 @@
         "!**/*.test.{ts,tsx}"
       ],
       "outputs": [".next/**", "!.next/cache/**"],
+      "outputLogs": "new-only",
       "env": ["NEXT_PUBLIC_*"]
     },
     "lint": {
       "dependsOn": ["^lint"],
       "outputs": [],
+      "outputLogs": "errors-only",
       "cache": true
     },
     "check-types": {
       "dependsOn": ["^check-types"],
       "outputs": [],
+      "outputLogs": "errors-only",
       "cache": true
     },
     "test": {
@@ -40,6 +45,7 @@
         "**/*.spec.{ts,tsx}"
       ],
       "outputs": ["coverage/**"],
+      "outputLogs": "errors-only",
       "cache": true
     },
     "test:watch": {
@@ -49,6 +55,7 @@
     "test:coverage": {
       "dependsOn": ["^test:coverage"],
       "outputs": ["coverage/**"],
+      "outputLogs": "new-only",
       "cache": true
     },
     "dev": {
