@@ -5,6 +5,7 @@ This file provides comprehensive guidance to Claude Code when working with this 
 ## Core Development Principles
 
 ### 1. English-Only Codebase
+
 **ALL code must be written in English without exception.**
 
 - **Variables, functions, classes**: English names only
@@ -24,6 +25,7 @@ function calculateTotalPrice() { ... }
 ```
 
 ### 2. Domain-Driven Design (DDD) Architecture
+
 **Strict layered architecture with clear separation of concerns.**
 
 ```
@@ -50,14 +52,17 @@ src/
 **Dependency Rule**: Dependencies point inward (UI → App → Domain)
 
 ### 3. Test-Driven Development (TDD)
+
 **TDD is mandatory - no exceptions.**
 
 **Workflow**: Red → Green → Refactor
+
 1. **Red**: Write failing test first
 2. **Green**: Write minimal code to pass
 3. **Refactor**: Improve code while keeping tests green
 
 **Testing Standards**:
+
 - **AAA Pattern**: Always use Arrange, Act, Assert with clear comments
 - **Layer Coverage Goals**:
   - Domain Layer: 100% (business critical)
@@ -67,11 +72,11 @@ src/
 
 ```typescript
 // ✅ CORRECT - AAA Pattern
-describe('UserService', () => {
-  it('should create user with valid email', () => {
+describe("UserService", () => {
+  it("should create user with valid email", () => {
     // Arrange
     const userService = new UserService();
-    const validEmail = 'test@example.com';
+    const validEmail = "test@example.com";
 
     // Act
     const result = userService.createUser(validEmail);
@@ -84,6 +89,7 @@ describe('UserService', () => {
 ```
 
 ### 4. Configuration-Driven Development
+
 **Business logic must be externalized into configuration.**
 
 - **No magic numbers**: All constants named and configurable
@@ -112,6 +118,7 @@ if (user.loginAttempts > CONFIG.MAX_LOGIN_ATTEMPTS) { ... }
 ## Project Architecture
 
 ### Turborepo Monorepo Structure
+
 - **Package Manager**: PNPM with workspace protocol (`workspace:*`)
 - **Monorepo Tool**: Turborepo 2.5.6
 - **Runtime**: Node.js >=18
@@ -120,11 +127,13 @@ if (user.loginAttempts > CONFIG.MAX_LOGIN_ATTEMPTS) { ... }
 - **Testing**: Vitest + Testing Library
 
 ### Applications
+
 - `apps/web` - Main web application (port 3000)
 - `apps/docs` - Documentation site (port 3001)
 - `apps/website` - Public website (port 3002)
 
 ### Shared Packages
+
 - `@repo/ui` - Shared UI components
 - `@repo/next-config` - Shared Next.js configuration
 - `@repo/eslint-config` - Shared ESLint rules
@@ -133,6 +142,7 @@ if (user.loginAttempts > CONFIG.MAX_LOGIN_ATTEMPTS) { ... }
 ## Development Commands
 
 ### Testing (Vitest)
+
 ```bash
 # Run all tests
 pnpm test
@@ -148,6 +158,7 @@ pnpm test --filter=web
 ```
 
 ### Building and Development
+
 ```bash
 # Start all apps in development
 pnpm dev
@@ -171,6 +182,7 @@ pnpm format
 ## Code Quality Standards
 
 ### Naming Conventions
+
 - **Files**: kebab-case (`user-service.ts`)
 - **Directories**: kebab-case (`value-objects/`)
 - **Variables/Functions**: camelCase (`getUserById`)
@@ -179,6 +191,7 @@ pnpm format
 - **Types/Interfaces**: PascalCase (`UserEntity`)
 
 ### Function Design
+
 - **Pure functions preferred**: No side effects when possible
 - **Single responsibility**: One function, one purpose
 - **Meaningful names**: Function name describes exact behavior
@@ -202,6 +215,7 @@ function createUser(params: CreateUserParams) { ... }
 ```
 
 ### Error Handling
+
 - **Result pattern**: Return success/failure objects, avoid throwing
 - **Type-safe errors**: Use discriminated unions
 - **Meaningful messages**: Include context and next steps
@@ -210,11 +224,11 @@ function createUser(params: CreateUserParams) { ... }
 // ✅ CORRECT - Result pattern
 type CreateUserResult =
   | { success: true; user: User }
-  | { success: false; error: 'INVALID_EMAIL' | 'USER_EXISTS' };
+  | { success: false; error: "INVALID_EMAIL" | "USER_EXISTS" };
 
 function createUser(email: string): CreateUserResult {
   if (!isValidEmail(email)) {
-    return { success: false, error: 'INVALID_EMAIL' };
+    return { success: false, error: "INVALID_EMAIL" };
   }
   // ... implementation
 }
@@ -223,6 +237,7 @@ function createUser(email: string): CreateUserResult {
 ## Testing Guidelines
 
 ### Test Structure
+
 ```
 src/
 ├── domain/
@@ -237,18 +252,19 @@ src/
 ```
 
 ### Test Naming
+
 - **Describe blocks**: Feature or class name
 - **Test cases**: "should [expected behavior] when [condition]"
 - **Variables**: Clear, descriptive names
 
 ```typescript
-describe('UserService', () => {
-  describe('createUser', () => {
-    it('should create user when valid email is provided', () => {
+describe("UserService", () => {
+  describe("createUser", () => {
+    it("should create user when valid email is provided", () => {
       // Test implementation
     });
 
-    it('should return error when email is invalid', () => {
+    it("should return error when email is invalid", () => {
       // Test implementation
     });
   });
@@ -256,6 +272,7 @@ describe('UserService', () => {
 ```
 
 ### Test Data Management
+
 - **Factories**: Use factory functions for test data
 - **Builders**: Use builder pattern for complex objects
 - **Constants**: Centralized test constants
@@ -263,10 +280,10 @@ describe('UserService', () => {
 ```typescript
 // Test factories
 const createValidUser = (overrides = {}) => ({
-  id: '123',
-  email: 'test@example.com',
-  name: 'Test User',
-  ...overrides
+  id: "123",
+  email: "test@example.com",
+  name: "Test User",
+  ...overrides,
 });
 
 // Test builders
@@ -287,26 +304,28 @@ class UserBuilder {
 ## Configuration Management
 
 ### Environment Configuration
+
 ```typescript
 // config/index.ts
 export const config = {
   database: {
-    url: process.env.DATABASE_URL || 'localhost:5432',
-    maxConnections: Number(process.env.DB_MAX_CONNECTIONS) || 10
+    url: process.env.DATABASE_URL || "localhost:5432",
+    maxConnections: Number(process.env.DB_MAX_CONNECTIONS) || 10,
   },
   features: {
-    advancedSearch: process.env.FEATURE_ADVANCED_SEARCH === 'true',
-    userProfiles: process.env.FEATURE_USER_PROFILES === 'true'
+    advancedSearch: process.env.FEATURE_ADVANCED_SEARCH === "true",
+    userProfiles: process.env.FEATURE_USER_PROFILES === "true",
   },
   business: {
     maxLoginAttempts: 5,
     sessionTimeoutMs: 30 * 60 * 1000, // 30 minutes
-    supportedLanguages: ['en', 'zh'] as const
-  }
+    supportedLanguages: ["en", "zh"] as const,
+  },
 };
 ```
 
 ### Business Rules Configuration
+
 ```typescript
 // config/business-rules.ts
 export const businessRules = {
@@ -314,25 +333,26 @@ export const businessRules = {
     validation: {
       emailRegex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
       minPasswordLength: 8,
-      maxNameLength: 100
+      maxNameLength: 100,
     },
     permissions: {
-      admin: ['read', 'write', 'delete'],
-      user: ['read'],
-      guest: []
-    }
+      admin: ["read", "write", "delete"],
+      user: ["read"],
+      guest: [],
+    },
   },
   content: {
     maxFileSize: 10 * 1024 * 1024, // 10MB
-    allowedFileTypes: ['.jpg', '.png', '.pdf'],
-    maxCommentsPerPost: 50
-  }
+    allowedFileTypes: [".jpg", ".png", ".pdf"],
+    maxCommentsPerPost: 50,
+  },
 };
 ```
 
 ## Claude Code Behavior Guidelines
 
 ### When Working on This Project
+
 1. **Always follow TDD**: Write tests first, implementation second
 2. **Respect DDD boundaries**: Don't mix layer responsibilities
 3. **Use English only**: Never write Chinese in code
@@ -341,6 +361,7 @@ export const businessRules = {
 6. **Validate architecture**: Check layer dependencies before implementing
 
 ### Code Review Checklist
+
 - [ ] All code written in English
 - [ ] Tests written before implementation
 - [ ] DDD layer boundaries respected
@@ -350,6 +371,7 @@ export const businessRules = {
 - [ ] Test coverage meets requirements
 
 ### Common Anti-Patterns to Avoid
+
 - Chinese text in variable names or comments
 - Hardcoded business logic in UI components
 - Direct database access from presentation layer
@@ -360,6 +382,7 @@ export const businessRules = {
 ## AI Assistant Instructions
 
 When working with this codebase:
+
 1. **Enforce standards strictly**: Correct violations respectfully but firmly
 2. **Suggest better alternatives**: Provide examples of correct patterns
 3. **Maintain consistency**: Follow established patterns and conventions
@@ -371,6 +394,7 @@ Remember: These standards exist to ensure maintainable, scalable, and high-quali
 ## Development Workflow Integration
 
 ### Pre-commit Hooks
+
 Pre-commit hooks automatically enforce standards before code is committed:
 
 ```bash
@@ -384,7 +408,9 @@ pre-commit run --all-files
 ```
 
 ### GitHub Actions
+
 Automated quality gates run on every push and pull request:
+
 - **Code Standards**: English-only validation, TypeScript checking, linting
 - **Architecture**: DDD layer boundary validation, test structure compliance
 - **Configuration**: Config externalization validation, feature flag checks
@@ -393,6 +419,7 @@ Automated quality gates run on every push and pull request:
 - **SonarCloud Analysis**: Continuous code quality monitoring, security hotspot detection
 
 ### Development Commands
+
 ```bash
 # Quality assurance commands
 pnpm test:coverage    # Run tests with coverage validation
@@ -410,7 +437,9 @@ pnpm check:features   # Validate feature flag usage
 ```
 
 ### IDE Integration
+
 Recommended VS Code extensions for enforcing standards:
+
 - **ESLint**: Automatic English-only rule enforcement
 - **Prettier**: Code formatting
 - **TypeScript**: Type checking and intellisense
@@ -419,15 +448,18 @@ Recommended VS Code extensions for enforcing standards:
 - **Todo Tree**: Track implementation tasks
 
 ### Code Review Process
+
 1. **Automated Checks**: All GitHub Actions must pass green
 2. **Manual Review**: Use CODE_REVIEW_CHECKLIST.md systematically
 3. **Approval Criteria**: All four core principles must be validated
 4. **Rejection Criteria**: Any violation of critical requirements results in automatic rejection
 
 ### Quality Gates
+
 The following quality gates must pass for code to be merged:
 
 #### ✅ Critical Gates (Must Pass)
+
 - **English-Only**: No Chinese characters in code/comments
 - **TDD Compliance**: Tests written before implementation
 - **DDD Architecture**: Proper layer separation maintained
@@ -435,6 +467,7 @@ The following quality gates must pass for code to be merged:
 - **SonarCloud Quality Gate**: Must pass with current settings
 
 #### ⚠️ Warning Gates (Should Pass)
+
 - **Test Coverage**: Domain (100%), Application (80%), UI (60%)
 - **Code Quality**: No magic numbers, proper error handling
 - **Documentation**: JSDoc coverage for public APIs
@@ -442,6 +475,7 @@ The following quality gates must pass for code to be merged:
 - **SonarCloud Metrics**: Code duplication <3%, Security hotspots reviewed
 
 #### 📊 SonarCloud Integration
+
 - **Dashboard**: https://sonarcloud.io/dashboard?id=Michael0520_code4tw
 - **Analysis**: Automatic on every push and PR
 - **Reports**: Integrated with GitHub checks
