@@ -37,6 +37,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     needs: changes
+    permissions:
+      contents: read
+      pull-requests: write
 
     steps:
       - name: Checkout code
