@@ -2,11 +2,15 @@ import posthog from 'posthog-js';
 
 if (typeof window !== 'undefined') {
   const posthogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY;
-  const posthogHost = process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com';
 
   if (posthogKey) {
+    // Use reverse proxy to bypass ad-blockers, fallback to direct host for debugging
+    const useProxy = process.env.NEXT_PUBLIC_POSTHOG_PROXY !== 'false';
+
     posthog.init(posthogKey, {
-      api_host: posthogHost,
+      // Use local reverse proxy to prevent ad-blocker blocking
+      api_host: useProxy ? window.location.origin + '/ingest' : 'https://us.i.posthog.com',
+      ui_host: 'https://us.posthog.com', // Keep UI host for dashboard links
       person_profiles: 'identified_only',
       capture_pageview: true, // Enable automatic pageview tracking
       capture_pageleave: true,
