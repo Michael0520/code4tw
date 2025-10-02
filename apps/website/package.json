@@ -13,11 +13,9 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@radix-ui/react-accordion": "catalog:",
-    "@radix-ui/react-slot": "catalog:",
     "@repo/next-config": "workspace:*",
-    "class-variance-authority": "catalog:",
-    "clsx": "catalog:",
+    "@repo/tailwind-config": "workspace:*",
+    "@repo/ui": "workspace:*",
     "framer-motion": "catalog:",
     "lucide-react": "catalog:",
     "motion": "^12.23.22",
@@ -26,9 +24,7 @@
     "posthog-js": "catalog:",
     "posthog-node": "catalog:",
     "react": "catalog:",
-    "react-dom": "catalog:",
-    "tailwind-merge": "catalog:",
-    "tailwindcss": "catalog:"
+    "react-dom": "catalog:"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.1.0",
@@ -47,6 +43,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "postcss": "catalog:",
     "prettier": "catalog:",
+    "tailwindcss": "catalog:",
     "typescript": "catalog:"
   },
   "prettier": {

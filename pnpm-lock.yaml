@@ -113,21 +113,15 @@ importers:
 
   apps/website:
     dependencies:
-      '@radix-ui/react-accordion':
-        specifier: 'catalog:'
-        version: 1.2.2(@types/react-dom@19.1.1(@types/react@19.1.0))(@types/react@19.1.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      '@radix-ui/react-slot':
-        specifier: 'catalog:'
-        version: 1.2.3(@types/react@19.1.0)(react@19.1.1)
       '@repo/next-config':
         specifier: workspace:*
         version: link:../../packages/next-config
-      class-variance-authority:
-        specifier: 'catalog:'
-        version: 0.7.1
-      clsx:
-        specifier: 'catalog:'
-        version: 2.1.1
+      '@repo/tailwind-config':
+        specifier: workspace:*
+        version: link:../../packages/tailwind-config
+      '@repo/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       framer-motion:
         specifier: 'catalog:'
         version: 12.23.22(@emotion/is-prop-valid@0.8.8)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -155,12 +149,6 @@ importers:
       react-dom:
         specifier: 'catalog:'
         version: 19.1.1(react@19.1.1)
-      tailwind-merge:
-        specifier: 'catalog:'
-        version: 2.6.0
-      tailwindcss:
-        specifier: 'catalog:'
-        version: 3.4.17
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3.1.0
@@ -210,6 +198,9 @@ importers:
       prettier:
         specifier: 'catalog:'
         version: 3.6.2
+      tailwindcss:
+        specifier: 'catalog:'
+        version: 3.4.17
       typescript:
         specifier: 'catalog:'
         version: 5.9.2
@@ -256,20 +247,50 @@ importers:
         specifier: '>=15.5.0'
         version: 15.5.3(@babel/core@7.28.4)(@playwright/test@1.55.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
 
+  packages/tailwind-config:
+    devDependencies:
+      tailwindcss:
+        specifier: 'catalog:'
+        version: 3.4.17
+
   packages/typescript-config: {}
 
   packages/ui:
     dependencies:
+      '@radix-ui/react-accordion':
+        specifier: 'catalog:'
+        version: 1.2.2(@types/react-dom@19.1.1(@types/react@19.1.0))(@types/react@19.1.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      '@radix-ui/react-slot':
+        specifier: 'catalog:'
+        version: 1.2.3(@types/react@19.1.0)(react@19.1.1)
+      class-variance-authority:
+        specifier: 'catalog:'
+        version: 0.7.1
+      clsx:
+        specifier: 'catalog:'
+        version: 2.1.1
+      framer-motion:
+        specifier: 'catalog:'
+        version: 12.23.22(@emotion/is-prop-valid@0.8.8)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      lucide-react:
+        specifier: 'catalog:'
+        version: 0.454.0(react@19.1.1)
       react:
         specifier: ^19.1.0
         version: 19.1.1
       react-dom:
         specifier: ^19.1.0
         version: 19.1.1(react@19.1.1)
+      tailwind-merge:
+        specifier: 'catalog:'
+        version: 2.6.0
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
+      '@repo/tailwind-config':
+        specifier: workspace:*
+        version: link:../tailwind-config
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
@@ -285,6 +306,9 @@ importers:
       eslint:
         specifier: ^9.34.0
         version: 9.36.0(jiti@2.5.1)
+      tailwindcss:
+        specifier: 'catalog:'
+        version: 3.4.17
       typescript:
         specifier: 5.9.2
         version: 5.9.2
@@ -6780,8 +6804,8 @@ snapshots:
       '@typescript-eslint/parser': 8.44.0(eslint@9.11.1(jiti@2.5.1))(typescript@5.9.2)
       eslint: 9.11.1(jiti@2.5.1)
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@9.11.1(jiti@2.5.1))
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.44.0(eslint@9.11.1(jiti@2.5.1))(typescript@5.9.2))(eslint-import-resolver-typescript@3.10.1)(eslint@9.11.1(jiti@2.5.1))
+      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.44.0(eslint@9.11.1(jiti@2.5.1))(typescript@5.9.2))(eslint@9.11.1(jiti@2.5.1)))(eslint@9.11.1(jiti@2.5.1))
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.44.0(eslint@9.11.1(jiti@2.5.1))(typescript@5.9.2))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.44.0(eslint@9.11.1(jiti@2.5.1))(typescript@5.9.2))(eslint@9.11.1(jiti@2.5.1)))(eslint@9.11.1(jiti@2.5.1)))(eslint@9.11.1(jiti@2.5.1))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.11.1(jiti@2.5.1))
       eslint-plugin-react: 7.37.5(eslint@9.11.1(jiti@2.5.1))
       eslint-plugin-react-hooks: 5.2.0(eslint@9.11.1(jiti@2.5.1))
@@ -6804,7 +6828,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0)(eslint@9.11.1(jiti@2.5.1)):
+  eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.44.0(eslint@9.11.1(jiti@2.5.1))(typescript@5.9.2))(eslint@9.11.1(jiti@2.5.1)))(eslint@9.11.1(jiti@2.5.1)):
     dependencies:
       '@nolyfill/is-core-module': 1.0.39
       debug: 4.4.3
@@ -6815,22 +6839,22 @@ snapshots:
       tinyglobby: 0.2.15
       unrs-resolver: 1.11.1
     optionalDependencies:
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.44.0(eslint@9.11.1(jiti@2.5.1))(typescript@5.9.2))(eslint-import-resolver-typescript@3.10.1)(eslint@9.11.1(jiti@2.5.1))
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.44.0(eslint@9.11.1(jiti@2.5.1))(typescript@5.9.2))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.44.0(eslint@9.11.1(jiti@2.5.1))(typescript@5.9.2))(eslint@9.11.1(jiti@2.5.1)))(eslint@9.11.1(jiti@2.5.1)))(eslint@9.11.1(jiti@2.5.1))
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.1(@typescript-eslint/parser@8.44.0(eslint@9.11.1(jiti@2.5.1))(typescript@5.9.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1)(eslint@9.11.1(jiti@2.5.1)):
+  eslint-module-utils@2.12.1(@typescript-eslint/parser@8.44.0(eslint@9.11.1(jiti@2.5.1))(typescript@5.9.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.44.0(eslint@9.11.1(jiti@2.5.1))(typescript@5.9.2))(eslint@9.11.1(jiti@2.5.1)))(eslint@9.11.1(jiti@2.5.1)))(eslint@9.11.1(jiti@2.5.1)):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
       '@typescript-eslint/parser': 8.44.0(eslint@9.11.1(jiti@2.5.1))(typescript@5.9.2)
       eslint: 9.11.1(jiti@2.5.1)
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@9.11.1(jiti@2.5.1))
+      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.44.0(eslint@9.11.1(jiti@2.5.1))(typescript@5.9.2))(eslint@9.11.1(jiti@2.5.1)))(eslint@9.11.1(jiti@2.5.1))
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.44.0(eslint@9.11.1(jiti@2.5.1))(typescript@5.9.2))(eslint-import-resolver-typescript@3.10.1)(eslint@9.11.1(jiti@2.5.1)):
+  eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.44.0(eslint@9.11.1(jiti@2.5.1))(typescript@5.9.2))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.44.0(eslint@9.11.1(jiti@2.5.1))(typescript@5.9.2))(eslint@9.11.1(jiti@2.5.1)))(eslint@9.11.1(jiti@2.5.1)))(eslint@9.11.1(jiti@2.5.1)):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.9
@@ -6841,7 +6865,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 9.11.1(jiti@2.5.1)
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.1(@typescript-eslint/parser@8.44.0(eslint@9.11.1(jiti@2.5.1))(typescript@5.9.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1)(eslint@9.11.1(jiti@2.5.1))
+      eslint-module-utils: 2.12.1(@typescript-eslint/parser@8.44.0(eslint@9.11.1(jiti@2.5.1))(typescript@5.9.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.44.0(eslint@9.11.1(jiti@2.5.1))(typescript@5.9.2))(eslint@9.11.1(jiti@2.5.1)))(eslint@9.11.1(jiti@2.5.1)))(eslint@9.11.1(jiti@2.5.1))
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3

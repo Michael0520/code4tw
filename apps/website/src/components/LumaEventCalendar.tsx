@@ -5,7 +5,7 @@ import {useTranslations} from 'next-intl';
 import {motion} from 'framer-motion';
 import {Calendar, Loader2} from 'lucide-react';
 import {usePostHog} from '@/hooks/usePostHog';
-import {cn} from '@/lib/utils';
+import {cn} from '@repo/ui/lib/utils';
 
 interface LumaEventCalendarProps {
   className?: string;
