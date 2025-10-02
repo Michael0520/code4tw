@@ -17,6 +17,7 @@ Configuration and setup documentation for various tools and services:
 Development guidelines and best practices:
 
 - [Code Review Checklist](./development/CODE_REVIEW_CHECKLIST.md) - Comprehensive checklist for code reviews
+- [Dependency Updates](./development/DEPENDENCY_UPDATES.md) - Automated dependency management with taze
 
 ## 🔗 Quick Links
 
@@ -43,6 +44,7 @@ docs/
 │   ├── POSTHOG_SETUP.md
 │   └── POSTHOG_DOMAINS.md
 ├── development/            # Development guidelines
-│   └── CODE_REVIEW_CHECKLIST.md
+│   ├── CODE_REVIEW_CHECKLIST.md
+│   └── DEPENDENCY_UPDATES.md
 └── README.md              # This file
 ```
