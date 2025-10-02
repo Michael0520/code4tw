@@ -50,6 +50,13 @@ export async function generateMetadata(props: {
     verification: {
       google: '2CvgG0Lxzp7YM4wq2J97HtoBOeE9pcz0iYFHbHjotys'
     },
+    icons: {
+      icon: [
+        {url: '/favicon.ico', sizes: '32x32'},
+        {url: '/icon.png', sizes: '192x192', type: 'image/png'}
+      ],
+      apple: '/apple-touch-icon.png'
+    },
     alternates: {
       canonical: currentUrl,
       languages: {
