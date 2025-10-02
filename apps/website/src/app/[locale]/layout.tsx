@@ -4,18 +4,12 @@ import {Locale, hasLocale, NextIntlClientProvider} from 'next-intl';
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {cn} from '@repo/ui/lib/utils';
 import {Inter} from 'next/font/google';
-import localFont from 'next/font/local';
 import {routing} from '@/i18n/routing';
 import {siteConfig} from '@/config/site';
 import {PHProvider} from '@/providers/PosthogProvider';
 import './styles.css';
 
 const inter = Inter({subsets: ['latin']});
-
-const brand = localFont({
-  variable: '--font-brand',
-  src: '../../fonts/Array-Bold.woff2'
-});
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
@@ -119,9 +113,7 @@ export default async function LocaleLayout({
 
   return (
     <html className="h-full" lang={locale}>
-      <body
-        className={cn(inter.className, brand.variable, 'flex h-full flex-col')}
-      >
+      <body className={cn(inter.className, 'flex h-full flex-col')}>
         <PHProvider>
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </PHProvider>

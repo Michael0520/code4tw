@@ -1,12 +1,20 @@
 @import 'tailwindcss';
 
+@font-face {
+  font-family: 'Array-Bold';
+  src: url('../../fonts/Array-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   /* Font Families */
-  --font-family-sans: Inter, sans-serif;
-  --font-family-mono:
+  --font-sans: Inter, sans-serif;
+  --font-mono:
     Monaco, ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono,
     Courier New, monospace;
-  --font-family-brand: var(--font-brand);
+  --font-brand: 'Array-Bold', sans-serif;
 
   /* Custom Colors */
   --color-slate-850: hsl(222deg 47% 16%);
