@@ -116,9 +116,6 @@ importers:
       '@repo/next-config':
         specifier: workspace:*
         version: link:../../packages/next-config
-      '@repo/tailwind-config':
-        specifier: workspace:*
-        version: link:../../packages/tailwind-config
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -288,9 +285,6 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@repo/tailwind-config':
-        specifier: workspace:*
-        version: link:../tailwind-config
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config

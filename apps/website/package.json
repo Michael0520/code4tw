@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@repo/next-config": "workspace:*",
-    "@repo/tailwind-config": "workspace:*",
     "@repo/ui": "workspace:*",
     "framer-motion": "catalog:",
     "lucide-react": "catalog:",
