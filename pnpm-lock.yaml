@@ -244,12 +244,6 @@ importers:
         specifier: '>=15.5.0'
         version: 15.5.3(@babel/core@7.28.4)(@playwright/test@1.55.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
 
-  packages/tailwind-config:
-    devDependencies:
-      tailwindcss:
-        specifier: 'catalog:'
-        version: 4.1.14
-
   packages/typescript-config: {}
 
   packages/ui:
