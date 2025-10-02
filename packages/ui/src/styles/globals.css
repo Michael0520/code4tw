@@ -1,6 +1,30 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  /* Font Families */
+  --font-family-sans: Inter, sans-serif;
+  --font-family-mono: Monaco, ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, Courier New, monospace;
+  --font-family-brand: var(--font-brand);
+
+  /* Custom Colors */
+  --color-slate-850: hsl(222deg 47% 16%);
+  --color-primary: #000095;
+
+  --color-brand-50: #e6e6f4;
+  --color-brand-100: #c0c0e5;
+  --color-brand-200: #9999d6;
+  --color-brand-300: #6666c2;
+  --color-brand-400: #3333ad;
+  --color-brand-500: #000095;
+  --color-brand-600: #000080;
+  --color-brand-700: #00006b;
+  --color-brand-800: #000056;
+  --color-brand-900: #000040;
+
+  /* Container */
+  --container-center: true;
+  --breakpoint-sm: 50rem;
+}
 
 @layer base {
   :root {
@@ -17,5 +41,48 @@
   .dark-section {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
+  }
+}
+
+/* Keyframes */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+@keyframes ripple {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+}
+
+/* Animation utilities */
+@layer utilities {
+  .animate-accordion-down {
+    animation: accordion-down 0.2s ease-out;
+  }
+
+  .animate-accordion-up {
+    animation: accordion-up 0.2s ease-out;
+  }
+
+  .animate-ripple {
+    animation: ripple 4s ease-in-out infinite;
   }
 }
