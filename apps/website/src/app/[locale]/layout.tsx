@@ -2,7 +2,7 @@ import {notFound} from 'next/navigation';
 import type {ReactNode} from 'react';
 import {Locale, hasLocale, NextIntlClientProvider} from 'next-intl';
 import {getTranslations, setRequestLocale} from 'next-intl/server';
-import {clsx} from 'clsx';
+import {cn} from '@repo/ui/lib/utils';
 import {Inter} from 'next/font/google';
 import localFont from 'next/font/local';
 import {routing} from '@/i18n/routing';
@@ -113,11 +113,7 @@ export default async function LocaleLayout({
   return (
     <html className="h-full" lang={locale}>
       <body
-        className={clsx(
-          inter.className,
-          brand.variable,
-          'flex h-full flex-col'
-        )}
+        className={cn(inter.className, brand.variable, 'flex h-full flex-col')}
       >
         <PHProvider>
           <NextIntlClientProvider>{children}</NextIntlClientProvider>

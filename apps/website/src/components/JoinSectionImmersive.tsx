@@ -15,7 +15,7 @@ import {BrandKeywordHighlight} from './BrandKeywordHighlight';
 import TextAnimate from './TextAnimate';
 import {usePostHog} from '@/hooks/usePostHog';
 import {siteConfig} from '@/config/site';
-import {Button} from '@/components/ui/button';
+import {Button} from '@repo/ui/ui/button';
 
 // Enhanced SplitText animation component (currently unused)
 /*

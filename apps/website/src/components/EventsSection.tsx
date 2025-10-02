@@ -4,12 +4,12 @@ import {useState} from 'react';
 import {useTranslations} from 'next-intl';
 import {motion} from 'framer-motion';
 import {ExternalLink, Plus, Minus} from 'lucide-react';
-import {Ripple} from '@/components/ui/ripple';
+import {Ripple} from '@repo/ui/ui/ripple';
 import {BrandKeywordHighlight} from '@/components/BrandKeywordHighlight';
 import {LumaEventCalendar} from '@/components/LumaEventCalendar';
 import {usePostHog} from '@/hooks/usePostHog';
 import {siteConfig} from '@/config/site';
-import {Button} from '@/components/ui/button';
+import {Button} from '@repo/ui/ui/button';
 
 export function EventsSection() {
   const t = useTranslations('IndexPage.events');

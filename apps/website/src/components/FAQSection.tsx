@@ -6,7 +6,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger
-} from '@/components/ui/accordion';
+} from '@repo/ui/ui/accordion';
 import TextAnimate from './TextAnimate';
 
 interface FAQItem {

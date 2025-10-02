@@ -1,11 +1,9 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
   /* Font Families */
   --font-family-sans: Inter, sans-serif;
-  --font-family-mono:
-    Monaco, ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono,
-    Courier New, monospace;
+  --font-family-mono: Monaco, ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, Courier New, monospace;
   --font-family-brand: var(--font-brand);
 
   /* Custom Colors */
@@ -66,8 +64,7 @@
 }
 
 @keyframes ripple {
-  0%,
-  100% {
+  0%, 100% {
     transform: scale(1);
   }
   50% {
@@ -80,9 +77,11 @@
   .animate-accordion-down {
     animation: accordion-down 0.2s ease-out;
   }
+
   .animate-accordion-up {
     animation: accordion-up 0.2s ease-out;
   }
+
   .animate-ripple {
     animation: ripple 4s ease-in-out infinite;
   }

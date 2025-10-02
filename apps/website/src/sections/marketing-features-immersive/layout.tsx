@@ -1,6 +1,6 @@
 import {Inter_Tight} from 'next/font/google';
 import type {ReactNode} from 'react';
-import {cn} from '@/lib/utils';
+import {cn} from '@repo/ui/lib/utils';
 
 const inter = Inter_Tight({subsets: ['latin']});
 
