@@ -1,9 +1,11 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   /* Font Families */
   --font-family-sans: Inter, sans-serif;
-  --font-family-mono: Monaco, ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, Courier New, monospace;
+  --font-family-mono:
+    Monaco, ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono,
+    Courier New, monospace;
   --font-family-brand: var(--font-brand);
 
   /* Custom Colors */
@@ -64,7 +66,8 @@
 }
 
 @keyframes ripple {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
