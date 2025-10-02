@@ -175,10 +175,3 @@ repos:
 default_stages: [commit]
 fail_fast: false
 minimum_pre_commit_version: 3.0.0
-
-# Repository configuration
-repos:
-  - repo: meta
-    hooks:
-      - id: check-hooks-apply
-      - id: check-useless-excludes

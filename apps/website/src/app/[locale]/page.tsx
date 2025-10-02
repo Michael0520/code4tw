@@ -167,7 +167,6 @@ export default function IndexPage() {
                 >
                   <Button
                     onClick={() => {
-                      console.log('Opening Discord...');
                       trackCTAClick('Join Discord', 'hero_section');
                       window.open(siteConfig.social.discord, '_blank');
                     }}
@@ -181,7 +180,6 @@ export default function IndexPage() {
                   </Button>
                   <Button
                     onClick={() => {
-                      console.log('Scrolling to about...');
                       scrollToAbout();
                     }}
                     variant="outline-white"

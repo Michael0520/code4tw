@@ -42,3 +42,5 @@ yarn-error.log*
 .mcp.json
 .specstory/
 .claude/
+.vscode/
+!.vscode/extensions.json
