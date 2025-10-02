@@ -4,5 +4,23 @@ import {baseConfig} from '@repo/next-config/base';
 
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
-// Use shared base configuration from @repo/next-config
-export default withNextIntl(baseConfig as NextConfig);
+// PostHog reverse proxy configuration to prevent ad-blocker blocking
+const config: NextConfig = {
+  ...baseConfig,
+  skipTrailingSlashRedirect: true,
+  async rewrites() {
+    return [
+      {
+        source: '/ingest/static/:path*',
+        destination: 'https://us-assets.i.posthog.com/static/:path*',
+      },
+      {
+        source: '/ingest/:path*',
+        destination: 'https://us.i.posthog.com/:path*',
+      },
+    ];
+  },
+};
+
+// Use shared base configuration from @repo/next-config with PostHog proxy
+export default withNextIntl(config);
