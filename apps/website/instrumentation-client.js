@@ -4,9 +4,12 @@ if (typeof window !== 'undefined') {
   const posthogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY;
 
   if (posthogKey) {
+    // Use reverse proxy to bypass ad-blockers, fallback to direct host for debugging
+    const useProxy = process.env.NEXT_PUBLIC_POSTHOG_PROXY !== 'false';
+
     posthog.init(posthogKey, {
       // Use local reverse proxy to prevent ad-blocker blocking
-      api_host: window.location.origin + '/ingest',
+      api_host: useProxy ? window.location.origin + '/ingest' : 'https://us.i.posthog.com',
       ui_host: 'https://us.posthog.com', // Keep UI host for dashboard links
       person_profiles: 'identified_only',
       capture_pageview: true, // Enable automatic pageview tracking
