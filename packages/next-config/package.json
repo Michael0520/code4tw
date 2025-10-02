@@ -11,14 +11,9 @@
     "./configs": {
       "import": "./next.config.base.mjs",
       "require": "./next.config.base.js"
-    },
-    "./next": "./node_modules/next",
-    "./next-themes": "./node_modules/next-themes"
+    }
   },
-  "dependencies": {
-    "next": "^15.5.0",
-    "next-themes": "latest",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+  "peerDependencies": {
+    "next": ">=15.5.0"
   }
 }
