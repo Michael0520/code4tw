@@ -1,6 +1,6 @@
 'use client';
 
-import {usePostHog as usePostHogOriginal} from 'posthog-js/react';
+import {usePostHog as usePostHogOriginal} from '@repo/analytics/provider';
 
 export function usePostHog() {
   const posthog = usePostHogOriginal();

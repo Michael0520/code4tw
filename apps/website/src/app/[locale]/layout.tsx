@@ -6,7 +6,7 @@ import {cn} from '@repo/ui/lib/utils';
 import {Inter} from 'next/font/google';
 import {routing} from '@repo/i18n/routing';
 import {siteConfig} from '@repo/config/site';
-import {PHProvider} from '@/providers/PosthogProvider';
+import {PHProvider} from '@repo/analytics/provider';
 import './styles.css';
 
 const inter = Inter({subsets: ['latin']});

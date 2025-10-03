@@ -51,9 +51,6 @@ catalogs:
     posthog-js:
       specifier: ^1.268.6
       version: 1.268.6
-    posthog-node:
-      specifier: ^5.9.1
-      version: 5.9.1
     prettier:
       specifier: ^3.6.2
       version: 3.6.2
@@ -113,6 +110,9 @@ importers:
 
   apps/website:
     dependencies:
+      '@repo/analytics':
+        specifier: workspace:*
+        version: link:../../packages/analytics
       '@repo/config':
         specifier: workspace:*
         version: link:../../packages/config
@@ -140,12 +140,6 @@ importers:
       next-intl:
         specifier: 'catalog:'
         version: 4.3.9(next@15.5.3(@playwright/test@1.55.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(typescript@5.9.2)
-      posthog-js:
-        specifier: 'catalog:'
-        version: 1.268.6
-      posthog-node:
-        specifier: 'catalog:'
-        version: 5.9.1
       react:
         specifier: 'catalog:'
         version: 19.1.1
@@ -204,6 +198,22 @@ importers:
       tailwindcss:
         specifier: 'catalog:'
         version: 4.1.14
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.2
+
+  packages/analytics:
+    dependencies:
+      posthog-js:
+        specifier: 'catalog:'
+        version: 1.268.6
+      react:
+        specifier: 'catalog:'
+        version: 19.1.1
+    devDependencies:
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
       typescript:
         specifier: 'catalog:'
         version: 5.9.2
@@ -3810,10 +3820,6 @@ packages:
         optional: true
       rrweb-snapshot:
         optional: true
-
-  posthog-node@5.9.1:
-    resolution: {integrity: sha512-Tydweh2Q3s2dy1b77NOYOaBfphSUNd6zmEPbU7yCuWnz8vU0nk2jObDRUQClTMGJZnr+HSj6ZVWvosrAN1d1dQ==}
-    engines: {node: '>=20'}
 
   preact@10.27.2:
     resolution: {integrity: sha512-5SYSgFKSyhCbk6SrXyMpqjb5+MQBgfvEKE/OC+PujcY34sOpqtr+0AZQtPYx5IA6VxynQ7rUPCtKzyovpj9Bpg==}
@@ -8630,10 +8636,6 @@ snapshots:
       fflate: 0.4.8
       preact: 10.27.2
       web-vitals: 4.2.4
-
-  posthog-node@5.9.1:
-    dependencies:
-      '@posthog/core': 1.2.1
 
   preact@10.27.2: {}
 
