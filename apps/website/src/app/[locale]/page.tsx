@@ -13,7 +13,7 @@ import {BrandKeywordHighlight} from '@/components/BrandKeywordHighlight';
 import {EventsSection} from '@/components/EventsSection';
 import {motion} from 'framer-motion';
 import {usePostHog} from '@/hooks/usePostHog';
-import {siteConfig} from '@/config/site';
+import {siteConfig} from '@repo/config/site';
 import {Button} from '@repo/ui/ui/button';
 
 export default function IndexPage() {

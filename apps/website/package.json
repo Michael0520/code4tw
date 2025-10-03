@@ -13,6 +13,7 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@repo/config": "workspace:*",
     "@repo/next-config": "workspace:*",
     "@repo/ui": "workspace:*",
     "framer-motion": "catalog:",

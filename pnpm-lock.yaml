@@ -113,6 +113,9 @@ importers:
 
   apps/website:
     dependencies:
+      '@repo/config':
+        specifier: workspace:*
+        version: link:../../packages/config
       '@repo/next-config':
         specifier: workspace:*
         version: link:../../packages/next-config
@@ -198,6 +201,21 @@ importers:
       tailwindcss:
         specifier: 'catalog:'
         version: 4.1.14
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.2
+
+  packages/config:
+    devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      eslint:
+        specifier: 'catalog:'
+        version: 9.11.1(jiti@2.6.1)
       typescript:
         specifier: 'catalog:'
         version: 5.9.2

@@ -5,7 +5,7 @@ import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {cn} from '@repo/ui/lib/utils';
 import {Inter} from 'next/font/google';
 import {routing} from '@/i18n/routing';
-import {siteConfig} from '@/config/site';
+import {siteConfig} from '@repo/config/site';
 import {PHProvider} from '@/providers/PosthogProvider';
 import './styles.css';
 

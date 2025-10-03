@@ -13,7 +13,7 @@ import {
   Instagram
 } from 'lucide-react';
 import {usePostHog} from '@/hooks/usePostHog';
-import {siteConfig} from '@/config/site';
+import {siteConfig} from '@repo/config/site';
 
 export function Footer() {
   const t = useTranslations('Footer');

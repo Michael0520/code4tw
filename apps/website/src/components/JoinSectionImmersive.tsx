@@ -14,7 +14,7 @@ import {Code, Palette, Database, Calendar, Users} from 'lucide-react';
 import {BrandKeywordHighlight} from './BrandKeywordHighlight';
 import TextAnimate from './TextAnimate';
 import {usePostHog} from '@/hooks/usePostHog';
-import {siteConfig} from '@/config/site';
+import {siteConfig} from '@repo/config/site';
 import {Button} from '@repo/ui/ui/button';
 
 // Enhanced SplitText animation component (currently unused)

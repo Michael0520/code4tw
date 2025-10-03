@@ -8,7 +8,7 @@ import {Ripple} from '@repo/ui/ui/ripple';
 import {BrandKeywordHighlight} from '@/components/BrandKeywordHighlight';
 import {LumaEventCalendar} from '@/components/LumaEventCalendar';
 import {usePostHog} from '@/hooks/usePostHog';
-import {siteConfig} from '@/config/site';
+import {siteConfig} from '@repo/config/site';
 import {Button} from '@repo/ui/ui/button';
 
 export function EventsSection() {
