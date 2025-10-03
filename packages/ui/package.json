@@ -29,8 +29,8 @@
     "clsx": "catalog:",
     "framer-motion": "catalog:",
     "lucide-react": "catalog:",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "catalog:",
+    "react-dom": "catalog:",
     "tailwind-merge": "catalog:"
   }
 }
