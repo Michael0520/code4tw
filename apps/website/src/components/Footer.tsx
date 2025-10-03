@@ -12,7 +12,7 @@ import {
   Youtube,
   Instagram
 } from 'lucide-react';
-import {usePostHog} from '@/hooks/usePostHog';
+import {usePostHog} from '@repo/hooks/usePostHog';
 import {siteConfig} from '@repo/config/site';
 
 export function Footer() {

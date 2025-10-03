@@ -7,7 +7,7 @@ import {ExternalLink, Plus, Minus} from 'lucide-react';
 import {Ripple} from '@repo/ui/ui/ripple';
 import {BrandKeywordHighlight} from '@/components/BrandKeywordHighlight';
 import {LumaEventCalendar} from '@/components/LumaEventCalendar';
-import {usePostHog} from '@/hooks/usePostHog';
+import {usePostHog} from '@repo/hooks/usePostHog';
 import {siteConfig} from '@repo/config/site';
 import {Button} from '@repo/ui/ui/button';
 

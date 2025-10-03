@@ -12,7 +12,7 @@ import {AboutSectionBento} from '@/components/AboutSectionBento';
 import {BrandKeywordHighlight} from '@/components/BrandKeywordHighlight';
 import {EventsSection} from '@/components/EventsSection';
 import {motion} from 'framer-motion';
-import {usePostHog} from '@/hooks/usePostHog';
+import {usePostHog} from '@repo/hooks/usePostHog';
 import {siteConfig} from '@repo/config/site';
 import {Button} from '@repo/ui/ui/button';
 

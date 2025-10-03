@@ -116,6 +116,9 @@ importers:
       '@repo/config':
         specifier: workspace:*
         version: link:../../packages/config
+      '@repo/hooks':
+        specifier: workspace:*
+        version: link:../../packages/hooks
       '@repo/i18n':
         specifier: workspace:*
         version: link:../../packages/i18n
@@ -268,6 +271,22 @@ importers:
       typescript-eslint:
         specifier: ^8.40.0
         version: 8.44.0(eslint@9.36.0(jiti@2.6.1))(typescript@5.9.2)
+
+  packages/hooks:
+    dependencies:
+      '@repo/analytics':
+        specifier: workspace:*
+        version: link:../analytics
+      react:
+        specifier: 'catalog:'
+        version: 19.1.1
+    devDependencies:
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.2
 
   packages/i18n:
     dependencies:

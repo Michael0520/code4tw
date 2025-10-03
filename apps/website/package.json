@@ -15,6 +15,7 @@
   "dependencies": {
     "@repo/analytics": "workspace:*",
     "@repo/config": "workspace:*",
+    "@repo/hooks": "workspace:*",
     "@repo/i18n": "workspace:*",
     "@repo/next-config": "workspace:*",
     "@repo/ui": "workspace:*",
