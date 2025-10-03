@@ -116,6 +116,9 @@ importers:
       '@repo/config':
         specifier: workspace:*
         version: link:../../packages/config
+      '@repo/i18n':
+        specifier: workspace:*
+        version: link:../../packages/i18n
       '@repo/next-config':
         specifier: workspace:*
         version: link:../../packages/next-config
@@ -136,7 +139,7 @@ importers:
         version: 15.5.3(@babel/core@7.28.4)(@playwright/test@1.55.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       next-intl:
         specifier: 'catalog:'
-        version: 4.3.9(next@15.5.3(@babel/core@7.28.4)(@playwright/test@1.55.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(typescript@5.9.2)
+        version: 4.3.9(next@15.5.3(@playwright/test@1.55.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(typescript@5.9.2)
       posthog-js:
         specifier: 'catalog:'
         version: 1.268.6
@@ -255,6 +258,25 @@ importers:
       typescript-eslint:
         specifier: ^8.40.0
         version: 8.44.0(eslint@9.36.0(jiti@2.6.1))(typescript@5.9.2)
+
+  packages/i18n:
+    dependencies:
+      next-intl:
+        specifier: 'catalog:'
+        version: 4.3.9(next@15.5.3(@playwright/test@1.55.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(typescript@5.9.2)
+    devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      eslint:
+        specifier: 'catalog:'
+        version: 9.11.1(jiti@2.6.1)
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.2
 
   packages/next-config:
     dependencies:
@@ -8348,7 +8370,7 @@ snapshots:
 
   negotiator@1.0.0: {}
 
-  next-intl@4.3.9(next@15.5.3(@babel/core@7.28.4)(@playwright/test@1.55.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(typescript@5.9.2):
+  next-intl@4.3.9(next@15.5.3(@playwright/test@1.55.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(typescript@5.9.2):
     dependencies:
       '@formatjs/intl-localematcher': 0.5.10
       negotiator: 1.0.0

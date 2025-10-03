@@ -4,7 +4,7 @@ import {Locale, hasLocale, NextIntlClientProvider} from 'next-intl';
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {cn} from '@repo/ui/lib/utils';
 import {Inter} from 'next/font/google';
-import {routing} from '@/i18n/routing';
+import {routing} from '@repo/i18n/routing';
 import {siteConfig} from '@repo/config/site';
 import {PHProvider} from '@/providers/PosthogProvider';
 import './styles.css';

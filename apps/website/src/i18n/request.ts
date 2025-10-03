@@ -1,16 +1,6 @@
-import {hasLocale} from 'next-intl';
-import {getRequestConfig} from 'next-intl/server';
-import {routing} from './routing';
+import {createRequestConfig} from '@repo/i18n/request';
 
-export default getRequestConfig(async ({requestLocale}) => {
-  // Typically corresponds to the `[locale]` segment
-  const requested = await requestLocale;
-  const locale = hasLocale(routing.locales, requested)
-    ? requested
-    : routing.defaultLocale;
-
-  return {
-    locale,
-    messages: (await import(`../../messages/${locale}.json`)).default
-  };
+// Custom message loader for this app
+export default createRequestConfig(async (locale) => {
+  return (await import(`../../messages/${locale}.json`)).default;
 });
