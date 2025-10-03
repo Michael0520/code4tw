@@ -19,18 +19,18 @@
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
     "eslint": "^9.34.0",
-    "tailwindcss": "catalog:",
+    "tailwindcss": "catalog:ui",
     "typescript": "5.9.2"
   },
   "dependencies": {
-    "@radix-ui/react-accordion": "catalog:",
-    "@radix-ui/react-slot": "catalog:",
-    "class-variance-authority": "catalog:",
-    "clsx": "catalog:",
-    "framer-motion": "catalog:",
-    "lucide-react": "catalog:",
-    "react": "catalog:",
-    "react-dom": "catalog:",
-    "tailwind-merge": "catalog:"
+    "@radix-ui/react-accordion": "catalog:radix",
+    "@radix-ui/react-slot": "catalog:radix",
+    "class-variance-authority": "catalog:ui",
+    "clsx": "catalog:ui",
+    "framer-motion": "catalog:ui",
+    "lucide-react": "catalog:ui",
+    "react": "catalog:framework",
+    "react-dom": "catalog:framework",
+    "tailwind-merge": "catalog:ui"
   }
 }

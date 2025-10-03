@@ -110,6 +110,44 @@ pnpm lint --filter=website
 pnpm test:coverage --filter=website
 ```
 
+### Dependency Management
+
+This monorepo uses **PNPM Named Catalogs** for centralized dependency version management, inspired by [@antfu](https://antfu.me/posts/categorize-deps)'s best practices.
+
+```bash
+# View all catalog dependencies
+pnpm deps:info
+
+# Check for outdated dependencies
+pnpm deps:check
+
+# Update dependencies (safe mode - within version range)
+pnpm deps:update
+
+# Update to latest minor versions
+pnpm deps:minor
+
+# Update to latest major versions (may include breaking changes)
+pnpm deps:major
+
+# Install new packages using nip (interactive CLI)
+pnpm dlx nip add <package-name>
+```
+
+#### Catalog Categories
+
+Dependencies are organized into semantic categories in `pnpm-workspace.yaml`:
+
+- **framework**: Core frameworks (React, Next.js)
+- **ui**: UI libraries and styling tools (Tailwind CSS, Radix UI, Framer Motion)
+- **radix**: Radix UI components
+- **i18n**: Internationalization (next-intl)
+- **analytics**: Analytics tools (PostHog)
+- **dev**: Development tools (TypeScript, ESLint, Prettier)
+- **test**: Testing frameworks (Vitest, Playwright, Jest)
+
+All packages reference catalogs using `catalog:<category>` notation (e.g., `"react": "catalog:framework"`), ensuring version consistency across the monorepo.
+
 ### Quality Monitoring
 
 This project uses comprehensive quality monitoring:

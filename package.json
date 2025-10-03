@@ -16,13 +16,16 @@
     "deps:minor": "taze minor -r -w",
     "deps:patch": "taze patch -r -w",
     "deps:latest": "taze latest -r -w",
+    "deps:info": "echo '\n📦 Catalog Dependencies:\n' && cat pnpm-workspace.yaml | grep -A 100 'catalogs:'",
     "prepare": "husky"
   },
   "devDependencies": {
+    "@antfu/ni": "^26.1.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "^14.5.2",
     "@vitest/coverage-v8": "^2.1.8",
+    "eslint-plugin-pnpm": "^1.2.0",
     "husky": "^9.1.7",
     "jsdom": "^26.0.0",
     "prettier": "^3.6.2",

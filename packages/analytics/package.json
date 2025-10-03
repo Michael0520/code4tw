@@ -8,13 +8,13 @@
     "./provider": "./src/provider.tsx"
   },
   "dependencies": {
-    "posthog-js": "catalog:"
+    "posthog-js": "catalog:analytics"
   },
   "peerDependencies": {
-    "react": "catalog:"
+    "react": "catalog:framework"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
-    "typescript": "catalog:"
+    "typescript": "catalog:dev"
   }
 }

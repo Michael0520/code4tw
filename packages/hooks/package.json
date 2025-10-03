@@ -10,10 +10,10 @@
     "@repo/analytics": "workspace:*"
   },
   "peerDependencies": {
-    "react": "catalog:"
+    "react": "catalog:framework"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
-    "typescript": "catalog:"
+    "typescript": "catalog:dev"
   }
 }

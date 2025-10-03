@@ -1,44 +1,47 @@
-catalog:
+catalogs:
   # Framework Core
-  next: ^15.5.0
-  react: ^19.1.0
-  react-dom: ^19.1.0
+  framework:
+    next: ^15.5.0
+    react: ^19.1.0
+    react-dom: ^19.1.0
 
-  # Styling
-  tailwindcss: ^4.0.0
-  '@tailwindcss/postcss': ^4.0.0
-  postcss: ^8.5.3
+  # UI & Styling
+  ui:
+    tailwindcss: ^4.0.0
+    '@tailwindcss/postcss': ^4.0.0
+    postcss: ^8.5.3
+    framer-motion: ^12.23.22
+    lucide-react: ^0.454.0
+    clsx: ^2.1.1
+    tailwind-merge: ^2.5.5
+    class-variance-authority: ^0.7.1
 
-  # UI Libraries
-  framer-motion: ^12.23.22
-  lucide-react: ^0.454.0
-
-  # Utilities
-  clsx: ^2.1.1
-  tailwind-merge: ^2.5.5
-  class-variance-authority: ^0.7.1
-
-  # Radix UI
-  '@radix-ui/react-accordion': 1.2.2
-  '@radix-ui/react-slot': ^1.2.3
+  # Radix UI Components
+  radix:
+    '@radix-ui/react-accordion': 1.2.2
+    '@radix-ui/react-slot': ^1.2.3
 
   # Internationalization
-  next-intl: ^4.0.0
+  i18n:
+    next-intl: ^4.0.0
 
   # Analytics
-  posthog-js: ^1.268.6
-  posthog-node: ^5.9.1
+  analytics:
+    posthog-js: ^1.268.6
+    posthog-node: ^5.9.1
 
   # Development Tools
-  typescript: ^5.9.2
-  eslint: 9.11.1
-  prettier: ^3.6.2
+  dev:
+    typescript: ^5.9.2
+    eslint: 9.11.1
+    prettier: ^3.6.2
 
   # Testing
-  '@playwright/test': ^1.51.1
-  '@testing-library/react': ^16.3.0
-  jest: ^29.7.0
-  vitest: ^2.1.8
+  test:
+    '@playwright/test': ^1.51.1
+    '@testing-library/react': ^16.3.0
+    jest: ^29.7.0
+    vitest: ^2.1.8
 
 packages:
   - "apps/*"
