@@ -5,8 +5,8 @@
   },
   "IndexPage": {
     "title": "Code for Taiwan",
-    "subtitle": "Building Digital Infrastructure for a Better Society",
-    "description": "We are a civic tech community dedicated to creating open-source solutions that improve government transparency, civic engagement, and public services.",
+    "subtitle": "Regular Free Meetups for Programming Exchange",
+    "description": "A free programming exchange community. Monthly meetups to share development experience and discuss programming thinking. Non-profit and open to everyone.",
     "navigation": {
       "home": "Home",
       "about": "About",
@@ -15,43 +15,45 @@
       "faq": "FAQ"
     },
     "hero": {
+      "headline": "Using AI tools to code - do you really know what's happening?",
+      "subheadline": "Join our free monthly online meetups to exchange programming thinking and share development experience",
       "cta": "Get Involved",
       "learn_more": "Learn More"
     },
     "about": {
-      "title": "Building a Better Taiwan Through Technology and Collaboration",
-      "subtitle": "Through collaborative civic tech development, we promote transparency, accountability, and civic engagement in Taiwan.",
-      "civic_tech": "Civic Tech",
-      "civic_tech_zh": "Civic Technology",
+      "title": "Casual Programming Exchange, Accessible Anywhere",
+      "subtitle": "Many people use AI tools for development, boosting efficiency but often not understanding what's happening behind the scenes. We're a free non-profit community hosting monthly online meetups to exchange programming thinking and share development experience. Not just cities - friends from rural areas can easily join too.",
+      "civic_tech": "Code Exchange",
+      "civic_tech_zh": "Programming Exchange",
       "testimonials": {
         "opensource_collaboration": "Developer",
         "transparency_changes": "Citizen",
         "tech_creates_value": "Designer"
       },
       "message_card": {
-        "user_message": "We need more transparent government information...",
-        "join_message": "Join us! Transform Taiwan with technology"
+        "user_message": "AI tools are convenient, but I'm not sure what's happening behind the scenes...",
+        "join_message": "Join us! Let's exchange and discuss"
       },
       "ai_card": {
-        "title": "AI-Driven Innovation",
-        "description": "Latest AI technology analysis"
+        "title": "Free Non-Profit Meetups",
+        "description": "Regular exchange and sharing"
       },
       "values": {
         "open_source": {
-          "title": "Open Source",
-          "description": "All content is open source and welcome contributions from the community"
+          "title": "Open Exchange",
+          "description": "Everyone can freely share experience and discuss ideas, regardless of skill level"
         },
         "community_driven": {
-          "title": "Community Driven",
-          "description": "Diverse community of volunteers working together for social impact"
+          "title": "Completely Free",
+          "description": "All activities are non-profit and free, with no fees whatsoever"
         },
         "innovation": {
-          "title": "Innovation",
-          "description": "Innovative solutions for social challenges using modern technology"
+          "title": "Experience Sharing",
+          "description": "Share development experience and discuss how to write better code"
         },
         "transparency": {
-          "title": "Government Transparency",
-          "description": "Building tools to make government more transparent and accountable"
+          "title": "No Geographic Barriers",
+          "description": "Online meetups - join from anywhere, urban or rural"
         }
       }
     },
@@ -59,29 +61,29 @@
       "questions": [
         {
           "question": "What is Code for Taiwan?",
-          "answer": "Code for Taiwan is a civic tech community dedicated to solving social problems through open-source technology, promoting government transparency and civic engagement. We bring together technologists, designers, and citizens who care about society to create meaningful digital solutions."
+          "answer": "A free programming exchange community. We host regular monthly online meetups where people who love programming can share development experience and discuss programming thinking. All activities are non-profit and completely free to join."
         },
         {
           "question": "Can I participate without a technical background?",
-          "answer": "Absolutely! We welcome participants from all backgrounds. Besides engineers and designers, we also need skills in coordination, content editing, community management, policy research, and more. Everyone can learn programming thinking to improve their work efficiency."
+          "answer": "Absolutely! Our exchange activities welcome everyone. Whether you're a beginner, PM, designer - as long as you're interested in programming, you can come listen to others' experiences and discuss your ideas."
         },
         {
-          "question": "How can I start learning programming thinking?",
-          "answer": "You can start by attending our workshops, joining our Discord discussion groups, or directly checking out our learning resources on GitHub. We regularly host beginner-friendly courses to help everyone develop programming thinking."
+          "question": "How do I join the monthly online meetups?",
+          "answer": "We host free online meetups monthly to exchange programming thinking and experience. You can see the latest meetup information on our event calendar and sign up directly online."
         },
         {
-          "question": "Are all Code for Taiwan learning resources free?",
-          "answer": "Yes, all our learning resources are open source and freely available to the public. We believe knowledge dissemination is key to bridging the urban-rural gap, so our materials, tools, and resources are open to everyone."
+          "question": "Are all activities free?",
+          "answer": "Yes! We're a non-profit community, and all activities and resources are completely free. We hope to enable more people to participate in programming exchange, whether you're in a city or rural area."
         },
         {
-          "question": "How can I contact the Code for Taiwan team?",
-          "answer": "You can reach us through our official website, social media platforms, or by directly attending our physical events. We also welcome you to join our online community to discuss and exchange ideas with other participants."
+          "question": "Why join this community?",
+          "answer": "If you use AI tools for development and want to understand the underlying principles; or want to exchange experience and discuss ideas with others; or want to meet friends who love programming - join our free meetups!"
         }
       ]
     },
     "events": {
-      "title": "Explore Our Events",
-      "subtitle": "Join our workshops, hackathons, and community meetups to create change through technology",
+      "title": "Monthly Free Online Meetups",
+      "subtitle": "Regular meetups to exchange programming thinking and share development experience",
       "show_calendar": "Show Event Calendar",
       "hide_calendar": "Hide Calendar",
       "view_all_luma": "View All Events on Luma",
@@ -91,29 +93,29 @@
     "join": {
       "title": "Community",
       "subtitle": "Join our",
-      "description": "Participate in community activities through various channels and work together with like-minded partners for Taiwan's digital democracy.",
+      "description": "Monthly online meetups to exchange programming thinking and share development experience with friends who love programming. Completely free and open to everyone.",
       "section": {
-        "cta_title": "Join Our Movement",
-        "cta_description_line1": "Join Code for Taiwan Now",
-        "cta_description_line2": "Transform Society with Technology"
+        "cta_title": "What You'll Get",
+        "cta_description_line1": "Meet Like-minded People • Share Experience • Free Resources",
+        "cta_description_line2": "Casual exchange and discussion, no pressure"
       },
       "roles": {
         "developers": "Developers",
-        "developers_description": "Build open-source tools and promote programming thinking",
+        "developers_description": "Share development experience and discuss programming best practices",
         "designers": "Designers",
-        "designers_description": "Create user-friendly interfaces and improve digital experiences",
+        "designers_description": "Exchange interface design ideas and share user experience",
         "data_scientists": "Data Scientists",
-        "data_scientists_description": "Analyze open data and generate insights for public good",
-        "project_managers": "Coordination Promoters",
-        "project_managers_description": "Coordinate teams and promote programming thinking popularization",
+        "data_scientists_description": "Share data analysis experience and discuss technical approaches",
+        "project_managers": "Project Coordinators",
+        "project_managers_description": "Help organize meetup activities and plan exchange topics",
         "community_organizers": "Community Organizers",
-        "community_organizers_description": "Connect people and foster collaboration across communities"
+        "community_organizers_description": "Expand to more regions so everyone can participate"
       },
       "cta": "Join Our Community"
     }
   },
   "Footer": {
-    "tagline": "Building a better Taiwan through technology and collaboration.",
+    "tagline": "Regular free meetups for programming exchange.",
     "community": {
       "title": "Community",
       "discord": "Discord Chat",
@@ -127,8 +129,8 @@
     }
   },
   "LocaleLayout": {
-    "title": "Code for Taiwan - Building Digital Infrastructure for a Better Society",
-    "description": "Code for Taiwan is a civic tech community dedicated to creating open-source solutions that improve government transparency, civic engagement, and public services."
+    "title": "Code for Taiwan - Programming Exchange Community | Free Monthly Meetups",
+    "description": "A free programming exchange community with monthly online meetups. Share development experience and discuss programming thinking. Non-profit and open to everyone."
   },
   "Manifest": {
     "name": "Code for Taiwan"
