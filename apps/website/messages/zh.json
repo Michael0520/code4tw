@@ -5,8 +5,8 @@
   },
   "IndexPage": {
     "title": "Code for Taiwan",
-    "subtitle": "培養程式思維，而非盲目使用工具",
-    "description": "專注於理解程式原理的技術社群。每月分享會，討論程式思維、交流開發經驗。歡迎所有人參加。",
+    "subtitle": "一起學習程式思維",
+    "description": "每月聚會討論程式概念、交流開發經驗。工程師、PM、設計師都歡迎。",
     "navigation": {
       "home": "首頁",
       "about": "關於",
@@ -15,45 +15,41 @@
       "faq": "FAQ"
     },
     "hero": {
-      "headline": "深度思考程式碼，而非只是複製工具",
-      "subheadline": "每月分享會，一起討論程式思維",
+      "headline": "一起學習程式思維",
+      "subheadline": "每月第三週三聚會，交流開發經驗，從彼此身上學習",
       "cta": "立即參與",
       "learn_more": "了解更多"
     },
     "about": {
-      "title": "透過討論與分享，理解程式原理",
-      "subtitle": "我們是技術社群，讓開發者分享經驗、討論程式思維。每月聚會專注於理解程式碼背後的「為什麼」，而非只是跟隨工具。從彼此的觀點中學習。",
+      "title": "討論程式概念的聚會",
+      "subtitle": "AI 工具讓開發變簡單了，但很多人像在玩吃角子老虎 — 按按鈕有效就好，不知道為什麼。我們每月聚會，一起討論程式概念、交流經驗、培養思維。",
       "civic_tech": "Civic Tech",
-      "civic_tech_zh": "深度理解技術",
+      "civic_tech_zh": "人人都能懂的科技",
       "testimonials": {
         "opensource_collaboration": "開發者",
         "transparency_changes": "公民",
         "tech_creates_value": "設計師"
       },
       "message_card": {
-        "user_message": "我想理解程式碼如何運作，而非只是複製結果...",
-        "join_message": "加入我們，一起討論學習"
+        "user_message": "我會用工具做東西，但想理解背後原理...",
+        "join_message": "一起來交流吧"
       },
       "ai_card": {
-        "title": "每月分享會",
-        "description": "分享與討論"
+        "title": "每月聚會",
+        "description": "第三週三"
       },
       "values": {
         "open_source": {
-          "title": "深度思考",
-          "description": "理解原理，而非盲目跟隨工具。批判性思考程式碼的運作方式。"
+          "title": "概念優於工具",
+          "description": "討論為什麼這樣寫，而不只是怎麼寫。"
         },
         "community_driven": {
-          "title": "友善空間",
-          "description": "歡迎各種背景的朋友。在互相支持的環境中一起學習。"
+          "title": "開放友善",
+          "description": "不管你用什麼工具、什麼背景，都歡迎來交流。"
         },
         "innovation": {
-          "title": "知識分享",
-          "description": "開放分享經驗。從不同的觀點和方法中學習。"
-        },
-        "transparency": {
-          "title": "",
-          "description": ""
+          "title": "從經驗中學習",
+          "description": "聽別人踩過的坑，分享自己的解法。"
         }
       }
     },
@@ -63,29 +59,29 @@
       "questions": [
         {
           "question": "什麼是 Code for Taiwan？",
-          "answer": "專注於程式思維的技術社群。每月第三個星期三聚會，分享開發經驗、討論如何思考程式碼而非只是使用工具。"
+          "answer": "討論程式概念的月聚會。工程師、PM、設計師、任何想理解程式的人都歡迎。我們聊開發經驗、討論解法、一起成長。"
         },
         {
-          "question": "沒有技術背景可以參加嗎？",
-          "answer": "可以。我們歡迎新手、PM、設計師，以及任何想了解程式如何運作的人。你會從其他人的經驗中學習。"
+          "question": "我沒寫過 code，可以參加嗎？",
+          "answer": "可以！正因為這樣才更應該來。聽聽別人怎麼思考問題、怎麼解決，你會學到很多。"
         },
         {
-          "question": "如何參加？",
-          "answer": "每月第三個星期三聚會。可以在活動日曆查看詳情。也歡迎加入 Discord 與成員交流。"
+          "question": "怎麼參加？",
+          "answer": "看活動日曆的詳細資訊，或加入 Discord 聊聊。歡迎直接來聚會認識大家。"
         },
         {
-          "question": "分享會都在做什麼？",
-          "answer": "成員輪流分享開發經驗和心得。我們討論程式思維、最佳實踐、如何解決問題。氛圍輕鬆，歡迎討論。"
+          "question": "聚會都在做什麼？",
+          "answer": "有人分享經驗，大家討論程式概念。有時候有人分享專案，有時候就開放討論。氣氛輕鬆。"
         },
         {
-          "question": "為什麼要參加？",
-          "answer": "如果你想更深入理解程式碼、從他人經驗中學習、和同好討論程式，歡迎加入我們。"
+          "question": "為什麼叫 Code for Taiwan？",
+          "answer": "希望大家一起理解 code、寫出更好的 Code — 不只是用工具交差。"
         }
       ]
     },
     "events": {
-      "title": "每月分享會",
-      "subtitle": "每月第三個星期三 - 分享經驗、討論程式思維",
+      "title": "每月第三週三聚會",
+      "subtitle": "討論程式概念、分享開發經驗",
       "show_calendar": "顯示活動日曆",
       "hide_calendar": "隱藏活動日曆",
       "view_all_luma": "在 Luma 查看完整活動",
@@ -95,29 +91,29 @@
     "join": {
       "title": "Community",
       "subtitle": "Join our",
-      "description": "每月分享會，討論程式思維、從他人經驗中學習。歡迎所有人。",
+      "description": "每月聚會，一起討論程式概念、交流開發經驗。不管你在用什麼工具，都歡迎來聊聊。",
       "section": {
-        "cta_title": "你可以獲得",
-        "cta_description_line1": "程式洞察 • 共同學習 • 多元觀點",
-        "cta_description_line2": "友善空間，開放討論"
+        "cta_title": "你會獲得",
+        "cta_description_line1": "程式思維 • 實戰經驗 • 同好交流",
+        "cta_description_line2": "輕鬆聊天，沒有壓力"
       },
       "roles": {
         "developers": "開發者",
-        "developers_description": "分享開發經驗，討論如何寫出更好的程式",
+        "developers_description": "分享開發經驗，討論不同框架和工具的思維方式",
         "designers": "設計師",
-        "designers_description": "交流介面設計想法和使用者體驗思考",
+        "designers_description": "理解程式概念，和工程師更好地協作",
         "data_scientists": "資料科學家",
-        "data_scientists_description": "分享資料分析方法和解決問題的方式",
-        "project_managers": "專案協調者",
-        "project_managers_description": "協助組織分享會和引導討論",
+        "data_scientists_description": "交流資料處理的想法和最佳實踐",
+        "project_managers": "專案經理",
+        "project_managers_description": "理解技術決策背後的思考過程",
         "community_organizers": "社群組織者",
-        "community_organizers_description": "協助擴展觸及，讓更多人能參與"
+        "community_organizers_description": "幫忙把聚會資訊分享出去"
       },
       "cta": "加入社群"
     }
   },
   "Footer": {
-    "tagline": "透過共同學習，理解程式碼。",
+    "tagline": "一起討論程式概念。",
     "community": {
       "title": "社群",
       "discord": "Discord 聊天室",
@@ -131,8 +127,8 @@
     }
   },
   "LocaleLayout": {
-    "title": "Code for Taiwan - 技術社群 | 程式思維",
-    "description": "專注於程式思維的技術社群。每月第三個星期三分享會，討論開發經驗和程式原理。歡迎所有人。"
+    "title": "Code for Taiwan - 一起學習程式思維",
+    "description": "每月聚會討論程式概念、交流開發經驗。歡迎所有人。"
   },
   "Manifest": {
     "name": "Code for Taiwan"

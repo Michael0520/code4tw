@@ -5,8 +5,8 @@
   },
   "IndexPage": {
     "title": "Code for Taiwan",
-    "subtitle": "Cultivating Programming Thinking, Not Just Using Tools",
-    "description": "A tech community focused on understanding principles behind code. Monthly sharing sessions to discuss programming thinking and exchange development experience. Open to everyone.",
+    "subtitle": "Learn Programming Thinking Together",
+    "description": "Monthly meetups to discuss code concepts and share development experience. Engineers, PMs, designers all welcome.",
     "navigation": {
       "home": "Home",
       "about": "About",
@@ -15,45 +15,41 @@
       "faq": "FAQ"
     },
     "hero": {
-      "headline": "Think Deeply About Code, Not Just Copy Tools",
-      "subheadline": "Join our monthly sharing sessions to discuss programming thinking",
+      "headline": "Learn Programming Thinking Together",
+      "subheadline": "Monthly meetups on third Wednesday - Share experience and learn from each other",
       "cta": "Get Involved",
       "learn_more": "Learn More"
     },
     "about": {
-      "title": "Understanding Principles Through Discussion & Sharing",
-      "subtitle": "We're a tech community where developers share experience and discuss programming thinking. Monthly meetups focus on understanding the 'why' behind code, not just following tools. Learn from each other's perspectives.",
+      "title": "Meetups to Discuss Code Concepts",
+      "subtitle": "AI tools made development easier, but many people are like playing slot machines - press buttons and it works, without knowing why. We meet monthly to discuss code concepts, share experience, and develop thinking together.",
       "civic_tech": "Civic Tech",
-      "civic_tech_zh": "Thoughtful Technology",
+      "civic_tech_zh": "Tech for Everyone",
       "testimonials": {
         "opensource_collaboration": "Developer",
         "transparency_changes": "Citizen",
         "tech_creates_value": "Designer"
       },
       "message_card": {
-        "user_message": "I want to understand how code works, not just copy results...",
-        "join_message": "Join us to discuss and learn"
+        "user_message": "I can use tools to build things, but want to understand the principles...",
+        "join_message": "Let's share together"
       },
       "ai_card": {
-        "title": "Monthly Sharing Sessions",
-        "description": "Share and discuss together"
+        "title": "Monthly Meetups",
+        "description": "Third Wednesday"
       },
       "values": {
         "open_source": {
-          "title": "Deep Thinking",
-          "description": "Understand principles instead of blindly following tools. Think critically about how code works."
+          "title": "Concepts Over Tools",
+          "description": "Discuss why we code this way, not just how to code."
         },
         "community_driven": {
-          "title": "Friendly Space",
-          "description": "Welcome everyone regardless of background. Learn together in a supportive environment."
+          "title": "Open & Friendly",
+          "description": "No matter what tools you use or your background, you're welcome to share."
         },
         "innovation": {
-          "title": "Knowledge Sharing",
-          "description": "Share experience openly. Learn from different perspectives and approaches."
-        },
-        "transparency": {
-          "title": "",
-          "description": ""
+          "title": "Learn from Experience",
+          "description": "Hear about others' mistakes, share your own solutions."
         }
       }
     },
@@ -61,29 +57,29 @@
       "questions": [
         {
           "question": "What is Code for Taiwan?",
-          "answer": "A tech community focused on programming thinking. We meet monthly (third Wednesday) to share development experience and discuss how to think about code instead of just using tools."
+          "answer": "Monthly meetups to discuss code concepts. Engineers, PMs, designers, anyone who wants to understand programming is welcome. We chat about development experience, discuss solutions, and grow together."
         },
         {
-          "question": "Can I join without technical background?",
-          "answer": "Yes. We welcome beginners, PMs, designers, and anyone interested in understanding how programming works. You'll learn from others' experiences."
+          "question": "I've never written code, can I join?",
+          "answer": "Yes! That's exactly why you should come. Listening to how others think about problems and solve them, you'll learn a lot."
         },
         {
           "question": "How do I join?",
-          "answer": "We meet monthly on the third Wednesday. Check our event calendar for details. You can also join our Discord to connect with members."
+          "answer": "Check our event calendar for details, or join Discord to chat. Feel free to come directly to meetups and meet everyone."
         },
         {
-          "question": "What happens at the sharing sessions?",
-          "answer": "Members take turns sharing their development experience and insights. We discuss programming thinking, best practices, and how to solve problems. It's informal and discussion-friendly."
+          "question": "What happens at meetups?",
+          "answer": "People share experiences, we discuss code concepts. Sometimes someone shares a project, sometimes it's open discussion. Casual atmosphere."
         },
         {
-          "question": "Why join?",
-          "answer": "If you want to understand code more deeply, learn from others' experience, and discuss programming with like-minded people, come join us."
+          "question": "Why 'Code for Taiwan'?",
+          "answer": "We want everyone to understand code together and write better code - not just get by with tools."
         }
       ]
     },
     "events": {
-      "title": "Monthly Sharing Sessions",
-      "subtitle": "Third Wednesday of every month - Share experience and discuss programming thinking",
+      "title": "Monthly Meetups on Third Wednesday",
+      "subtitle": "Discuss code concepts and share development experience",
       "show_calendar": "Show Event Calendar",
       "hide_calendar": "Hide Calendar",
       "view_all_luma": "View All Events on Luma",
@@ -93,29 +89,29 @@
     "join": {
       "title": "Community",
       "subtitle": "Join our",
-      "description": "Join our monthly sharing sessions to discuss programming thinking and learn from others' experience. Everyone's welcome.",
+      "description": "Monthly meetups to discuss code concepts and share development experience. No matter what tools you use, you're welcome to chat.",
       "section": {
-        "cta_title": "What You Get",
-        "cta_description_line1": "Programming Insights • Shared Learning • Diverse Perspectives",
-        "cta_description_line2": "Friendly space, open discussion"
+        "cta_title": "What You'll Get",
+        "cta_description_line1": "Programming Thinking • Real Experience • Community",
+        "cta_description_line2": "Casual chat, no pressure"
       },
       "roles": {
         "developers": "Developers",
-        "developers_description": "Share development experience and discuss approaches to writing better code",
+        "developers_description": "Share development experience, discuss thinking behind different frameworks and tools",
         "designers": "Designers",
-        "designers_description": "Exchange ideas on interface design and user experience thinking",
+        "designers_description": "Understand code concepts to collaborate better with engineers",
         "data_scientists": "Data Scientists",
-        "data_scientists_description": "Share data analysis methods and problem-solving approaches",
-        "project_managers": "Project Coordinators",
-        "project_managers_description": "Help organize sharing sessions and facilitate discussions",
+        "data_scientists_description": "Exchange ideas about data processing and best practices",
+        "project_managers": "Project Managers",
+        "project_managers_description": "Understand the thinking process behind technical decisions",
         "community_organizers": "Community Organizers",
-        "community_organizers_description": "Help expand reach so more people can join and participate"
+        "community_organizers_description": "Help spread the word about our meetups"
       },
       "cta": "Join Our Community"
     }
   },
   "Footer": {
-    "tagline": "Understanding code through shared learning.",
+    "tagline": "Discussing code concepts together.",
     "community": {
       "title": "Community",
       "discord": "Discord Chat",
@@ -129,8 +125,8 @@
     }
   },
   "LocaleLayout": {
-    "title": "Code for Taiwan - Tech Community | Programming Thinking",
-    "description": "A tech community focused on programming thinking. Monthly sharing sessions on the third Wednesday to discuss development experience and code principles. Open to everyone."
+    "title": "Code for Taiwan - Learn Programming Thinking Together",
+    "description": "Monthly meetups to discuss code concepts and share development experience. Everyone's welcome."
   },
   "Manifest": {
     "name": "Code for Taiwan"
