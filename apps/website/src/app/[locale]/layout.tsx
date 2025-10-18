@@ -46,8 +46,8 @@ export async function generateMetadata(props: {
     },
     icons: {
       icon: [
-        {url: '/favicon.ico', sizes: '32x32'},
-        {url: '/icon.png', sizes: '192x192', type: 'image/png'}
+        {url: '/icon.png', sizes: '192x192', type: 'image/png'},
+        {url: '/logo-square.svg', type: 'image/svg+xml'}
       ],
       apple: '/apple-touch-icon.png'
     },

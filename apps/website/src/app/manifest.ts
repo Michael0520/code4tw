@@ -18,10 +18,9 @@ export default async function manifest(): Promise<MetadataRoute.Manifest> {
     theme_color: '#000095',
     icons: [
       {
-        src: '/logo-square.svg',
-        sizes: '208x208',
-        type: 'image/svg+xml',
-        purpose: 'maskable'
+        src: '/icon.png',
+        sizes: '192x192',
+        type: 'image/png'
       },
       {
         src: '/logo-square.svg',
@@ -32,6 +31,12 @@ export default async function manifest(): Promise<MetadataRoute.Manifest> {
         src: '/logo-square.svg',
         sizes: '512x512',
         type: 'image/svg+xml'
+      },
+      {
+        src: '/logo-square.svg',
+        sizes: '208x208',
+        type: 'image/svg+xml',
+        purpose: 'maskable'
       }
     ]
   };
