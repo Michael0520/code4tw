@@ -95,7 +95,7 @@
       "section": {
         "cta_title": "你會獲得",
         "cta_description_line1": "程式思維 • 實戰經驗 • 同好交流",
-        "cta_description_line2": "輕鬆聊天，沒有壓力"
+        "cta_description_line2": "自由交流，一起學習"
       },
       "roles": {
         "developers": "開發者",
@@ -113,7 +113,7 @@
     }
   },
   "Footer": {
-    "tagline": "一起討論程式概念。",
+    "tagline": "一起討論程式概念",
     "community": {
       "title": "社群",
       "discord": "Discord 聊天室",
@@ -128,7 +128,7 @@
   },
   "LocaleLayout": {
     "title": "Code for Taiwan - 一起學習程式思維",
-    "description": "每月聚會討論程式概念、交流開發經驗。歡迎所有人。"
+    "description": "我們是一個公民科技社群，一起培養程式思維，用技術創造改變"
   },
   "Manifest": {
     "name": "Code for Taiwan"

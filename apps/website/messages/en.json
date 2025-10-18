@@ -93,7 +93,7 @@
       "section": {
         "cta_title": "What You'll Get",
         "cta_description_line1": "Programming Thinking • Real Experience • Community",
-        "cta_description_line2": "Casual chat, no pressure"
+        "cta_description_line2": "Free exchange, learn together"
       },
       "roles": {
         "developers": "Developers",
@@ -111,7 +111,7 @@
     }
   },
   "Footer": {
-    "tagline": "Discussing code concepts together.",
+    "tagline": "Discussing code concepts together",
     "community": {
       "title": "Community",
       "discord": "Discord Chat",
@@ -126,7 +126,7 @@
   },
   "LocaleLayout": {
     "title": "Code for Taiwan - Learn Programming Thinking Together",
-    "description": "Monthly meetups to discuss code concepts and share development experience. Everyone's welcome."
+    "description": "We are a civic tech community, developing programming thinking together and creating change through technology"
   },
   "Manifest": {
     "name": "Code for Taiwan"
