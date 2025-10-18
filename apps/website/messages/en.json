@@ -22,7 +22,7 @@
     },
     "about": {
       "title": "Where We Build Programming Thinking",
-      "subtitle": "AI tools made development easier, but many people are like playing slot machines - press buttons and it works, without knowing why. We meet monthly to discuss code concepts, share experience, and develop thinking together.",
+      "subtitle": "AI tools made development easier, but many people are like playing slot machines - press buttons and it works, without knowing why. We meet monthly to discuss code concepts, share experience, and develop thinking together",
       "civic_tech": "Civic Tech",
       "civic_tech_zh": "Tech for Everyone",
       "testimonials": {
@@ -41,15 +41,15 @@
       "values": {
         "open_source": {
           "title": "Concepts Over Tools",
-          "description": "Discuss why we code this way, not just how to code."
+          "description": "Discuss why we code this way, not just how to code"
         },
         "community_driven": {
           "title": "Open & Friendly",
-          "description": "No matter what tools you use or your background, you're welcome to share."
+          "description": "No matter what tools you use or your background, you're welcome to share"
         },
         "innovation": {
           "title": "Learn from Experience",
-          "description": "Hear about others' mistakes, share your own solutions."
+          "description": "Hear about others' mistakes, share your own solutions"
         }
       }
     },
@@ -57,19 +57,19 @@
       "questions": [
         {
           "question": "What is Code for Taiwan?",
-          "answer": "Monthly meetups to discuss code concepts. Engineers, PMs, designers, anyone who wants to understand programming is welcome. We chat about development experience, discuss solutions, and grow together."
+          "answer": "Monthly meetups to discuss code concepts. Engineers, PMs, designers, anyone who wants to understand programming is welcome. We chat about development experience, discuss solutions, and grow together"
         },
         {
           "question": "I've never written code, can I join?",
-          "answer": "Yes! That's exactly why you should come. Listening to how others think about problems and solve them, you'll learn a lot."
+          "answer": "Yes! That's exactly why you should come. Listening to how others think about problems and solve them, you'll learn a lot"
         },
         {
           "question": "How do I join?",
-          "answer": "Check our event calendar for details, or join Discord to chat. Feel free to come directly to meetups and meet everyone."
+          "answer": "Check our event calendar for details, or join Discord to chat. Feel free to come directly to meetups and meet everyone"
         },
         {
           "question": "What happens at meetups?",
-          "answer": "Everyone shares development experience, discusses code concepts, and exchanges freely."
+          "answer": "Everyone shares development experience, discusses code concepts, and exchanges freely"
         },
         {
           "question": "Why 'Code for Taiwan'?",

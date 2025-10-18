@@ -146,7 +146,7 @@ export function AboutSectionBento() {
             <span className="bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 bg-clip-text text-transparent">
               <BrandKeywordHighlight
                 text={t('about.title')}
-                keywords={['Code', 'Concepts']}
+                keywords={['Build', 'Programming', 'Thinking']}
                 normalClassName="text-black"
                 brandKeywordClassName="font-brand "
                 animate={false}
