@@ -5,8 +5,8 @@
   },
   "IndexPage": {
     "title": "Code for Taiwan",
-    "subtitle": "Regular Free Meetups for Programming Exchange",
-    "description": "A free programming exchange community. Monthly meetups to share development experience and discuss programming thinking. Non-profit and open to everyone.",
+    "subtitle": "Cultivating Programming Thinking, Not Just Using Tools",
+    "description": "A tech community focused on understanding principles behind code. Monthly sharing sessions to discuss programming thinking and exchange development experience. Open to everyone.",
     "navigation": {
       "home": "Home",
       "about": "About",
@@ -15,45 +15,45 @@
       "faq": "FAQ"
     },
     "hero": {
-      "headline": "Using AI tools to code - do you really know what's happening?",
-      "subheadline": "Join our free monthly online meetups to exchange programming thinking and share development experience",
+      "headline": "Think Deeply About Code, Not Just Copy Tools",
+      "subheadline": "Join our monthly sharing sessions to discuss programming thinking",
       "cta": "Get Involved",
       "learn_more": "Learn More"
     },
     "about": {
-      "title": "Casual Programming Exchange, Accessible Anywhere",
-      "subtitle": "Many people use AI tools for development, boosting efficiency but often not understanding what's happening behind the scenes. We're a free non-profit community hosting monthly online meetups to exchange programming thinking and share development experience. Not just cities - friends from rural areas can easily join too.",
-      "civic_tech": "Code Exchange",
-      "civic_tech_zh": "Programming Exchange",
+      "title": "Understanding Principles Through Discussion & Sharing",
+      "subtitle": "We're a tech community where developers share experience and discuss programming thinking. Monthly meetups focus on understanding the 'why' behind code, not just following tools. Learn from each other's perspectives.",
+      "civic_tech": "Civic Tech",
+      "civic_tech_zh": "Thoughtful Technology",
       "testimonials": {
         "opensource_collaboration": "Developer",
         "transparency_changes": "Citizen",
         "tech_creates_value": "Designer"
       },
       "message_card": {
-        "user_message": "AI tools are convenient, but I'm not sure what's happening behind the scenes...",
-        "join_message": "Join us! Let's exchange and discuss"
+        "user_message": "I want to understand how code works, not just copy results...",
+        "join_message": "Join us to discuss and learn"
       },
       "ai_card": {
-        "title": "Free Non-Profit Meetups",
-        "description": "Regular exchange and sharing"
+        "title": "Monthly Sharing Sessions",
+        "description": "Share and discuss together"
       },
       "values": {
         "open_source": {
-          "title": "Open Exchange",
-          "description": "Everyone can freely share experience and discuss ideas, regardless of skill level"
+          "title": "Deep Thinking",
+          "description": "Understand principles instead of blindly following tools. Think critically about how code works."
         },
         "community_driven": {
-          "title": "Completely Free",
-          "description": "All activities are non-profit and free, with no fees whatsoever"
+          "title": "Friendly Space",
+          "description": "Welcome everyone regardless of background. Learn together in a supportive environment."
         },
         "innovation": {
-          "title": "Experience Sharing",
-          "description": "Share development experience and discuss how to write better code"
+          "title": "Knowledge Sharing",
+          "description": "Share experience openly. Learn from different perspectives and approaches."
         },
         "transparency": {
-          "title": "No Geographic Barriers",
-          "description": "Online meetups - join from anywhere, urban or rural"
+          "title": "",
+          "description": ""
         }
       }
     },
@@ -61,29 +61,29 @@
       "questions": [
         {
           "question": "What is Code for Taiwan?",
-          "answer": "A free programming exchange community. We host regular monthly online meetups where people who love programming can share development experience and discuss programming thinking. All activities are non-profit and completely free to join."
+          "answer": "A tech community focused on programming thinking. We meet monthly (third Wednesday) to share development experience and discuss how to think about code instead of just using tools."
         },
         {
-          "question": "Can I participate without a technical background?",
-          "answer": "Absolutely! Our exchange activities welcome everyone. Whether you're a beginner, PM, designer - as long as you're interested in programming, you can come listen to others' experiences and discuss your ideas."
+          "question": "Can I join without technical background?",
+          "answer": "Yes. We welcome beginners, PMs, designers, and anyone interested in understanding how programming works. You'll learn from others' experiences."
         },
         {
-          "question": "How do I join the monthly online meetups?",
-          "answer": "We host free online meetups monthly to exchange programming thinking and experience. You can see the latest meetup information on our event calendar and sign up directly online."
+          "question": "How do I join?",
+          "answer": "We meet monthly on the third Wednesday. Check our event calendar for details. You can also join our Discord to connect with members."
         },
         {
-          "question": "Are all activities free?",
-          "answer": "Yes! We're a non-profit community, and all activities and resources are completely free. We hope to enable more people to participate in programming exchange, whether you're in a city or rural area."
+          "question": "What happens at the sharing sessions?",
+          "answer": "Members take turns sharing their development experience and insights. We discuss programming thinking, best practices, and how to solve problems. It's informal and discussion-friendly."
         },
         {
-          "question": "Why join this community?",
-          "answer": "If you use AI tools for development and want to understand the underlying principles; or want to exchange experience and discuss ideas with others; or want to meet friends who love programming - join our free meetups!"
+          "question": "Why join?",
+          "answer": "If you want to understand code more deeply, learn from others' experience, and discuss programming with like-minded people, come join us."
         }
       ]
     },
     "events": {
-      "title": "Monthly Free Online Meetups",
-      "subtitle": "Regular meetups to exchange programming thinking and share development experience",
+      "title": "Monthly Sharing Sessions",
+      "subtitle": "Third Wednesday of every month - Share experience and discuss programming thinking",
       "show_calendar": "Show Event Calendar",
       "hide_calendar": "Hide Calendar",
       "view_all_luma": "View All Events on Luma",
@@ -93,29 +93,29 @@
     "join": {
       "title": "Community",
       "subtitle": "Join our",
-      "description": "Monthly online meetups to exchange programming thinking and share development experience with friends who love programming. Completely free and open to everyone.",
+      "description": "Join our monthly sharing sessions to discuss programming thinking and learn from others' experience. Everyone's welcome.",
       "section": {
-        "cta_title": "What You'll Get",
-        "cta_description_line1": "Meet Like-minded People • Share Experience • Free Resources",
-        "cta_description_line2": "Casual exchange and discussion, no pressure"
+        "cta_title": "What You Get",
+        "cta_description_line1": "Programming Insights • Shared Learning • Diverse Perspectives",
+        "cta_description_line2": "Friendly space, open discussion"
       },
       "roles": {
         "developers": "Developers",
-        "developers_description": "Share development experience and discuss programming best practices",
+        "developers_description": "Share development experience and discuss approaches to writing better code",
         "designers": "Designers",
-        "designers_description": "Exchange interface design ideas and share user experience",
+        "designers_description": "Exchange ideas on interface design and user experience thinking",
         "data_scientists": "Data Scientists",
-        "data_scientists_description": "Share data analysis experience and discuss technical approaches",
+        "data_scientists_description": "Share data analysis methods and problem-solving approaches",
         "project_managers": "Project Coordinators",
-        "project_managers_description": "Help organize meetup activities and plan exchange topics",
+        "project_managers_description": "Help organize sharing sessions and facilitate discussions",
         "community_organizers": "Community Organizers",
-        "community_organizers_description": "Expand to more regions so everyone can participate"
+        "community_organizers_description": "Help expand reach so more people can join and participate"
       },
       "cta": "Join Our Community"
     }
   },
   "Footer": {
-    "tagline": "Regular free meetups for programming exchange.",
+    "tagline": "Understanding code through shared learning.",
     "community": {
       "title": "Community",
       "discord": "Discord Chat",
@@ -129,8 +129,8 @@
     }
   },
   "LocaleLayout": {
-    "title": "Code for Taiwan - Programming Exchange Community | Free Monthly Meetups",
-    "description": "A free programming exchange community with monthly online meetups. Share development experience and discuss programming thinking. Non-profit and open to everyone."
+    "title": "Code for Taiwan - Tech Community | Programming Thinking",
+    "description": "A tech community focused on programming thinking. Monthly sharing sessions on the third Wednesday to discuss development experience and code principles. Open to everyone."
   },
   "Manifest": {
     "name": "Code for Taiwan"

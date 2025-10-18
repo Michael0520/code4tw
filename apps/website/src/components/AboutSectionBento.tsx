@@ -164,8 +164,8 @@ export function AboutSectionBento() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
             <span className="bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 bg-clip-text text-transparent">
               <BrandKeywordHighlight
-                text="Building a Better Taiwan Through Technology and Collaboration"
-                keywords={['Technology', 'Collaboration']}
+                text={t('about.title')}
+                keywords={['Programming', 'Thinking']}
                 normalClassName="text-black"
                 brandKeywordClassName="font-brand "
                 animate={false}

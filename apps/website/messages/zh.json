@@ -5,8 +5,8 @@
   },
   "IndexPage": {
     "title": "Code for Taiwan",
-    "subtitle": "定期免費聚會，交流程式思維與經驗",
-    "description": "一個免費的程式交流社群。每個月定期聚會，分享開發經驗、討論程式思維。公益性質，歡迎所有人參加。",
+    "subtitle": "培養程式思維，而非盲目使用工具",
+    "description": "專注於理解程式原理的技術社群。每月分享會，討論程式思維、交流開發經驗。歡迎所有人參加。",
     "navigation": {
       "home": "首頁",
       "about": "關於",
@@ -15,45 +15,45 @@
       "faq": "FAQ"
     },
     "hero": {
-      "headline": "用 AI 工具開發，你真的知道背後在做什麼嗎？",
-      "subheadline": "每個月免費線上聚會，一起交流程式思維、分享開發經驗",
+      "headline": "深度思考程式碼，而非只是複製工具",
+      "subheadline": "每月分享會，一起討論程式思維",
       "cta": "立即參與",
       "learn_more": "了解更多"
     },
     "about": {
-      "title": "輕鬆交流程式，不分城鄉都能參加",
-      "subtitle": "現在很多人用 AI 工具開發，效率提升了，但常常不知道背後在做什麼。我們是一個免費的公益社群，每個月定期線上聚會，交流程式思維、分享開發經驗。不只是城市，鄉鎮市區的朋友也能輕鬆參加。",
-      "civic_tech": "Code Exchange",
-      "civic_tech_zh": "程式交流",
+      "title": "透過討論與分享，理解程式原理",
+      "subtitle": "我們是技術社群，讓開發者分享經驗、討論程式思維。每月聚會專注於理解程式碼背後的「為什麼」，而非只是跟隨工具。從彼此的觀點中學習。",
+      "civic_tech": "Civic Tech",
+      "civic_tech_zh": "深度理解技術",
       "testimonials": {
         "opensource_collaboration": "開發者",
         "transparency_changes": "公民",
         "tech_creates_value": "設計師"
       },
       "message_card": {
-        "user_message": "用 AI 工具開發很方便，但我不確定背後在做什麼...",
-        "join_message": "加入我們！一起交流討論"
+        "user_message": "我想理解程式碼如何運作，而非只是複製結果...",
+        "join_message": "加入我們，一起討論學習"
       },
       "ai_card": {
-        "title": "免費公益聚會",
-        "description": "定期交流分享"
+        "title": "每月分享會",
+        "description": "分享與討論"
       },
       "values": {
         "open_source": {
-          "title": "開放交流",
-          "description": "不論程度高低，大家都能自由分享經驗、討論想法"
+          "title": "深度思考",
+          "description": "理解原理，而非盲目跟隨工具。批判性思考程式碼的運作方式。"
         },
         "community_driven": {
-          "title": "完全免費",
-          "description": "所有活動都是免費公益性質，沒有任何費用"
+          "title": "友善空間",
+          "description": "歡迎各種背景的朋友。在互相支持的環境中一起學習。"
         },
         "innovation": {
-          "title": "經驗分享",
-          "description": "互相分享開發經驗，討論如何寫出更好的程式"
+          "title": "知識分享",
+          "description": "開放分享經驗。從不同的觀點和方法中學習。"
         },
         "transparency": {
-          "title": "不分城鄉",
-          "description": "線上聚會，不論你在哪裡都能參加交流"
+          "title": "",
+          "description": ""
         }
       }
     },
@@ -63,29 +63,29 @@
       "questions": [
         {
           "question": "什麼是 Code for Taiwan？",
-          "answer": "一個免費的程式交流社群。每個月定期線上聚會，讓喜歡程式的朋友們可以分享開發經驗、討論程式思維。活動都是公益性質，完全免費參加。"
+          "answer": "專注於程式思維的技術社群。每月第三個星期三聚會，分享開發經驗、討論如何思考程式碼而非只是使用工具。"
         },
         {
-          "question": "我沒有技術背景，可以參加嗎？",
-          "answer": "當然可以！交流活動歡迎所有人參加。無論你是新手、PM、設計師，只要對程式有興趣，都可以來聽聽別人的經驗、討論你的想法。"
+          "question": "沒有技術背景可以參加嗎？",
+          "answer": "可以。我們歡迎新手、PM、設計師，以及任何想了解程式如何運作的人。你會從其他人的經驗中學習。"
         },
         {
-          "question": "如何參加每月的線上聚會？",
-          "answer": "我們每個月定期舉辦免費線上聚會，交流程式思維和經驗。你可以在活動日曆看到最新的聚會資訊，直接線上報名就可以參加。"
+          "question": "如何參加？",
+          "answer": "每月第三個星期三聚會。可以在活動日曆查看詳情。也歡迎加入 Discord 與成員交流。"
         },
         {
-          "question": "所有活動都是免費的嗎？",
-          "answer": "是的！我們是公益性質的社群，所有活動、資源都完全免費。希望讓更多人能參與程式交流，不論你在城市還是鄉鎮都能參加。"
+          "question": "分享會都在做什麼？",
+          "answer": "成員輪流分享開發經驗和心得。我們討論程式思維、最佳實踐、如何解決問題。氛圍輕鬆，歡迎討論。"
         },
         {
-          "question": "為什麼要參加這個社群？",
-          "answer": "如果你常用 AI 工具開發，想知道背後的原理；或是想跟其他人交流經驗、討論想法；又或是想認識喜歡程式的朋友，歡迎來參加我們的免費聚會。"
+          "question": "為什麼要參加？",
+          "answer": "如果你想更深入理解程式碼、從他人經驗中學習、和同好討論程式，歡迎加入我們。"
         }
       ]
     },
     "events": {
-      "title": "每月免費線上聚會",
-      "subtitle": "定期舉辦，交流程式思維、分享開發經驗",
+      "title": "每月分享會",
+      "subtitle": "每月第三個星期三 - 分享經驗、討論程式思維",
       "show_calendar": "顯示活動日曆",
       "hide_calendar": "隱藏活動日曆",
       "view_all_luma": "在 Luma 查看完整活動",
@@ -95,29 +95,29 @@
     "join": {
       "title": "Community",
       "subtitle": "Join our",
-      "description": "每個月定期線上聚會，跟喜歡程式的朋友們交流程式思維、分享開發經驗。完全免費，歡迎所有人參加。",
+      "description": "每月分享會，討論程式思維、從他人經驗中學習。歡迎所有人。",
       "section": {
         "cta_title": "你可以獲得",
-        "cta_description_line1": "認識同好 • 經驗分享 • 免費資源",
-        "cta_description_line2": "輕鬆交流討論，沒有壓力"
+        "cta_description_line1": "程式洞察 • 共同學習 • 多元觀點",
+        "cta_description_line2": "友善空間，開放討論"
       },
       "roles": {
         "developers": "開發者",
-        "developers_description": "分享開發經驗，討論程式最佳實踐",
+        "developers_description": "分享開發經驗，討論如何寫出更好的程式",
         "designers": "設計師",
-        "designers_description": "交流介面設計想法，分享使用者經驗",
+        "designers_description": "交流介面設計想法和使用者體驗思考",
         "data_scientists": "資料科學家",
-        "data_scientists_description": "分享資料分析經驗，討論技術方法",
+        "data_scientists_description": "分享資料分析方法和解決問題的方式",
         "project_managers": "專案協調者",
-        "project_managers_description": "協助組織聚會活動，規劃交流主題",
+        "project_managers_description": "協助組織分享會和引導討論",
         "community_organizers": "社群組織者",
-        "community_organizers_description": "拓展到更多地區，讓各地都能參加"
+        "community_organizers_description": "協助擴展觸及，讓更多人能參與"
       },
       "cta": "加入社群"
     }
   },
   "Footer": {
-    "tagline": "定期免費聚會，交流程式經驗。",
+    "tagline": "透過共同學習，理解程式碼。",
     "community": {
       "title": "社群",
       "discord": "Discord 聊天室",
@@ -131,8 +131,8 @@
     }
   },
   "LocaleLayout": {
-    "title": "Code for Taiwan - 程式交流社群 | 每月免費線上聚會",
-    "description": "免費的程式交流社群，每個月定期線上聚會。分享開發經驗、討論技術想法。公益性質，歡迎所有人參加。"
+    "title": "Code for Taiwan - 技術社群 | 程式思維",
+    "description": "專注於程式思維的技術社群。每月第三個星期三分享會，討論開發經驗和程式原理。歡迎所有人。"
   },
   "Manifest": {
     "name": "Code for Taiwan"
