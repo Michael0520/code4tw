@@ -6,7 +6,7 @@
   "IndexPage": {
     "title": "Code for Taiwan",
     "subtitle": "Learn Programming Thinking Together",
-    "description": "Monthly meetups to discuss code concepts and share development experience. Engineers, PMs, designers all welcome.",
+    "description": "Monthly meetups to discuss code concepts and share development experience. Engineers, PMs, designers all welcome",
     "navigation": {
       "home": "Home",
       "about": "About",
@@ -21,7 +21,7 @@
       "learn_more": "Learn More"
     },
     "about": {
-      "title": "Meetups to Discuss Code Concepts",
+      "title": "Where We Build Programming Thinking",
       "subtitle": "AI tools made development easier, but many people are like playing slot machines - press buttons and it works, without knowing why. We meet monthly to discuss code concepts, share experience, and develop thinking together.",
       "civic_tech": "Civic Tech",
       "civic_tech_zh": "Tech for Everyone",
@@ -73,7 +73,7 @@
         },
         {
           "question": "Why 'Code for Taiwan'?",
-          "answer": "We want everyone to understand code together and write better code - not just get by with tools."
+          "answer": "We want everyone to understand code together and write better code, truly mastering the power of programming"
         }
       ]
     },
@@ -89,7 +89,7 @@
     "join": {
       "title": "Community",
       "subtitle": "Join our",
-      "description": "Monthly meetups to discuss code concepts and share development experience. No matter what tools you use, you're welcome to chat.",
+      "description": "Monthly meetups to discuss code concepts and share development experience. No matter what tools you use, you're welcome to chat",
       "section": {
         "cta_title": "What You'll Get",
         "cta_description_line1": "Programming Thinking • Real Experience • Community",

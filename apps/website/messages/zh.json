@@ -6,7 +6,7 @@
   "IndexPage": {
     "title": "Code for Taiwan",
     "subtitle": "一起學習程式思維",
-    "description": "每月聚會討論程式概念、交流開發經驗，工程師、PM、設計師都歡迎。",
+    "description": "每月聚會討論程式概念、交流開發經驗，工程師、PM、設計師都歡迎",
     "navigation": {
       "home": "首頁",
       "about": "關於",
@@ -21,7 +21,7 @@
       "learn_more": "了解更多"
     },
     "about": {
-      "title": "討論程式概念的聚會",
+      "title": "Where We Build Programming Thinking",
       "subtitle": "AI 工具讓開發變簡單了，但很多人像在玩吃角子老虎 — 按按鈕有效就好，不知道為什麼，我們每月聚會，一起討論程式概念、交流經驗、培養思維。",
       "civic_tech": "Civic Tech",
       "civic_tech_zh": "人人都能懂的科技",
@@ -75,7 +75,7 @@
         },
         {
           "question": "為什麼叫 Code for Taiwan？",
-          "answer": "希望大家一起理解 code、寫出更好的 Code — 不只是用工具交差。"
+          "answer": "希望大家一起理解 code、寫出更好的 Code，真正掌握程式的力量"
         }
       ]
     },
@@ -91,7 +91,7 @@
     "join": {
       "title": "Community",
       "subtitle": "Join our",
-      "description": "每月聚會，一起討論程式概念、交流開發經驗，不管你在用什麼工具，都歡迎來聊聊。",
+      "description": "每月聚會，一起討論程式概念、交流開發經驗，不管你在用什麼工具，都歡迎來聊聊",
       "section": {
         "cta_title": "你會獲得",
         "cta_description_line1": "程式思維 • 實戰經驗 • 同好交流",
