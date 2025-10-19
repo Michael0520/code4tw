@@ -45,8 +45,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=Michael0520_code4tw
-            -Dsonar.organization=michael0520
+            -Dsonar.projectKey=code-for-Taiwan_code4tw
+            -Dsonar.organization=code-for-taiwan
             -Dsonar.sources=apps/website/src
             -Dsonar.tests=apps/website/src
             -Dsonar.test.inclusions=**/*.test.ts,**/*.test.tsx,**/*.spec.ts,**/*.spec.tsx
