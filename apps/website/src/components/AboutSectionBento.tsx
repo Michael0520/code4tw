@@ -10,7 +10,6 @@ import {
 } from './BentoGrid';
 import {
   TechStackSkeleton,
-  GradientSkeleton,
   TestimonialsSkeleton,
   MessageSkeleton,
   AISkeleton
@@ -20,7 +19,6 @@ import {
   Code2,
   Users,
   Lightbulb,
-  Eye,
   Globe,
   Sparkles,
   Heart,
@@ -80,23 +78,6 @@ export function AboutSectionBento() {
       className: 'md:col-span-1 md:row-span-1 group',
       icon: (
         <Lightbulb className="h-4 w-4 text-yellow-600 group-hover:text-yellow-700 transition-colors" />
-      )
-    },
-    {
-      title: (
-        <span className="text-lg md:text-xl font-extrabold tracking-tight">
-          {t('about.values.transparency.title')}
-        </span>
-      ),
-      description: (
-        <span className="text-base md:text-lg leading-[1.5] text-gray-600">
-          {t('about.values.transparency.description')}
-        </span>
-      ),
-      header: <GradientSkeleton />,
-      className: 'md:col-span-1 md:row-span-1 group',
-      icon: (
-        <Eye className="h-4 w-4 text-purple-600 group-hover:text-purple-700 transition-colors" />
       )
     }
   ];
@@ -164,8 +145,8 @@ export function AboutSectionBento() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
             <span className="bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 bg-clip-text text-transparent">
               <BrandKeywordHighlight
-                text="Building a Better Taiwan Through Technology and Collaboration"
-                keywords={['Technology', 'Collaboration']}
+                text={t('about.title')}
+                keywords={['Build', 'Programming', 'Thinking']}
                 normalClassName="text-black"
                 brandKeywordClassName="font-brand "
                 animate={false}

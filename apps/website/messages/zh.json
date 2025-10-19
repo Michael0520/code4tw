@@ -5,8 +5,8 @@
   },
   "IndexPage": {
     "title": "Code for Taiwan",
-    "subtitle": "為更好的社會建立數位基礎設施",
-    "description": "我們是一個公民科技社群，致力於創造開源解決方案，以改善政府透明度、公民參與和公共服務。",
+    "subtitle": "一起學習程式思維",
+    "description": "我們是一個公民科技社群，一起培養程式思維，用技術創造改變",
     "navigation": {
       "home": "首頁",
       "about": "關於",
@@ -15,45 +15,41 @@
       "faq": "FAQ"
     },
     "hero": {
-      "headline": "科技創造社會價值",
-      "subheadline": "加入我們，透過科技建立更透明、更具參與性的民主",
+      "headline": "一起學習程式思維",
+      "subheadline": "每月第三個週三線上小聚，交流開發經驗，從彼此身上學習",
       "cta": "立即參與",
       "learn_more": "了解更多"
     },
     "about": {
-      "title": "透過科技與協作，打造更好的台灣",
-      "subtitle": "透過公民科技的協作開發，促進台灣的透明度、問責制和公民參與。",
+      "title": "Where We Build Programming Thinking",
+      "subtitle": "AI 工具讓開發變簡單了，但很多人像在玩吃角子老虎 — 按按鈕有效就好，不知道為什麼，我們每月聚會，一起討論程式概念、交流經驗、培養思維",
       "civic_tech": "Civic Tech",
-      "civic_tech_zh": "公民科技",
+      "civic_tech_zh": "人人都能懂的科技",
       "testimonials": {
         "opensource_collaboration": "開發者",
         "transparency_changes": "公民",
         "tech_creates_value": "設計師"
       },
       "message_card": {
-        "user_message": "我們需要更透明的政府資訊...",
-        "join_message": "加入我們！用科技改變台灣"
+        "user_message": "我會用工具做東西，但想理解背後原理...",
+        "join_message": "一起來交流吧"
       },
       "ai_card": {
-        "title": "AI 驅動創新",
-        "description": "最新 AI 技術分析"
+        "title": "每月線上小聚",
+        "description": "第三個週三"
       },
       "values": {
         "open_source": {
-          "title": "Open Source",
-          "description": "所有內容都是開源的，歡迎來自社群的貢獻"
+          "title": "概念優於工具",
+          "description": "討論為什麼這樣寫，而不只是怎麼寫"
         },
         "community_driven": {
-          "title": "Community Driven",
-          "description": "多元化的志工社群為了社會影響力而共同協作"
+          "title": "開放友善",
+          "description": "不管你用什麼工具、什麼背景，都歡迎來交流"
         },
         "innovation": {
-          "title": "Innovation",
-          "description": "使用現代技術為社會挑戰提供創新解決方案"
-        },
-        "transparency": {
-          "title": "Government Transparency",
-          "description": "建立工具讓政府更透明和負責任"
+          "title": "從經驗中學習",
+          "description": "聽別人踩過的坑，分享自己的解法"
         }
       }
     },
@@ -63,29 +59,29 @@
       "questions": [
         {
           "question": "什麼是 Code for Taiwan？",
-          "answer": "Code for Taiwan 是一個公民科技社群，致力於透過開源技術解決社會問題，促進政府透明度和公民參與。我們將技術人員、設計師和關心社會的公民聚集在一起，共同創造有意義的數位解決方案。"
+          "answer": "Code for Taiwan 是一個公民科技社群，透過每月聚會培養程式思維、交流開發經驗。我們將工程師、設計師、PM和關心技術的人聚集在一起，一起學習、討論程式概念、共同成長"
         },
         {
           "question": "我沒有技術背景，可以參與嗎？",
-          "answer": "當然可以！我們歡迎各種背景的參與者。除了工程師和設計師，我們也需要協調管理、內容編輯、社群經營、政策研究等各種技能。每個人都可以透過學習程式思維來提升自己的工作效率。"
+          "answer": "當然可以！我們歡迎各種背景的人來聚會。聽聽別人怎麼思考問題、怎麼解決，你會學到很多。每個人都可以透過學習程式思維來提升自己"
         },
         {
           "question": "如何開始學習程式思維？",
-          "answer": "您可以透過參加我們的工作坊、加入我們的 Discord 討論群組、或是直接在 GitHub 上查看我們的學習資源開始學習。我們定期舉辦新手友善的課程，幫助大家建立程式思維。"
+          "answer": "參加我們的每月線上小聚、加入 Discord 聊聊，或直接來聚會認識大家。透過每月第三個週三的討論交流，大家一起培養程式思維"
         },
         {
           "question": "Code for Taiwan 的學習資源都是免費的嗎？",
-          "answer": "是的，我們所有的學習資源都是開源且免費提供給公眾使用。我們相信知識普及是縮小城鄉差距的關鍵，因此我們的教材、工具和資源都對所有人開放。"
+          "answer": "是的，我們的每月線上小聚都是免費參加，討論內容和經驗分享都開放給所有人。我們相信知識共享是社群成長的關鍵"
         },
         {
           "question": "如何聯繫 Code for Taiwan 團隊？",
-          "answer": "您可以透過我們的官方網站、社群媒體平台，或是直接參加我們的實體活動與我們聯繫。我們也歡迎您加入我們的線上社群，與其他參與者交流討論。"
+          "answer": "透過官方網站、Discord 社群，或直接參加每月第三個週三的線上小聚與我們聯繫。歡迎加入線上社群，與其他參與者交流討論"
         }
       ]
     },
     "events": {
-      "title": "Explore Our Events",
-      "subtitle": "參與我們的工作坊、黑客松與社群聚會，一起用科技創造改變",
+      "title": "每月第三個週三線上小聚",
+      "subtitle": "討論程式概念、分享開發經驗",
       "show_calendar": "顯示活動日曆",
       "hide_calendar": "隱藏活動日曆",
       "view_all_luma": "在 Luma 查看完整活動",
@@ -95,29 +91,29 @@
     "join": {
       "title": "Community",
       "subtitle": "Join our",
-      "description": "透過多種管道參與社群活動，與志同道合的夥伴一起為台灣的數位民主努力。",
+      "description": "每月第三個週三線上小聚，一起討論程式概念、交流開發經驗，不管你在用什麼工具，都歡迎來聊聊",
       "section": {
-        "cta_title": "加入我們的行列",
-        "cta_description_line1": "立即加入 Code for Taiwan",
-        "cta_description_line2": "用科技改變社會"
+        "cta_title": "你會獲得",
+        "cta_description_line1": "程式思維 • 實戰經驗 • 同好交流",
+        "cta_description_line2": "自由交流，一起學習"
       },
       "roles": {
         "developers": "開發者",
-        "developers_description": "建構開源工具並推廣程式思維",
+        "developers_description": "分享開發經驗，討論不同框架和工具的思維方式",
         "designers": "設計師",
-        "designers_description": "創造友善的使用者介面並提升數位體驗",
+        "designers_description": "理解程式概念，和工程師更好地協作",
         "data_scientists": "資料科學家",
-        "data_scientists_description": "分析開放資料並產出公共利益的洞察",
-        "project_managers": "協調推廣者",
-        "project_managers_description": "協調團隊並推動程式思維普及化",
+        "data_scientists_description": "交流資料處理的想法和最佳實踐",
+        "project_managers": "專案經理",
+        "project_managers_description": "理解技術決策背後的思考過程",
         "community_organizers": "社群組織者",
-        "community_organizers_description": "連結人群並促進跨社群的協作"
+        "community_organizers_description": "幫忙把聚會資訊分享出去"
       },
       "cta": "加入社群"
     }
   },
   "Footer": {
-    "tagline": "透過科技與協作，打造更好的台灣。",
+    "tagline": "一起討論程式概念",
     "community": {
       "title": "社群",
       "discord": "Discord 聊天室",
@@ -131,8 +127,8 @@
     }
   },
   "LocaleLayout": {
-    "title": "Code for Taiwan - 為更好的社會建立數位基礎設施",
-    "description": "Code for Taiwan 是一個公民科技社群，致力於創造開源解決方案，以改善政府透明度、公民參與和公共服務。"
+    "title": "Code for Taiwan - 一起學習程式思維",
+    "description": "我們是一個公民科技社群，一起培養程式思維，用技術創造改變"
   },
   "Manifest": {
     "name": "Code for Taiwan"
