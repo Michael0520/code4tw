@@ -16,7 +16,7 @@
     },
     "hero": {
       "headline": "Learn Programming Thinking Together",
-      "subheadline": "Monthly meetups on third Wednesday - Share experience and learn from each other",
+      "subheadline": "Monthly online meetups on the third Wednesday - Share experience and learn from each other",
       "cta": "Get Involved",
       "learn_more": "Learn More"
     },
@@ -35,8 +35,8 @@
         "join_message": "Let's share together"
       },
       "ai_card": {
-        "title": "Monthly Meetups",
-        "description": "Third Wednesday"
+        "title": "Monthly Online Meetups",
+        "description": "The Third Wednesday"
       },
       "values": {
         "open_source": {
@@ -65,20 +65,20 @@
         },
         {
           "question": "How do I start learning programming thinking?",
-          "answer": "Join our monthly meetups, chat on Discord, or come directly to meetups and meet everyone. Through monthly third Wednesday discussions and exchanges, we develop programming thinking together"
+          "answer": "Join our monthly online meetups, chat on Discord, or come directly to meetups and meet everyone. Through monthly third Wednesday discussions and exchanges, we develop programming thinking together"
         },
         {
           "question": "Are Code for Taiwan's learning resources free?",
-          "answer": "Yes, our monthly meetups are free to attend, and discussions and experience sharing are open to everyone. We believe knowledge sharing is key to community growth"
+          "answer": "Yes, our monthly online meetups are free to attend, and discussions and experience sharing are open to everyone. We believe knowledge sharing is key to community growth"
         },
         {
           "question": "How do I contact the Code for Taiwan team?",
-          "answer": "Through our official website, Discord community, or by directly attending our monthly third Wednesday meetups. Feel free to join our online community and exchange ideas with other participants"
+          "answer": "Through our official website, Discord community, or by directly attending our monthly online meetups on the third Wednesday. Feel free to join our online community and exchange ideas with other participants"
         }
       ]
     },
     "events": {
-      "title": "Monthly Meetups on Third Wednesday",
+      "title": "Monthly Online Meetups on the Third Wednesday",
       "subtitle": "Discuss code concepts and share development experience",
       "show_calendar": "Show Event Calendar",
       "hide_calendar": "Hide Calendar",
@@ -89,7 +89,7 @@
     "join": {
       "title": "Community",
       "subtitle": "Join our",
-      "description": "Monthly meetups to discuss code concepts and share development experience. No matter what tools you use, you're welcome to chat",
+      "description": "Monthly online meetups on the third Wednesday to discuss code concepts and share development experience. No matter what tools you use, you're welcome to chat",
       "section": {
         "cta_title": "What You'll Get",
         "cta_description_line1": "Programming Thinking • Real Experience • Community",
