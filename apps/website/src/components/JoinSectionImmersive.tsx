@@ -437,37 +437,38 @@ export function JoinSectionImmersive() {
               transition={{duration: 0.8, delay: 1}}
               className="flex flex-wrap gap-4"
             >
-              <MagneticButton
-                strength={40}
-                onClick={() => {
-                  trackCTAClick('Join Discord', 'join_section');
-                  window.open(siteConfig.social.discord, '_blank');
-                }}
-              >
+              <MagneticButton strength={40}>
                 <Button
+                  asChild
                   variant="primary-brand"
                   size="xl"
                   rounded="full"
-                  type="button"
                 >
-                  {t('join.cta')}
+                  <a
+                    href={siteConfig.social.discord}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() =>
+                      trackCTAClick('Join Discord', 'join_section')
+                    }
+                  >
+                    {t('join.cta')}
+                  </a>
                 </Button>
               </MagneticButton>
 
-              <MagneticButton
-                strength={30}
-                onClick={() => {
-                  const faqSection = document.getElementById('faq');
-                  faqSection?.scrollIntoView({behavior: 'smooth'});
-                }}
-              >
-                <Button
-                  variant="outline-gray"
-                  size="xl"
-                  rounded="full"
-                  type="button"
-                >
-                  {t('hero.learn_more')}
+              <MagneticButton strength={30}>
+                <Button asChild variant="outline-gray" size="xl" rounded="full">
+                  <a
+                    href="#faq"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const faqSection = document.getElementById('faq');
+                      faqSection?.scrollIntoView({behavior: 'smooth'});
+                    }}
+                  >
+                    {t('hero.learn_more')}
+                  </a>
                 </Button>
               </MagneticButton>
             </motion.div>

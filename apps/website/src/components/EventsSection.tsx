@@ -16,11 +16,6 @@ export function EventsSection() {
   const {trackCTAClick, trackEvent} = usePostHog();
   const [showCalendar, setShowCalendar] = useState(false);
 
-  const handleViewEvents = () => {
-    trackCTAClick('View Events', 'events_section');
-    window.open(siteConfig.social.events, '_blank');
-  };
-
   const handleToggleCalendar = () => {
     const newState = !showCalendar;
     setShowCalendar(newState);
@@ -109,14 +104,21 @@ export function EventsSection() {
             </Button>
 
             <Button
-              onClick={handleViewEvents}
+              asChild
               variant="outline-white"
               size="xl"
               rounded="full"
               className="group"
             >
-              <span>{t('view_all_luma')}</span>
-              <ExternalLink className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <a
+                href={siteConfig.social.events}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackCTAClick('View Events', 'events_section')}
+              >
+                <span>{t('view_all_luma')}</span>
+                <ExternalLink className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
             </Button>
           </motion.div>
 

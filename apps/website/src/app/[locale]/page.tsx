@@ -166,29 +166,39 @@ export default function IndexPage() {
                   transition={{duration: 0.8, delay: 1.3}}
                 >
                   <Button
-                    onClick={() => {
-                      trackCTAClick('Join Discord', 'hero_section');
-                      window.open(siteConfig.social.discord, '_blank');
-                    }}
+                    asChild
                     variant="primary-white"
                     size="xl"
                     rounded="full"
                     className="relative z-[100]"
-                    type="button"
                   >
-                    {t('hero.cta')}
+                    <a
+                      href={siteConfig.social.discord}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() =>
+                        trackCTAClick('Join Discord', 'hero_section')
+                      }
+                    >
+                      {t('hero.cta')}
+                    </a>
                   </Button>
                   <Button
-                    onClick={() => {
-                      scrollToAbout();
-                    }}
+                    asChild
                     variant="outline-white"
                     size="xl"
                     rounded="full"
                     className="relative z-[100]"
-                    type="button"
                   >
-                    {t('hero.learn_more')}
+                    <a
+                      href="#about"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollToAbout();
+                      }}
+                    >
+                      {t('hero.learn_more')}
+                    </a>
                   </Button>
                 </motion.div>
               </div>
