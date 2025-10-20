@@ -35,7 +35,9 @@ export const siteConfig = {
     docs: 'https://docs.codefortaiwan.org',
     awesomeTaiwan: 'https://github.com/codefortaiwan/awesome-taiwan',
     g0v: 'https://g0v.tw',
-    vTaiwan: 'https://vtaiwan.tw'
+    vTaiwan: 'https://vtaiwan.tw',
+    privacy: '#privacy',
+    terms: '#terms'
   },
 
   // Copyright

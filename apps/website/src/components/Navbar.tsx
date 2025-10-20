@@ -68,20 +68,22 @@ export function Navbar({}: NavbarProps) {
       <ul className="flex w-full justify-between gap-0.5 md:gap-1">
         {tabs.map((tab) => {
           return (
-            <motion.a
-              key={tab.id}
-              href={`#${tab.id}`}
-              onClick={handleSmoothScroll}
-              className="relative flex items-center justify-center gap-1.5 px-2 md:px-3 py-2 md:py-1.5 text-sm cursor-pointer font-medium outline-none transition-all hover:bg-white/5 focus-visible:outline-2 rounded-full"
-              style={{WebkitTapHighlightColor: 'transparent'}}
-            >
-              <div className="flex items-center gap-1.5 pointer-events-none">
-                <div className="flex-shrink-0">{tab.icon}</div>
-                <span className="hidden md:block text-xs lg:text-sm font-medium text-white whitespace-nowrap">
-                  {tab.label}
-                </span>
-              </div>
-            </motion.a>
+            <li key={tab.id} className="flex">
+              <motion.a
+                href={`#${tab.id}`}
+                onClick={handleSmoothScroll}
+                aria-label={tab.label}
+                className="relative flex items-center justify-center gap-1.5 px-2 md:px-3 py-2 md:py-1.5 text-sm cursor-pointer font-medium outline-none transition-all hover:bg-white/5 focus-visible:outline-2 rounded-full"
+                style={{WebkitTapHighlightColor: 'transparent'}}
+              >
+                <div className="flex items-center gap-1.5 pointer-events-none">
+                  <div className="flex-shrink-0">{tab.icon}</div>
+                  <span className="hidden md:block text-xs lg:text-sm font-medium text-white whitespace-nowrap">
+                    {tab.label}
+                  </span>
+                </div>
+              </motion.a>
+            </li>
           );
         })}
       </ul>

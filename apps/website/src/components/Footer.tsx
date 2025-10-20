@@ -143,10 +143,21 @@ export function Footer() {
             {t('copyright')}
           </div>
 
-          <div className="flex space-x-6">
-            <span className="text-sm text-gray-500">{t('links.privacy')}</span>
-            <span className="text-sm text-gray-500">{t('links.terms')}</span>
-          </div>
+          {/* Privacy & Terms links - Hidden until actual pages are created */}
+          {/* <div className="flex space-x-6">
+            <a
+              href={siteConfig.links.privacy}
+              className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
+            >
+              {t('links.privacy')}
+            </a>
+            <a
+              href={siteConfig.links.terms}
+              className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
+            >
+              {t('links.terms')}
+            </a>
+          </div> */}
         </div>
       </div>
     </footer>
