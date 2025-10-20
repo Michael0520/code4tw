@@ -12,12 +12,19 @@ interface NavbarProps {
 export function Navbar({}: NavbarProps) {
   const t = useTranslations('IndexPage.navigation');
 
-  const handleTabClick = useCallback((id: string) => {
-    const section = document.querySelector(`#${id}`);
-    if (section) {
-      section.scrollIntoView({behavior: 'smooth'});
-    }
-  }, []);
+  const handleSmoothScroll = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      const href = e.currentTarget.getAttribute('href');
+      if (href) {
+        const section = document.querySelector(href);
+        if (section) {
+          section.scrollIntoView({behavior: 'smooth'});
+        }
+      }
+    },
+    []
+  );
 
   // Tabs configuration with modern icon + label design
   const tabs = [
@@ -61,9 +68,10 @@ export function Navbar({}: NavbarProps) {
       <ul className="flex w-full justify-between gap-0.5 md:gap-1">
         {tabs.map((tab) => {
           return (
-            <motion.button
+            <motion.a
               key={tab.id}
-              onClick={() => handleTabClick(tab.id)}
+              href={`#${tab.id}`}
+              onClick={handleSmoothScroll}
               className="relative flex items-center justify-center gap-1.5 px-2 md:px-3 py-2 md:py-1.5 text-sm cursor-pointer font-medium outline-none transition-all hover:bg-white/5 focus-visible:outline-2 rounded-full"
               style={{WebkitTapHighlightColor: 'transparent'}}
             >
@@ -73,7 +81,7 @@ export function Navbar({}: NavbarProps) {
                   {tab.label}
                 </span>
               </div>
-            </motion.button>
+            </motion.a>
           );
         })}
       </ul>
