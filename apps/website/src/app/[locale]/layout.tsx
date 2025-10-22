@@ -44,13 +44,7 @@ export async function generateMetadata(props: {
     verification: {
       google: '2CvgG0Lxzp7YM4wq2J97HtoBOeE9pcz0iYFHbHjotys'
     },
-    icons: {
-      icon: [
-        {url: '/icon.png', sizes: '192x192', type: 'image/png'},
-        {url: '/logo-square.svg', type: 'image/svg+xml'}
-      ],
-      apple: '/apple-touch-icon.png'
-    },
+    // Icons are handled via file-based metadata (app/icon.svg, app/icon.png, app/apple-icon.png)
     alternates: {
       canonical: currentUrl,
       languages: {
