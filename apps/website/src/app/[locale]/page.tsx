@@ -75,7 +75,7 @@ export default function IndexPage() {
           initial={{opacity: 0, y: -120}}
           animate={{opacity: 1, y: 0}}
           exit={{opacity: 0, y: 120}}
-          transition={{duration: 1.6, delay: 0.9, type: 'spring'}}
+          transition={{duration: 0.6, delay: 0, type: 'spring'}}
           className="pointer-events-auto"
           style={{contain: 'layout style paint'}}
         >
@@ -89,7 +89,7 @@ export default function IndexPage() {
           initial={{opacity: 0, y: -20}}
           animate={{opacity: 1, y: 0}}
           exit={{opacity: 0, y: -20}}
-          transition={{duration: 0.6, delay: 1.1, type: 'spring'}}
+          transition={{duration: 0.4, delay: 0.2, type: 'spring'}}
         >
           <LanguageSelector />
         </motion.div>
@@ -114,7 +114,7 @@ export default function IndexPage() {
                 <motion.h1
                   initial={{opacity: 0, y: 20}}
                   animate={{opacity: 1, y: 0}}
-                  transition={{duration: 0.8, delay: 0.5}}
+                  transition={{duration: 0.4, delay: 0}}
                   className="text-4xl md:text-5xl font-bold mb-6 text-white"
                 >
                   <BrandKeywordHighlight
@@ -129,7 +129,7 @@ export default function IndexPage() {
                   className="text-lg md:text-xl text-gray-200 mb-4"
                   initial={{opacity: 0, y: 20}}
                   animate={{opacity: 1, y: 0}}
-                  transition={{duration: 0.8, delay: 0.8}}
+                  transition={{duration: 0.4, delay: 0.1}}
                 >
                   <BrandKeywordHighlight
                     text={t('subtitle')}
@@ -143,7 +143,7 @@ export default function IndexPage() {
                   className="text-base md:text-lg text-gray-300 mb-12 max-w-4xl mx-auto"
                   initial={{opacity: 0, y: 20}}
                   animate={{opacity: 1, y: 0}}
-                  transition={{duration: 0.8, delay: 1.1}}
+                  transition={{duration: 0.4, delay: 0.2}}
                 >
                   <BrandKeywordHighlight
                     text={t('description')}
@@ -163,7 +163,7 @@ export default function IndexPage() {
                   className="flex flex-col sm:flex-row gap-4 justify-center relative z-[100] pointer-events-auto"
                   initial={{opacity: 0, y: 20}}
                   animate={{opacity: 1, y: 0}}
-                  transition={{duration: 0.8, delay: 1.3}}
+                  transition={{duration: 0.4, delay: 0.3}}
                 >
                   <Button
                     asChild
