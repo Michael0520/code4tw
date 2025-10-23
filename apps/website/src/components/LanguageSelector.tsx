@@ -115,10 +115,7 @@ export function LanguageSelector() {
                   {lang.label}
                 </span>
                 {isSelected && (
-                  <Check
-                    className="w-4 h-4 text-blue-600"
-                    aria-hidden="true"
-                  />
+                  <Check className="w-4 h-4 text-blue-600" aria-hidden="true" />
                 )}
               </button>
             );
