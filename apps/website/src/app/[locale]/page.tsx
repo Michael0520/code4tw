@@ -1,7 +1,7 @@
 'use client';
 
 import {useTranslations} from 'next-intl';
-import {useEffect, useRef, useState} from 'react';
+import {useEffect, useRef} from 'react';
 import {AnimatedRadialGradientBackground} from '@/sections/marketing-hero-radial-gradient/animated-radial-background';
 import {FAQSection} from '@/components/FAQSection';
 import {Footer} from '@/components/Footer';
@@ -17,7 +17,6 @@ import {siteConfig} from '@/config/site';
 import {Button} from '@repo/ui/ui/button';
 
 export default function IndexPage() {
-  const [activeSection, setActiveSection] = useState('hero');
   const {trackCTAClick} = usePostHog();
 
   const heroRef = useRef<HTMLElement | null>(null);
@@ -39,7 +38,8 @@ export default function IndexPage() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+            // Track active section for future use
+            // Currently not used but kept for potential active state highlighting
           }
         });
       },
@@ -79,7 +79,7 @@ export default function IndexPage() {
           className="pointer-events-auto"
           style={{contain: 'layout style paint'}}
         >
-          <Navbar activeSection={activeSection} />
+          <Navbar />
         </motion.div>
       </div>
 

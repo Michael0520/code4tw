@@ -5,11 +5,7 @@ import {motion} from 'framer-motion';
 import Image from 'next/image';
 import {useTranslations} from 'next-intl';
 
-interface NavbarProps {
-  activeSection: string;
-}
-
-export function Navbar({}: NavbarProps) {
+export function Navbar() {
   const t = useTranslations('IndexPage.navigation');
 
   const handleSmoothScroll = useCallback(
