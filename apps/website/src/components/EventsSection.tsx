@@ -91,7 +91,7 @@ export function EventsSection() {
               variant="primary-white"
               size="xl"
               rounded="full"
-              className="group text-gray-900"
+              className="group text-gray-900 cursor-pointer"
             >
               <span>
                 {showCalendar ? t('hide_calendar') : t('show_calendar')}

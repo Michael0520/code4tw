@@ -64,20 +64,29 @@ export function Navbar({}: NavbarProps) {
   ];
 
   return (
-    <div className="flex sticky top-0 z-50 bg-black/80 backdrop-blur-md px-1.5 py-1 md:px-2 md:py-1 rounded-full border border-white/20 shadow-lg min-w-[240px] md:min-w-fit">
-      <ul className="flex w-full justify-between gap-0.5 md:gap-1">
+    <nav
+      className="flex sticky top-0 z-50 bg-black/80 backdrop-blur-md px-1.5 py-1 md:px-2 md:py-1 rounded-full border border-white/20 shadow-lg min-w-[240px] md:min-w-fit"
+      role="navigation"
+      aria-label="Main navigation"
+    >
+      <ul className="flex w-full justify-between gap-0.5 md:gap-1" role="list">
         {tabs.map((tab) => {
           return (
-            <li key={tab.id} className="flex">
+            <li key={tab.id} className="flex" role="listitem">
               <motion.a
                 href={`#${tab.id}`}
                 onClick={handleSmoothScroll}
-                aria-label={tab.label}
-                className="relative flex items-center justify-center gap-1.5 px-2 md:px-3 py-2 md:py-1.5 text-sm cursor-pointer font-medium outline-none transition-all hover:bg-white/5 focus-visible:outline-2 rounded-full"
+                aria-label={`Navigate to ${tab.label} section`}
+                className="relative flex items-center justify-center gap-1.5 px-2 md:px-3 py-2 md:py-1.5 text-sm cursor-pointer font-medium outline-none transition-all duration-200 hover:bg-white/10 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-black/80 rounded-full"
                 style={{WebkitTapHighlightColor: 'transparent'}}
+                whileHover={{scale: 1.05}}
+                whileTap={{scale: 0.95}}
+                transition={{type: 'spring', stiffness: 400, damping: 17}}
               >
                 <div className="flex items-center gap-1.5 pointer-events-none">
-                  <div className="flex-shrink-0">{tab.icon}</div>
+                  <div className="flex-shrink-0" aria-hidden="true">
+                    {tab.icon}
+                  </div>
                   <span className="hidden md:block text-xs lg:text-sm font-medium text-white whitespace-nowrap">
                     {tab.label}
                   </span>
@@ -87,7 +96,7 @@ export function Navbar({}: NavbarProps) {
           );
         })}
       </ul>
-    </div>
+    </nav>
   );
 }
 
