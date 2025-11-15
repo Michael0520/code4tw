@@ -92,7 +92,7 @@ export function LumaEventCalendar({
         }}
       >
         <iframe
-          src="https://luma.com/embed/calendar/cal-DLj7yelTE4rnL4k/events"
+          src="https://luma.com/embed/calendar/cal-8EhyWXBBpUBUbyA/events"
           className="w-full h-full"
           frameBorder="0"
           style={{
