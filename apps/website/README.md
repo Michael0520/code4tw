@@ -223,7 +223,7 @@ Part of the Code4TW project.
 - **Email**: codefortaiwan.org@gmail.com
 - **Facebook**: [CFTcodefortaiwan](https://www.facebook.com/CFTcodefortaiwan/)
 - **Discord**: [Join our community](https://discord.gg/pRFjDXeFyv)
-- **Events**: [Luma Calendar](https://luma.com/0ckf5dio)
+- **Events**: [Luma Calendar](https://luma.com/code4tw)
 - **GitHub**: [codefortaiwan](https://github.com/codefortaiwan)
 
 ---

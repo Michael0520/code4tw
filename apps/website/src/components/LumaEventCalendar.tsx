@@ -52,7 +52,7 @@ export function LumaEventCalendar({
         <Calendar className="w-12 h-12 text-gray-400 mb-4" />
         <p className="text-gray-400 text-center">{t('calendar_unavailable')}</p>
         <a
-          href="https://luma.com/user/code4tw"
+          href="https://luma.com/code4tw"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white hover:text-gray-300 underline mt-2"
