@@ -51,7 +51,7 @@ export default async function Image() {
           opacity: 0.9
         }}
       >
-        透過科技與協作，打造更好的台灣
+        Building a better Taiwan through technology
       </div>
     </div>,
     {
