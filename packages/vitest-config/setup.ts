@@ -4,7 +4,8 @@ import { afterEach, beforeAll } from "vitest";
 
 /**
  * Global test setup for React applications
- * This file is automatically loaded by vitest when using @repo/vitest-config/react
+ * Import this file via setupFiles in your vitest.config.ts:
+ * setupFiles: ["@repo/vitest-config/setup"]
  */
 
 // Setup global test environment
