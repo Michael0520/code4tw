@@ -7,10 +7,11 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: ["./vitest.setup.ts"],
     include: ["**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
-    exclude: ["node_modules", ".next", "dist", "build", "**/*.d.ts"],
+    exclude: ["**/node_modules/**", "**/.next/**", "**/dist/**", "**/build/**", "**/*.d.ts"],
     coverage: {
       provider: "v8",
       reporter: ["text", "json", "html", "lcov"],
+      include: ["apps/*/src/**/*.{ts,tsx}", "packages/*/src/**/*.{ts,tsx}"],
       exclude: [
         "node_modules/",
         "dist/",
