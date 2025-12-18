@@ -2,9 +2,15 @@ import "@testing-library/jest-dom";
 import { cleanup } from "@testing-library/react";
 import { afterEach, beforeAll } from "vitest";
 
-// Global test setup
+/**
+ * Global test setup for React applications
+ * Import this file via setupFiles in your vitest.config.ts:
+ * setupFiles: ["@repo/vitest-config/setup"]
+ */
+
+// Setup global test environment
 beforeAll(() => {
-  // Setup global test environment
+  // Mock ResizeObserver
   global.ResizeObserver = class ResizeObserver {
     observe() {}
     unobserve() {}
