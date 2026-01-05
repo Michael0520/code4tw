@@ -23,11 +23,11 @@ catalog:
   '@radix-ui/react-slot': ^1.2.4
 
   # Internationalization
-  next-intl: ^4.6.1
+  next-intl: ^4.7.0
 
   # Analytics
-  posthog-js: ^1.309.1
-  posthog-node: ^5.17.4
+  posthog-js: ^1.313.0
+  posthog-node: ^5.18.1
 
   # Development Tools
   typescript: ^5.9.2
