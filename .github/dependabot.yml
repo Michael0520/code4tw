@@ -1,0 +1,22 @@
+version: 2
+updates:
+  # GitHub Actions dependencies only
+  # NPM packages are managed by taze via dependencies.yml workflow
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Asia/Taipei"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(ci)"
+    labels:
+      - "dependencies"
+      - "github-actions"
+      - "automated"
+    groups:
+      actions:
+        patterns:
+          - "*"
