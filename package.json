@@ -22,16 +22,16 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "^14.6.1",
-    "@vitest/coverage-v8": "^4.0.16",
+    "@vitest/coverage-v8": "^4.0.18",
     "husky": "^9.1.7",
     "jsdom": "^26.1.0",
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.1",
     "taze": "^19.9.2",
-    "turbo": "^2.6.3",
+    "turbo": "^2.7.6",
     "typescript": "5.9.2",
-    "vitest": "^4.0.16"
+    "vitest": "^4.0.18"
   },
-  "packageManager": "pnpm@10.26.0",
+  "packageManager": "pnpm@10.28.1",
   "engines": {
     "node": ">=18"
   }

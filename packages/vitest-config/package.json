@@ -9,9 +9,9 @@
   "peerDependencies": {
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^16.0.0",
-    "@vitest/coverage-v8": "^4.0.0",
-    "jsdom": "^26.0.0",
-    "vitest": "^4.0.0"
+    "@vitest/coverage-v8": "^4.0.18",
+    "jsdom": "^26.1.0",
+    "vitest": "^4.0.18"
   },
   "peerDependenciesMeta": {
     "@testing-library/jest-dom": {
